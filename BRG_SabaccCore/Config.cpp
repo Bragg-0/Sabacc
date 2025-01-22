@@ -17,6 +17,48 @@ class CfgFunctions
     class BRG_Sabacc_Functions
     {
         tag = "BRG";
+        class Cards
+        {
+            file = "BRG_SabaccCore\Functions\Cards";
+            F(discardCard)        // Todo
+            F(getCard)            // Todo
+            F(getCardName)        // Todo
+            F(getLastDiscardCard) // Todo
+            F(getNewCard)         // Todo
+            F(initCardDeck)       // Todo
+            F(pickNewCard)        // Todo
+            F(setCard)            // Todo
+        };
+        class Bonus
+        {
+            file = "BRG_SabaccCore\Functions\Bonus";
+            F(bonusSelector) // Todo
+            F(initBonus)     // Todo
+            F(useBonus)      // Todo
+        };
+        class Chips
+        {
+            file = "BRG_SabaccCore\Functions\Chips";
+            F(addChips)    // Todo
+            F(getChips)    // Todo
+            F(initChips)   // Todo
+            F(removeChips) // Todo
+        };
+        class Core
+        {
+            file = "BRG_SabaccCore\Functions\Core";
+            F(initGame)             // Todo
+            F(initPlayer)           // Todo
+            F(calculateWinner)      // Todo
+            F(calculatePlayerScore) // Todo
+        };
+        class Other
+        {
+            file = "BRG_SabaccCore\Functions\Other";
+            F(launchDice) // Todo
+            F(revealDice) // Todo
+            F(showRules)  // Todo
+        };
     };
 };
 
