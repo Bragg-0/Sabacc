@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="BRG_Sabacc">
     <Package name="UI">
-        <Key ID="STR_Sabacc_PlayerChipsInGame">
-            <Original>Your chips in the game:</Original>
-            <French>Vos jetons engagés dans la partie:</French>
-        </Key>
-        <Key ID="STR_Sabacc_PlayerChipsReserve">
-            <Original>Your chips reserve:</Original>
-            <French>Vos jetons de réserve:</French>
-        </Key>
+
     </Package>
     <Package name="Bonus">
 

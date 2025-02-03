@@ -76,3 +76,5 @@ class CfgRemoteExec
         /* Functions for everyone */
     };
 };
+
+#include "Dialogs\SabaccGameInterface.hpp"
