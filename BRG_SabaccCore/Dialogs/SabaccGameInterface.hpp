@@ -1,4 +1,4 @@
-#include ".\script_macro.hpp"
+#include "..\script_macro.hpp"
 
 class SabaccGameInterface
 {
