@@ -1,12 +1,14 @@
+#include ".\script_macro.hpp"
+
 class SabaccGameInterface
 {
-	idd = 22;
+	idd = SabaccInterface;
 	movingEnable = false;
 
 	class ControlsBackground
 	{
-		/* Player Cards */
-		class PlayerCardBackground
+		/* Player Cards*/
+		class BRG_PlayerCardBackground
 		{
 			type = 0;
 			idc = 0;
@@ -22,8 +24,8 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Player Bonus */
-		class PlayerBonusBackground
+		/* Player Bonus*/
+		class BRG_PlayerBonusBackground
 		{
 			type = 0;
 			idc = 0;
@@ -39,8 +41,8 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Chips */
-		class PlayerChipsReserveBackground
+		/* Chips*/
+		class BRG_PlayerChipsReserveBackground
 		{
 			type = 0;
 			idc = 0;
@@ -55,7 +57,7 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsReserve
+		class BRG_PlayerChipsReserve
 		{
 			type = 0;
 			idc = -1;
@@ -70,7 +72,7 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsInGameBackground
+		class BRG_PlayerChipsInGameBackground
 		{
 			type = 0;
 			idc = 0;
@@ -85,7 +87,7 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsInGame
+		class BRG_PlayerChipsInGame
 		{
 			type = 0;
 			idc = -1;
@@ -101,8 +103,8 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Timer */
-		class TimerBackground
+		/* Timer*/
+		class BRG_TimerBackground
 		{
 			type = 0;
 			idc = 0;
@@ -118,8 +120,8 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Player 1 */
-		class PlayersInfoBackgroundPlayer1
+		/* Player 1*/
+		class BRG_PlayersInfoBackgroundPlayer1
 		{
 			type = 0;
 			idc = 0;
@@ -134,7 +136,7 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsBackgroundPlayer1
+		class BRG_PlayerChipsBackgroundPlayer1
 		{
 			type = 0;
 			idc = 0;
@@ -150,8 +152,8 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Player 2 */
-		class PlayersInfoBackgroundPlayer2
+		/* Player 2*/
+		class BRG_PlayersInfoBackgroundPlayer2
 		{
 			type = 0;
 			idc = 0;
@@ -166,7 +168,7 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsBackgroundPlayer2
+		class BRG_PlayerChipsBackgroundPlayer2
 		{
 			type = 0;
 			idc = 0;
@@ -182,8 +184,8 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Player 3 */
-		class PlayersInfoBackgroundPlayer3
+		/* Player 3*/
+		class BRG_PlayersInfoBackgroundPlayer3
 		{
 			type = 0;
 			idc = 0;
@@ -198,7 +200,7 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsBackgroundPlayer3
+		class BRG_PlayerChipsBackgroundPlayer3
 		{
 			type = 0;
 			idc = 0;
@@ -214,8 +216,8 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Player 4 */
-		class PlayersInfoBackgroundPlayer4
+		/* Player 4*/
+		class BRG_PlayersInfoBackgroundPlayer4
 		{
 			type = 0;
 			idc = 0;
@@ -230,7 +232,7 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsBackgroundPlayer4
+		class BRG_PlayerChipsBackgroundPlayer4
 		{
 			type = 0;
 			idc = 0;
@@ -250,10 +252,10 @@ class SabaccGameInterface
 	{
 
 		/* Player Bonus 1*/
-		class PlayerBonus1
+		class BRG_PlayerBonus1
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayerBonus1Name;
 			x = safeZoneX + safeZoneW * 0.67423134;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.09809664;
@@ -265,10 +267,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerBonusName1
+		class BRG_PlayerBonusName1
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerBonus2Name;
 			x = safeZoneX + safeZoneW * 0.67423134;
 			y = safeZoneY + safeZoneH * 0.93619792;
 			w = safeZoneW * 0.09809664;
@@ -281,11 +283,11 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Player Bonus 2 */
-		class PlayerBonus2
+		/* Player Bonus 2*/
+		class BRG_PlayerBonus2
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayerBonus1;
 			x = safeZoneX + safeZoneW * 0.78843339;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.09809664;
@@ -297,10 +299,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerBonusName2
+		class BRG_PlayerBonusName2
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerBonus2;
 			x = safeZoneX + safeZoneW * 0.78843339;
 			y = safeZoneY + safeZoneH * 0.93619792;
 			w = safeZoneW * 0.09809664;
@@ -314,10 +316,10 @@ class SabaccGameInterface
 		};
 
 		/* Player Card*/
-		class PlayerCard1
+		class BRG_PlayerCard1
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerCard1;
 			x = safeZoneX + safeZoneW * 0.36969254;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.11713031;
@@ -329,10 +331,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerCard2
+		class BRG_PlayerCard2
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerCard2;
 			x = safeZoneX + safeZoneW * 0.5124451;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.11713031;
@@ -345,11 +347,11 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Chips */
-		class PlayerChipsInGameCounter
+		/* Chips*/
+		class BRG_PlayerChipsInGameCounter
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerChipsInGameCounter;
 			x = safeZoneX + safeZoneW * 0.93118595;
 			y = safeZoneY + safeZoneH * 0.73567709;
 			w = safeZoneW * 0.03147878;
@@ -361,10 +363,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class PlayerChipsReserveCounter
+		class BRG_PlayerChipsReserveCounter
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerChipsReserveCounter;
 			x = safeZoneX + safeZoneW * 0.93118595;
 			y = safeZoneY + safeZoneH * 0.90885417;
 			w = safeZoneW * 0.03147878;
@@ -378,10 +380,10 @@ class SabaccGameInterface
 		};
 
 		/* Table for player play*/
-		class CentralTableBackgroundPlayerPlay
+		class BRG_CentralTableBackgroundPlayerPlay
 		{
 			type = 0;
-			idc = 0;
+			idc = TableBackground;
 			x = safeZoneX + safeZoneW * 0.25549049;
 			y = safeZoneY + safeZoneH * 0.2890625;
 			w = safeZoneW * 0.48828697;
@@ -393,10 +395,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class TableCard1PlayerPlay
+		class BRG_TableCard1PlayerPlay
 		{
 			type = 0;
-			idc = -1;
+			idc = TableCard1;
 			x = safeZoneX + safeZoneW * 0.36969254;
 			y = safeZoneY + safeZoneH * 0.30729167;
 			w = safeZoneW * 0.11713031;
@@ -408,25 +410,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class TableDropCard1PlayerPlay
+		class BRG_TableCard2PlayerPlay
 		{
 			type = 0;
-			idc = -1;
-			x = safeZoneX + safeZoneW * 0.26500733;
-			y = safeZoneY + safeZoneH * 0.34375;
-			w = safeZoneW * 0.07906296;
-			h = safeZoneH * 0.23958334;
-			style = 2 + 48;
-			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class TableCard2PlayerPlay
-		{
-			type = 0;
-			idc = -1;
+			idc = TableCard2;
 			x = safeZoneX + safeZoneW * 0.5124451;
 			y = safeZoneY + safeZoneH * 0.30729167;
 			w = safeZoneW * 0.11713031;
@@ -438,10 +425,25 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class TableDropCard2PlayerPlay
+		class BRG_TableDropCard1PlayerPlay
 		{
 			type = 0;
-			idc = -1;
+			idc = DropedCard1;
+			x = safeZoneX + safeZoneW * 0.26500733;
+			y = safeZoneY + safeZoneH * 0.34375;
+			w = safeZoneW * 0.07906296;
+			h = safeZoneH * 0.23958334;
+			style = 2 + 48;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0};
+			colorText[] = {1, 1, 1, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+		class BRG_TableDropCard2PlayerPlay
+		{
+			type = 0;
+			idc = DropedCard2;
 			x = safeZoneX + safeZoneW * 0.65519766;
 			y = safeZoneY + safeZoneH * 0.34375;
 			w = safeZoneW * 0.07906296;
@@ -454,11 +456,11 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Table for player wait is turn*/
-		class CentralTableBackground
+		/* MiniTable for player wait is turn*/
+		class BRG_CentralTableBackground
 		{
 			type = 0;
-			idc = 0;
+			idc = MiniTableBackground;
 			x = safeZoneX + safeZoneW * 0.70278185;
 			y = safeZoneY + safeZoneH * 0.02473959;
 			w = safeZoneW * 0.26939971;
@@ -470,10 +472,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class TableCard1
+		class BRG_TableCard1
 		{
 			type = 0;
-			idc = -1;
+			idc = MimiTableCard1;
 			x = safeZoneX + safeZoneW * 0.76939971;
 			y = safeZoneY + safeZoneH * 0.04296875;
 			w = safeZoneW * 0.06002929;
@@ -485,10 +487,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class TableCard2
+		class BRG_TableCard2
 		{
 			type = 0;
-			idc = -1;
+			idc = MimiTableCard2;
 			x = safeZoneX + safeZoneW * 0.84553441;
 			y = safeZoneY + safeZoneH * 0.04296875;
 			w = safeZoneW * 0.06002929;
@@ -500,25 +502,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class TableDropCard2
+		class BRG_TableDropCard1
 		{
 			type = 0;
-			idc = -1;
-			x = safeZoneX + safeZoneW * 0.92166911;
-			y = safeZoneY + safeZoneH * 0.06119792;
-			w = safeZoneW * 0.04099561;
-			h = safeZoneH * 0.13932292;
-			style = 2 + 48;
-			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class TableDropCard1
-		{
-			type = 0;
-			idc = -1;
+			idc = MiniDropedCard1;
 			x = safeZoneX + safeZoneW * 0.71229869;
 			y = safeZoneY + safeZoneH * 0.06119792;
 			w = safeZoneW * 0.04099561;
@@ -530,12 +517,27 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
+		class BRG_TableDropCard2
+		{
+			type = 0;
+			idc = MiniDropedCard2;
+			x = safeZoneX + safeZoneW * 0.92166911;
+			y = safeZoneY + safeZoneH * 0.06119792;
+			w = safeZoneW * 0.04099561;
+			h = safeZoneH * 0.13932292;
+			style = 2 + 48;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0};
+			colorText[] = {1, 1, 1, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
 
-		/* Timer */
-		class TimerBar
+		/* Timer*/
+		class BRG_TimerBar
 		{
 			type = 8;
-			idc = -1;
+			idc = TimerBar;
 			x = safeZoneX + safeZoneW * 0.92166911;
 			y = safeZoneY + safeZoneH * 0.55338542;
 			w = safeZoneW * 0.05051245;
@@ -545,10 +547,10 @@ class SabaccGameInterface
 			colorFrame[] = {0, 0, 0, 0};
 			texture = "#(argb,8,8,3)color(1,1,1,1)";
 		};
-		class Timer
+		class BRG_Timer
 		{
 			type = 0;
-			idc = 0;
+			idc = Timer;
 			x = safeZoneX + safeZoneW * 0.92166911;
 			y = safeZoneY + safeZoneH * 0.55338542;
 			w = safeZoneW * 0.05051245;
@@ -563,10 +565,10 @@ class SabaccGameInterface
 		};
 
 		/* Player 1 InfoPanel*/
-		class PlayInfoPlayer1
+		class BRG_PlayInfoPlayer1
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayInfoPlayer1;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.02473959;
 			w = safeZoneW * 0.00292826;
@@ -578,10 +580,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class NamePlayer1
+		class BRG_NamePlayer1
 		{
 			type = 0;
-			idc = 0;
+			idc = NamePlayer1;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.03515625;
 			w = safeZoneW * 0.14568082;
@@ -594,10 +596,10 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 0;
 		};
-		class ChipsInRoundPlayer1
+		class BRG_ChipsInRoundPlayer1
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundPlayer1;
 			x = safeZoneX + safeZoneW * 0.12225476;
 			y = safeZoneY + safeZoneH * 0.07942709;
 			w = safeZoneW * 0.02196194;
@@ -609,10 +611,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsInRoundCounterPlayer1
+		class BRG_ChipsInRoundCounterPlayer1
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundCounterPlayer1;
 			x = safeZoneX + safeZoneW * 0.15080528;
 			y = safeZoneY + safeZoneH * 0.07942709;
 			w = safeZoneW * 0.02196194;
@@ -624,10 +626,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReservePlayer1
+		class BRG_ChipsReservePlayer1
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReservePlayer1;
 			x = safeZoneX + safeZoneW * 0.04612006;
 			y = safeZoneY + safeZoneH * 0.07942709;
 			w = safeZoneW * 0.02196194;
@@ -639,10 +641,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReserveCounterPlayer1
+		class BRG_ChipsReserveCounterPlayer1
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReserveCounterPlayer1;
 			x = safeZoneX + safeZoneW * 0.07467058;
 			y = safeZoneY + safeZoneH * 0.07942709;
 			w = safeZoneW * 0.02196194;
@@ -654,10 +656,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus1Player1
+		class BRG_Bonus1Player1
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus1Player1;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.13411459;
 			w = safeZoneW * 0.02196194;
@@ -669,10 +671,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus2Player1
+		class BRG_Bonus2Player1
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus2Player1;
 			x = safeZoneX + safeZoneW * 0.06515374;
 			y = safeZoneY + safeZoneH * 0.13411459;
 			w = safeZoneW * 0.02196194;
@@ -684,10 +686,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card1Player1
+		class BRG_Card1Player1
 		{
 			type = 0;
-			idc = 0;
+			idc = Card1Player1;
 			x = safeZoneX + safeZoneW * 0.1317716;
 			y = safeZoneY + safeZoneH * 0.13411459;
 			w = safeZoneW * 0.02196194;
@@ -699,10 +701,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card2Player1
+		class BRG_Card2Player1
 		{
 			type = 0;
-			idc = 0;
+			idc = Card2Player1;
 			x = safeZoneX + safeZoneW * 0.16032211;
 			y = safeZoneY + safeZoneH * 0.13411459;
 			w = safeZoneW * 0.02196194;
@@ -716,10 +718,10 @@ class SabaccGameInterface
 		};
 
 		/* Player 2 InfoPanel*/
-		class PlayInfoPlayer2
+		class BRG_PlayInfoPlayer2
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayInfoPlayer2;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.24348959;
 			w = safeZoneW * 0.00292826;
@@ -731,10 +733,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class NamePlayer2
+		class BRG_NamePlayer2
 		{
 			type = 0;
-			idc = 0;
+			idc = NamePlayer2;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.25390625;
 			w = safeZoneW * 0.14568082;
@@ -747,10 +749,10 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 0;
 		};
-		class ChipsInRoundPlayer2
+		class BRG_ChipsInRoundPlayer2
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundPlayer2;
 			x = safeZoneX + safeZoneW * 0.12225476;
 			y = safeZoneY + safeZoneH * 0.29817709;
 			w = safeZoneW * 0.02196194;
@@ -762,10 +764,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsInRoundCounterPlayer2
+		class BRG_ChipsInRoundCounterPlayer2
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundCounterPlayer2;
 			x = safeZoneX + safeZoneW * 0.15080528;
 			y = safeZoneY + safeZoneH * 0.29817709;
 			w = safeZoneW * 0.02196194;
@@ -777,10 +779,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReservePlayer2
+		class BRG_ChipsReservePlayer2
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReservePlayer2;
 			x = safeZoneX + safeZoneW * 0.04612006;
 			y = safeZoneY + safeZoneH * 0.29817709;
 			w = safeZoneW * 0.02196194;
@@ -792,10 +794,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReserveCounterPlayer2
+		class BRG_ChipsReserveCounterPlayer2
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReserveCounterPlayer2;
 			x = safeZoneX + safeZoneW * 0.07467058;
 			y = safeZoneY + safeZoneH * 0.29817709;
 			w = safeZoneW * 0.02196194;
@@ -807,10 +809,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus1Player2
+		class BRG_Bonus1Player2
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus1Player2;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.35286459;
 			w = safeZoneW * 0.02196194;
@@ -822,10 +824,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus2Player2
+		class BRG_Bonus2Player2
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus2Player2;
 			x = safeZoneX + safeZoneW * 0.06515374;
 			y = safeZoneY + safeZoneH * 0.35286459;
 			w = safeZoneW * 0.02196194;
@@ -837,10 +839,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card1Player2
+		class BRG_Card1Player2
 		{
 			type = 0;
-			idc = 0;
+			idc = Card1Player2;
 			x = safeZoneX + safeZoneW * 0.1317716;
 			y = safeZoneY + safeZoneH * 0.35286459;
 			w = safeZoneW * 0.02196194;
@@ -852,10 +854,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card2Player2
+		class BRG_Card2Player2
 		{
 			type = 0;
-			idc = 0;
+			idc = Card2Player2;
 			x = safeZoneX + safeZoneW * 0.16032211;
 			y = safeZoneY + safeZoneH * 0.35286459;
 			w = safeZoneW * 0.02196194;
@@ -868,11 +870,11 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Player 3 InfoPanel */
-		class PlayInfoPlayer3
+		/* Player 3 InfoPanel*/
+		class BRG_PlayInfoPlayer3
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayInfoPlayer3;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.46223959;
 			w = safeZoneW * 0.00292826;
@@ -884,10 +886,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class NamePlayer3
+		class BRG_NamePlayer3
 		{
 			type = 0;
-			idc = 0;
+			idc = NamePlayer3;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.47265625;
 			w = safeZoneW * 0.14568082;
@@ -900,10 +902,10 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 0;
 		};
-		class ChipsInRoundPlayer3
+		class BRG_ChipsInRoundPlayer3
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundPlayer3;
 			x = safeZoneX + safeZoneW * 0.12225476;
 			y = safeZoneY + safeZoneH * 0.51692709;
 			w = safeZoneW * 0.02196194;
@@ -915,10 +917,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsInRoundCounterPlayer3
+		class BRG_ChipsInRoundCounterPlayer3
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundCounterPlayer3;
 			x = safeZoneX + safeZoneW * 0.15080528;
 			y = safeZoneY + safeZoneH * 0.51692709;
 			w = safeZoneW * 0.02196194;
@@ -930,10 +932,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReservePlayer3
+		class BRG_ChipsReservePlayer3
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReservePlayer3;
 			x = safeZoneX + safeZoneW * 0.04612006;
 			y = safeZoneY + safeZoneH * 0.51692709;
 			w = safeZoneW * 0.02196194;
@@ -945,10 +947,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReserveCounterPlayer3
+		class BRG_ChipsReserveCounterPlayer3
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReserveCounterPlayer3;
 			x = safeZoneX + safeZoneW * 0.07467058;
 			y = safeZoneY + safeZoneH * 0.51692709;
 			w = safeZoneW * 0.02196194;
@@ -960,10 +962,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus1Player3
+		class BRG_Bonus1Player3
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus1Player3;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.57161459;
 			w = safeZoneW * 0.02196194;
@@ -975,10 +977,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus2Player3
+		class BRG_Bonus2Player3
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus2Player3;
 			x = safeZoneX + safeZoneW * 0.06515374;
 			y = safeZoneY + safeZoneH * 0.57161459;
 			w = safeZoneW * 0.02196194;
@@ -990,10 +992,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card1Player3
+		class BRG_Card1Player3
 		{
 			type = 0;
-			idc = 0;
+			idc = Card1Player3;
 			x = safeZoneX + safeZoneW * 0.1317716;
 			y = safeZoneY + safeZoneH * 0.57161459;
 			w = safeZoneW * 0.02196194;
@@ -1005,10 +1007,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card2Player3
+		class BRG_Card2Player3
 		{
 			type = 0;
-			idc = 0;
+			idc = Card2Player3;
 			x = safeZoneX + safeZoneW * 0.16032211;
 			y = safeZoneY + safeZoneH * 0.57161459;
 			w = safeZoneW * 0.02196194;
@@ -1022,10 +1024,10 @@ class SabaccGameInterface
 		};
 
 		/* Player 4 InfoPanel*/
-		class PlayInfoPlayer4
+		class BRG_PlayInfoPlayer4
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayInfoPlayer4;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.68098959;
 			w = safeZoneW * 0.00292826;
@@ -1037,10 +1039,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class NamePlayer4
+		class BRG_NamePlayer4
 		{
 			type = 0;
-			idc = 0;
+			idc = NamePlayer4;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.69140625;
 			w = safeZoneW * 0.14568082;
@@ -1053,10 +1055,10 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 0;
 		};
-		class ChipsInRoundPlayer4
+		class BRG_ChipsInRoundPlayer4
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundPlayer4;
 			x = safeZoneX + safeZoneW * 0.12225476;
 			y = safeZoneY + safeZoneH * 0.73567709;
 			w = safeZoneW * 0.02196194;
@@ -1068,10 +1070,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsInRoundCounterPlayer4
+		class BRG_ChipsInRoundCounterPlayer4
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsInRoundCounterPlayer4;
 			x = safeZoneX + safeZoneW * 0.15080528;
 			y = safeZoneY + safeZoneH * 0.73567709;
 			w = safeZoneW * 0.02196194;
@@ -1083,10 +1085,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReservePlayer4
+		class BRG_ChipsReservePlayer4
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReservePlayer4;
 			x = safeZoneX + safeZoneW * 0.04612006;
 			y = safeZoneY + safeZoneH * 0.73567709;
 			w = safeZoneW * 0.02196194;
@@ -1098,10 +1100,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class ChipsReserveCounterPlayer4
+		class BRG_ChipsReserveCounterPlayer4
 		{
 			type = 0;
-			idc = 0;
+			idc = ChipsReserveCounterPlayer4;
 			x = safeZoneX + safeZoneW * 0.07467058;
 			y = safeZoneY + safeZoneH * 0.73567709;
 			w = safeZoneW * 0.02196194;
@@ -1113,10 +1115,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus1Player4
+		class BRG_Bonus1Player4
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus1Player4;
 			x = safeZoneX + safeZoneW * 0.03660323;
 			y = safeZoneY + safeZoneH * 0.79036459;
 			w = safeZoneW * 0.02196194;
@@ -1128,10 +1130,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Bonus2Player4
+		class BRG_Bonus2Player4
 		{
 			type = 0;
-			idc = 0;
+			idc = Bonus2Player4;
 			x = safeZoneX + safeZoneW * 0.06515374;
 			y = safeZoneY + safeZoneH * 0.79036459;
 			w = safeZoneW * 0.02196194;
@@ -1143,10 +1145,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card1Player4
+		class BRG_Card1Player4
 		{
 			type = 0;
-			idc = 0;
+			idc = Card1Player4;
 			x = safeZoneX + safeZoneW * 0.1317716;
 			y = safeZoneY + safeZoneH * 0.79036459;
 			w = safeZoneW * 0.02196194;
@@ -1158,10 +1160,10 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class Card2Player4
+		class BRG_Card2Player4
 		{
 			type = 0;
-			idc = 0;
+			idc = Card2Player4;
 			x = safeZoneX + safeZoneW * 0.16032211;
 			y = safeZoneY + safeZoneH * 0.79036459;
 			w = safeZoneW * 0.02196194;
@@ -1174,11 +1176,11 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
-		/* Button */
-		class PlayerBonus1Button
+		/* Button*/
+		class BRG_PlayerBonus1Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Bonus1Button;
 			x = safeZoneX + safeZoneW * 0.67423134;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.09809664;
@@ -1205,10 +1207,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class PlayerBonus2Button
+		class BRG_PlayerBonus2Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Bonus2Button;
 			x = safeZoneX + safeZoneW * 0.78843339;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.09809664;
@@ -1235,10 +1237,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class PlayerCard1Button
+		class BRG_PlayerCard1Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Card1Button;
 			x = safeZoneX + safeZoneW * 0.36969254;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.11713031;
@@ -1265,10 +1267,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class PlayerCard2Button
+		class BRG_PlayerCard2Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Card2Button;
 			x = safeZoneX + safeZoneW * 0.5124451;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.11713031;
@@ -1295,10 +1297,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class TableCard1PlayerPlayButton
+		class BRG_TableCard1PlayerPlayButton
 		{
 			type = 1;
-			idc = -1;
+			idc = TableCard1Button;
 			x = safeZoneX + safeZoneW * 0.36969254;
 			y = safeZoneY + safeZoneH * 0.30729167;
 			w = safeZoneW * 0.11713031;
@@ -1325,10 +1327,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class TableDropCard1PlayerPlayButton
+		class BRG_TableDropCard1PlayerPlayButton
 		{
 			type = 1;
-			idc = -1;
+			idc = DropedCard1Button;
 			x = safeZoneX + safeZoneW * 0.26500733;
 			y = safeZoneY + safeZoneH * 0.34375;
 			w = safeZoneW * 0.07906296;
@@ -1355,10 +1357,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class TableCard2PlayerPlayButton
+		class BRG_TableCard2PlayerPlayButton
 		{
 			type = 1;
-			idc = -1;
+			idc = TableCard2Button;
 			x = safeZoneX + safeZoneW * 0.5124451;
 			y = safeZoneY + safeZoneH * 0.30729167;
 			w = safeZoneW * 0.11713031;
@@ -1385,10 +1387,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class TableDropCard2PlayerPlayButton
+		class BRG_TableDropCard2PlayerPlayButton
 		{
 			type = 1;
-			idc = -1;
+			idc = DropedCard2Button;
 			x = safeZoneX + safeZoneW * 0.65519766;
 			y = safeZoneY + safeZoneH * 0.34375;
 			w = safeZoneW * 0.07906296;
@@ -1415,10 +1417,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class Player1Button
+		class BRG_Player1Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Player1Button;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.02473959;
 			w = safeZoneW * 0.1647145;
@@ -1445,10 +1447,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class Player2Button
+		class BRG_Player2Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Player2Button;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.24348959;
 			w = safeZoneW * 0.1647145;
@@ -1475,10 +1477,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class Player3Button
+		class BRG_Player3Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Player3Button;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.46223959;
 			w = safeZoneW * 0.1647145;
@@ -1505,10 +1507,10 @@ class SabaccGameInterface
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
 		};
-		class Player4Button
+		class BRG_Player4Button
 		{
 			type = 1;
-			idc = -1;
+			idc = Player2Button;
 			x = safeZoneX + safeZoneW * 0.02708639;
 			y = safeZoneY + safeZoneH * 0.68098959;
 			w = safeZoneW * 0.1647145;
