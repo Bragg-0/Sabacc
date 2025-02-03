@@ -17,57 +17,53 @@ class CfgFunctions
     class BRG_Sabacc_Functions
     {
         tag = "BRG";
-        class Cards
+        class Functions_BonusInteraction
         {
-            file = "BRG_SabaccCore\Functions\Cards";
-            F(discardCard)        // Todo
-            F(getCard)            // Todo
-            F(getCardName)        // Todo
-            F(getLastDiscardCard) // Todo
-            F(getNewCard)         // Todo
-            F(initCardDeck)       // Todo
-            F(pickNewCard)        // Todo
-            F(setCard)            // Todo
+            F(getPlayerBonus);
+            F(setPlayerBonus);
+            F(usePlayerBonus);
+            F(checkIfUseBonus);
         };
-        class Bonus
+        class Functions_CardInteraction
         {
-            file = "BRG_SabaccCore\Functions\Bonus";
-            F(bonusSelector) // Todo
-            F(initBonus)     // Todo
-            F(useBonus)      // Todo
+            F(dropPlayerCard);
+            F(getLastDropedCard);
+            F(getNewCard);
+            F(getPlayerCard);
+            F(getRandomCard);
+            F(getTableCard);
+            F(setPlayerCard);
+            F(setTableCard);
         };
-        class Chips
+        class Functions_ChipsInteraction
         {
-            file = "BRG_SabaccCore\Functions\Chips";
-            F(addChips)    // Todo
-            F(getChips)    // Todo
-            F(initChips)   // Todo
-            F(removeChips) // Todo
+            F(addChips);
+            F(getChips);
+            F(setChips);
         };
-        class Core
+        class Functions_GameInteraction
         {
-            file = "BRG_SabaccCore\Functions\Core";
-            F(initGame)             // Todo
-            F(initPlayer)           // Todo
-            F(calculateWinner)      // Todo
-            F(calculatePlayerScore) // Todo
+            F(createNewGame);
+            F(getGameCardDeck);
+            F(getGameInfo);
+            F(getGameOwner);
+            F(getGameParams);
+            F(getGamePlayersMax);
+            F(getGameStatus);
+            F(setGameCardDeck);
+            F(setGameOwner);
+            F(setGameParams);
+            F(setGamePlayersMax);
+            F(setGameStatus);
         };
-        class Other
+        class Functions_PlayerInteraction
         {
-            file = "BRG_SabaccCore\Functions\Other";
-            F(launchDice) // Todo
-            F(revealDice) // Todo
-            F(showRules)  // Todo
-        };
-        class UI
-        {
-            file = "BRG_SabaccCore\Functions\UI";
-            F(initUI)           // Todo
-            F(clickTarget)      // Todo
-            F(clickBonus)       // Todo
-            F(clickCardInHand)  // Todo
-            F(clickNewCard)     // Todo
-            F(clickDiscardCard) // Todo
+            F(checkExistPlayer);
+            F(getAllplayers);
+            F(getGameNumberFromUnit);
+            F(getPlayerInfo);
+            F(getPlayerNumberFromUnit);
+            F(setPlayerInfo);
         };
     };
 };
