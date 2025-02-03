@@ -59,6 +59,16 @@ class CfgFunctions
             F(revealDice) // Todo
             F(showRules)  // Todo
         };
+        class UI
+        {
+            file = "BRG_SabaccCore\Functions\UI";
+            F(initUI)           // Todo
+            F(clickTarget)      // Todo
+            F(clickBonus)       // Todo
+            F(clickCardInHand)  // Todo
+            F(clickNewCard)     // Todo
+            F(clickDiscardCard) // Todo
+        };
     };
 };
 
