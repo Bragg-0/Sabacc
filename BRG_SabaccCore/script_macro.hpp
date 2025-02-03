@@ -64,6 +64,8 @@
 #define Bonus2Player1 221108
 #define Card1Player1 221109
 #define Card2Player1 221110
+#define Player1Background 221111
+#define Player1ChipsBackground 221112
 
 /* Player 2 InfoPanel*/
 #define PlayInfoPlayer2 221201
@@ -76,6 +78,8 @@
 #define Bonus2Player2 221208
 #define Card1Player2 221209
 #define Card2Player2 221210
+#define Player2Background 221211
+#define Player2ChipsBackground 221212
 
 /* Player 3 InfoPanel*/
 #define PlayInfoPlayer3 221301
@@ -88,6 +92,8 @@
 #define Bonus2Player3 221308
 #define Card1Player3 221309
 #define Card2Player3 221310
+#define Player3Background 221311
+#define Player3ChipsBackground 221312
 
 /* Player 4 InfoPanel*/
 #define PlayInfoPlayer4 221401
@@ -100,6 +106,8 @@
 #define Bonus2Player4 221408
 #define Card1Player4 221409
 #define Card2Player4 221410
+#define Player4Background 221411
+#define Player4ChipsBackground 221412
 
 /* Player & Game interaction*/
 /**
