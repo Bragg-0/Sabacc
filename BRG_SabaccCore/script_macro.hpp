@@ -172,3 +172,9 @@
 #define addChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_addChips
 #define getChips(_GameNumber, _playerNumber, _chipsType) [ _GameNumber, _playerNumber, _chipsType ] call BRG_fnc_getChips
 #define setChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_setChips
+
+/* UI interaction*/
+#define enableUI(_IDC, _enable) [ _IDC, _enable ] call BRG_fnc_enableUI
+#define getUIValue(_IDC) [_IDC] call BRG_fnc_getUIValue
+#define setUIValue(_IDC, _value) [ _IDC, _value ] call BRG_fnc_setUIValue
+#define setUIVisible(_IDC, _visible) [ _IDC, _visible ] call BRG_fnc_setUIVisible

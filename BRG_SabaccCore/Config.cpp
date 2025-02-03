@@ -78,6 +78,13 @@ class CfgFunctions
             F(getPlayerNumberFromUnit);
             F(setPlayerInfo);
         };
+        class Functions_UIInteraction
+        {
+            F(enableUI);
+            F(getUIValue);
+            F(setUIValue);
+            F(setUIVisible);
+        };
     };
 };
 
