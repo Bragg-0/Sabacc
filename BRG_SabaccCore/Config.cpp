@@ -41,6 +41,19 @@ class CfgFunctions
             F(getChips);
             F(setChips);
         };
+        class Functions_GameFlow
+        {
+            F(endGame);
+            F(endRound);
+            F(endTurn);
+            F(getGameOrder);
+            F(getWhosNextTurn);
+            F(getWhosTurn);
+            F(setWhosTurn);
+            F(startGame);
+            F(startRound);
+            F(startTurn);
+        };
         class Functions_GameInteraction
         {
             F(createNewGame);

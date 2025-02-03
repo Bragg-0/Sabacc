@@ -138,6 +138,18 @@
 #define getPlayerNumberFromUnit(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_getPlayerNumberFromUnit
 #define setPlayerInfo(_GameNumber, _playerNumber, _playerInfo) [ _GameNumber, _playerNumber, _playerInfo ] call BRG_fnc_setPlayerInfo
 
+/* Game flow*/
+#define endGame(_GameNumber) [_GameNumber] call BRG_fnc_endGame
+#define endRound(_GameNumber) [_GameNumber] call BRG_fnc_endRound
+#define endTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_endTurn
+#define getGameOrder(_GameNumber) [_GameNumber] call BRG_fnc_getGameOrder
+#define getWhosNextTurn(_GameNumber) [_GameNumber] call BRG_fnc_getWhosNextTurn
+#define getWhosTurn(_GameNumber) [_GameNumber] call BRG_fnc_getWhosTurn
+#define setWhosTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_setWhosTurn
+#define startGame(_GameNumber) [_GameNumber] call BRG_fnc_startGame
+#define startRound(_GameNumber) [_GameNumber] call BRG_fnc_startRound
+#define startTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_startTurn
+
 /* Card interaction*/
 #define DefaultCardsDeck [ [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ], [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ] ]
 
