@@ -116,9 +116,6 @@
 #define Player4Background 221411
 #define Player4ChipsBackground 221412
 
-/* Cards */
-#define DefaultCardsDeck [ [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ], [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ] ]
-
 /**
  * BRG_fnc_createNewGame - Create new game
  * @return <int> - Game number
@@ -527,3 +524,10 @@
  */
 #define GameInfo(_GameNumber, _GameStatus, _CardDeck, _GameOwner, _GamePlayersMax, _Unit, _Name, _Bonus) \
     [[_GameNumber, _GameStatus, _CardDeck, [_GameOwner, _GamePlayersMax], [[_Unit, _Name, _Bonus]]]]
+
+/**
+ * Default cards deck array
+ * @param _typeCart1 <array> - Card type Sand
+ * @param _typeCart2 <array> - Card type Blood
+ */
+#define DefaultCardsDeck [ [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ], [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ] ]
