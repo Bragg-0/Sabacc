@@ -9,7 +9,7 @@
             <FRENCH>Vide</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_1">
-            <Original>Extra Payout</Original>
+            <Original>Additionad refund</Original>
             <FRENCH>Remboursement supplémentaire</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_2">
@@ -17,7 +17,7 @@
             <FRENCH>Audit</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_3">
-            <Original>Big Con</Original>
+            <Original>Big scam</Original>
             <FRENCH>Grosse arnaque</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_4">
@@ -33,8 +33,8 @@
             <FRENCH>Embargo</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_7">
-            <Original>Exhaustion</Original>
-            <FRENCH>Epuisement</FRENCH>
+            <Original>Embezzlement</Original>
+            <FRENCH>Détournement</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_8">
             <Original>Free Draw</Original>
@@ -61,12 +61,16 @@
             <FRENCH>Réévaluation</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_14">
-            <Original>Special Rights</Original>
+            <Original>Special duty</Original>
             <FRENCH>Droit spécial</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_15">
             <Original>Accounting Fraud</Original>
             <FRENCH>Fraude comptable</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_16">
+            <Original>Exhaustion</Original>
+            <FRENCH>Epuisement</FRENCH>
         </Key>
     </Package>
 </Project>
