@@ -37,10 +37,10 @@ class CfgFunctions
         };
         class Functions_ChipsInteraction
         {
-            F(addChips); // Todo
-            F(getChips); // Todo
-            F(setChips); // Todo
-            F(subChips); // Todo
+            F(addChips);
+            F(getChips);
+            F(setChips);
+            F(subChips);
         };
         class Functions_GameFlow
         {
