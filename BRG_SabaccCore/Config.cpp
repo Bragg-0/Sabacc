@@ -40,6 +40,7 @@ class CfgFunctions
             F(addChips);
             F(getChips);
             F(setChips);
+            F(subChips);
         };
         class Functions_GameFlow
         {
@@ -50,6 +51,7 @@ class CfgFunctions
             F(getWhosNextTurn);
             F(getWhosTurn);
             F(joinGame);
+            F(leaveGame);
             F(setWhosTurn);
             F(startGame);
             F(startRound);
