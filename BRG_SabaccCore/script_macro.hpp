@@ -450,7 +450,7 @@
  * @param _playerNumber <int> - Player number
  * @param _chips <int> - Chips number
  * @param _chipsType <int> - Chips type
- * @return <int> - Chips number
+ * @return <array> - Chips numbers array
  */
 #define addChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_addChips
 
@@ -460,7 +460,7 @@
  * @param _playerNumber <int> - Player number
  * @param _chips <int> - Chips number
  * @param _chipsType <int> - Chips type
- * @return <int> - Chips number
+ * @return <array> - Chips numbers array
  */
 #define subChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_subChips
 
@@ -469,7 +469,7 @@
  * @param _GameNumber <int> - Game number
  * @param _playerNumber <int> - Player number
  * @param _chipsType <int> - Chips type
- * @return <int> - Chips number
+ * @return <array> - Chips numbers array
  */
 #define getChips(_GameNumber, _playerNumber, _chipsType) [ _GameNumber, _playerNumber, _chipsType ] call BRG_fnc_getChips
 
@@ -479,6 +479,7 @@
  * @param _playerNumber <int> - Player number
  * @param _chips <int> - Chips number
  * @param _chipsType <int> - Chips type
+ * @return <array> - Chips numbers array
  */
 #define setChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_setChips
 
