@@ -523,12 +523,13 @@
  *  @param _Unit <object> - Player unit
  *  @param _Name <string> - Player name
  *  @param _Bonus <array> - Player bonus array
+ *  @param _Chips <array> - Player chips array
  *
  * @example
- * GameInfo = [[ 0, 0, DefaultCardsDeck, [ player1, 4 ], [[player1, "Player 1", [0, 0]], [player2, "Player 2", 0, [0, 0]], [player3, "Player 3", 0, [0, 0]], [player4, "Player 4", 0, [0, 0]]] ]]
+ * GameInfo = [[ 0, 0, DefaultCardsDeck, [ player1, 4 ], [[player1, "Player 1", [0, 0], [0, 0]], [player2, "Player 2", 0, [0, 0], [0, 0]], [player3, "Player 3", 0, [0, 0], [0, 0]], [player4, "Player 4", 0, [0, 0], [0, 0]]] ]]
  */
-#define GameInfo(_GameNumber, _GameStatus, _CardDeck, _GameOwner, _GamePlayersMax, _Unit, _Name, _Bonus) \
-    [[_GameNumber, _GameStatus, _CardDeck, [_GameOwner, _GamePlayersMax], [[_Unit, _Name, _Bonus]]]]
+#define GameInfo(_GameNumber, _GameStatus, _CardDeck, _GameOwner, _GamePlayersMax, _Unit, _Name, _Bonus, _Chips) \
+    [[_GameNumber, _GameStatus, _CardDeck, [_GameOwner, _GamePlayersMax], [[_Unit, _Name, _Bonus, _Chips]]]]
 
 /**
  * Default cards deck array
