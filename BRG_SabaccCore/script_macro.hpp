@@ -192,28 +192,6 @@
 #define getGameStatus(_GameNumber) [_GameNumber] call BRG_fnc_getGameStatus
 
 /**
- * BRG_fnc_getPlayerInfo - Get player information
- * @param _GameNumber <int> - Game number
- * @param _playerNumber <int> - Player number
- * @return <array> - Player information array
- */
-#define setGameCardDeck(_GameNumber, _CardDeck) [ _GameNumber, _CardDeck ] call BRG_fnc_setGameCardDeck
-
-/**
- * BRG_fnc_setGameOwner - Set game owner
- * @param _GameNumber <int> - Game number
- * @param _GameOwner <object> - Game owner unit
- */
-#define setGameOwner(_GameNumber, _GameOwner) [ _GameNumber, _GameOwner ] call BRG_fnc_setGameOwner
-
-/**
- * BRG_fnc_setGameParms - Set game parameters
- * @param _GameNumber <int> - Game number
- * @param _GameParms <array> - Game parameters array
- */
-#define setGameParams(_GameNumber, _GameParms) [ _GameNumber, _GameParms ] call BRG_fnc_setGameParms
-
-/**
  * BRG_fnc_setGamePlayersMax - Set game maximum players
  * @param _GameNumber <int> - Game number
  * @param _GamePlayersMax <int> - Game maximum players

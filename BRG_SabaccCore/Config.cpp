@@ -66,9 +66,6 @@ class CfgFunctions
             F(getGameParams);
             F(getGamePlayersMax);
             F(getGameStatus);
-            F(setGameCardDeck);
-            F(setGameOwner);
-            F(setGameParams);
             F(setGamePlayersMax);
             F(setGameStatus);
         };
