@@ -349,13 +349,21 @@
  * @param _playerNumber <int> - Player number
  * @param _cardType <int> - Card type
  */
-#define dropPlayerCard(_GameNumber, _playerNumber, _cardType) [ _GameNumber, _playerNumber, _cardType ] call BRG_fnc_dropPlayerCard
+#define dropPlayerCard(_GameNumber, _playerNumber, _cardType) [ _GameNumber, _playerNumber, _cardType, _CardID ] call BRG_fnc_dropPlayerCard
+
+/**
+ * BRG_fnc_getCards - Get table card
+ * @param _GameNumber <int> - Game number
+ * @param _cardType <int> - Card type
+ * @return <array> - Card
+ */
+#define getCards(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getCards
 
 /**
  * BRG_fnc_getLastDropedCard - Get last droped card
  * @param _GameNumber <int> - Game number
  * @param _cardType <int> - Card type
- * @return <int> - Card number
+ * @return <int> - Card ID
  */
 #define getLastDropedCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getLastDropedCard
 
@@ -363,7 +371,7 @@
  * BRG_fnc_getNewCard - Get new card
  * @param _GameNumber <int> - Game number
  * @param _cardType <int> - Card type
- * @return <int> - Card number
+ * @return <int> - Card ID
  */
 #define getNewCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getNewCard
 
@@ -372,42 +380,18 @@
  * @param _GameNumber <int> - Game number
  * @param _playerNumber <int> - Player number
  * @param _cardType <int> - Card type
- * @return <int> - Card number
+ * @return <int> - Card ID
  */
 #define getPlayerCard(_GameNumber, _playerNumber, _cardType) [ _GameNumber, _playerNumber, _cardType ] call BRG_fnc_getPlayerCard
-
-/**
- * BRG_fnc_getRandomCard - Get random card
- * @param _GameNumber <int> - Game number
- * @param _cardType <int> - Card type
- * @return <int> - Card number
- */
-#define getRandomCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getRandomCard
-
-/**
- * BRG_fnc_getTableCard - Get table card
- * @param _GameNumber <int> - Game number
- * @param _cardType <int> - Card type
- * @return <int> - Card number
- */
-#define getTableCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getTableCard
 
 /**
  * BRG_fnc_setPlayerCard - Set player card
  * @param _GameNumber <int> - Game number
  * @param _playerNumber <int> - Player number
- * @param _cardNumber <int> - Card number
  * @param _cardType <int> - Card type
+ * @param _CardID <int> - Card ID
  */
-#define setPlayerCard(_GameNumber, _playerNumber, _cardNumber, _cardType) [ _GameNumber, _playerNumber, _cardNumber, _cardType ] call BRG_fnc_setPlayerCard
-
-/**
- * BRG_fnc_setTableCard - Set table card
- * @param _GameNumber <int> - Game number
- * @param _cardNumber <int> - Card number
- * @param _cardType <int> - Card type
- */
-#define setTableCard(_GameNumber, _cardNumber, _cardType) [ _GameNumber, _cardNumber, _cardType ] call BRG_fnc_setTableCard
+#define setPlayerCard(_GameNumber, _playerNumber, _cardType, _CardID) [ _GameNumber, _playerNumber, _cardType, _CardID ] call BRG_fnc_setPlayerCard
 
 /**
  * BRG_fnc_checkIfUseBonus - Check if use bonus
@@ -535,6 +519,33 @@
 /**
  * Default cards deck array
  * @param _typeCart1 <array> - Card type Sand
+ *  @param _CardNumber <string> - Card number
+ *  @param _CardAssigneTo <int> - Card assigne to ...
+ *  @param _CardID <int> - Card ID
  * @param _typeCart2 <array> - Card type Blood
+ *  @param _CardNumber <string> - Card number
+ *  @param _CardAssigneTo <int> - Card assigne to ...
+ *  @param _CardID <int> - Card ID
  */
-#define DefaultCardsDeck [ [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ], [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ] ]
+#define DefaultCardsDeck [                              \
+    [                                                   \
+        [ "1", 0, 0 ], [ "1", 0, 1 ], [ "1", 0, 2 ],    \
+        [ "2", 0, 3 ], [ "2", 0, 4 ], [ "2", 0, 5 ],    \
+        [ "3", 0, 6 ], [ "3", 0, 7 ], [ "3", 0, 8 ],    \
+        [ "4", 0, 9 ], [ "4", 0, 10 ], [ "4", 0, 11 ],  \
+        [ "5", 0, 12 ], [ "5", 0, 13 ], [ "5", 0, 14 ], \
+        [ "6", 0, 15 ], [ "6", 0, 16 ], [ "6", 0, 17 ], \
+        [ "I", 0, 18 ], [ "I", 0, 19 ], [ "I", 0, 20 ], \
+        [ "S", 0, 21 ], [ "S", 0, 22 ]                  \
+    ],                                                  \
+    [                                                   \
+        [ "1", 0, 30 ], [ "1", 0, 31 ], [ "1", 0, 32 ], \
+        [ "2", 0, 33 ], [ "2", 0, 34 ], [ "2", 0, 35 ], \
+        [ "3", 0, 36 ], [ "3", 0, 37 ], [ "3", 0, 38 ], \
+        [ "4", 0, 39 ], [ "4", 0, 40 ], [ "4", 0, 41 ], \
+        [ "5", 0, 42 ], [ "5", 0, 43 ], [ "5", 0, 44 ], \
+        [ "6", 0, 45 ], [ "6", 0, 46 ], [ "6", 0, 47 ], \
+        [ "I", 0, 48 ], [ "I", 0, 49 ], [ "I", 0, 50 ], \
+        [ "S", 0, 51 ], [ "S", 0, 52 ]                  \
+    ]                                                   \
+]

@@ -27,13 +27,11 @@ class CfgFunctions
         class Functions_CardInteraction
         {
             F(dropPlayerCard);    // Todo
+            F(getCards);          // Todo
             F(getLastDropedCard); // Todo
             F(getNewCard);        // Todo
             F(getPlayerCard);     // Todo
-            F(getRandomCard);     // Todo
-            F(getTableCard);      // Todo
             F(setPlayerCard);     // Todo
-            F(setTableCard);      // Todo
         };
         class Functions_ChipsInteraction
         {
