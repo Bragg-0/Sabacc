@@ -154,6 +154,7 @@
 #define setPlayerInfo(_GameNumber, _playerNumber, _playerInfo) [ _GameNumber, _playerNumber, _playerInfo ] call BRG_fnc_setPlayerInfo
 
 /* Game flow*/
+#define joinGame(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_joinGame
 #define endGame(_GameNumber) [_GameNumber] call BRG_fnc_endGame
 #define endRound(_GameNumber) [_GameNumber] call BRG_fnc_endRound
 #define endTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_endTurn

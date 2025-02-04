@@ -49,6 +49,7 @@ class CfgFunctions
             F(getGameOrder);
             F(getWhosNextTurn);
             F(getWhosTurn);
+            F(joinGame);
             F(setWhosTurn);
             F(startGame);
             F(startRound);
