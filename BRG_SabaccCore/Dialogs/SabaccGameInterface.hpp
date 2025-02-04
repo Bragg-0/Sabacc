@@ -347,6 +347,53 @@ class SabaccGameInterface
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
 
+		/* Dice */
+		class BRG_DiceTableBackground
+		{
+			type = 0;
+			idc = DiceBackground;
+			x = safeZoneX + safeZoneW * 0.385625;
+			y = safeZoneY + safeZoneH * 0.02888889;
+			w = safeZoneW * 0.228125;
+			h = safeZoneH * 0.19;
+			style = 0;
+			text = "";
+			colorBackground[] = {0, 0.2, 0, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+		class BRG_Dice1
+		{
+			type = 0;
+			idc = Dice1;
+			x = safeZoneX + safeZoneW * 0.39;
+			y = safeZoneY + safeZoneH * 0.03777778;
+			w = safeZoneW * 0.096875;
+			h = safeZoneH * 0.17333334;
+			style = 2 + 48;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0};
+			colorText[] = {1, 1, 1, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+		class BRG_Dice2
+		{
+			type = 0;
+			idc = Dice2;
+			x = safeZoneX + safeZoneW * 0.51;
+			y = safeZoneY + safeZoneH * 0.03777778;
+			w = safeZoneW * 0.096875;
+			h = safeZoneH * 0.17333334;
+			style = 2 + 48;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0};
+			colorText[] = {1, 1, 1, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+
 		/* Chips*/
 		class BRG_PlayerChipsInGameCounter
 		{

@@ -60,6 +60,11 @@
 #define PlayerBonus2Name 220904
 #define PlayerBonusBackground 220905
 
+/* Dice */
+#define Dice1 221001
+#define Dice2 221002
+#define DiceBackground 221003
+
 /* Player 1 InfoPanel*/
 #define PlayInfoPlayer1 221101
 #define NamePlayer1 221102
