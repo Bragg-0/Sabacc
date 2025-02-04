@@ -118,14 +118,14 @@
 
 /* Player & Game interaction*/
 /**
- * @param GameInfo <array> - Game information array
+ * @param GameInfo <array> - Game information array :
  *  @param GameNumber <int> - Game number
  *  @param GameStatus <int> - Game status
  *  @param CardDeck <array> - Card deck array
- *  @param GameParms <array> - Game parameters array
+ *  @param GameParms <array> - Game parameters array :
  *   @param GameOwner <object> - Game owner unit
  *   @param GamePlayersMax <int> - Game maximum players
- * @param PlayerInfo <array> - Player information array (can be have 0 - 4 players)
+ * @param PlayerInfo <array> - Player information array (can be have 0 - 4 players) :
  *  @param Unit <object> - Player unit
  *  @param Name <string> - Player name
  *  @param Bonus1 <int> - Player bonus 1 number
