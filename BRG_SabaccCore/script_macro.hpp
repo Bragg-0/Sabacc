@@ -118,18 +118,18 @@
 
 /* Player & Game interaction*/
 /**
- * @param GameInfo <array> - Game information array :
+ * @param GameInfo <array> - Game information array (can be have 1 - infinite games) :
  *  @param GameNumber <int> - Game number
  *  @param GameStatus <int> - Game status
  *  @param CardDeck <array> - Card deck array
  *  @param GameParms <array> - Game parameters array :
  *   @param GameOwner <object> - Game owner unit
  *   @param GamePlayersMax <int> - Game maximum players
- * @param PlayerInfo <array> - Player information array (can be have 0 - 4 players) :
- *  @param Unit <object> - Player unit
- *  @param Name <string> - Player name
- *  @param Bonus1 <int> - Player bonus 1 number
- *  @param Bonus2 <int> - Player bonus 2 number
+ *  @param PlayerInfo <array> - Player information array (can be have 1 - 4 players) :
+ *   @param Unit <object> - Player unit
+ *   @param Name <string> - Player name
+ *   @param Bonus1 <int> - Player bonus 1 number
+ *   @param Bonus2 <int> - Player bonus 2 number
  */
 
 #define createNewGame [] call BRG_fnc_createNewGame
