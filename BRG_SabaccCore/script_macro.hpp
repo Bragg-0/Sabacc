@@ -206,11 +206,11 @@
 #define setGameStatus(_GameNumber, _GameStatus) [ _GameNumber, _GameStatus ] call BRG_fnc_setGameStatus
 
 /**
- * BRG_fnc_setPlayerInfo - Set player information
+ * BRG_fnc_checkExistPlayer - Set player information
  * @param _GameNumber <int> - Game number
- * @param _playerNumber <int> - Player number
+ * @param _unit <object> - Player unit
  */
-#define checkExistPlayer(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_checkExistPlayer
+#define checkExistPlayer(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_checkExistPlayer
 
 /**
  * BRG_fnc_deletePlayerInfo - Delete player information
