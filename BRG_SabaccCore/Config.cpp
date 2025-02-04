@@ -26,12 +26,12 @@ class CfgFunctions
         };
         class Functions_CardInteraction
         {
-            F(dropPlayerCard);    // Todo
-            F(getCards);          // Todo
-            F(getLastDropedCard); // Todo
-            F(getNewCard);        // Todo
-            F(getPlayerCard);     // Todo
-            F(setPlayerCard);     // Todo
+            F(dropPlayerCard);
+            F(getCards);
+            F(getLastDropedCard);
+            F(getNewCard);
+            F(getPlayerCard);
+            F(setPlayerCard);
         };
         class Functions_ChipsInteraction
         {
