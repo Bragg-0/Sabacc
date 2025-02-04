@@ -19,43 +19,43 @@ class CfgFunctions
         tag = "BRG";
         class Functions_BonusInteraction
         {
-            F(getPlayerBonus);
-            F(setPlayerBonus);
-            F(usePlayerBonus);
-            F(checkIfUseBonus);
+            F(getPlayerBonus);  // Todo
+            F(setPlayerBonus);  // Todo
+            F(usePlayerBonus);  // Todo
+            F(checkIfUseBonus); // Todo
         };
         class Functions_CardInteraction
         {
-            F(dropPlayerCard);
-            F(getLastDropedCard);
-            F(getNewCard);
-            F(getPlayerCard);
-            F(getRandomCard);
-            F(getTableCard);
-            F(setPlayerCard);
-            F(setTableCard);
+            F(dropPlayerCard);    // Todo
+            F(getLastDropedCard); // Todo
+            F(getNewCard);        // Todo
+            F(getPlayerCard);     // Todo
+            F(getRandomCard);     // Todo
+            F(getTableCard);      // Todo
+            F(setPlayerCard);     // Todo
+            F(setTableCard);      // Todo
         };
         class Functions_ChipsInteraction
         {
-            F(addChips);
-            F(getChips);
-            F(setChips);
-            F(subChips);
+            F(addChips); // Todo
+            F(getChips); // Todo
+            F(setChips); // Todo
+            F(subChips); // Todo
         };
         class Functions_GameFlow
         {
-            F(endGame);
-            F(endRound);
-            F(endTurn);
-            F(getGameOrder);
-            F(getWhosNextTurn);
-            F(getWhosTurn);
-            F(joinGame);
-            F(leaveGame);
-            F(setWhosTurn);
-            F(startGame);
-            F(startRound);
-            F(startTurn);
+            F(endGame);         // Todo
+            F(endRound);        // Todo
+            F(endTurn);         // Todo
+            F(getGameOrder);    // Todo
+            F(getWhosNextTurn); // Todo
+            F(getWhosTurn);     // Todo
+            F(joinGame);        // Todo
+            F(leaveGame);       // Todo
+            F(setWhosTurn);     // Todo
+            F(startGame);       // Todo
+            F(startRound);      // Todo
+            F(startTurn);       // Todo
         };
         class Functions_GameInteraction
         {
