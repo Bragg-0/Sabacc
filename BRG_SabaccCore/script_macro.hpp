@@ -116,81 +116,414 @@
 #define Player4Background 221411
 #define Player4ChipsBackground 221412
 
-/* Player & Game interaction*/
-/**
- * @param GameInfo <array> - Game information array (can be have 1 - infinite games) :
- *  @param GameNumber <int> - Game number
- *  @param GameStatus <int> - Game status
- *  @param CardDeck <array> - Card deck array
- *  @param GameParms <array> - Game parameters array :
- *   @param GameOwner <object> - Game owner unit
- *   @param GamePlayersMax <int> - Game maximum players
- *  @param PlayerInfo <array> - Player information array (can be have 1 - 4 players) :
- *   @param Unit <object> - Player unit
- *   @param Name <string> - Player name
- *   @param Bonus1 <int> - Player bonus 1 number
- *   @param Bonus2 <int> - Player bonus 2 number
- */
-
-#define createNewGame [] call BRG_fnc_createNewGame
-#define getGameCardDeck(_GameNumber) [_GameNumber] call BRG_fnc_getGameCardDeck
-#define getGameInfo(_GameNumber) [_GameNumber] call BRG_fnc_getGameInfo
-#define getGameOwner(_GameNumber) [_GameNumber] call BRG_fnc_getGameOwner
-#define getGameParams(_GameNumber) [_GameNumber] call BRG_fnc_getGameParms
-#define getGamePlayersMax(_GameNumber) [_GameNumber] call BRG_fnc_getGamePlayersMax
-#define getGameStatus(_GameNumber) [_GameNumber] call BRG_fnc_getGameStatus
-#define setGameCardDeck(_GameNumber, _CardDeck) [ _GameNumber, _CardDeck ] call BRG_fnc_setGameCardDeck
-#define setGameOwner(_GameNumber, _GameOwner) [ _GameNumber, _GameOwner ] call BRG_fnc_setGameOwner
-#define setGameParams(_GameNumber, _GameParms) [ _GameNumber, _GameParms ] call BRG_fnc_setGameParms
-#define setGamePlayersMax(_GameNumber, _GamePlayersMax) [ _GameNumber, _GamePlayersMax ] call BRG_fnc_setGamePlayersMax
-#define setGameStatus(_GameNumber, _GameStatus) [ _GameNumber, _GameStatus ] call BRG_fnc_setGameStatus
-
-#define checkExistPlayer(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_checkExistPlayer
-#define deletePlayerInfo(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_setPlayerInfo
-#define getAllplayers(_GameNumber) [_GameNumber] call BRG_fnc_getAllplayers
-#define getGameNumberFromUnit(_unit) [_unit] call BRG_fnc_getGameNumberFromUnit
-#define getPlayerInfo(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_getPlayerInfo
-#define getPlayerNumberFromUnit(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_getPlayerNumberFromUnit
-#define setPlayerInfo(_GameNumber, _playerNumber, _playerInfo) [ _GameNumber, _playerNumber, _playerInfo ] call BRG_fnc_setPlayerInfo
-
-/* Game flow*/
-#define joinGame(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_joinGame
-#define endGame(_GameNumber) [_GameNumber] call BRG_fnc_endGame
-#define endRound(_GameNumber) [_GameNumber] call BRG_fnc_endRound
-#define endTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_endTurn
-#define getGameOrder(_GameNumber) [_GameNumber] call BRG_fnc_getGameOrder
-#define getWhosNextTurn(_GameNumber) [_GameNumber] call BRG_fnc_getWhosNextTurn
-#define getWhosTurn(_GameNumber) [_GameNumber] call BRG_fnc_getWhosTurn
-#define setWhosTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_setWhosTurn
-#define startGame(_GameNumber) [_GameNumber] call BRG_fnc_startGame
-#define startRound(_GameNumber) [_GameNumber] call BRG_fnc_startRound
-#define startTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_startTurn
-
-/* Card interaction*/
+/* Cards */
 #define DefaultCardsDeck [ [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ], [ [ "1", 0 ], [ "1", 0 ], [ "1", 0 ], [ "2", 0 ], [ "2", 0 ], [ "2", 0 ], [ "3", 0 ], [ "3", 0 ], [ "3", 0 ], [ "4", 0 ], [ "4", 0 ], [ "4", 0 ], [ "5", 0 ], [ "5", 0 ], [ "5", 0 ], [ "6", 0 ], [ "6", 0 ], [ "6", 0 ], [ "I", 0 ], [ "I", 0 ], [ "I", 0 ], [ "S", 0 ], [ "S", 0 ] ] ]
 
+/**
+ * BRG_fnc_createNewGame - Create new game
+ * @return <int> - Game number
+ */
+#define createNewGame [] call BRG_fnc_createNewGame
+
+/**
+ * BRG_fnc_getGameCardDeck - Get game card deck
+ * @param _GameNumber <int> - Game number
+ * @return <array> - Card deck array
+ */
+#define getGameCardDeck(_GameNumber) [_GameNumber] call BRG_fnc_getGameCardDeck
+
+/**
+ * BRG_fnc_getGameInfo - Get game information
+ * @param _GameNumber <int> - Game number
+ * @return <array> - Game information array
+ */
+#define getGameInfo(_GameNumber) [_GameNumber] call BRG_fnc_getGameInfo
+
+/**
+ * BRG_fnc_getGameOwner - Get game owner
+ * @param _GameNumber <int> - Game number
+ * @return <object> - Game owner unit
+ */
+#define getGameOwner(_GameNumber) [_GameNumber] call BRG_fnc_getGameOwner
+
+/**
+ * BRG_fnc_getGameParms - Get game parameters
+ * @param _GameNumber <int> - Game number
+ * @return <array> - Game parameters array
+ */
+#define getGameParams(_GameNumber) [_GameNumber] call BRG_fnc_getGameParms
+
+/**
+ * BRG_fnc_getGamePlayersMax - Get game maximum players
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Game maximum players
+ */
+#define getGamePlayersMax(_GameNumber) [_GameNumber] call BRG_fnc_getGamePlayersMax
+
+/**
+ * BRG_fnc_getGameStatus - Get game status
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Game status
+ */
+#define getGameStatus(_GameNumber) [_GameNumber] call BRG_fnc_getGameStatus
+
+/**
+ * BRG_fnc_getPlayerInfo - Get player information
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @return <array> - Player information array
+ */
+#define setGameCardDeck(_GameNumber, _CardDeck) [ _GameNumber, _CardDeck ] call BRG_fnc_setGameCardDeck
+
+/**
+ * BRG_fnc_setGameOwner - Set game owner
+ * @param _GameNumber <int> - Game number
+ * @param _GameOwner <object> - Game owner unit
+ */
+#define setGameOwner(_GameNumber, _GameOwner) [ _GameNumber, _GameOwner ] call BRG_fnc_setGameOwner
+
+/**
+ * BRG_fnc_setGameParms - Set game parameters
+ * @param _GameNumber <int> - Game number
+ * @param _GameParms <array> - Game parameters array
+ */
+#define setGameParams(_GameNumber, _GameParms) [ _GameNumber, _GameParms ] call BRG_fnc_setGameParms
+
+/**
+ * BRG_fnc_setGamePlayersMax - Set game maximum players
+ * @param _GameNumber <int> - Game number
+ * @param _GamePlayersMax <int> - Game maximum players
+ */
+#define setGamePlayersMax(_GameNumber, _GamePlayersMax) [ _GameNumber, _GamePlayersMax ] call BRG_fnc_setGamePlayersMax
+
+/**
+ * BRG_fnc_setGameStatus - Set game status
+ * @param _GameNumber <int> - Game number
+ * @param _GameStatus <int> - Game status
+ */
+#define setGameStatus(_GameNumber, _GameStatus) [ _GameNumber, _GameStatus ] call BRG_fnc_setGameStatus
+
+/**
+ * BRG_fnc_setPlayerInfo - Set player information
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ */
+#define checkExistPlayer(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_checkExistPlayer
+
+/**
+ * BRG_fnc_deletePlayerInfo - Delete player information
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ */
+#define deletePlayerInfo(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_setPlayerInfo
+
+/**
+ * BRG_fnc_getAllplayers - Get all players
+ * @param _GameNumber <int> - Game number
+ * @return <array> - All players array
+ */
+#define getAllplayers(_GameNumber) [_GameNumber] call BRG_fnc_getAllplayers
+
+/**
+ * BRG_fnc_getGameNumberFromUnit - Get game number from unit
+ * @param _unit <object> - Player unit
+ * @return <int> - Game number
+ */
+#define getGameNumberFromUnit(_unit) [_unit] call BRG_fnc_getGameNumberFromUnit
+
+/**
+ * BRG_fnc_getPlayerInfo - Get player information
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @return <array> - Player information array
+ */
+#define getPlayerInfo(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_getPlayerInfo
+
+/**
+ * BRG_fnc_getPlayerNumberFromUnit - Get player number from unit
+ * @param _GameNumber <int> - Game number
+ * @param _unit <object> - Player unit
+ * @return <int> - Player number
+ */
+#define getPlayerNumberFromUnit(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_getPlayerNumberFromUnit
+
+/**
+ * BRG_fnc_setPlayerInfo - Set player information
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _playerInfo <array> - Player information array
+ */
+#define setPlayerInfo(_GameNumber, _playerNumber, _playerInfo) [ _GameNumber, _playerNumber, _playerInfo ] call BRG_fnc_setPlayerInfo
+
+/**
+ * BRG_fnc_joinGame - Join game
+ * @param _GameNumber <int> - Game number
+ * @param _unit <object> - Player unit
+ */
+#define joinGame(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_joinGame
+
+/**
+ * BRG_fnc_leaveGame - Leave game
+ * @param _GameNumber <int> - Game number
+ * @param _unit <object> - Player unit
+ */
+#define leaveGame(_GameNumber, _unit) [ _GameNumber, _unit ] call BRG_fnc_leaveGame
+
+/**
+ * BRG_fnc_endGame - End game
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Game status
+ */
+#define endGame(_GameNumber) [_GameNumber] call BRG_fnc_endGame
+
+/**
+ * BRG_fnc_endRound - End game round
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Game status
+ */
+#define endRound(_GameNumber) [_GameNumber] call BRG_fnc_endRound
+
+/**
+ * BRG_fnc_endTurn - End player turn
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @return <int> - Game status
+ */
+#define endTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_endTurn
+
+/**
+ * BRG_fnc_getGameOrder - Get game order
+ * @param _GameNumber <int> - Game number
+ * @return <array> - Game order array
+ */
+#define getGameOrder(_GameNumber) [_GameNumber] call BRG_fnc_getGameOrder
+
+/**
+ * BRG_fnc_getWhosNextTurn - Get next player turn
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Player number
+ */
+#define getWhosNextTurn(_GameNumber) [_GameNumber] call BRG_fnc_getWhosNextTurn
+
+/**
+ * BRG_fnc_getWhosTurn - Get player turn
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Player number
+ */
+#define getWhosTurn(_GameNumber) [_GameNumber] call BRG_fnc_getWhosTurn
+
+/**
+ * BRG_fnc_setWhosTurn - Set player turn
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ */
+#define setWhosTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_setWhosTurn
+
+/**
+ * BRG_fnc_startGame - Start game
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Game status
+ */
+#define startGame(_GameNumber) [_GameNumber] call BRG_fnc_startGame
+
+/**
+ * BRG_fnc_startRound - Start game round
+ * @param _GameNumber <int> - Game number
+ * @return <int> - Game status
+ */
+#define startRound(_GameNumber) [_GameNumber] call BRG_fnc_startRound
+
+/**
+ * BRG_fnc_startTurn - Start player turn
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @return <int> - Game status
+ */
+#define startTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_startTurn
+
+/**
+ * BRG_fnc_dropPlayerCard - Drop player card
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _cardType <int> - Card type
+ */
 #define dropPlayerCard(_GameNumber, _playerNumber, _cardType) [ _GameNumber, _playerNumber, _cardType ] call BRG_fnc_dropPlayerCard
+
+/**
+ * BRG_fnc_getLastDropedCard - Get last droped card
+ * @param _GameNumber <int> - Game number
+ * @param _cardType <int> - Card type
+ * @return <int> - Card number
+ */
 #define getLastDropedCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getLastDropedCard
+
+/**
+ * BRG_fnc_getNewCard - Get new card
+ * @param _GameNumber <int> - Game number
+ * @param _cardType <int> - Card type
+ * @return <int> - Card number
+ */
 #define getNewCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getNewCard
+
+/**
+ * BRG_fnc_getPlayerCard - Get player card
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _cardType <int> - Card type
+ * @return <int> - Card number
+ */
 #define getPlayerCard(_GameNumber, _playerNumber, _cardType) [ _GameNumber, _playerNumber, _cardType ] call BRG_fnc_getPlayerCard
+
+/**
+ * BRG_fnc_getRandomCard - Get random card
+ * @param _GameNumber <int> - Game number
+ * @param _cardType <int> - Card type
+ * @return <int> - Card number
+ */
 #define getRandomCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getRandomCard
+
+/**
+ * BRG_fnc_getTableCard - Get table card
+ * @param _GameNumber <int> - Game number
+ * @param _cardType <int> - Card type
+ * @return <int> - Card number
+ */
 #define getTableCard(_GameNumber, _cardType) [ _GameNumber, _cardType ] call BRG_fnc_getTableCard
+
+/**
+ * BRG_fnc_setPlayerCard - Set player card
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _cardNumber <int> - Card number
+ * @param _cardType <int> - Card type
+ */
 #define setPlayerCard(_GameNumber, _playerNumber, _cardNumber, _cardType) [ _GameNumber, _playerNumber, _cardNumber, _cardType ] call BRG_fnc_setPlayerCard
+
+/**
+ * BRG_fnc_setTableCard - Set table card
+ * @param _GameNumber <int> - Game number
+ * @param _cardNumber <int> - Card number
+ * @param _cardType <int> - Card type
+ */
 #define setTableCard(_GameNumber, _cardNumber, _cardType) [ _GameNumber, _cardNumber, _cardType ] call BRG_fnc_setTableCard
 
-/* Bonus interaction */
+/**
+ * BRG_fnc_checkIfUseBonus - Check if use bonus
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _bonusNumber <int> - Bonus number
+ * @return <bool> - Use bonus
+ */
 #define checkIfUseBonus(_GameNumber, _playerNumber, _bonusNumber) [ _GameNumber, _playerNumber, _bonusNumber ] call BRG_fnc_checkIfUseBonus
+
+/**
+ * BRG_fnc_getPlayerBonus - Get player bonus
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _bonusNumber <int> - Bonus number
+ * @return <int> - Bonus type
+ */
 #define getPlayerBonus(_GameNumber, _playerNumber, _bonusNumber) [ _GameNumber, _playerNumber, _bonusType ] call BRG_fnc_getPlayerBonus
+
+/**
+ * BRG_fnc_setPlayerBonus - Set player bonus
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _bonusNumber <int> - Bonus number
+ * @param _bonusType <int> - Bonus type
+ */
 #define setPlayerBonus(_GameNumber, _playerNumber, _bonusNumber, _bonusType) [ _GameNumber, _playerNumber, _bonusNumber, _bonusType ] call BRG_fnc_setPlayerBonus
+
+/**
+ * BRG_fnc_usePlayerBonus - Use player bonus
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _bonusNumber <int> - Bonus number
+ */
 #define usePlayerBonus(_GameNumber, _playerNumber, _bonusNumber) [ _GameNumber, _playerNumber, _bonusNumber ] call BRG_fnc_usePlayerBonus
 
-/* Chips interaction */
+/**
+ * BRG_fnc_addChips - Add chips number
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _chips <int> - Chips number
+ * @param _chipsType <int> - Chips type
+ * @return <int> - Chips number
+ */
 #define addChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_addChips
+
+/**
+ * BRG_fnc_subChips - Sub chips number
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _chips <int> - Chips number
+ * @param _chipsType <int> - Chips type
+ * @return <int> - Chips number
+ */
+#define subChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_subChips
+
+/**
+ * BRG_fnc_getChips - Get chips number
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _chipsType <int> - Chips type
+ * @return <int> - Chips number
+ */
 #define getChips(_GameNumber, _playerNumber, _chipsType) [ _GameNumber, _playerNumber, _chipsType ] call BRG_fnc_getChips
+
+/**
+ * BRG_fnc_setChips - Set chips number
+ * @param _GameNumber <int> - Game number
+ * @param _playerNumber <int> - Player number
+ * @param _chips <int> - Chips number
+ * @param _chipsType <int> - Chips type
+ */
 #define setChips(_GameNumber, _playerNumber, _chips, _chipsType) [ _GameNumber, _playerNumber, _chips, _chipsType ] call BRG_fnc_setChips
 
-/* UI interaction*/
+/**
+ * BRG_fnc_enableUI - Enable or disable UI
+ * @param _IDC <int> - IDC number
+ * @param _enable <bool> - Enable or disable
+ * @return <bool> - Enable or disable
+ */
 #define enableUI(_IDC, _enable) [ _IDC, _enable ] call BRG_fnc_enableUI
+
+/**
+ * BRG_fnc_getUIValue - Get UI value
+ * @param _IDC <int> - IDC number
+ * @return <any> - UI value
+ */
 #define getUIValue(_IDC) [_IDC] call BRG_fnc_getUIValue
+
+/**
+ * BRG_fnc_setUIValue - Set UI value
+ * @param _IDC <int> - IDC number
+ * @param _value <any> - UI value
+ */
 #define setUIValue(_IDC, _value) [ _IDC, _value ] call BRG_fnc_setUIValue
+
+/**
+ * BRG_fnc_setUIVisible - Set UI visible or invisible
+ * @param _IDC <int> - IDC number
+ * @param _visible <bool> - Visible or invisible
+ */
 #define setUIVisible(_IDC, _visible) [ _IDC, _visible ] call BRG_fnc_setUIVisible
+
+/**
+ * Game information array (can be have 1 - infinite games)
+ * @param _GameNumber <int> - Game number
+ * @param _GameStatus <int> - Game status
+ * @param _CardDeck <array> - Card deck array
+ * @param _GameParms <array> - Game parameters array :
+ *  @param _GameOwner <object> - Game owner unit
+ *  @param _GamePlayersMax <int> - Game maximum players
+ * @param _PlayerInfo <array> - Player information array (can be have 1 to 4 players) :
+ *  @param _Unit <object> - Player unit
+ *  @param _Name <string> - Player name
+ *  @param _Bonus <array> - Player bonus array
+ *
+ * @example
+ * GameInfo = [[ 0, 0, DefaultCardsDeck, [ player1, 4 ], [[player1, "Player 1", [0, 0]], [player2, "Player 2", 0, [0, 0]], [player3, "Player 3", 0, [0, 0]], [player4, "Player 4", 0, [0, 0]]] ]]
+ */
+#define GameInfo(_GameNumber, _GameStatus, _CardDeck, _GameOwner, _GamePlayersMax, _Unit, _Name, _Bonus) \
+    [[_GameNumber, _GameStatus, _CardDeck, [_GameOwner, _GamePlayersMax], [[_Unit, _Name, _Bonus]]]]
