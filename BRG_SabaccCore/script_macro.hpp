@@ -1,3 +1,24 @@
+/* Color */
+#define ColorBlack {0, 0, 0, 1}
+#define ColorBlack25 {0, 0, 0, 0.25}
+#define ColorBlack50 {0, 0, 0, 0.5}
+#define ColorBlack75 {0, 0, 0, 0.75}
+#define ColorDarkYellow {0.4, 0.4, 0, 1}
+#define ColorGreen50 {0, 0.2, 0, 0.5}
+#define ColorLightBlue {0, 1, 1, 1}
+#define ColorLightBlue50 {0, 0.8, 0.8, 0.5}
+#define ColorTransparent {0, 0, 0, 0}
+#define ColorWhite {1, 1, 1, 1}
+
+/* Dialog Config */
+#define DefaultFont "PuristaMedium"
+#define SizeEx sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)
+#define SoundClick                                                            \
+    soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};   \
+    soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};   \
+    soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0}; \
+    soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0}
+
 /* Sabacc Game Interface*/
 #define SabaccInterface 22
 

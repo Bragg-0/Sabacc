@@ -18,10 +18,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.32161459;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player Bonus*/
@@ -35,10 +35,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.32161459;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Chips*/
@@ -52,10 +52,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.1484375;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsReserve
 		{
@@ -67,10 +67,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 48 + 2;
 			text = ""; // Chips img
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsInGameBackground
 		{
@@ -82,10 +82,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.1484375;
 			style = 0;
 			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsInGame
 		{
@@ -97,10 +97,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 2 + 48;
 			text = ""; // Chips img
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Timer*/
@@ -114,10 +114,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.08463542;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player 1*/
@@ -131,10 +131,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsBackgroundPlayer1
 		{
@@ -146,10 +146,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 0;
 			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player 2*/
@@ -163,10 +163,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsBackgroundPlayer2
 		{
@@ -178,10 +178,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 0;
 			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player 3*/
@@ -195,10 +195,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsBackgroundPlayer3
 		{
@@ -210,10 +210,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 0;
 			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player 4*/
@@ -227,10 +227,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsBackgroundPlayer4
 		{
@@ -242,10 +242,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 0;
 			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 	};
 	class Controls
@@ -262,10 +262,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.26692709;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerBonusName1
 		{
@@ -277,10 +277,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.02994792;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.75};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack75;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player Bonus 2*/
@@ -294,10 +294,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.26692709;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerBonusName2
 		{
@@ -309,10 +309,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.02994792;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.75};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack75;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player Card*/
@@ -326,10 +326,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.30338542;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerCard2
 		{
@@ -341,10 +341,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.30338542;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Dice */
@@ -358,10 +358,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0.2, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorGreen50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Dice1
 		{
@@ -373,10 +373,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.17333334;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Dice2
 		{
@@ -388,10 +388,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.17333334;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Chips*/
@@ -405,10 +405,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_PlayerChipsReserveCounter
 		{
@@ -420,10 +420,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.05729167;
 			style = 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Table for player play*/
@@ -437,10 +437,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.33984375;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0.2, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorGreen50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableCard1PlayerPlay
 		{
@@ -452,10 +452,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.30338542;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableCard2PlayerPlay
 		{
@@ -467,10 +467,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.30338542;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableDropCard1PlayerPlay
 		{
@@ -482,10 +482,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.23958334;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableDropCard2PlayerPlay
 		{
@@ -497,10 +497,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.23958334;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* MiniTable for player wait is turn*/
@@ -514,10 +514,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.21223959;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0.2, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorGreen50;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableCard1
 		{
@@ -529,10 +529,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.17578125;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableCard2
 		{
@@ -544,10 +544,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.17578125;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableDropCard1
 		{
@@ -559,10 +559,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.13932292;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_TableDropCard2
 		{
@@ -574,10 +574,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.13932292;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Timer*/
@@ -590,8 +590,8 @@ class SabaccGameInterface
 			w = safeZoneW * 0.05051245;
 			h = safeZoneH * 0.08463542;
 			style = 1;
-			colorBar[] = {0.4, 0.4, 0, 1};
-			colorFrame[] = {0, 0, 0, 0};
+			colorBar[] = ColorDarkYellow;
+			colorFrame[] = ColorTransparent;
 			texture = "#(argb,8,8,3)color(1,1,1,1)";
 		};
 		class BRG_Timer
@@ -604,10 +604,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.08463542;
 			style = 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 			shadow = 1;
 		};
 
@@ -622,10 +622,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 1, 1, 1};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_NamePlayer1
 		{
@@ -637,10 +637,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.02994792;
 			style = 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.75};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack75;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 			shadow = 0;
 		};
 		class BRG_ChipsInRoundPlayer1
@@ -653,10 +653,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsInRoundCounterPlayer1
 		{
@@ -668,10 +668,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReservePlayer1
 		{
@@ -683,10 +683,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 48 + 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReserveCounterPlayer1
 		{
@@ -698,10 +698,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus1Player1
 		{
@@ -713,10 +713,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus2Player1
 		{
@@ -728,10 +728,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card1Player1
 		{
@@ -743,10 +743,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card2Player1
 		{
@@ -758,10 +758,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player 2 InfoPanel*/
@@ -775,10 +775,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 1, 1, 1};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_NamePlayer2
 		{
@@ -790,10 +790,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.02994792;
 			style = 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.75};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack75;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 			shadow = 0;
 		};
 		class BRG_ChipsInRoundPlayer2
@@ -806,10 +806,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsInRoundCounterPlayer2
 		{
@@ -821,10 +821,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReservePlayer2
 		{
@@ -836,10 +836,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 48 + 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReserveCounterPlayer2
 		{
@@ -851,10 +851,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus1Player2
 		{
@@ -866,10 +866,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus2Player2
 		{
@@ -881,10 +881,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card1Player2
 		{
@@ -896,10 +896,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card2Player2
 		{
@@ -911,10 +911,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player 3 InfoPanel*/
@@ -928,10 +928,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 1, 1, 1};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_NamePlayer3
 		{
@@ -943,10 +943,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.02994792;
 			style = 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.75};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack75;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 			shadow = 0;
 		};
 		class BRG_ChipsInRoundPlayer3
@@ -959,10 +959,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsInRoundCounterPlayer3
 		{
@@ -974,10 +974,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReservePlayer3
 		{
@@ -989,10 +989,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 48 + 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReserveCounterPlayer3
 		{
@@ -1004,10 +1004,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus1Player3
 		{
@@ -1019,10 +1019,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus2Player3
 		{
@@ -1034,10 +1034,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card1Player3
 		{
@@ -1049,10 +1049,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card2Player3
 		{
@@ -1064,10 +1064,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Player 4 InfoPanel*/
@@ -1081,10 +1081,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.19401042;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 1, 1, 1};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorLightBlue;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_NamePlayer4
 		{
@@ -1096,10 +1096,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.02994792;
 			style = 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0.75};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorBlack75;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 			shadow = 0;
 		};
 		class BRG_ChipsInRoundPlayer4
@@ -1112,10 +1112,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsInRoundCounterPlayer4
 		{
@@ -1127,10 +1127,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReservePlayer4
 		{
@@ -1142,10 +1142,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 48 + 2;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_ChipsReserveCounterPlayer4
 		{
@@ -1157,10 +1157,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.0390625;
 			style = 0;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus1Player4
 		{
@@ -1172,10 +1172,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Bonus2Player4
 		{
@@ -1187,10 +1187,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card1Player4
 		{
@@ -1202,10 +1202,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 		class BRG_Card2Player4
 		{
@@ -1217,10 +1217,10 @@ class SabaccGameInterface
 			h = safeZoneH * 0.06640625;
 			style = 2 + 48;
 			text = "";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			colorBackground[] = ColorTransparent;
+			colorText[] = ColorWhite;
+			font = DefaultFont;
+			SizeEx;
 		};
 
 		/* Button*/
@@ -1235,24 +1235,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_PlayerBonus2Button
 		{
@@ -1265,24 +1262,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_PlayerCard1Button
 		{
@@ -1295,24 +1289,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_PlayerCard2Button
 		{
@@ -1325,24 +1316,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_TableCard1PlayerPlayButton
 		{
@@ -1355,24 +1343,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_TableDropCard1PlayerPlayButton
 		{
@@ -1385,24 +1370,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_TableCard2PlayerPlayButton
 		{
@@ -1415,24 +1397,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_TableDropCard2PlayerPlayButton
 		{
@@ -1445,24 +1424,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_Player1Button
 		{
@@ -1475,24 +1451,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_Player2Button
 		{
@@ -1505,24 +1478,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_Player3Button
 		{
@@ -1535,24 +1505,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 		class BRG_Player4Button
 		{
@@ -1565,24 +1532,21 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			borderSize = 0;
-			colorBackground[] = {0, 0, 0, 0};
-			colorBackgroundActive[] = {0, 0, 0, 0.25};
-			colorBackgroundDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorBorder[] = {0, 0, 0, 0};
-			colorDisabled[] = {0.2, 0.2, 0.2, 0.5};
-			colorFocused[] = {0.2, 0.2, 0.2, 0.25};
-			colorShadow[] = {0, 0, 0, 0};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
+			colorBackground[] = ColorTransparent;
+			colorBackgroundActive[] = ColorBlack25;
+			colorBackgroundDisabled[] = ColorBlack50;
+			colorBorder[] = ColorTransparent;
+			colorDisabled[] = ColorBlack50;
+			colorFocused[] = ColorBlack25;
+			colorShadow[] = ColorTransparent;
+			colorText[] = ColorBlack;
+			font = DefaultFont;
 			offsetPressedX = 0;
 			offsetPressedY = 0;
 			offsetX = 0;
 			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1.0};
+			SizeEx;
+			SoundClick;
 		};
 	};
 };
