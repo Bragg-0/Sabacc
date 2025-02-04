@@ -144,9 +144,10 @@
 
 /**
  * BRG_fnc_createNewGame - Create new game
+ * @param _unit <object> - Player unit
  * @return <int> - Game number
  */
-#define createNewGame [] call BRG_fnc_createNewGame
+#define createNewGame [_unit] call BRG_fnc_createNewGame
 
 /**
  * BRG_fnc_getGameCardDeck - Get game card deck
