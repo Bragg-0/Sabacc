@@ -11,7 +11,7 @@ class SabaccGameInterface
 		class BRG_PlayerCardBackground
 		{
 			type = 0;
-			idc = 0;
+			idc = CardBackground;
 			x = safeZoneX + safeZoneW * 0.3601757;
 			y = safeZoneY + safeZoneH * 0.65364584;
 			w = safeZoneW * 0.27891655;
@@ -28,7 +28,7 @@ class SabaccGameInterface
 		class BRG_PlayerBonusBackground
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayerBonusBackground;
 			x = safeZoneX + safeZoneW * 0.6647145;
 			y = safeZoneY + safeZoneH * 0.65364584;
 			w = safeZoneW * 0.23133236;
@@ -45,7 +45,7 @@ class SabaccGameInterface
 		class BRG_PlayerChipsReserveBackground
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayerChipsReserveBackground;
 			x = safeZoneX + safeZoneW * 0.92166911;
 			y = safeZoneY + safeZoneH * 0.82682292;
 			w = safeZoneW * 0.05051245;
@@ -60,7 +60,7 @@ class SabaccGameInterface
 		class BRG_PlayerChipsReserve
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerChipsReserve;
 			x = safeZoneX + safeZoneW * 0.93118595;
 			y = safeZoneY + safeZoneH * 0.8359375;
 			w = safeZoneW * 0.03147878;
@@ -75,7 +75,7 @@ class SabaccGameInterface
 		class BRG_PlayerChipsInGameBackground
 		{
 			type = 0;
-			idc = 0;
+			idc = PlayerChipsInGameBackground;
 			x = safeZoneX + safeZoneW * 0.92166911;
 			y = safeZoneY + safeZoneH * 0.65364584;
 			w = safeZoneW * 0.05051245;
@@ -90,7 +90,7 @@ class SabaccGameInterface
 		class BRG_PlayerChipsInGame
 		{
 			type = 0;
-			idc = -1;
+			idc = PlayerChipsInGame;
 			x = safeZoneX + safeZoneW * 0.93118595;
 			y = safeZoneY + safeZoneH * 0.66276042;
 			w = safeZoneW * 0.03147878;
@@ -107,7 +107,7 @@ class SabaccGameInterface
 		class BRG_TimerBackground
 		{
 			type = 0;
-			idc = 0;
+			idc = TimerBackground;
 			x = safeZoneX + safeZoneW * 0.92166911;
 			y = safeZoneY + safeZoneH * 0.55338542;
 			w = safeZoneW * 0.05051245;
@@ -115,6 +115,134 @@ class SabaccGameInterface
 			style = 0;
 			text = "";
 			colorBackground[] = {0, 0, 0, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+
+		/* Player 1*/
+		class BRG_PlayersInfoBackgroundPlayer1
+		{
+			type = 0;
+			idc = Player1Background;
+			x = safeZoneX + safeZoneW * 0.02708639;
+			y = safeZoneY + safeZoneH * 0.02473959;
+			w = safeZoneW * 0.1647145;
+			h = safeZoneH * 0.19401042;
+			style = 0;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+		class BRG_PlayerChipsBackgroundPlayer1
+		{
+			type = 0;
+			idc = Player1ChipsBackground;
+			x = safeZoneX + safeZoneW * 0.11273793;
+			y = safeZoneY + safeZoneH * 0.0703125;
+			w = safeZoneW * 0.06954613;
+			h = safeZoneH * 0.05729167;
+			style = 0;
+			text = "";
+			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+
+		/* Player 2*/
+		class BRG_PlayersInfoBackgroundPlayer2
+		{
+			type = 0;
+			idc = Player2Background;
+			x = safeZoneX + safeZoneW * 0.02708639;
+			y = safeZoneY + safeZoneH * 0.24348959;
+			w = safeZoneW * 0.1647145;
+			h = safeZoneH * 0.19401042;
+			style = 0;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+		class BRG_PlayerChipsBackgroundPlayer2
+		{
+			type = 0;
+			idc = Player2ChipsBackground;
+			x = safeZoneX + safeZoneW * 0.11273793;
+			y = safeZoneY + safeZoneH * 0.2890625;
+			w = safeZoneW * 0.06954613;
+			h = safeZoneH * 0.05729167;
+			style = 0;
+			text = "";
+			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+
+		/* Player 3*/
+		class BRG_PlayersInfoBackgroundPlayer3
+		{
+			type = 0;
+			idc = Player3Background;
+			x = safeZoneX + safeZoneW * 0.02708639;
+			y = safeZoneY + safeZoneH * 0.46223959;
+			w = safeZoneW * 0.1647145;
+			h = safeZoneH * 0.19401042;
+			style = 0;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+		class BRG_PlayerChipsBackgroundPlayer3
+		{
+			type = 0;
+			idc = Player3ChipsBackground;
+			x = safeZoneX + safeZoneW * 0.11273793;
+			y = safeZoneY + safeZoneH * 0.5078125;
+			w = safeZoneW * 0.06954613;
+			h = safeZoneH * 0.05729167;
+			style = 0;
+			text = "";
+			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+
+		/* Player 4*/
+		class BRG_PlayersInfoBackgroundPlayer4
+		{
+			type = 0;
+			idc = Player4Background;
+			x = safeZoneX + safeZoneW * 0.02708639;
+			y = safeZoneY + safeZoneH * 0.68098959;
+			w = safeZoneW * 0.1647145;
+			h = safeZoneH * 0.19401042;
+			style = 0;
+			text = "";
+			colorBackground[] = {0, 0, 0, 0.5};
+			colorText[] = {0, 0, 0, 1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+		class BRG_PlayerChipsBackgroundPlayer4
+		{
+			type = 0;
+			idc = Player4ChipsBackground;
+			x = safeZoneX + safeZoneW * 0.11273793;
+			y = safeZoneY + safeZoneH * 0.7265625;
+			w = safeZoneW * 0.06954613;
+			h = safeZoneH * 0.05729167;
+			style = 0;
+			text = "";
+			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
 			colorText[] = {0, 0, 0, 1};
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
@@ -588,36 +716,6 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class BRG_PlayersInfoBackgroundPlayer1
-		{
-			type = 0;
-			idc = Player1Background;
-			x = safeZoneX + safeZoneW * 0.02708639;
-			y = safeZoneY + safeZoneH * 0.02473959;
-			w = safeZoneW * 0.1647145;
-			h = safeZoneH * 0.19401042;
-			style = 0;
-			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class BRG_PlayerChipsBackgroundPlayer1
-		{
-			type = 0;
-			idc = Player1ChipsBackground;
-			x = safeZoneX + safeZoneW * 0.11273793;
-			y = safeZoneY + safeZoneH * 0.0703125;
-			w = safeZoneW * 0.06954613;
-			h = safeZoneH * 0.05729167;
-			style = 0;
-			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
 
 		/* Player 2 InfoPanel*/
 		class BRG_PlayInfoPlayer2
@@ -768,36 +866,6 @@ class SabaccGameInterface
 			text = "";
 			colorBackground[] = {0, 0, 0, 0};
 			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class BRG_PlayersInfoBackgroundPlayer2
-		{
-			type = 0;
-			idc = Player2Background;
-			x = safeZoneX + safeZoneW * 0.02708639;
-			y = safeZoneY + safeZoneH * 0.24348959;
-			w = safeZoneW * 0.1647145;
-			h = safeZoneH * 0.19401042;
-			style = 0;
-			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class BRG_PlayerChipsBackgroundPlayer2
-		{
-			type = 0;
-			idc = Player2ChipsBackground;
-			x = safeZoneX + safeZoneW * 0.11273793;
-			y = safeZoneY + safeZoneH * 0.2890625;
-			w = safeZoneW * 0.06954613;
-			h = safeZoneH * 0.05729167;
-			style = 0;
-			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
@@ -954,36 +1022,6 @@ class SabaccGameInterface
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-		class BRG_PlayersInfoBackgroundPlayer3
-		{
-			type = 0;
-			idc = Player3Background;
-			x = safeZoneX + safeZoneW * 0.02708639;
-			y = safeZoneY + safeZoneH * 0.46223959;
-			w = safeZoneW * 0.1647145;
-			h = safeZoneH * 0.19401042;
-			style = 0;
-			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class BRG_PlayerChipsBackgroundPlayer3
-		{
-			type = 0;
-			idc = Player3ChipsBackground;
-			x = safeZoneX + safeZoneW * 0.11273793;
-			y = safeZoneY + safeZoneH * 0.5078125;
-			w = safeZoneW * 0.06954613;
-			h = safeZoneH * 0.05729167;
-			style = 0;
-			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
 
 		/* Player 4 InfoPanel*/
 		class BRG_PlayInfoPlayer4
@@ -1134,36 +1172,6 @@ class SabaccGameInterface
 			text = "";
 			colorBackground[] = {0, 0, 0, 0};
 			colorText[] = {1, 1, 1, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class BRG_PlayersInfoBackgroundPlayer4
-		{
-			type = 0;
-			idc = Player4Background;
-			x = safeZoneX + safeZoneW * 0.02708639;
-			y = safeZoneY + safeZoneH * 0.68098959;
-			w = safeZoneW * 0.1647145;
-			h = safeZoneH * 0.19401042;
-			style = 0;
-			text = "";
-			colorBackground[] = {0, 0, 0, 0.5};
-			colorText[] = {0, 0, 0, 1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-		};
-		class BRG_PlayerChipsBackgroundPlayer4
-		{
-			type = 0;
-			idc = Player4ChipsBackground;
-			x = safeZoneX + safeZoneW * 0.11273793;
-			y = safeZoneY + safeZoneH * 0.7265625;
-			w = safeZoneW * 0.06954613;
-			h = safeZoneH * 0.05729167;
-			style = 0;
-			text = "";
-			colorBackground[] = {0.3, 0.8, 0.8, 0.5};
-			colorText[] = {0, 0, 0, 1};
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};

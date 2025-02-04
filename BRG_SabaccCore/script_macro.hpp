@@ -24,6 +24,7 @@
 /* Timer*/
 #define Timer 220401
 #define TimerBar 220402
+#define TimerBackground 220403
 
 /* MimiTable Card*/
 #define MimiTableCard1 220501
@@ -42,16 +43,22 @@
 /* Player Chips*/
 #define PlayerChipsReserveCounter 220701
 #define PlayerChipsInGameCounter 220702
+#define PlayerChipsReserve 220703
+#define PlayerChipsInGame 220704
+#define PlayerChipsReserveBackground 220705
+#define PlayerChipsInGameBackground 220706
 
 /* Player Card*/
 #define PlayerCard1 220801
 #define PlayerCard2 220802
+#define CardBackground 220803
 
 /* Player Bonus*/
 #define PlayerBonus1 220901
 #define PlayerBonus1Name 220902
 #define PlayerBonus2 220903
 #define PlayerBonus2Name 220904
+#define PlayerBonusBackground 220905
 
 /* Player 1 InfoPanel*/
 #define PlayInfoPlayer1 221101
