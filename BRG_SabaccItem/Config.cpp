@@ -13,7 +13,6 @@ class CfgPatches
 class cfgWeapons
 {
     class ItemCore;
-    class InventoryUavTerminalItem_Base_F;
     class BRG_SabaccTerminal : ItemCore
     {
         scope = 2;
@@ -22,7 +21,7 @@ class cfgWeapons
         model = "\a3\Drones_F\Weapons_F_Gamma\Items\UAV_controller_Civ_F";
         picture = "\BRG_SabaccItem\UI\Terminal_co.paa";
         descriptionShort = "$STR_Sabacc_Terminal_Description";
-        class ItemInfo : InventoryUavTerminalItem_Base_F
+        class ItemInfo
         {
             mass = 1;
         };
@@ -38,7 +37,7 @@ class cfgVehicles
         scopeCurator = 2;
         displayName = "$STR_Sabacc_Terminal_DisplayName";
         author = "Bragg";
-        model = "a3\Weapons_F\DummyItemHorizontal";
+        model = "\a3\Drones_F\Weapons_F_Gamma\Items\UAV_controller_Civ_F";
         editorCategory = "EdCat_Equipment";
         editorSubcategory = "EdSubcat_InventoryItems";
         vehicleClass = "Items";
