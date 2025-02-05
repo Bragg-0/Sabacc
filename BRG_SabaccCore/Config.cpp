@@ -19,10 +19,9 @@ class CfgFunctions
         tag = "BRG";
         class Functions_BonusInteraction
         {
-            F(getPlayerBonus);  // Todo
-            F(setPlayerBonus);  // Todo
-            F(usePlayerBonus);  // Todo
-            F(checkIfUseBonus); // Todo
+            F(getPlayerBonus);
+            F(setPlayerBonus);
+            F(usePlayerBonus);
         };
         class Functions_CardInteraction
         {
