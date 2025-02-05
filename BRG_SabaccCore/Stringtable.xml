@@ -73,4 +73,14 @@
             <FRENCH>Epuisement</FRENCH>
         </Key>
     </Package>
+    <Package name="Item">
+        <Key ID="STR_Sabacc_Terminal_DisplayName">
+            <Original>Sabacc Terminal</Original>
+            <French>Terminal de Sabacc</French>
+        </Key>
+        <Key ID="STR_Sabacc_Terminal_Description">
+            <Original>Use this terminal to play Sabacc</Original>
+            <French>Utilisez ce terminal pour jouer au Sabacc</French>
+        </Key>
+    </Package>
 </Project>

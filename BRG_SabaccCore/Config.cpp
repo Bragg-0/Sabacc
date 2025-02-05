@@ -2,9 +2,9 @@
 
 class CfgPatches
 {
-    class BRG_Sabacc
+    class BRG_SabaccCore
     {
-        name = "[BRG] Sabacc";
+        name = "[BRG] Sabacc - Core";
         author = "Bragg";
         requiredAddons[] = {};
         units[] = {};
