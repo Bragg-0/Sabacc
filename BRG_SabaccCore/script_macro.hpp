@@ -315,13 +315,6 @@
 #define getWhosTurn(_GameNumber) [_GameNumber] call BRG_fnc_getWhosTurn
 
 /**
- * BRG_fnc_setWhosTurn - Set player turn
- * @param _GameNumber <int> - Game number
- * @param _playerNumber <int> - Player number
- */
-#define setWhosTurn(_GameNumber, _playerNumber) [ _GameNumber, _playerNumber ] call BRG_fnc_setWhosTurn
-
-/**
  * BRG_fnc_startGame - Start game
  * @param _GameNumber <int> - Game number
  * @return <int> - Game status

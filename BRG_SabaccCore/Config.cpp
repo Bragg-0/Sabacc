@@ -47,9 +47,9 @@ class CfgFunctions
             F(getGameOrder);    // Todo
             F(getWhosNextTurn); // Todo
             F(getWhosTurn);     // Todo
+            F(init);            // Todo
             F(joinGame);        // Todo
             F(leaveGame);       // Todo
-            F(setWhosTurn);     // Todo
             F(startGame);       // Todo
             F(startRound);      // Todo
             F(startTurn);       // Todo
