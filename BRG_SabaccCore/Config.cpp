@@ -17,14 +17,16 @@ class CfgFunctions
     class BRG_Sabacc_Functions
     {
         tag = "BRG";
-        class Functions_BonusInteraction
+        class BonusInteraction
         {
+            file = "\BRG_SabaccCore\functions\BonusInteraction";
             F(getPlayerBonus);
             F(setPlayerBonus);
             F(usePlayerBonus);
         };
-        class Functions_CardInteraction
+        class CardInteraction
         {
+            file = "\BRG_SabaccCore\functions\CardInteraction";
             F(dropPlayerCard);
             F(getCards);
             F(getLastDropedCard);
@@ -32,15 +34,17 @@ class CfgFunctions
             F(getPlayerCard);
             F(setPlayerCard);
         };
-        class Functions_ChipsInteraction
+        class ChipsInteraction
         {
+            file = "\BRG_SabaccCore\functions\ChipsInteraction";
             F(addChips);
             F(getChips);
             F(setChips);
             F(subChips);
         };
-        class Functions_GameFlow
+        class GameFlow
         {
+            file = "\BRG_SabaccCore\functions\GameFlow";
             F(endGame);         // Todo
             F(endRound);        // Todo
             F(endTurn);         // Todo
@@ -54,8 +58,9 @@ class CfgFunctions
             F(startRound);      // Todo
             F(startTurn);       // Todo
         };
-        class Functions_GameInteraction
+        class GameInteraction
         {
+            file = "\BRG_SabaccCore\functions\GameInteraction";
             F(createNewGame);
             F(getGameCardDeck);
             F(getGameInfo);
@@ -66,8 +71,9 @@ class CfgFunctions
             F(setGamePlayersMax);
             F(setGameStatus);
         };
-        class Functions_PlayerInteraction
+        class PlayerInteraction
         {
+            file = "\BRG_SabaccCore\functions\PlayerInteraction";
             F(checkExistPlayer);
             F(getAllplayers);
             F(getGameNumberFromUnit);
@@ -75,8 +81,9 @@ class CfgFunctions
             F(getPlayerNumberFromUnit);
             F(setPlayerInfo);
         };
-        class Functions_UIInteraction
+        class UIInteraction
         {
+            file = "\BRG_SabaccCore\functions\UIInteraction";
             F(enableUI);
             F(getUIValue);
             F(setUIValue);

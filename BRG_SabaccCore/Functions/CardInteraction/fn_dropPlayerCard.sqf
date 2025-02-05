@@ -9,6 +9,6 @@ if (isNil "BRG_IndexCardDrop") then {
 };
 
 BRG_IndexCardDrop = BRG_IndexCardDrop + 1;
-publuicVariable "BRG_IndexCardDrop";
+publicVariable "BRG_IndexCardDrop";
 
 setPlayerCard(_GameNumber, BRG_IndexCardDrop, _cardType, _cardID);
