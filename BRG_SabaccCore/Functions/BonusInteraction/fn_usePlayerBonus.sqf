@@ -25,7 +25,7 @@ switch (_bonusType) do {
 
 	case 7: {}; // TODO - Détournement de fonds : Prenez 1 jeton dans le pot de chaque joueur et ajoutez-les à votre pot.
 
-	case 8: {}; // TODO - Tirage gratuit : Ignorez le coût pour tirer une carte à ce tour
+	case 8: {}; // TODO - Tirage gratuit : Ignorez le coût pour tirer une carte à ce tour.
 
 	case 9: {}; // TODO - Immunité : Les Bonus n’ont pas d’effet sur vous jusqu'à la prochaine révélation.
 

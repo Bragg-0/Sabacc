@@ -8,69 +8,141 @@
             <Original>Empty</Original>
             <FRENCH>Vide</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_0_Description">
+            <Original>No bonus.</Original>
+            <FRENCH>Pas de bonus.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_1">
             <Original>Additionad refund</Original>
             <FRENCH>Remboursement supplémentaire</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_1_Description">
+            <Original>Get 3 chips back.</Original>
+            <FRENCH>Récupérez 3 jetons.</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_2">
             <Original>Audit</Original>
             <FRENCH>Audit</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_2_Description">
+            <Original>Choose a player who has at least 3 chips in the pot. He must pay a 3 chips
+                tax.</Original>
+            <FRENCH>Choisissez un joueur qui a au moins 3 jetons de mise. Il doit payer une taxe de
+                3 jetons de mise.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_3">
             <Original>Big scam</Original>
             <FRENCH>Grosse arnaque</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_3_Description">
+            <Original>Set the impostor value to 6 until the next revelation.</Original>
+            <FRENCH>Fixez la valeur de l’imposteur à 6 jusqu’à la prochaine révélation.</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_4">
             <Original>Direct Transaction</Original>
             <FRENCH>Transaction directe</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_4_Description">
+            <Original>Choose a player and exchange your cards with him.</Original>
+            <FRENCH>Choisissez un joueur et échangez vos cartes avec lui.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_5">
             <Original>Discount</Original>
             <FRENCH>Réduction</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_5_Description">
+            <Original>The sylop value is set to 0 until the next revelation.</Original>
+            <FRENCH>La valeur du sylop est fixée à 0 jusqu’à la prochaine révélation.</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_6">
             <Original>Embargo</Original>
             <FRENCH>Embargo</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_6_Description">
+            <Original>The next player must pass his turn.</Original>
+            <FRENCH>Le prochain joueur doit passer son tour.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_7">
             <Original>Embezzlement</Original>
             <FRENCH>Détournement de fonds</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_7_Description">
+            <Original>Take 1 chip from each player's pot and add them to your pot.</Original>
+            <FRENCH>Prenez 1 jeton dans le pot de chaque joueur et ajoutez-les à votre pot.</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_8">
             <Original>Free Draw</Original>
             <FRENCH>Tirage gratuit</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_8_Description">
+            <Original>Ignore the cost to draw a card this turn.</Original>
+            <FRENCH>Ignorez le coût pour tirer une carte à ce tour.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_9">
             <Original>Immunity</Original>
             <FRENCH>Immunité</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_9_Description">
+            <Original>Bonuses have no effect on you until the next revelation.</Original>
+            <FRENCH>Les Bonus n’ont pas d’effet sur vous jusqu'à la prochaine révélation.</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_10">
             <Original>Raid</Original>
             <FRENCH>Raid</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_10_Description">
+            <Original>Other players in a holding position must pay a 2 chips tax.</Original>
+            <FRENCH>Les autres joueurs en position de tenir doivent payer une taxe de 2 jetons de
+                mise.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_11">
             <Original>Regulation</Original>
             <FRENCH>Régulation</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_11_Description">
+            <Original>Other players must pay a 1 chip tax.</Original>
+            <FRENCH>Les autres joueurs doivent payer une taxe de 1 jeton de mise.</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_12">
             <Original>Refund</Original>
             <FRENCH>Remboursement</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_12_Description">
+            <Original>Get 2 chips back.</Original>
+            <FRENCH>Récupérez 2 jetons</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_13">
             <Original>Revaluation</Original>
             <FRENCH>Réévaluation</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_13_Description">
+            <Original>Roll 2 dice. Choose a result as the strongest last hand of Sabacc.</Original>
+            <FRENCH>Lancez 2 dés. Choisissez un résultat comme dernière main la plus forte de
+                Sabacc.</FRENCH>
         </Key>
         <Key ID="STR_Sabacc_BONUS_14">
             <Original>Special duty</Original>
             <FRENCH>Droit spécial</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_14_Description">
+            <Original>Choose a player. He must pay a 2 chips tax.</Original>
+            <FRENCH>Choisissez un joueur. Il doit payer une taxe de 2 jetons de mise.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_15">
             <Original>Accounting Fraud</Original>
             <FRENCH>Fraude comptable</FRENCH>
         </Key>
+        <Key ID="STR_Sabacc_BONUS_15_Description">
+            <Original>The strength of the Sabacc hands is reversed until the next revelation.</Original>
+            <FRENCH>La force des mains de Sabacc est inversée jusqu’à la prochaine révélation.</FRENCH>
+        </Key>
         <Key ID="STR_Sabacc_BONUS_16">
             <Original>Exhaustion</Original>
             <FRENCH>Epuisement</FRENCH>
+        </Key>
+        <Key ID="STR_Sabacc_BONUS_16_Description">
+            <Original>Choose a player. He must drop his hand and draw again.</Original>
+            <FRENCH>Choisissez un joueur. Il doit défausser sa main et piocher à nouveau.</FRENCH>
         </Key>
     </Package>
     <Package name="Item">
