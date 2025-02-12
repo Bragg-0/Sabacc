@@ -19,7 +19,7 @@ class cfgWeapons
         displayName = "$STR_Sabacc_Terminal_DisplayName";
         author = "Bragg";
         model = "\a3\Drones_F\Weapons_F_Gamma\Items\UAV_controller_Civ_F";
-        picture = "\BRG_SabaccItem\UI\Terminal_co.paa";
+        picture = "\BRG_SabaccItem\UI\Terminal_ca.paa";
         descriptionShort = "$STR_Sabacc_Terminal_Description";
         class ItemInfo
         {
