@@ -20,3 +20,5 @@ private _NewGameInfo = GameInfo(_GameNumber, _GameStatus, _CardDeck, _GameOwner,
 
 BRG_SabaccGameInformation pushBack _NewGameInfo;
 publicVariable "BRG_SabaccGameInformation";
+
+_GameNumber
