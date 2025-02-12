@@ -14,4 +14,8 @@ for "_i" from 1 to "_gamePlayersMax" step 1 do {
 	};
 };
 
-false
+if (_player isEqualTo _unit) then {
+	true
+} else {
+	false
+};
