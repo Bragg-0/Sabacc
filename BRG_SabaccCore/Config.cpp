@@ -42,6 +42,12 @@ class CfgFunctions
             F(setChips);
             F(subChips);
         };
+        class DialogsInteraction
+        {
+            file = "\BRG_SabaccCore\functions\DialogsInteraction";
+            F(openGameInterface); // Todo
+            F(openGamesMenu);     // Todo
+        };
         class GameFlow
         {
             file = "\BRG_SabaccCore\functions\GameFlow";
@@ -50,7 +56,6 @@ class CfgFunctions
             F(endTurn);      // Todo
             F(getGameOrder); // Todo
             F(getWhosTurn);  // Todo
-            F(init);         // Todo
             F(joinGame);     // Todo
             F(leaveGame);    // Todo
             F(startGame);    // Todo
@@ -87,6 +92,11 @@ class CfgFunctions
             F(getUIValue);
             F(setUIValue);
             F(setUIVisible);
+        };
+        class Init
+        {
+            file = "\BRG_SabaccCore\functions";
+            F_PostInit(init);
         };
     };
 };

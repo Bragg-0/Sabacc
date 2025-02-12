@@ -35,6 +35,22 @@
 				Sylop
 			</French>
 		</key>
+		<key ID="STR_Sabacc_OpenGameTerminal">
+			<Original>
+				Open the game terminal
+			</Original>
+			<French>
+				Ouvrir le terminal de jeux
+			</French>
+		</key>
+		<key ID="STR_Sabacc_TitleGameTerminal">
+			<Original>
+				Sabacc terminal
+			</Original>
+			<French>
+				Terminal de Sabacc
+			</French>
+		</key>
 	</Package>
 	<Package name="Bonus">
 		<Key ID="STR_Sabacc_BONUS_0">
