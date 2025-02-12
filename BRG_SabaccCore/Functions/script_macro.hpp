@@ -5,6 +5,8 @@
 #define ColorBlack75 {0, 0, 0, 0.75}
 #define ColorDarkYellow {0.4, 0.4, 0, 1}
 #define ColorGreen50 {0, 0.2, 0, 0.5}
+#define ColorRed50 {0.2, 0, 0, 0.5}
+#define ColorRed {1, 0, 0, 1}
 #define ColorLightBlue {0, 1, 1, 1}
 #define ColorLightBlue50 {0, 0.8, 0.8, 0.5}
 #define ColorTransparent {0, 0, 0, 0}
@@ -21,6 +23,7 @@
 
 /* Sabacc Game Interface*/
 #define SabaccInterface 22
+#define SabaccMenu 23
 
 /* Player Card Button*/
 #define Card1Button 220001
@@ -141,6 +144,27 @@
 #define Card2Player4 221410
 #define Player4Background 221411
 #define Player4ChipsBackground 221412
+
+/* Games Menu Parms */
+#define MenuTitleParams 230001
+#define MenuBackgroundParams 230002
+#define MenuFrameParms 230003
+#define MenuGameParmsTitlePlayersQtt 230004
+#define MenuGameParmsPlayersQtt 230005
+#define MenuDeleteGameButton 230006
+
+/* Games Menu */
+#define MenuGamesList 230101
+#define MenuJoinGameButton 230102
+#define MenuCreateGameButton 230103
+#define MenuLeaveGameButton 230104
+
+/* Games Menu InfoPanel */
+#define MenuGameNameSelected 230201
+#define MenuPlayer1InGame 230202
+#define MenuPlayer2InGame 230203
+#define MenuPlayer3InGame 230204
+#define MenuPlayer4InGame 230205
 
 /**
  * BRG_fnc_createNewGame - Create new game

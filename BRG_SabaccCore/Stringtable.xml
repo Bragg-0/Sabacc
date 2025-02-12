@@ -2,6 +2,40 @@
 <Project name="BRG_Sabacc">
 	<Package name="UI">
 	</Package>
+	<Package name="Card">
+		<key ID="STR_Sabacc_CardType_Sand">
+			<Original>
+				Sand
+			</Original>
+			<French>
+				Sable
+			</French>
+		</key>
+		<key ID="STR_Sabacc_CardType_Blood">
+			<Original>
+				Blood
+			</Original>
+			<French>
+				Sang
+			</French>
+		</key>
+		<key ID="STR_Sabacc_Impostor">
+			<Original>
+				Impostor
+			</Original>
+			<French>
+				Imposteur
+			</French>
+		</key>
+		<key ID="STR_Sabacc_Sylop">
+			<Original>
+				Sylop
+			</Original>
+			<French>
+				Sylop
+			</French>
+		</key>
+	</Package>
 	<Package name="Bonus">
 		<Key ID="STR_Sabacc_BONUS_0">
 			<Original>
