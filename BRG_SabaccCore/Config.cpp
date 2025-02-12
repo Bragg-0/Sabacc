@@ -45,17 +45,17 @@ class CfgFunctions
         class GameFlow
         {
             file = "\BRG_SabaccCore\functions\GameFlow";
-            F(endGame);         // Todo
-            F(endRound);        // Todo
-            F(endTurn);         // Todo
-            F(getGameOrder);    // Todo
-            F(getWhosTurn);     // Todo
-            F(init);            // Todo
-            F(joinGame);        // Todo
-            F(leaveGame);       // Todo
-            F(startGame);       // Todo
-            F(startRound);      // Todo
-            F(startTurn);       // Todo
+            F(endGame);      // Todo
+            F(endRound);     // Todo
+            F(endTurn);      // Todo
+            F(getGameOrder); // Todo
+            F(getWhosTurn);  // Todo
+            F(init);         // Todo
+            F(joinGame);     // Todo
+            F(leaveGame);    // Todo
+            F(startGame);    // Todo
+            F(startRound);   // Todo
+            F(startTurn);    // Todo
         };
         class GameInteraction
         {
@@ -107,3 +107,4 @@ class CfgRemoteExec
 };
 
 #include "Dialogs\SabaccGameInterface.hpp"
+#include "Dialogs\SabaccGamesMenu.hpp"
