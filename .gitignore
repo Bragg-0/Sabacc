@@ -1,4 +1,28 @@
-*.backup
-*adc
-*.png
-/@*
+# HEMTT
+hemtt.exe
+.hemtt/missions/~*
+.hemttout/
+releases/
+
+# Textures
+Exports/
+*.spp
+*.spp.painter_lock
+*.psd
+
+# Music
+*.ogg
+*.wav
+
+# Pictures (sources live in assets_src/)
+# *.paa are tracked: the mod needs its textures
+
+# Other
+*.biprivatekey
+*.zip
+*.pbo
+*.sqfc
+
+# Arma 3 Server Configuration
+server.cfg
+*conf.ini

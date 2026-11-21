@@ -1,14 +1,56 @@
-# 🎲 Sabacc - Star Wars Game in Arma 3
+# 🎲 Sabacc - A Star Wars Game in Arma 3
 
-## 📄 License
+Play **Kessel Sabacc** with other players (or droids) from a terminal item, anywhere in Arma 3.
+Multiplayer-ready: the server runs the game and every player only receives their own hand.
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Bragg-0/Sabacc">Sabacc - Star Wars Game in Arma 3</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/Bragg-0">Bragg-0</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+## 🃏 How to play
 
-## ⚠️ Disclaimer
+1. Get a **Sabacc Terminal** (Arsenal / Zeus / editor: *Equipment > Inventory items*).
+2. Open it: ACE self-interaction *Equipment > Play Sabacc*, the scroll-wheel action without ACE, or the *Open Sabacc terminal* keybind (CBA controls).
+3. Create a table, wait for players (or **add droids**), then start the game.
 
-This mod is an unofficial resource and is in no way linked to Lucasfilm Ltd, the Walt Disney Company, Electronic Arts Inc. or Twentieth Century Fox. The "Star Wars" brand and all the intellectual content of this mod is based on the property of "The Walt Disney Company".
+Rules in short: you always hold one **Sand** and one **Blood** card. A pair is a *Sabacc* (the lower the better, two Sylops = *Pure Sabacc*); without a pair, the smallest difference wins. Each round has 3 turns: stand for free, or draw a card for 1 chip. **Shift tokens** (16 kinds) bend the rules once per game. The full rules are available in-game (*Rules* button).
 
-Star Wars © 1977 Twentieth Century Fox Film Corporation. All rights reserved. ™ & copyright 1977 Lucasfilm Ltd. Star Wars logo and all related characters, names and indicia are trademarks & copyright 2012 Lucasfilm Ltd. All rights reserved, or their respective trademark and copyright holders.
+## ⚙️ Settings (CBA, server-side)
+
+| Setting | Default |
+|---|---|
+| Starting chips | 8 |
+| Shift tokens per player | 2 |
+| Turn time | 60 s |
+| Results display time | 12 s |
+| Sabacc terminal required | yes |
+
+## 🛠️ Development
+
+Requires [HEMTT](https://hemtt.dev) and [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997). ACE3 is optional.
+
+```sh
+hemtt dev      # build + file patching
+hemtt launch   # build and start Arma 3 (Ctrl+Shift+B in VS Code)
+hemtt release  # signed release
+```
+
+| Addon | Content |
+|---|---|
+| `addons/main` | mod metadata, shared macros |
+| `addons/items` | the Sabacc Terminal item |
+| `addons/game` | game logic (`fnc_server*`), UI (`fnc_menu*`, `fnc_game*`), settings, textures |
+
+Texture sources (PNG) are in `assets_src/`, the game uses the `.paa` files in `addons/*/data/`.
+
+## 📜 Licence
+
+<a href="https://www.bohemia.net/community/licenses/arma-public-license-share-alike">
+  <img src="https://www.bohemia.net/assets/img/licenses/APL-SA.png" alt="licence">
+</a>
+
+The source code and **original** resources of this project are available under the [APL-SA](https://www.bohemia.net/community/licenses/arma-public-license-share-alike) license.
+
+> [!CAUTION]
+> This mod is an unofficial resource and is not affiliated with Lucasfilm Ltd, the Walt Disney Company, Electronic Arts Inc., or Twentieth Century Fox. The "Star Wars" brand and all intellectual content in this mod are based on the property of The Walt Disney Company.
+>
+> Star Wars © 1977 Twentieth Century Fox Film Corporation. All rights reserved. ™ & Copyright 1977 Lucasfilm Ltd. Star Wars logo and all related characters, names, and indicia are trademarks & copyright 2012 Lucasfilm Ltd. All rights reserved, or their respective trademark and copyright holders.
 
 ## 💬 Feedback
 

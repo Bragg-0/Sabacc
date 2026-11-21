@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Sabacc">
+    <Package name="Game">
+        <Key ID="STR_brg_game_ActionDrew">
+            <English>Drew a card</English>
+            <French>A pioché</French>
+        </Key>
+        <Key ID="STR_brg_game_ActionOpen">
+            <English>Play Sabacc</English>
+            <French>Jouer au Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_game_ActionStood">
+            <English>Stood</English>
+            <French>A passé</French>
+        </Key>
+        <Key ID="STR_brg_game_Blood">
+            <English>Blood</English>
+            <French>Sang</French>
+        </Key>
+        <Key ID="STR_brg_game_CardName">
+            <English>%1 %2</English>
+            <French>%2 de %1</French>
+        </Key>
+        <Key ID="STR_brg_game_ChoiceImpostor">
+            <English>Your %1 Impostor takes the value of the die you choose.</English>
+            <French>Votre Imposteur de %1 prend la valeur du dé choisi.</French>
+        </Key>
+        <Key ID="STR_brg_game_ChoicePriority">
+            <English>Re-evaluation: the Sabacc of the chosen value becomes the strongest after the Pure Sabacc.</English>
+            <French>Réévaluation : le Sabacc de la valeur choisie devient le plus fort après le Sabacc pur.</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectFreeDraw">
+            <English>Next draw is free</English>
+            <French>Prochaine pioche gratuite</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectImpostorSix">
+            <English>Impostors are worth 6</English>
+            <French>Les Imposteurs valent 6</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectInverted">
+            <English>Sabacc order reversed</English>
+            <French>Force des Sabacc inversée</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectPriority">
+            <English>Sabacc of %1 is priority</English>
+            <French>Sabacc de %1 prioritaire</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectSylopZero">
+            <English>Sylops are worth 0</English>
+            <French>Les Sylops valent 0</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorAlreadySeated">
+            <English>You are already seated at a table.</English>
+            <French>Vous êtes déjà assis à une table.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorAlreadyStarted">
+            <English>The game has already started.</English>
+            <French>La partie a déjà commencé.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorAuditChips">
+            <English>%1 has fewer than 3 chips.</English>
+            <French>%1 a moins de 3 jetons.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorChoiceFirst">
+            <English>Choose a die first.</English>
+            <French>Choisissez d'abord un dé.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorEmptyPile">
+            <English>This pile is empty.</English>
+            <French>Cette pile est vide.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorInvalidTarget">
+            <English>Invalid target.</English>
+            <French>Cible invalide.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorNoChips">
+            <English>You have no chip left to draw. Stand instead.</English>
+            <French>Vous n'avez plus de jeton pour piocher. Passez votre tour.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorNotEnoughPlayers">
+            <English>At least 2 players are needed.</English>
+            <French>Il faut au moins 2 joueurs.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorNotOwner">
+            <English>Only the host can start the game.</English>
+            <French>Seul l'hôte peut lancer la partie.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorNotYourTurn">
+            <English>It is not your turn.</English>
+            <French>Ce n'est pas votre tour.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorShiftBeforeAction">
+            <English>Shift tokens are used before drawing.</English>
+            <French>Les jetons bonus s'utilisent avant de piocher.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorShiftUsed">
+            <English>Only one shift token per turn.</English>
+            <French>Un seul jeton bonus par tour.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorTableFull">
+            <English>This table is full.</English>
+            <French>Cette table est complète.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorTableNotFound">
+            <English>This table no longer exists.</English>
+            <French>Cette table n'existe plus.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorTargetImmune">
+            <English>%1 is immune to shift tokens.</English>
+            <French>%1 est immunisé contre les bonus.</French>
+        </Key>
+        <Key ID="STR_brg_game_GameBloodDeck">
+            <English>Blood deck</English>
+            <French>Pioche Sang</French>
+        </Key>
+        <Key ID="STR_brg_game_GameBloodDiscard">
+            <English>Blood discard</English>
+            <French>Défausse Sang</French>
+        </Key>
+        <Key ID="STR_brg_game_GameChips">
+            <English>Chips</English>
+            <French>Jetons</French>
+        </Key>
+        <Key ID="STR_brg_game_GameDealer">
+            <English>Dealer</English>
+            <French>Donneur</French>
+        </Key>
+        <Key ID="STR_brg_game_GameDrawnCard">
+            <English>Drawn</English>
+            <French>Piochée</French>
+        </Key>
+        <Key ID="STR_brg_game_GameHost">
+            <English>Host</English>
+            <French>Hôte</French>
+        </Key>
+        <Key ID="STR_brg_game_GameKeepHand">
+            <English>Keep my hand</English>
+            <French>Garder ma main</French>
+        </Key>
+        <Key ID="STR_brg_game_GameLeave">
+            <English>Leave table</English>
+            <French>Quitter la table</French>
+        </Key>
+        <Key ID="STR_brg_game_GameLeaveConfirm">
+            <English>Forfeit? Click again</English>
+            <French>Abandonner ? Recliquez</French>
+        </Key>
+        <Key ID="STR_brg_game_GamePot">
+            <English>Pot</English>
+            <French>Pot</French>
+        </Key>
+        <Key ID="STR_brg_game_GameRestart">
+            <English>New game</English>
+            <French>Nouvelle partie</French>
+        </Key>
+        <Key ID="STR_brg_game_GameRound">
+            <English>Round %1</English>
+            <French>Manche %1</French>
+        </Key>
+        <Key ID="STR_brg_game_GameSandDeck">
+            <English>Sand deck</English>
+            <French>Pioche Sable</French>
+        </Key>
+        <Key ID="STR_brg_game_GameSandDiscard">
+            <English>Sand discard</English>
+            <French>Défausse Sable</French>
+        </Key>
+        <Key ID="STR_brg_game_GameShifts">
+            <English>Shifts</English>
+            <French>Bonus</French>
+        </Key>
+        <Key ID="STR_brg_game_GameShiftsTitle">
+            <English>Shift tokens</English>
+            <French>Jetons bonus</French>
+        </Key>
+        <Key ID="STR_brg_game_GameStand">
+            <English>Stand</English>
+            <French>Passer</French>
+        </Key>
+        <Key ID="STR_brg_game_GameTakeDrawn">
+            <English>Take the card</English>
+            <French>Prendre la carte</French>
+        </Key>
+        <Key ID="STR_brg_game_GameTarget">
+            <English>Target</English>
+            <French>Cibler</French>
+        </Key>
+        <Key ID="STR_brg_game_GameTimer">
+            <English>%1 s</English>
+            <French>%1 s</French>
+        </Key>
+        <Key ID="STR_brg_game_GameTurn">
+            <English>Turn %1/%2</English>
+            <French>Tour %1/%2</French>
+        </Key>
+        <Key ID="STR_brg_game_GameYou">
+            <English>You</English>
+            <French>Vous</French>
+        </Key>
+        <Key ID="STR_brg_game_HandDiff">
+            <English>Difference of %1</English>
+            <French>Écart de %1</French>
+        </Key>
+        <Key ID="STR_brg_game_HandPreview">
+            <English>Hand: %1</English>
+            <French>Main : %1</French>
+        </Key>
+        <Key ID="STR_brg_game_HandPure">
+            <English>Pure Sabacc</English>
+            <French>Sabacc pur</French>
+        </Key>
+        <Key ID="STR_brg_game_HandSabacc">
+            <English>Sabacc of %1</English>
+            <French>Sabacc de %1</French>
+        </Key>
+        <Key ID="STR_brg_game_HandUnknown">
+            <English>Impostor: value rolled at the reveal</English>
+            <French>Imposteur : valeur tirée aux dés à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_game_HintGameStarted">
+            <English>Sabacc: your game has started. Open the terminal to play.</English>
+            <French>Sabacc : votre partie a commencé. Ouvrez le terminal pour jouer.</French>
+        </Key>
+        <Key ID="STR_brg_game_HintYourTurn">
+            <English>Sabacc: it's your turn!</English>
+            <French>Sabacc : c'est à vous de jouer !</French>
+        </Key>
+        <Key ID="STR_brg_game_Impostor">
+            <English>Impostor</English>
+            <French>Imposteur</French>
+        </Key>
+        <Key ID="STR_brg_game_KeybindOpen">
+            <English>Open Sabacc terminal</English>
+            <French>Ouvrir le terminal de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_game_KeybindOpenTip">
+            <English>Opens the Sabacc tables menu or your current game.</English>
+            <French>Ouvre le menu des tables de Sabacc ou votre partie en cours.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogCreated">
+            <English>%1 created the table.</English>
+            <French>%1 a créé la table.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogDiscard">
+            <English>%1 discards the %2.</English>
+            <French>%1 défausse le %2.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogDrawDeck">
+            <English>%1 draws from the %2 deck.</English>
+            <French>%1 pioche dans la pile %2.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogDrawDiscard">
+            <English>%1 takes the %2 from the discard.</English>
+            <French>%1 prend le %2 dans la défausse.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogEliminated">
+            <English>%1 is eliminated.</English>
+            <French>%1 est éliminé.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogEmbargoSkip">
+            <English>%1 is under embargo and skips the turn.</English>
+            <French>%1 est sous embargo et passe son tour.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogGameOver">
+            <English>%1 wins the game!</English>
+            <French>%1 remporte la partie !</French>
+        </Key>
+        <Key ID="STR_brg_game_LogGameOverDraw">
+            <English>The game ends with no winner.</English>
+            <French>La partie se termine sans vainqueur.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogGameStarted">
+            <English>The game begins!</English>
+            <French>La partie commence !</French>
+        </Key>
+        <Key ID="STR_brg_game_LogImpostor">
+            <English>%1 sets their %2 Impostor to %3.</English>
+            <French>%1 fixe son Imposteur de %2 à %3.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogJoined">
+            <English>%1 joined the table.</English>
+            <French>%1 a rejoint la table.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogLeft">
+            <English>%1 left the table.</English>
+            <French>%1 a quitté la table.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogPriority">
+            <English>%1 makes the Sabacc of %2 the priority.</English>
+            <French>%1 rend le Sabacc de %2 prioritaire.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogReveal">
+            <English>Hands are revealed!</English>
+            <French>Révélation des mains !</French>
+        </Key>
+        <Key ID="STR_brg_game_LogRoundStarted">
+            <English>Round %1, dealer: %2.</English>
+            <French>Manche %1, donneur : %2.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogShift">
+            <English>%1 uses "%2".</English>
+            <French>%1 utilise « %2 ».</French>
+        </Key>
+        <Key ID="STR_brg_game_LogShiftTarget">
+            <English>%1 uses "%2" on %3.</English>
+            <French>%1 utilise « %2 » sur %3.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogStand">
+            <English>%1 stands.</English>
+            <French>%1 passe.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogTimeout">
+            <English>%1 ran out of time.</English>
+            <French>%1 n'a pas joué à temps.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogWinner">
+            <English>%1 wins the round (%2).</English>
+            <French>%1 remporte la manche (%2).</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuAddBot">
+            <English>Add droid</English>
+            <French>Ajouter un droïde</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuAddBotTip">
+            <English>Seat a computer player at your table (to play or test alone).</English>
+            <French>Asseoir un joueur contrôlé par l'ordinateur à votre table (pour jouer ou tester seul).</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuBack">
+            <English>Back</English>
+            <French>Retour</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuClose">
+            <English>Close</English>
+            <French>Fermer</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuCloseShort">
+            <English>X</English>
+            <French>X</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuCreate">
+            <English>Create</English>
+            <French>Créer</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuDefaultName">
+            <English>%1's table</English>
+            <French>Table de %1</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuHostHint">
+            <English>Start the game when everyone is seated.</English>
+            <French>Lancez la partie quand tout le monde est assis.</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuJoin">
+            <English>Join</English>
+            <French>Rejoindre</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuLeave">
+            <English>Leave</English>
+            <French>Quitter</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuNewTable">
+            <English>New table</English>
+            <French>Nouvelle table</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuNoTables">
+            <English>No table yet. Create the first one!</English>
+            <French>Aucune table pour l'instant. Créez la première !</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuNotSeated">
+            <English>You are not seated at any table.</English>
+            <French>Vous n'êtes assis à aucune table.</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuOpenGame">
+            <English>Open game</English>
+            <French>Voir la partie</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuOwner">
+            <English>Host: %1</English>
+            <French>Hôte : %1</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuPlayers">
+            <English>Players</English>
+            <French>Joueurs</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuPlayersCount">
+            <English>%1 players</English>
+            <French>%1 joueurs</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuRules">
+            <English>Rules</English>
+            <French>Règles</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuSeatedAt">
+            <English>Your table: &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt; (%2).</English>
+            <French>Votre table : &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt; (%2).</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuSelectTable">
+            <English>Select a table to see its players, or create your own.</English>
+            <French>Sélectionnez une table pour voir ses joueurs, ou créez la vôtre.</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuStart">
+            <English>Start game</English>
+            <French>Lancer</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuTables">
+            <English>Tables</English>
+            <French>Tables</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuTitle">
+            <English>SABACC TERMINAL</English>
+            <French>TERMINAL DE SABACC</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuWaitingHost">
+            <English>Waiting for the host to start.</English>
+            <French>En attente du lancement par l'hôte.</French>
+        </Key>
+        <Key ID="STR_brg_game_RulesText">
+            <English>&lt;t size='1.2' font='PuristaBold'&gt;Kessel Sabacc&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Goal&lt;/t&gt;&lt;br/&gt;Be the last player with chips.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Your hand&lt;/t&gt;&lt;br/&gt;Always one &lt;t color='#f0c870'&gt;Sand&lt;/t&gt; card and one &lt;t color='#ff6060'&gt;Blood&lt;/t&gt; card. A pair is a &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;: the lower the pair, the better (1/1 is best). Two Sylops are a &lt;t font='PuristaBold'&gt;Pure Sabacc&lt;/t&gt;, the best hand. Without a pair, the smallest difference between your two cards wins.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Special cards&lt;/t&gt;&lt;br/&gt;Sylop: takes the value of your other card.&lt;br/&gt;Impostor: at the reveal you roll two dice and choose its value.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;A round&lt;/t&gt;&lt;br/&gt;3 turns. On your turn, either stand (free), or draw a card from a deck or a discard pile for 1 chip, then keep your hand or swap the card of the same suit. Before acting you may use one shift token.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;The reveal&lt;/t&gt;&lt;br/&gt;Best hand: you get your pot back. Others lose their pot and pay 1 chip with a Sabacc, otherwise the difference between their cards. No chips left: eliminated.</English>
+            <French>&lt;t size='1.2' font='PuristaBold'&gt;Sabacc de Kessel&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;But&lt;/t&gt;&lt;br/&gt;Être le dernier joueur à avoir des jetons.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Votre main&lt;/t&gt;&lt;br/&gt;Toujours une carte &lt;t color='#f0c870'&gt;Sable&lt;/t&gt; et une carte &lt;t color='#ff6060'&gt;Sang&lt;/t&gt;. Une paire est un &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt; : plus la paire est basse, meilleure elle est (1/1 est la meilleure). Deux Sylops forment un &lt;t font='PuristaBold'&gt;Sabacc pur&lt;/t&gt;, la meilleure main. Sans paire, le plus petit écart entre vos deux cartes l'emporte.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Cartes spéciales&lt;/t&gt;&lt;br/&gt;Sylop : prend la valeur de votre autre carte.&lt;br/&gt;Imposteur : à la révélation, vous lancez deux dés et choisissez sa valeur.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Une manche&lt;/t&gt;&lt;br/&gt;3 tours. À votre tour, passez (gratuit) ou piochez une carte dans une pioche ou une défausse pour 1 jeton, puis gardez votre main ou échangez la carte de même couleur. Avant d'agir, vous pouvez utiliser un jeton bonus.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;La révélation&lt;/t&gt;&lt;br/&gt;Meilleure main : vous récupérez votre pot. Les autres perdent leur pot et paient 1 jeton avec un Sabacc, sinon l'écart entre leurs cartes. Plus de jetons : éliminé.</French>
+        </Key>
+        <Key ID="STR_brg_game_Sand">
+            <English>Sand</English>
+            <French>Sable</French>
+        </Key>
+        <Key ID="STR_brg_game_SeatChoosing">
+            <English>Choosing...</English>
+            <French>Choisit...</French>
+        </Key>
+        <Key ID="STR_brg_game_SeatImmune">
+            <English>Immune to shifts</English>
+            <French>Immunisé contre les bonus</French>
+        </Key>
+        <Key ID="STR_brg_game_SeatLeft">
+            <English>Left the table</English>
+            <French>A quitté la table</French>
+        </Key>
+        <Key ID="STR_brg_game_SeatLoser">
+            <English>Loses %1</English>
+            <French>Perd %1</French>
+        </Key>
+        <Key ID="STR_brg_game_SeatOut">
+            <English>Eliminated</English>
+            <French>Éliminé</French>
+        </Key>
+        <Key ID="STR_brg_game_SeatWinner">
+            <English>Wins, gets back %1</English>
+            <French>Gagne, récupère %1</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingRequireTerminal">
+            <English>Require a Sabacc terminal</English>
+            <French>Terminal de Sabacc requis</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingRequireTerminalTip">
+            <English>Players need the Sabacc terminal item in their inventory to play.</English>
+            <French>Les joueurs doivent avoir l'objet Terminal de Sabacc dans leur inventaire pour jouer.</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingResultsTime">
+            <English>Results display time (s)</English>
+            <French>Durée d'affichage des résultats (s)</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingResultsTimeTip">
+            <English>How long the revealed hands stay on screen before the next round.</English>
+            <French>Temps pendant lequel les mains révélées restent affichées avant la manche suivante.</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingShifts">
+            <English>Shift tokens per player</English>
+            <French>Bonus par joueur</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingShiftsTip">
+            <English>Number of shift tokens dealt to each player for the whole game.</English>
+            <French>Nombre de jetons bonus distribués à chaque joueur pour toute la partie.</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingStartChips">
+            <English>Starting chips</English>
+            <French>Jetons de départ</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingStartChipsTip">
+            <English>Chips each player starts the game with.</English>
+            <French>Nombre de jetons de chaque joueur en début de partie.</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingTurnTime">
+            <English>Turn time (s)</English>
+            <French>Temps par tour (s)</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingTurnTimeTip">
+            <English>After this delay the player automatically stands.</English>
+            <French>Passé ce délai, le joueur passe automatiquement son tour.</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingsAccess">
+            <English>Access</English>
+            <French>Accès</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingsRules">
+            <English>Rules</English>
+            <French>Règles</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift10Desc">
+            <English>Every other player whose last move was to stand pays a tax of 2 chips.</English>
+            <French>Les autres joueurs qui ont passé leur dernier tour doivent payer une taxe de 2 jetons.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift10Name">
+            <English>Raid</English>
+            <French>Raid</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift11Desc">
+            <English>Every other player pays a tax of 1 chip.</English>
+            <French>Les autres joueurs doivent payer une taxe de 1 jeton.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift11Name">
+            <English>Regulation</English>
+            <French>Régulation</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift12Desc">
+            <English>Get 2 chips back from your pot.</English>
+            <French>Récupérez 2 jetons de votre pot.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift12Name">
+            <English>Refund</English>
+            <French>Remboursement</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift13Desc">
+            <English>Roll 2 dice and pick one: the Sabacc of that value becomes the strongest after the Pure Sabacc.</English>
+            <French>Lancez 2 dés et choisissez-en un : le Sabacc de cette valeur devient le plus fort après le Sabacc pur.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift13Name">
+            <English>Re-evaluation</English>
+            <French>Réévaluation</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift14Desc">
+            <English>Choose a player. They pay a tax of 2 chips.</English>
+            <French>Choisissez un joueur. Il doit payer une taxe de 2 jetons.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift14Name">
+            <English>Special levy</English>
+            <French>Droit spécial</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift15Desc">
+            <English>The strength of Sabacc hands is reversed until the reveal (6/6 beats 1/1).</English>
+            <French>La force des mains de Sabacc est inversée jusqu'à la révélation (6/6 bat 1/1).</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift15Name">
+            <English>Cooked books</English>
+            <French>Fraude comptable</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift16Desc">
+            <English>Choose a player. They discard their hand and draw a new one.</English>
+            <French>Choisissez un joueur. Il doit défausser sa main et piocher à nouveau.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift16Name">
+            <English>Exhaustion</English>
+            <French>Épuisement</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift1Desc">
+            <English>Get 3 chips back from your pot.</English>
+            <French>Récupérez 3 jetons de votre pot.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift1Name">
+            <English>Extra refund</English>
+            <French>Remboursement supplémentaire</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift2Desc">
+            <English>Choose a player with at least 3 chips. They pay a tax of 3 chips.</English>
+            <French>Choisissez un joueur qui a au moins 3 jetons. Il doit payer une taxe de 3 jetons.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift2Name">
+            <English>Audit</English>
+            <French>Audit</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift3Desc">
+            <English>Impostors are worth 6 until the reveal.</English>
+            <French>La valeur des Imposteurs est fixée à 6 jusqu'à la révélation.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift3Name">
+            <English>Major fraud</English>
+            <French>Grosse arnaque</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift4Desc">
+            <English>Choose a player and swap your hand with theirs.</English>
+            <French>Choisissez un joueur et échangez vos cartes avec lui.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift4Name">
+            <English>Direct transaction</English>
+            <French>Transaction directe</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift5Desc">
+            <English>Sylops are worth 0 until the reveal.</English>
+            <French>La valeur des Sylops est fixée à 0 jusqu'à la révélation.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift5Name">
+            <English>Markdown</English>
+            <French>Réduction</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift6Desc">
+            <English>The next player must skip their turn.</English>
+            <French>Le prochain joueur doit passer son tour.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift6Name">
+            <English>Embargo</English>
+            <French>Embargo</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift7Desc">
+            <English>Take 1 chip from every other player's pot and add it to yours.</English>
+            <French>Prenez 1 jeton dans le pot de chaque joueur et ajoutez-les à votre pot.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift7Name">
+            <English>Embezzlement</English>
+            <French>Détournement de fonds</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift8Desc">
+            <English>Your next draw this round costs nothing.</English>
+            <French>Votre prochaine pioche de la manche est gratuite.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift8Name">
+            <English>Free draw</English>
+            <French>Tirage gratuit</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift9Desc">
+            <English>Shift tokens have no effect on you until the reveal.</English>
+            <French>Les bonus n'ont pas d'effet sur vous jusqu'à la révélation.</French>
+        </Key>
+        <Key ID="STR_brg_game_Shift9Name">
+            <English>Immunity</English>
+            <French>Immunité</French>
+        </Key>
+        <Key ID="STR_brg_game_ShiftHint">
+            <English>Hover a token to read its effect. One per turn, before drawing or standing. Each token can be used once per game.</English>
+            <French>Survolez un jeton pour lire son effet. Un par tour, avant de piocher ou de passer. Chaque jeton ne sert qu'une fois par partie.</French>
+        </Key>
+        <Key ID="STR_brg_game_ShiftNone">
+            <English>No shift token left.</English>
+            <French>Plus aucun jeton bonus.</French>
+        </Key>
+        <Key ID="STR_brg_game_ShiftTargeting">
+            <English>%1: choose a target (click the token again to cancel).</English>
+            <French>%1 : choisissez une cible (recliquez sur le jeton pour annuler).</French>
+        </Key>
+        <Key ID="STR_brg_game_ShiftUsedThisTurn">
+            <English>You already used a shift token this turn.</English>
+            <French>Vous avez déjà utilisé un jeton bonus ce tour-ci.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusDiscard">
+            <English>Keep your hand or take the drawn card.</English>
+            <French>Gardez votre main ou prenez la carte piochée.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusEliminated">
+            <English>You are out of chips. You can keep watching or leave the table.</English>
+            <French>Vous n'avez plus de jetons. Vous pouvez regarder la suite ou quitter la table.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusGameOver">
+            <English>Game over: %1 wins!</English>
+            <French>Partie terminée : %1 l'emporte !</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusGameOverDraw">
+            <English>Game over: no winner.</English>
+            <French>Partie terminée : aucun vainqueur.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusImpostorChoice">
+            <English>Reveal: choose the value of your Impostor.</English>
+            <French>Révélation : choisissez la valeur de votre Imposteur.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusLobby">
+            <English>Waiting</English>
+            <French>En attente</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusOver">
+            <English>Finished</English>
+            <French>Terminée</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusPlaying">
+            <English>In game</English>
+            <French>En jeu</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusPriorityChoice">
+            <English>Re-evaluation: choose a die.</English>
+            <French>Réévaluation : choisissez un dé.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusResults">
+            <English>Hands revealed!</English>
+            <French>Mains révélées !</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusTargeting">
+            <English>Choose a target with the Target buttons.</English>
+            <French>Choisissez une cible avec les boutons Cibler.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusTurnOf">
+            <English>%1 is playing...</English>
+            <French>%1 joue...</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusWaitingChoices">
+            <English>Reveal: waiting for the other players' Impostors...</English>
+            <French>Révélation : en attente des Imposteurs des autres joueurs...</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusYourTurn">
+            <English>Your turn: draw a card (1 chip) or stand.</English>
+            <French>À vous : piochez une carte (1 jeton) ou passez.</French>
+        </Key>
+        <Key ID="STR_brg_game_Sylop">
+            <English>Sylop</English>
+            <French>Sylop</French>
+        </Key>
+        <Key ID="STR_brg_game_TooltipDrawDeck">
+            <English>Draw the top card (1 chip)</English>
+            <French>Piocher la carte du dessus (1 jeton)</French>
+        </Key>
+        <Key ID="STR_brg_game_TooltipDrawDiscard">
+            <English>Take this card (1 chip)</English>
+            <French>Prendre cette carte (1 jeton)</French>
+        </Key>
+        <Key ID="STR_brg_game_TooltipSwap">
+            <English>Replace this card with the drawn card</English>
+            <French>Remplacer cette carte par la carte piochée</French>
+        </Key>
+    </Package>
+</Project>
