@@ -10,7 +10,7 @@ Multiplayer-ready: the server runs the game and every player only receives their
 2. Open it: ACE self-interaction *Equipment > Play Nar Shaddaa Sabacc*, the scroll-wheel action without ACE, or the *Open the Nar Shaddaa Sabacc terminal* keybind (CBA controls).
 3. Create a table, wait for players (or **add droids**), then start the game.
 
-Rules in short: you always hold one **Amber** and one **Ember** card. A pair is a *Sabacc* (the lower the better, two Sylops = *Pure Sabacc*); without a pair, the smallest difference wins. Each round has 3 turns: stand for free, or draw a card for 1 chip. **Shift tokens** (16 kinds) bend the rules once per game. The full rules are available in-game (*Rules* button) and in the rulebook: English [Markdown](docs/RULES.md) / [PDF](docs/RULES.pdf), French [Markdown](docs/REGLES.md) / [PDF](docs/REGLES.pdf).
+Rules in short: you always hold one **Amber** and one **Ember** card. A pair is a *Sabacc* (the lower the better, two Sylops = *Pure Sabacc*); without a pair, the smallest difference wins. Each round has 3 turns: stand for free, or draw a card for 1 chip. **Shift tokens** (16 kinds) bend the rules once per game. The full rules are available in-game (*Rules* button) and in the rulebook: English [Markdown](rules/en_us.md), French [Markdown](rules/fr_fr.md).
 
 ## ⚙️ Settings (CBA, server-side)
 
