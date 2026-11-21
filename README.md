@@ -37,8 +37,6 @@ hemtt release  # signed release
 | `addons/items` | the Sabacc Terminal item |
 | `addons/game` | game logic (`fnc_server*`), UI (`fnc_menu*`, `fnc_game*`), settings, textures |
 
-Texture sources (PNG) are in `assets_src/`, the game uses the `.paa` files in `addons/*/data/`.
-
 ## 📜 Licence
 
 <a href="https://www.bohemia.net/community/licenses/arma-public-license-share-alike">

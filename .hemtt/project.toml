@@ -39,3 +39,4 @@ parameters = [
     "-noPause",
     "-noPauseAudio",
 ]
+mission = "test.Stratis"

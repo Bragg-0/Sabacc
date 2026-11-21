@@ -29,7 +29,10 @@ private _fnc_highlighted = {
 private _myTurn = _current == _myUid;
 private _myPanel = _display getVariable "myPanel";
 private _myHighlight = [_myUid] call _fnc_highlighted;
-_myPanel ctrlSetBackgroundColor ([COLOR_PANEL_LIGHT, [COLOR_ACTIVE, COLOR_WIN] select _showResults] select _myHighlight);
+private _myColor = [COLOR_PANEL_LIGHT, [COLOR_ACTIVE, COLOR_WIN] select _showResults] select _myHighlight;
+private _myIndex = (_state get "players") findIf {(_x get "uid") == _myUid};
+if (_myIndex >= 0 && {((_state get "players") select _myIndex) get "out"}) then {_myColor = COLOR_OUT};
+_myPanel ctrlSetBackgroundColor _myColor;
 _myPanel ctrlSetFade ([0, 0.5] select (_myHighlight && GVAR(pulse)));
 _myPanel ctrlCommit 0.5;
 

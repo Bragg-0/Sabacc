@@ -42,6 +42,7 @@ switch (_type) do {
     case "stand": {
         if (_drawn != CARD_NONE) exitWith {};
         _player set ["lastAction", "stand"];
+        _table set ["standStreak", (_table getOrDefault ["standStreak", 0]) + 1];
         [_table, LSTRING(LogStand), [_player get "name"]] call FUNC(serverLog);
         [_table] call FUNC(serverEndTurn);
     };
@@ -69,6 +70,7 @@ switch (_type) do {
         };
         _player set ["drawn", _card];
         _player set ["lastAction", "draw"];
+        _table set ["standStreak", 0];
 
         if (_fromDiscard) then {
             [_table, LSTRING(LogDrawDiscard), [_player get "name", ["card", _card]]] call FUNC(serverLog);

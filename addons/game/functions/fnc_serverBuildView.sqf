@@ -31,7 +31,7 @@ private _players = (_table get "players") apply {
         ["sand", [_x get "sand", _visible] call _fnc_hide],
         ["blood", [_x get "blood", _visible] call _fnc_hide],
         ["drawn", [_x get "drawn", _isMe] call _fnc_hide],
-        ["shifts", [[], +(_x get "shifts")] select _isMe],
+        ["shifts", +(_x get "shifts")], // shift tokens are public (face up on the table)
         ["shiftCount", count (_x get "shifts")],
         ["shiftUsed", _x get "shiftUsed"],
         ["out", _x get "out"],
@@ -39,7 +39,9 @@ private _players = (_table get "players") apply {
         ["immune", _x get "immune"],
         ["lastAction", _x get "lastAction"],
         ["pending", [[], +(_x get "pending")] select _isMe],
-        ["waiting", (_x get "pending") isNotEqualTo []]
+        ["waiting", (_x get "pending") isNotEqualTo []],
+        ["roundsWon", _x getOrDefault ["roundsWon", 0]],
+        ["eliminatedRound", _x getOrDefault ["eliminatedRound", -1]]
     ]
 };
 

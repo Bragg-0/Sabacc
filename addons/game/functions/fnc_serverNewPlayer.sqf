@@ -33,5 +33,7 @@ createHashMapFromArray [
     ["lastAction", ""],
     ["pending", []],        // [type, dice, suit] while a dice choice is expected
     ["queue", []],          // impostor choices still to make at the reveal
-    ["resolved", [-1, -1]]  // impostor values chosen at the reveal [sand, blood]
+    ["resolved", [-1, -1]], // impostor values chosen at the reveal [sand, blood]
+    ["roundsWon", 0],       // end screen statistics
+    ["eliminatedRound", -1]
 ]

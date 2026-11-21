@@ -32,6 +32,8 @@ private _perPlayer = (round GVAR(shiftsPerPlayer)) min (floor (SHIFT_COUNT / cou
     _x set ["chips", round GVAR(startChips)];
     _x set ["pot", 0];
     _x set ["out", false];
+    _x set ["roundsWon", 0];
+    _x set ["eliminatedRound", -1];
     _x set ["shifts", _pool select [_forEachIndex * _perPlayer, _perPlayer]];
 } forEach _players;
 

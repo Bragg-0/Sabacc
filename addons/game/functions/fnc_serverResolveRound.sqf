@@ -45,6 +45,7 @@ private _results = [];
     if (_won) then {
         _delta = _player get "pot";
         _player set ["chips", (_player get "chips") + _delta];
+        _player set ["roundsWon", (_player getOrDefault ["roundsWon", 0]) + 1];
         [_table, LSTRING(LogWinner), [_player get "name", ["msg", _labelKey, _labelArgs]]] call FUNC(serverLog);
     } else {
         private _paid = (_player get "chips") min _penalty;
@@ -63,6 +64,7 @@ private _results = [];
 {
     if ((_x get "chips") <= 0) then {
         _x set ["out", true];
+        _x set ["eliminatedRound", _table get "round"];
         [_table, LSTRING(LogEliminated), [_x get "name"]] call FUNC(serverLog);
     };
 } forEach _active;

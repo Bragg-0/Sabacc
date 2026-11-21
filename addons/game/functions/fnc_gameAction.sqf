@@ -51,7 +51,16 @@ switch (_action) do {
         GVAR(targeting) = -1;
         if (_shift > 0) then {["shift", [_shift, _uid]] call FUNC(request)};
     };
-    case "start": {["start"] call FUNC(request)};
+    case "start": {
+        GVAR(endHidden) = false;
+        ["start"] call FUNC(request);
+    };
+    case "hideEnd": {GVAR(endHidden) = true};   // look at the final table
+    case "showEnd": {GVAR(endHidden) = false};
+    case "backToMenu": {
+        (uiNamespace getVariable [QGVAR(gameDisplay), displayNull]) closeDisplay 2;
+        [{createDialog QGVAR(menu)}] call CBA_fnc_execNextFrame;
+    };
     case "leave": {
         // During a game, leaving means forfeiting: ask for a second click
         if (GVAR(leaveConfirm) || {(_state get "status") != STATUS_PLAYING} || {_me get "out"}) then {

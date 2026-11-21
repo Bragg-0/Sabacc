@@ -16,9 +16,9 @@ params ["_ctrl", ["_delay", 0]];
     params ["_ctrl"];
     if (isNull _ctrl) exitWith {};
     private _base = _ctrl getVariable [QGVAR(basePos), ctrlPosition _ctrl];
-    _base params ["_x", "_y", "_w", "_h"];
+    _base params ["_px", "_py", "_pw", "_ph"];
 
-    _ctrl ctrlSetPosition [_x + _w * 0.1, _y + _h * 0.1 - GH(1), _w * 0.8, _h * 0.8];
+    _ctrl ctrlSetPosition [_px + _pw * 0.1, _py + _ph * 0.1 - GH(1), _pw * 0.8, _ph * 0.8];
     _ctrl ctrlSetFade 0.4;
     _ctrl ctrlCommit 0;
 

@@ -30,7 +30,7 @@ if ((_table get "status") == STATUS_PLAYING) then {
     private _wasCurrent = ([_table] call FUNC(serverCurrentUid)) == _uid;
 
     {_player set _x} forEach [
-        ["out", true], ["left", true], ["chips", 0], ["pot", 0],
+        ["out", true], ["left", true], ["chips", 0], ["pot", 0], ["eliminatedRound", [_player get "eliminatedRound", _table get "round"] select ((_player getOrDefault ["eliminatedRound", -1]) < 0)],
         ["drawn", CARD_NONE], ["pending", []], ["queue", []]
     ];
 

@@ -22,6 +22,7 @@ private _effects = _table get "effects";
 if ((_effects getOrDefault ["embargo", ""]) == _uid) exitWith {
     _effects deleteAt "embargo";
     _player set ["lastAction", "stand"];
+    _table set ["standStreak", (_table getOrDefault ["standStreak", 0]) + 1];
     [_table, LSTRING(LogEmbargoSkip), [_player get "name"]] call FUNC(serverLog);
     [_table] call FUNC(serverEndTurn);
 };

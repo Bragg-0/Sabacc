@@ -27,26 +27,48 @@ private _seatedCount = {!(_x get "left")} count (_state getOrDefault ["players",
 
 // ---- Information panel ----
 private _text = switch (true) do {
-    case (GVAR(showRules)): {LLSTRING(RulesText)};
+    case (GVAR(showRules)): {format ["<t size='0.85' color='%1'>%2</t>", HTML_TEXT, LLSTRING(RulesText)]};
     case (_entry isNotEqualTo []): {
         _entry params ["", "_name", "_ownerName", "_names", "_max", "_status"];
-        format [
-            "<t size='1.2' font='PuristaBold'>%1</t><br/>%2<br/>%3<br/><br/><t color='#ffe0a0'>%4 (%5/%6)</t><br/>%7",
-            _name,
-            format [LLSTRING(MenuOwner), _ownerName],
-            [_status] call FUNC(statusName),
-            LLSTRING(MenuPlayers), count _names, _max,
-            _names joinString "<br/>"
-        ]
+        private _full = count _names >= _max;
+        private _statusColor = switch (_status) do {
+            case STATUS_PLAYING: {HTML_AMBER};
+            case STATUS_OVER: {HTML_MUTED};
+            default {HTML_GOOD};
+        };
+        private _seats = [];
+        for "_i" from 0 to (_max - 1) do {
+            _seats pushBack (if (_i < count _names) then {
+                format ["<t color='%1'>%2 </t><t color='%3'>%4</t>", HTML_HOLO, "+", HTML_TEXT, _names select _i]
+            } else {
+                format ["<t color='%1'>- %2</t>", HTML_DIM, LLSTRING(MenuFreeSeat)]
+            });
+        };
+        [
+            format ["<t size='1.15' font='PuristaBold' color='%1'>%2</t>", HTML_AMBER, toUpper _name],
+            [LLSTRING(LabelHost), _ownerName, HTML_TEXT, 0.85] call FUNC(uiRow),
+            [LLSTRING(LabelStatus), toUpper ([_status] call FUNC(statusName)), _statusColor, 0.85] call FUNC(uiRow),
+            [LLSTRING(LabelSeats), format ["%1 / %2", count _names, _max], [HTML_TEXT, HTML_BAD] select _full, 0.85] call FUNC(uiRow),
+            "",
+            format ["<t size='0.85'>%1</t>", _seats joinString "<br/>"]
+        ] joinString "<br/>"
     };
-    case (_lobby isEqualTo []): {LLSTRING(MenuNoTables)};
-    default {LLSTRING(MenuSelectTable)};
+    case (_lobby isEqualTo []): {format ["<t size='0.85' color='%1'>%2</t>", HTML_MUTED, LLSTRING(MenuNoTables)]};
+    default {format ["<t size='0.85' color='%1'>%2</t>", HTML_MUTED, LLSTRING(MenuSelectTable)]};
 };
+
+// Seated: no need to create a table, the details use the whole column
+{_x ctrlShow !_seated} forEach ((_display getVariable "newTable") + (_display getVariable "detailsShort"));
+{_x ctrlShow _seated} forEach (_display getVariable "detailsTall");
+private _groupHeight = [7.55, 12.05] select _seated;
+private _infoGroup = _display getVariable "infoGroup";
+_infoGroup ctrlSetPosition GRID(20.45,4.4,14.8,_groupHeight);
+_infoGroup ctrlCommit 0;
 
 private _info = _display getVariable "info";
 _info ctrlSetStructuredText parseText _text;
 private _position = ctrlPosition _info;
-_position set [3, (ctrlTextHeight _info) max GH(8.7)];
+_position set [3, (ctrlTextHeight _info) max GH(_groupHeight)];
 _info ctrlSetPosition _position;
 _info ctrlCommit 0;
 
@@ -60,7 +82,9 @@ private _seatText = if (_seated) then {
 } else {
     LLSTRING(MenuNotSeated)
 };
-(_display getVariable "seat") ctrlSetStructuredText parseText _seatText;
+(_display getVariable "seat") ctrlSetStructuredText parseText format [
+    "<t size='0.8' color='%1'>%2</t>", [HTML_MUTED, HTML_TEXT] select _seated, _seatText
+];
 
 // ---- Buttons ----
 private _canJoin = !_seated
@@ -74,4 +98,4 @@ private _canJoin = !_seated
 (_display getVariable "btnStart") ctrlEnable (_isOwner && {_myStatus != STATUS_PLAYING} && {_seatedCount >= MIN_PLAYERS});
 (_display getVariable "btnBot") ctrlEnable (_isOwner && {_myStatus != STATUS_PLAYING} && {_seatedCount < (_state get "maxPlayers")});
 (_display getVariable "btnOpen") ctrlEnable (_myStatus in [STATUS_PLAYING, STATUS_OVER]);
-(_display getVariable "btnRules") ctrlSetText ([LLSTRING(MenuRules), LLSTRING(MenuBack)] select GVAR(showRules));
+(_display getVariable "btnRules") ctrlSetText toUpper ([LLSTRING(MenuRules), LLSTRING(MenuBack)] select GVAR(showRules));

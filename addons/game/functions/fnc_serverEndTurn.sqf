@@ -11,6 +11,12 @@
  */
 params ["_table"];
 
+// Everyone still in the game stood in a row (nobody drew): reveal right away
+if ((_table getOrDefault ["standStreak", 0]) >= count ([_table] call FUNC(serverActivePlayers))) exitWith {
+    [_table, LSTRING(LogAllStood), []] call FUNC(serverLog);
+    [_table] call FUNC(serverReveal);
+};
+
 private _order = _table get "order";
 private _fnc_isOut = {([_table, _this] call FUNC(serverFindPlayer)) getOrDefault ["out", true]};
 

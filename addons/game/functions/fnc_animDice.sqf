@@ -30,6 +30,8 @@ GVAR(diceRolling) = true;
             [_x] call FUNC(animPop);
         } forEach _ctrls;
         [_handle] call CBA_fnc_removePerFrameHandler;
+        call FUNC(gameRefresh); // shows the values under the dice
+
     };
 
     {

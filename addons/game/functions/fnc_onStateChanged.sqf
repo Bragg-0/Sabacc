@@ -21,20 +21,22 @@ if (count _state == 0) then {
     if (!isNull _game) then {_game closeDisplay 2};
 };
 
+// Hints are only used when the terminal is closed: they would be drawn over our screens
+private _terminalOpen = !isNull (findDisplay IDD_MENU) || {!isNull (findDisplay IDD_GAME)};
+
 // The game just started: move everyone from the menu to the game screen
 if (_status == STATUS_PLAYING && {(_previous getOrDefault ["status", ""]) != STATUS_PLAYING}) then {
     private _menu = findDisplay IDD_MENU;
-    if (isNull _menu) then {
-        hint LLSTRING(HintGameStarted);
-    } else {
+    if (!isNull _menu) then {
         _menu closeDisplay 2;
         [{createDialog QGVAR(game)}] call CBA_fnc_execNextFrame;
     };
+    if (!_terminalOpen) then {hint LLSTRING(HintGameStarted)};
 };
 
-// It just became my turn while the terminal is closed
+// It just became my turn while the terminal is closed (the game screen has its own banner)
 private _myTurn = (_state getOrDefault ["current", ""]) == _myUid;
-if (_myTurn && {(_previous getOrDefault ["current", ""]) != _myUid} && {isNull (findDisplay IDD_GAME)}) then {
+if (_myTurn && {!_terminalOpen} && {(_previous getOrDefault ["current", ""]) != _myUid}) then {
     hint LLSTRING(HintYourTurn);
 };
 

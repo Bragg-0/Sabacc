@@ -22,8 +22,8 @@ _ctrl ctrlCommit 0;
 [{
     params ["_ctrl", "_texture", "_base", "_duration"];
     if (isNull _ctrl) exitWith {};
-    _base params ["_x", "_y", "_w", "_h"];
-    _ctrl ctrlSetPosition [_x + _w / 2, _y, 0, _h];
+    _base params ["_px", "_py", "_pw", "_ph"];
+    _ctrl ctrlSetPosition [_px + _pw / 2, _py, 0, _ph];
     _ctrl ctrlCommit (_duration / 2);
 
     [{

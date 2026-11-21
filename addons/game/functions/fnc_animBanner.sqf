@@ -22,7 +22,7 @@ params ["_display", "_text", ["_color", "#ffc040"], ["_delay", 0]];
     ctrlDelete (_display getVariable [QGVAR(banner), controlNull]);
 
     private _final = GRID(4,10.6,32,3.4);
-    private _ctrl = _display ctrlCreate ["RscStructuredText", -1];
+    private _ctrl = _display ctrlCreate [QGVAR(StructuredText), -1];
     _display setVariable [QGVAR(banner), _ctrl];
     _ctrl ctrlSetBackgroundColor [0, 0, 0, 0.75];
     _ctrl ctrlSetStructuredText parseText format [

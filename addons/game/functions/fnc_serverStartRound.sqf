@@ -17,6 +17,7 @@ private _count = count _players;
 
 _table set ["round", (_table get "round") + 1];
 _table set ["turn", 1];
+_table set ["standStreak", 0]; // consecutive stands, see serverEndTurn
 _table set ["effects", createHashMap];
 _table set ["results", []];
 

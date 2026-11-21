@@ -18,7 +18,7 @@ private _shown = _values apply {[str _x, LLSTRING(Sylop)] select (_x == VALUE_SY
 [
     format ["<t font='PuristaBold'>%1</t><t size='0.8' color='#bbbbbb'> (%2)</t>", _hand, _shown joinString " / "],
     if (_won) then {
-        format ["<t color='#70ff70'>%1</t>", format [LLSTRING(SeatWinner), _delta]]
+        format ["<t color='#70ff70'>%1</t>", if (_delta > 0) then {format [LLSTRING(SeatWinner), _delta]} else {LLSTRING(SeatWinnerNoPot)}]
     } else {
         format ["<t color='#ff7070'>%1</t>", format [LLSTRING(SeatLoser), abs _delta]]
     }

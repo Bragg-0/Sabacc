@@ -23,8 +23,9 @@ lbClear _list;
     _x params ["_id", "_name", "_ownerName", "_names", "_max", "_status"];
     private _index = _list lbAdd format ["%1   (%2/%3)", _name, count _names, _max];
     _list lbSetValue [_index, _id];
-    _list lbSetTextRight [_index, [_status] call FUNC(statusName)];
-    if (_id == _myId) then {_list lbSetColor [_index, COLOR_SAND]};
+    _list lbSetTextRight [_index, toUpper ([_status] call FUNC(statusName))];
+    _list lbSetColorRight [_index, switch (_status) do {case STATUS_PLAYING: {COLOR_AMBER}; case STATUS_OVER: {COLOR_DIM}; default {[0.43, 1, 0.6, 1]}}];
+    if (_id == _myId) then {_list lbSetColor [_index, COLOR_AMBER]};
     if (_id == _selectedId) then {_list lbSetCurSel _index};
 } forEach (missionNamespace getVariable [QGVAR(lobby), []]);
 

@@ -50,23 +50,37 @@ private _fnc_resultOf = {
 };
 private _fnc_tags = {
     params ["_uid"];
-    private _tags = "";
-    if (_uid == (_state get "dealerUid") && {_status == STATUS_PLAYING}) then {
-        _tags = _tags + format ["  <t size='0.75' color='#ffc040'>[%1]</t>", LLSTRING(GameDealer)];
-    };
+    private _tags = [];
     if (_uid == (_state get "ownerUid")) then {
-        _tags = _tags + format ["  <t size='0.75' color='#a0c8ff'>[%1]</t>", LLSTRING(GameHost)];
+        _tags pushBack format ["<t color='%1'>[%2]</t>", HTML_HOLO, toUpper LLSTRING(GameHost)];
     };
-    _tags
+    _tags joinString " "
+};
+private _fnc_hand = {
+    // Evaluation of a hand without dice: [labelText, isSabacc, penalty] or [] if an Impostor is unknown
+    params ["_sand", "_blood"];
+    if (_sand < 0 || {_blood < 0}) exitWith {[]};
+    private _values = [CARD_VALUE(_sand), CARD_VALUE(_blood)];
+    if (VALUE_IMPOSTOR in _values && {!(_effects getOrDefault ["impostorSix", false])}) exitWith {[]};
+    _values = _values apply {
+        switch (true) do {
+            case (_x == VALUE_IMPOSTOR): {6};
+            case (_x == VALUE_SYLOP && {_effects getOrDefault ["sylopZero", false]}): {0};
+            default {_x};
+        }
+    };
+    private _eval = (_values + [_effects]) call FUNC(evaluateHand);
+    [format ([localize (_eval select 3)] + (_eval select 4)), _eval select 1, _eval select 2]
 };
 
-// ---- Header ----
+// ===================================================================== Header
 (_display getVariable "title") ctrlSetStructuredText parseText format [
-    "<t font='PuristaBold' size='1.05'>SABACC</t>   <t color='#ffe0a0'>%1</t>", _state get "name"
+    "<t font='PuristaBold' size='1.15' color='%1'>SABACC</t><t size='1' color='%2'>  //  </t><t font='PuristaMedium' size='1' color='%3'>%4</t>",
+    HTML_AMBER, HTML_DIM, HTML_TEXT, toUpper (_state get "name")
 ];
 call FUNC(gameUpdateHeader);
 
-// ---- Opponents, in play order after me ----
+// ===================================================================== Opponents, in play order after me
 private _opponents = [];
 private _count = count _players;
 for "_i" from 1 to (_count - 1) do {_opponents pushBack (_players select ((_myIndex + _i) mod _count))};
@@ -75,47 +89,75 @@ _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
 {
     private _seat = _x;
     private _seatIndex = _forEachIndex;
-    _seat params ["_bg", "_name", "_info", "_sand", "_blood", "_statusCtrl", "_target"];
+    _seat params ["_bg", "_title", "_stats", "_sand", "_blood", "_statusCtrl", "_target"];
 
     if (_seatIndex >= count _opponents) then {
-        {_x ctrlShow false} forEach _seat;
+        {_x ctrlShow false} forEach (_seat + ((_display getVariable "seatShifts") select _seatIndex));
     } else {
         {_x ctrlShow true} forEach _seat;
         private _player = _opponents select _seatIndex;
         private _uid = _player get "uid";
+        private _isCurrent = _uid == _current;
 
-        _name ctrlSetStructuredText parseText format ["<t font='PuristaBold'>%1</t>%2", _player get "name", [_uid] call _fnc_tags];
-        _info ctrlSetStructuredText parseText format [
-            "<img image='%1'/> %2   <t color='#bbbbbb'>%3 %4   %5 %6</t>",
-            TEXTURE_CHIPS, _player get "chips",
-            LLSTRING(GamePot), _player get "pot",
-            LLSTRING(GameShifts), _player get "shiftCount"
+        _title ctrlSetStructuredText parseText format [
+            "<t align='left' font='PuristaSemibold' size='0.85' color='%1'>%2%3</t><t align='right' size='0.7'>%4</t>",
+            [HTML_TEXT, HTML_AMBER] select _isCurrent,
+            ["", "> "] select _isCurrent,
+            toUpper (_player get "name"),
+            [_uid] call _fnc_tags
         ];
-        _sand ctrlSetText ([_player get "sand"] call FUNC(cardTexture));
-        _blood ctrlSetText ([_player get "blood"] call FUNC(cardTexture));
 
-        private _lines = [];
-        switch (true) do {
-            case (_player get "left"): {_lines pushBack format ["<t color='#ff7070'>%1</t>", LLSTRING(SeatLeft)]};
-            case (_player get "out"): {_lines pushBack format ["<t color='#ff7070'>%1</t>", LLSTRING(SeatOut)]};
-        };
-        if (_showResults) then {
-            private _result = [_uid] call _fnc_resultOf;
-            if (_result isNotEqualTo []) then {_lines append ([_result] call FUNC(formatResult))};
-        } else {
-            if (_player get "waiting") then {_lines pushBack LLSTRING(SeatChoosing)};
-            switch (_player get "lastAction") do {
-                case "stand": {_lines pushBack LLSTRING(ActionStood)};
-                case "draw": {_lines pushBack LLSTRING(ActionDrew)};
+        private _chips = _player get "chips";
+        _stats ctrlSetStructuredText parseText ([
+            [LLSTRING(LabelChips), _chips, [HTML_TEXT, HTML_BAD] select (_chips <= 2), 1.15] call FUNC(uiRow),
+            [LLSTRING(LabelPot), _player get "pot", HTML_AMBER] call FUNC(uiRow)
+        ] joinString "<br/>");
+
+        // Shift tokens still in hand: icons with their description
+        private _theirShifts = _player get "shifts";
+        ((_display getVariable "seatShifts") select _seatIndex) params ["_bonusLabel"];
+        _bonusLabel ctrlShow !(_player get "out");
+        {
+            if (_forEachIndex < count _theirShifts && {!(_player get "out")}) then {
+                private _shift = _theirShifts select _forEachIndex;
+                ([_shift] call FUNC(shiftInfo)) params ["_shiftName", "_shiftDesc", "_needsTarget", "_texture"];
+                _x ctrlShow true;
+                _x ctrlSetText _texture;
+                [_x, _shiftName, _shiftDesc, HTML_AMBER, format [LLSTRING(HelpOpponentShift), _player get "name"]] call FUNC(uiHelp);
+            } else {
+                _x ctrlShow false;
             };
-            if (_player get "immune") then {_lines pushBack format ["<t color='#80c0ff'>%1</t>", LLSTRING(SeatImmune)]};
+        } forEach (((_display getVariable "seatShifts") select _seatIndex) select [1, 4]);
+
+        {
+            _x params ["_ctrl", "_card"];
+            _ctrl ctrlSetText ([_card] call FUNC(cardTexture));
+            ([_card] call FUNC(cardHelp)) params ["_helpTitle", "_helpText", "_helpColor"];
+            [_ctrl, _helpTitle, _helpText, _helpColor] call FUNC(uiHelp);
+        } forEach [[_sand, _player get "sand"], [_blood, _player get "blood"]];
+
+        // Last action / result
+        private _line = switch (true) do {
+            case (_player get "left"): {format ["<t color='%1'>%2</t>", HTML_BAD, toUpper LLSTRING(SeatLeft)]};
+            case (_showResults && {([_uid] call _fnc_resultOf) isNotEqualTo []}): {
+                ([[_uid] call _fnc_resultOf] call FUNC(formatResult)) joinString "<br/>"
+            };
+            case (_player get "out"): {format ["<t color='%1'>%2</t>", HTML_BAD, toUpper LLSTRING(SeatOut)]};
+            case (_player get "waiting"): {format ["<t color='%1'>%2</t>", HTML_AMBER, LLSTRING(SeatChoosing)]};
+            case (_isCurrent): {format ["<t color='%1'>%2</t>", HTML_AMBER, LLSTRING(SeatPlaying)]};
+            case ((_player get "lastAction") == "stand"): {LLSTRING(ActionStood)};
+            case ((_player get "lastAction") == "draw"): {LLSTRING(ActionDrew)};
+            default {format ["<t color='%1'>%2</t>", HTML_MUTED, LLSTRING(SeatWaiting)]};
         };
-        _statusCtrl ctrlSetStructuredText parseText format ["<t size='0.85'>%1</t>", _lines joinString "<br/>"];
+        if ((_player get "immune") && {!_showResults}) then {
+            _line = _line + format ["<br/><t color='%1'>%2</t>", HTML_HOLO, LLSTRING(SeatImmune)];
+        };
+        _statusCtrl ctrlSetStructuredText parseText format ["<t size='0.75' color='%1'>%2</t>", HTML_TEXT, _line];
 
         _bg ctrlSetBackgroundColor (switch (true) do {
             case (_showResults && {([_uid] call _fnc_resultOf) param [6, false]}): {COLOR_WIN};
             case (_player get "out"): {COLOR_OUT};
-            case (_uid == _current): {COLOR_ACTIVE};
+            case (_isCurrent): {COLOR_ACTIVE};
             case (_targeting): {COLOR_TARGET};
             default {COLOR_PANEL_LIGHT};
         });
@@ -125,7 +167,7 @@ _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
     };
 } forEach (_display getVariable "seats");
 
-// ---- Status line ----
+// ===================================================================== Status line
 private _statusText = switch (true) do {
     case (_status == STATUS_OVER): {
         private _winner = _state get "winner";
@@ -142,42 +184,65 @@ private _statusText = switch (true) do {
     case (_targeting): {LLSTRING(StatusTargeting)};
     default {LLSTRING(StatusYourTurn)};
 };
-if (_myTurn) then {_statusText = format ["<t color='#ffc040'>%1</t>", _statusText]};
+private _statusColor = [HTML_TEXT, HTML_AMBER] select _myTurn;
 
 // A recent notification (error...) takes over for a few seconds
 GVAR(flash) params ["_flashText", "_flashTime"];
-if (time - _flashTime < 4) then {_statusText = format ["<t color='#ff9060'>%1</t>", _flashText]};
+if (time - _flashTime < 4) then {
+    _statusText = _flashText;
+    _statusColor = HTML_BAD;
+};
 
-(_display getVariable "statusLine") ctrlSetStructuredText parseText format ["<t align='center' size='1.15'>%1</t>", _statusText];
+(_display getVariable "statusLine") ctrlSetStructuredText parseText format [
+    "<t align='center' font='PuristaSemibold' size='1.05' color='%1'>%2</t>", _statusColor, toUpper _statusText
+];
 
-// ---- Draw piles ----
+// ===================================================================== Draw piles
 private _tops = _state get "discardTops";
 private _counts = _state get "deckCounts";
-private _canDraw = _canAct && {_drawn == CARD_NONE} && {!_targeting} && {(_me get "chips") > 0 || {(_effects getOrDefault ["freeDraw", ""]) == _myUid}};
+private _freeDraw = (_effects getOrDefault ["freeDraw", ""]) == _myUid;
+private _canDraw = _canAct && {_drawn == CARD_NONE} && {!_targeting} && {(_me get "chips") > 0 || _freeDraw};
+private _cost = [LLSTRING(HelpCostOne), LLSTRING(HelpCostFree)] select _freeDraw;
 {
     _x params ["_pile", "_label"];
     private _source = _pile getVariable QGVAR(source);
     private _suit = _source mod 2;
+    private _suitName = localize ([LSTRING(Sand), LSTRING(Blood)] select _suit);
+    private _suitHtml = [HTML_SAND, HTML_BLOOD] select _suit;
     private _isDiscard = _source >= SOURCE_SAND_DISCARD;
     private _card = if (_isDiscard) then {_tops select _suit} else {[CARD_NONE, CARD_HIDDEN] select ((_counts select _suit) > 0)};
+    private _usable = _canDraw && {_card != CARD_NONE};
 
-    private _color = [COLOR_DIM, COLOR_WHITE] select (_canDraw || {!_myTurn});
     _pile ctrlSetText ([_card] call FUNC(cardTexture));
-    _pile ctrlEnable (_canDraw && {_card != CARD_NONE});
+    _pile setVariable [QGVAR(clickable), _usable];
+    private _color = [COLOR_DIM, COLOR_WHITE] select (_usable || {!_myTurn});
     _pile ctrlSetTextColor _color;
     _pile ctrlSetActiveColor _color;
 
-    private _labelText = localize (_label getVariable QGVAR(key));
-    if (!_isDiscard) then {_labelText = format ["%1 (%2)", _labelText, _counts select _suit]};
+    private _caption = if (_isDiscard) then {
+        LLSTRING(CaptionDiscard)
+    } else {
+        format [LLSTRING(CaptionDeck), _counts select _suit]
+    };
     _label ctrlSetStructuredText parseText format [
-        "<t align='center' size='0.8' color='%1'>%2</t>", ["#f0c870", "#ff6060"] select _suit, _labelText
+        "<t align='center' size='0.62' font='PuristaSemibold' color='%1'>%2</t>", _suitHtml, toUpper _caption
     ];
+
+    if (_isDiscard) then {
+        ([_card] call FUNC(cardHelp)) params ["_helpTitle", "_helpText", "_helpColor"];
+        if (_card == CARD_NONE) then {_helpTitle = format ["%1 %2", LLSTRING(CaptionDiscard), _suitName]; _helpText = LLSTRING(HelpEmptyPile); _helpColor = _suitHtml};
+        [_pile, _helpTitle, _helpText, _helpColor, format ["%1 %2", format [LLSTRING(HelpDiscard), _suitName], _cost]] call FUNC(uiHelp);
+    } else {
+        [_pile, format [LLSTRING(CaptionDeck), _counts select _suit], format [LLSTRING(HelpDeck), _suitName], _suitHtml, _cost] call FUNC(uiHelp);
+    };
 } forEach (_display getVariable "piles");
 
-// ---- Dice choice ----
+// ===================================================================== Dice choice
 private _choice = _display getVariable "choice";
 private _showChoice = _pending isNotEqualTo [];
 {_x ctrlShow _showChoice} forEach _choice;
+// A pile clicked just before keeps the focus and would be drawn above the dice: hide them meanwhile
+{{_x ctrlShow !_showChoice} forEach _x} forEach (_display getVariable "piles");
 if (_showChoice) then {
     _pending params ["_type", "_dice", "_suit"];
     private _text = if (_type == "priority") then {
@@ -185,67 +250,119 @@ if (_showChoice) then {
     } else {
         format [LLSTRING(ChoiceImpostor), localize ([LSTRING(Sand), LSTRING(Blood)] select _suit)]
     };
-    (_choice select 1) ctrlSetStructuredText parseText format ["<t align='center'>%1</t>", _text];
-    if !(missionNamespace getVariable [QGVAR(diceRolling), false]) then {
-        (_choice select 2) ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select 0];
-        (_choice select 3) ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select 1];
-    };
+    (_choice select 1) ctrlSetStructuredText parseText format [
+        "<t align='center' font='PuristaSemibold' size='0.8' color='%1'>%2</t><br/><t align='center' size='0.8' color='%3'>%4</t>",
+        HTML_AMBER, toUpper LLSTRING(ChoiceTitle), HTML_TEXT, _text
+    ];
+    {
+        _x setVariable [QGVAR(clickable), true];
+        [_x, LLSTRING(ChoiceTitle), format [LLSTRING(HelpDie), _dice select _forEachIndex], HTML_AMBER] call FUNC(uiHelp);
+        if !(missionNamespace getVariable [QGVAR(diceRolling), false]) then {
+            _x ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select _forEachIndex];
+        };
+    } forEach [_choice select 2, _choice select 3];
+
+    // Under each die: its value, and what choosing it gives
+    private _rolling = missionNamespace getVariable [QGVAR(diceRolling), false];
+    {
+        private _value = _dice select _forEachIndex;
+        private _outcome = "";
+        if (!_rolling) then {
+            if (_type == "priority") then {
+                _outcome = format [LLSTRING(EffectPriority), _value];
+            } else {
+                // Impostor: evaluate the hand with this value (unknown if the other card is an Impostor too)
+                private _otherCard = _me get (["blood", "sand"] select _suit);
+                private _otherValue = CARD_VALUE(_otherCard);
+                if (_otherValue != VALUE_IMPOSTOR) then {
+                    if (_otherValue == VALUE_SYLOP && {_effects getOrDefault ["sylopZero", false]}) then {_otherValue = 0};
+                    private _values = [[_value, _otherValue], [_otherValue, _value]] select (_suit == SUIT_BLOOD);
+                    private _eval = (_values + [_effects]) call FUNC(evaluateHand);
+                    _outcome = format ([localize (_eval select 3)] + (_eval select 4));
+                };
+            };
+        };
+        _x ctrlSetStructuredText parseText format [
+            "<t align='center' font='PuristaBold' size='1.7' color='%1'>%2</t><br/><t align='center' size='0.7' color='%3'>%4</t>",
+            HTML_AMBER, ["?", str _value] select !_rolling,
+            HTML_HOLO, ["", "> " + toUpper _outcome] select (_outcome != "")
+        ];
+    } forEach [_choice select 4, _choice select 5];
 };
 
-// ---- Log ----
+// ===================================================================== Log (newest at the bottom, older entries dimmed)
 private _log = (_state get "log") apply {[_x select 0, _x select 1] call FUNC(formatMessage)};
 _log = _log select [((count _log) - 8) max 0];
-(_display getVariable "log") ctrlSetStructuredText parseText format ["<t size='0.8'>%1</t>", _log joinString "<br/>"];
+private _logCount = count _log;
+{
+    private _recent = _forEachIndex >= _logCount - 2;
+    _log set [_forEachIndex, format ["<t color='%1'>%2 </t><t color='%3'>%4</t>", HTML_DIM, ">", [HTML_MUTED, HTML_TEXT] select _recent, _x]];
+} forEach _log;
+(_display getVariable "log") ctrlSetStructuredText parseText format ["<t size='0.75'>%1</t>", _log joinString "<br/>"];
 
-// ---- My hand ----
-(_display getVariable "myName") ctrlSetStructuredText parseText format [
-    "<t font='PuristaBold'>%1</t>%2", LLSTRING(GameYou), [_myUid] call _fnc_tags
-];
+// ===================================================================== My station
+(_display getVariable "myTitle") ctrlSetStructuredText parseText (
+    [_me get "name", [_myUid] call _fnc_tags] call FUNC(uiTitle)
+);
 
 private _mySand = _me get "sand";
 private _myBlood = _me get "blood";
-private _drawnSuit = if (_drawn >= 0) then {CARD_SUIT(_drawn)} else {-1};
+private _hasDrawn = _drawn >= 0;
+private _drawnSuit = if (_hasDrawn) then {CARD_SUIT(_drawn)} else {-1};
 
 {
     _x params ["_ctrl", "_card", "_suit"];
+    private _swappable = _canAct && {_drawnSuit == _suit};
     _ctrl ctrlSetText ([_card] call FUNC(cardTexture));
-    _ctrl ctrlSetTooltip (["", LLSTRING(TooltipSwap)] select (_canAct && {_drawnSuit == _suit}));
+    _ctrl setVariable [QGVAR(clickable), _swappable];
+    ([_card] call FUNC(cardHelp)) params ["_helpTitle", "_helpText", "_helpColor"];
+    [_ctrl, _helpTitle, _helpText, _helpColor, ["", LLSTRING(TooltipSwap)] select _swappable] call FUNC(uiHelp);
 } forEach [
     [_display getVariable "mySand", _mySand, SUIT_SAND],
     [_display getVariable "myBlood", _myBlood, SUIT_BLOOD]
 ];
 
-private _hasDrawn = _drawn >= 0;
-(_display getVariable "myDrawn") ctrlShow _hasDrawn;
+private _drawnCtrl = _display getVariable "myDrawn";
+_drawnCtrl ctrlShow _hasDrawn;
 (_display getVariable "drawnLabel") ctrlShow _hasDrawn;
 if (_hasDrawn) then {
-    (_display getVariable "myDrawn") ctrlSetText ([_drawn] call FUNC(cardTexture));    (_display getVariable "drawnLabel") ctrlSetStructuredText parseText format ["<t size='0.8' color='#ffc040'>%1</t>", LLSTRING(GameDrawnCard)];
+    _drawnCtrl ctrlSetText ([_drawn] call FUNC(cardTexture));
+    _drawnCtrl setVariable [QGVAR(clickable), _canAct];
+    ([_drawn] call FUNC(cardHelp)) params ["_helpTitle", "_helpText", "_helpColor"];
+    [_drawnCtrl, _helpTitle, _helpText, _helpColor, LLSTRING(TipDiscardDrawn)] call FUNC(uiHelp);
 };
 
-// Chips, pot, hand preview, active effects
-private _lines = [
-    format ["<img image='%1'/> %2 : <t font='PuristaBold'>%3</t>", TEXTURE_CHIPS, LLSTRING(GameChips), _me get "chips"],
-    format ["%1 : <t font='PuristaBold'>%2</t>", LLSTRING(GamePot), _me get "pot"]
+// Stats: chips, pot, hand, what a loss would cost, active effects
+private _chips = _me get "chips";
+private _pot = _me get "pot";
+private _rows = [
+    [LLSTRING(LabelChips), _chips, [HTML_TEXT, HTML_BAD] select (_chips <= 2), 1.3] call FUNC(uiRow),
+    [LLSTRING(LabelPot), _pot, HTML_AMBER, 1.05] call FUNC(uiRow)
 ];
 
 if (_showResults) then {
     private _result = [_myUid] call _fnc_resultOf;
-    if (_result isNotEqualTo []) then {_lines append ([_result] call FUNC(formatResult))};
+    if (_result isNotEqualTo []) then {
+        ([_result] call FUNC(formatResult)) params ["_handLine", "_deltaLine"];
+        _rows pushBack ([LLSTRING(LabelHand), _handLine, HTML_TEXT, 0.85] call FUNC(uiRow));
+        _rows pushBack format ["<t align='right' size='0.85'>%1</t>", _deltaLine];
+    };
 } else {
-    if (_mySand >= 0 && {_myBlood >= 0}) then {
-        private _values = [CARD_VALUE(_mySand), CARD_VALUE(_myBlood)];
-        if (VALUE_IMPOSTOR in _values && {!(_effects getOrDefault ["impostorSix", false])}) then {
-            _lines pushBack format ["<t size='0.85'>%1</t>", LLSTRING(HandUnknown)];
-        } else {
-            _values = _values apply {
-                switch (true) do {
-                    case (_x == VALUE_IMPOSTOR): {6};
-                    case (_x == VALUE_SYLOP && {_effects getOrDefault ["sylopZero", false]}): {0};
-                    default {_x};
-                }
+    private _hand = [_mySand, _myBlood] call _fnc_hand;
+    switch (true) do {
+        case (_mySand < 0 || {_myBlood < 0}): {}; // no cards (eliminated): nothing to evaluate
+        case (_hand isEqualTo []): {
+            _rows pushBack ([LLSTRING(LabelHand), LLSTRING(HandDice), HTML_HOLO, 0.85] call FUNC(uiRow));
+            _rows pushBack format ["<t size='0.65' color='%1'>%2</t>", HTML_MUTED, LLSTRING(HandUnknown)];
+        };
+        default {
+            _hand params ["_label", "_isSabacc", "_penalty"];
+            _rows pushBack ([LLSTRING(LabelHand), _label, [HTML_TEXT, HTML_GOOD] select _isSabacc, 0.9] call FUNC(uiRow));
+            // An Impostor only has a value here because a shift token fixed it: say it
+            if (VALUE_IMPOSTOR in [CARD_VALUE(_mySand), CARD_VALUE(_myBlood)]) then {
+                _rows pushBack format ["<t size='0.65' color='%1'>%2</t>", HTML_AMBER, LLSTRING(HandImpostorFixed)];
             };
-            private _eval = (_values + [_effects]) call FUNC(evaluateHand);
-            _lines pushBack format [LLSTRING(HandPreview), format ([localize (_eval select 3)] + (_eval select 4))];
+            _rows pushBack ([LLSTRING(LabelIfLose), format [LLSTRING(IfLoseValue), _pot + _penalty], HTML_BAD, 0.85] call FUNC(uiRow));
         };
     };
 };
@@ -255,70 +372,110 @@ if (_effects getOrDefault ["impostorSix", false]) then {_active pushBack LLSTRIN
 if (_effects getOrDefault ["sylopZero", false]) then {_active pushBack LLSTRING(EffectSylopZero)};
 if (_effects getOrDefault ["inverted", false]) then {_active pushBack LLSTRING(EffectInverted)};
 if ((_effects getOrDefault ["priority", -1]) > 0) then {_active pushBack format [LLSTRING(EffectPriority), _effects get "priority"]};
-if ((_effects getOrDefault ["freeDraw", ""]) == _myUid) then {_active pushBack LLSTRING(EffectFreeDraw)};
+if (_freeDraw) then {_active pushBack LLSTRING(EffectFreeDraw)};
 if (_me get "immune") then {_active pushBack LLSTRING(SeatImmune)};
 if (_active isNotEqualTo []) then {
-    _lines pushBack format ["<t size='0.8' color='#80c0ff'>%1</t>", _active joinString "<br/>"];
+    _rows pushBack format ["<t size='0.65' color='%1'>%2</t>", HTML_HOLO, toUpper (_active joinString " | ")];
 };
-(_display getVariable "handInfo") ctrlSetStructuredText parseText (_lines joinString "<br/>");
 
-// ---- Buttons ----
+private _handInfo = _display getVariable "handInfo";
+_handInfo ctrlSetStructuredText parseText (_rows joinString "<br/>");
+
+// Eliminated: the station says it clearly instead of showing an empty hand
+private _isOut = _me get "out";
+private _outBanner = _display getVariable "outBanner";
+_outBanner ctrlShow _isOut;
+// The cards of the round that eliminated me would show under the banner
+{_x ctrlShow !_isOut} forEach [_display getVariable "mySand", _display getVariable "myBlood"];
+if (_isOut) then {(_display getVariable "myDrawn") ctrlShow false};
+_handInfo ctrlShow !_isOut;
+{_x ctrlShow !_isOut} forEach ((_display getVariable "myCaptions") + (_display getVariable "myDividers") + [_display getVariable "shiftsTitle"]);
+if (_isOut) then {
+    private _round = _me get "eliminatedRound";
+    _outBanner ctrlSetStructuredText parseText format [
+        "<t align='center' font='PuristaBold' size='2.4' color='%1'>%2</t><br/><t align='center' size='0.95' color='%3'>%4</t><br/><t align='center' size='0.75' color='%5'>%6</t>",
+        HTML_BAD, toUpper LLSTRING(OutTitle),
+        HTML_TEXT, if (_me get "left") then {LLSTRING(OutLeft)} else {format [LLSTRING(OutReason), _round max 1]},
+        HTML_MUTED, LLSTRING(OutHelp)
+    ];
+};
+_handInfo ctrlSetTooltip LLSTRING(TipMyStats);
+
+// ===================================================================== Buttons
 (_display getVariable "buttons") params ["_main", "_second", "_leave"];
 
 switch (true) do {
     case (_status == STATUS_OVER): {
         _main ctrlShow _isOwner;
         _main ctrlEnable true;
-        _main ctrlSetText LLSTRING(GameRestart);
+        _main ctrlSetText toUpper LLSTRING(GameRestart);
         _main setVariable [QGVAR(action), "start"];
     };
     case (_hasDrawn): {
         _main ctrlShow true;
         _main ctrlEnable _canAct;
-        _main ctrlSetText LLSTRING(GameTakeDrawn);
+        _main ctrlSetText toUpper LLSTRING(GameTakeDrawn);
         _main setVariable [QGVAR(action), "takeDrawn"];
     };
     default {
-        _main ctrlShow (_status == STATUS_PLAYING);
+        _main ctrlShow (_status == STATUS_PLAYING && {!(_me get "out")});
         _main ctrlEnable (_canAct && {!_targeting});
-        _main ctrlSetText LLSTRING(GameStand);
+        _main ctrlSetText toUpper LLSTRING(GameStand);
         _main setVariable [QGVAR(action), "stand"];
     };
 };
+_main ctrlSetTooltip ([LLSTRING(TipStand), LLSTRING(TipTakeDrawn)] select _hasDrawn);
 
-_second ctrlShow _hasDrawn;
-_second ctrlEnable _canAct;
-_second ctrlSetText LLSTRING(GameKeepHand);
-_second setVariable [QGVAR(action), "keepHand"];
+if (_status == STATUS_OVER) then {
+    // Brings back the end screen after "see the table"
+    _second ctrlShow true;
+    _second ctrlEnable true;
+    _second ctrlSetText toUpper LLSTRING(GameResults);
+    _second ctrlSetTooltip LLSTRING(TipShowEnd);
+    _second setVariable [QGVAR(action), "showEnd"];
+} else {
+    _second ctrlShow _hasDrawn;
+    _second ctrlEnable _canAct;
+    _second ctrlSetText toUpper LLSTRING(GameKeepHand);
+    _second ctrlSetTooltip LLSTRING(TipKeepHand);
+    _second setVariable [QGVAR(action), "keepHand"];
+};
 
-_leave ctrlSetText ([LLSTRING(GameLeave), LLSTRING(GameLeaveConfirm)] select GVAR(leaveConfirm));
+_leave ctrlSetText toUpper ([LLSTRING(GameLeave), LLSTRING(GameLeaveConfirm)] select GVAR(leaveConfirm));
 _leave setVariable [QGVAR(action), "leave"];
 
-// ---- Shift tokens ----
+// ===================================================================== Shift tokens
 private _myShifts = _me get "shifts";
 private _canShift = _canAct && {!_hasDrawn} && {!(_me get "shiftUsed")};
 {
     if (_forEachIndex < count _myShifts) then {
         private _shift = _myShifts select _forEachIndex;
-        ([_shift] call FUNC(shiftInfo)) params ["_shiftName", "_shiftDesc", "", "_texture"];
-        _x ctrlShow true;
+        ([_shift] call FUNC(shiftInfo)) params ["_shiftName", "_shiftDesc", "_needsTarget", "_texture"];
+        private _selected = GVAR(targeting) == _shift;
+        _x ctrlShow !(_me get "out");
         _x ctrlSetText _texture;
-        _x ctrlSetTooltip format ["%1 : %2", _shiftName, _shiftDesc];
-        _x ctrlEnable _canShift;
-        _x ctrlSetTextColor ([COLOR_DIM, COLOR_WHITE] select (_canShift && {!_targeting || {GVAR(targeting) == _shift}}));
+        _x setVariable [QGVAR(clickable), _canShift];
+        _x ctrlSetTextColor ([COLOR_DIM, COLOR_WHITE] select (_canShift && {!_targeting || _selected}));
+        [_x, _shiftName, _shiftDesc, HTML_AMBER, ["", LLSTRING(HelpTargetedLong)] select _needsTarget] call FUNC(uiHelp);
     } else {
         _x ctrlShow false;
     };
 } forEach (_display getVariable "shiftSlots");
 
-private _shiftText = switch (true) do {
-    case (_myShifts isEqualTo []): {LLSTRING(ShiftNone)};
+// Default text of the analysis panel (when the mouse is over nothing)
+private _default = switch (true) do {
     case (_targeting): {format [LLSTRING(ShiftTargeting), ([GVAR(targeting)] call FUNC(shiftInfo)) select 0]};
+    case (_myShifts isEqualTo []): {LLSTRING(ShiftNone)};
     case (_myTurn && {_me get "shiftUsed"}): {LLSTRING(ShiftUsedThisTurn)};
-    default {LLSTRING(ShiftHint)};
+    default {LLSTRING(InspectorDefault)};
 };
-(_display getVariable "shiftText") ctrlSetStructuredText parseText format ["<t size='0.75' color='#cccccc'>%1</t>", _shiftText];
+_default = format ["<t size='0.7' color='%1'>%2</t>", [HTML_MUTED, HTML_AMBER] select _targeting, _default];
+_display setVariable ["inspectorDefault", _default];
+(_display getVariable "inspector") ctrlSetStructuredText parseText _default;
 
-// ---- Animations (only what changed since the last view) ----
+// ===================================================================== End screen
+[_display, _state] call FUNC(gameEndRefresh);
+
+// ===================================================================== Animations (only what changed since the last view)
 [_display, missionNamespace getVariable [QGVAR(lastView), createHashMap], _state] call FUNC(gameAnimate);
 GVAR(lastView) = _state;

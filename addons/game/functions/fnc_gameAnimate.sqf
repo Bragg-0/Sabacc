@@ -48,8 +48,8 @@ private _fnc_chipsPos = {
         (_seats select _index) select 2
     };
     if (isNull _ctrl) exitWith {[]};
-    (ctrlPosition _ctrl) params ["_x", "_y"];
-    [_x + GW(1), _y]
+    (ctrlPosition _ctrl) params ["_px", "_py"];
+    [_px + GW(1), _py]
 };
 
 // ---- New round: deal the cards ----
@@ -182,4 +182,20 @@ if (_status == STATUS_OVER && {(_prev get "status") != STATUS_OVER}) then {
     } else {
         [_display, LLSTRING(BannerGameOver), "#ffe0a0", 2.5] call FUNC(animBanner);
     };
+
+    // The end screen appears once the last results and the banner have been seen
+    GVAR(endHidden) = true;
+    {_x ctrlShow false} forEach (_display getVariable "endScreen");
+    [{
+        params ["_display"];
+        if (isNull _display || {(GVAR(state) getOrDefault ["status", ""]) != STATUS_OVER}) exitWith {};
+        GVAR(endHidden) = false;
+        call FUNC(gameRefresh);
+        {
+            _x ctrlSetFade 1;
+            _x ctrlCommit 0;
+            _x ctrlSetFade 0;
+            _x ctrlCommit 0.6;
+        } forEach (_display getVariable "endScreen");
+    }, [_display], 4.5] call CBA_fnc_waitAndExecute;
 };

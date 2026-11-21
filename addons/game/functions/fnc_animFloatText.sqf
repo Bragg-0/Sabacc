@@ -18,16 +18,16 @@ params ["_display", "_text", "_position", ["_color", "#ffffff"], ["_delay", 0]];
 [{
     params ["_display", "_text", "_position", "_color"];
     if (isNull _display) exitWith {};
-    _position params ["_x", "_y"];
+    _position params ["_px", "_py"];
 
-    private _ctrl = _display ctrlCreate ["RscStructuredText", -1];
-    _ctrl ctrlSetPosition [_x, _y, GW(6), GH(1.6)];
+    private _ctrl = _display ctrlCreate [QGVAR(StructuredText), -1];
+    _ctrl ctrlSetPosition [_px, _py, GW(6), GH(1.6)];
     _ctrl ctrlSetStructuredText parseText format [
         "<t size='1.5' font='PuristaBold' color='%1' shadow='2'>%2</t>", _color, _text
     ];
     _ctrl ctrlCommit 0;
 
-    _ctrl ctrlSetPosition [_x, _y - GH(2.5), GW(6), GH(1.6)];
+    _ctrl ctrlSetPosition [_px, _py - GH(2.5), GW(6), GH(1.6)];
     _ctrl ctrlSetFade 1;
     _ctrl ctrlCommit 1.8;
 

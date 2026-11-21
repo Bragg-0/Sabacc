@@ -14,9 +14,9 @@
 params ["_ctrl", "_scale", ["_duration", 0.12]];
 
 private _base = _ctrl getVariable [QGVAR(basePos), ctrlPosition _ctrl];
-_base params ["_x", "_y", "_w", "_h"];
+_base params ["_px", "_py", "_pw", "_ph"];
 
-private _newW = _w * _scale;
-private _newH = _h * _scale;
-_ctrl ctrlSetPosition [_x - (_newW - _w) / 2, _y - (_newH - _h) / 2, _newW, _newH];
+private _newW = _pw * _scale;
+private _newH = _ph * _scale;
+_ctrl ctrlSetPosition [_px - (_newW - _pw) / 2, _py - (_newH - _ph) / 2, _newW, _newH];
 _ctrl ctrlCommit _duration;
