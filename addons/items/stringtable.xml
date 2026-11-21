@@ -2,12 +2,12 @@
 <Project name="Sabacc">
     <Package name="Items">
         <Key ID="STR_brg_items_Description">
-            <English>Use this terminal to play Kessel Sabacc.</English>
-            <French>Utilisez ce terminal pour jouer au Sabacc de Kessel.</French>
+            <English>Use this terminal to play Nar Shaddaa Sabacc.</English>
+            <French>Utilisez ce terminal pour jouer au Sabacc de Nar Shaddaa.</French>
         </Key>
         <Key ID="STR_brg_items_DisplayName">
-            <English>Sabacc Terminal</English>
-            <French>Terminal de Sabacc</French>
+            <English>Nar Shaddaa Sabacc Terminal</English>
+            <French>Terminal Sabacc de Nar Shaddaa</French>
         </Key>
     </Package>
 </Project>

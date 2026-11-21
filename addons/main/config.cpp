@@ -17,9 +17,9 @@ class CfgPatches {
 class CfgMods {
     class PREFIX {
         dir = "@Sabacc";
-        name = "Sabacc";
+        name = "Nar Shaddaa Sabacc";
         author = AUTHOR;
-        overview = "Kessel Sabacc card game for Arma 3.";
+        overview = "Nar Shaddaa Sabacc, a fan-made Sabacc card game for Arma 3.";
         hideName = 0;
         hidePicture = 1;
     };

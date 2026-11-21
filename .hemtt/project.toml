@@ -13,8 +13,8 @@ include = [
     "meta.cpp",
     "*.paa",
     "*.dll",
-    "LICENSE",
-    "README",
+    "LICENSE.md",
+    "README.md",
     "rules/*.pdf",
 ]
 exclude = [
