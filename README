@@ -1,15 +1,16 @@
-# 🎲 Sabacc - A Star Wars Game in Arma 3
+# 🎲 Nar Shaddaa Sabacc - a fan-made card game for Arma 3
 
-Play **Kessel Sabacc** with other players (or droids) from a terminal item, anywhere in Arma 3.
+Play **Nar Shaddaa Sabacc** with other players (or droids) from a terminal item, anywhere in Arma 3.
+Nar Shaddaa Sabacc is a fan-made variant inspired by the Sabacc card game of a famous space saga: its rules, card names and shift tokens are its own.
 Multiplayer-ready: the server runs the game and every player only receives their own hand.
 
 ## 🃏 How to play
 
-1. Get a **Sabacc Terminal** (Arsenal / Zeus / editor: *Equipment > Inventory items*).
-2. Open it: ACE self-interaction *Equipment > Play Sabacc*, the scroll-wheel action without ACE, or the *Open Sabacc terminal* keybind (CBA controls).
+1. Get a **Nar Shaddaa Sabacc Terminal** (Arsenal / Zeus / editor: *Equipment > Inventory items*).
+2. Open it: ACE self-interaction *Equipment > Play Nar Shaddaa Sabacc*, the scroll-wheel action without ACE, or the *Open the Nar Shaddaa Sabacc terminal* keybind (CBA controls).
 3. Create a table, wait for players (or **add droids**), then start the game.
 
-Rules in short: you always hold one **Sand** and one **Blood** card. A pair is a *Sabacc* (the lower the better, two Sylops = *Pure Sabacc*); without a pair, the smallest difference wins. Each round has 3 turns: stand for free, or draw a card for 1 chip. **Shift tokens** (16 kinds) bend the rules once per game. The full rules are available in-game (*Rules* button).
+Rules in short: you always hold one **Amber** and one **Ember** card. A pair is a *Sabacc* (the lower the better, two Sylops = *Pure Sabacc*); without a pair, the smallest difference wins. Each round has 3 turns: stand for free, or draw a card for 1 chip. **Shift tokens** (16 kinds) bend the rules once per game. The full rules are available in-game (*Rules* button) and in the rulebook: English [Markdown](docs/RULES.md) / [PDF](docs/RULES.pdf), French [Markdown](docs/REGLES.md) / [PDF](docs/REGLES.pdf).
 
 ## ⚙️ Settings (CBA, server-side)
 
@@ -19,7 +20,7 @@ Rules in short: you always hold one **Sand** and one **Blood** card. A pair is a
 | Shift tokens per player | 2 |
 | Turn time | 60 s |
 | Results display time | 12 s |
-| Sabacc terminal required | yes |
+| Nar Shaddaa Sabacc terminal required | yes |
 
 ## 🛠️ Development
 
@@ -34,7 +35,7 @@ hemtt release  # signed release
 | Addon | Content |
 |---|---|
 | `addons/main` | mod metadata, shared macros |
-| `addons/items` | the Sabacc Terminal item |
+| `addons/items` | the Nar Shaddaa Sabacc Terminal item |
 | `addons/game` | game logic (`fnc_server*`), UI (`fnc_menu*`, `fnc_game*`), settings, textures |
 
 ## 📜 Licence
@@ -46,6 +47,10 @@ hemtt release  # signed release
 The source code and **original** resources of this project are available under the [APL-SA](https://www.bohemia.net/community/licenses/arma-public-license-share-alike) license.
 
 > [!CAUTION]
+> Nar Shaddaa Sabacc is a free, non-commercial fan project. It is not sold, and no paid content is attached to it.
+>
+> If you hold rights on any element of this mod and want it changed or removed, please open an issue on GitHub: it will be handled promptly.
+>
 > This mod is an unofficial resource and is not affiliated with Lucasfilm Ltd, the Walt Disney Company, Electronic Arts Inc., or Twentieth Century Fox. The "Star Wars" brand and all intellectual content in this mod are based on the property of The Walt Disney Company.
 >
 > Star Wars © 1977 Twentieth Century Fox Film Corporation. All rights reserved. ™ & Copyright 1977 Lucasfilm Ltd. Star Wars logo and all related characters, names, and indicia are trademarks & copyright 2012 Lucasfilm Ltd. All rights reserved, or their respective trademark and copyright holders.

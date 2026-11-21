@@ -10,17 +10,11 @@ Exports/
 *.spp.painter_lock
 *.psd
 
-# Music
-*.ogg
-*.wav
-
 # Other
-.hemttprivatekey
+*.hemttprivatekey
 *.biprivatekey
 *.zip
 *.pbo
 *.sqfc
-
-# Arma 3 Server Configuration
-server.cfg
-*conf.ini
+*.pdf
+*.py

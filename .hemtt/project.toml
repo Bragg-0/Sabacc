@@ -13,8 +13,9 @@ include = [
     "meta.cpp",
     "*.paa",
     "*.dll",
-    "LICENSE.md",
-    "README.md",
+    "LICENSE",
+    "README",
+    "rules/*.pdf",
 ]
 exclude = [
     "*.psd",
