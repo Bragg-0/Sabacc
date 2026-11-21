@@ -80,6 +80,7 @@
 #define COLOR_ACTIVE [0.85, 0.6, 0.15, 0.45]
 #define COLOR_TARGET [0.2, 0.6, 0.9, 0.45]
 #define COLOR_OUT [0.3, 0.05, 0.05, 0.6]
+#define COLOR_WIN [0.15, 0.55, 0.2, 0.55]
 #define COLOR_SAND [0.93, 0.78, 0.45, 1]
 #define COLOR_BLOOD [0.85, 0.2, 0.2, 1]
 #define COLOR_WHITE [1, 1, 1, 1]

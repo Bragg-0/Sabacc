@@ -13,6 +13,30 @@
             <English>Stood</English>
             <French>A passé</French>
         </Key>
+        <Key ID="STR_brg_game_BannerGameOver">
+            <English>Game over</English>
+            <French>Partie terminée</French>
+        </Key>
+        <Key ID="STR_brg_game_BannerLose">
+            <English>Round lost</English>
+            <French>Manche perdue</French>
+        </Key>
+        <Key ID="STR_brg_game_BannerRound">
+            <English>Round %1</English>
+            <French>Manche %1</French>
+        </Key>
+        <Key ID="STR_brg_game_BannerVictory">
+            <English>Victory!</English>
+            <French>Victoire !</French>
+        </Key>
+        <Key ID="STR_brg_game_BannerWin">
+            <English>Round won!</English>
+            <French>Manche gagnée !</French>
+        </Key>
+        <Key ID="STR_brg_game_BannerYourTurn">
+            <English>Your turn!</English>
+            <French>À vous de jouer !</French>
+        </Key>
         <Key ID="STR_brg_game_Blood">
             <English>Blood</English>
             <French>Sang</French>
@@ -469,6 +493,14 @@
             <English>Number of shift tokens dealt to each player for the whole game.</English>
             <French>Nombre de jetons bonus distribués à chaque joueur pour toute la partie.</French>
         </Key>
+        <Key ID="STR_brg_game_SettingSounds">
+            <English>Sounds</English>
+            <French>Sons</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingSoundsTip">
+            <English>Play sounds for your turn, the start of the game and the results.</English>
+            <French>Jouer des sons pour votre tour, le début de partie et les résultats.</French>
+        </Key>
         <Key ID="STR_brg_game_SettingStartChips">
             <English>Starting chips</English>
             <French>Jetons de départ</French>
@@ -488,6 +520,10 @@
         <Key ID="STR_brg_game_SettingsAccess">
             <English>Access</English>
             <French>Accès</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingsInterface">
+            <English>Interface</English>
+            <French>Interface</French>
         </Key>
         <Key ID="STR_brg_game_SettingsRules">
             <English>Rules</English>

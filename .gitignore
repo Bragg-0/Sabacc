@@ -14,10 +14,8 @@ Exports/
 *.ogg
 *.wav
 
-# Pictures (sources live in assets_src/)
-# *.paa are tracked: the mod needs its textures
-
 # Other
+.hemttprivatekey
 *.biprivatekey
 *.zip
 *.pbo

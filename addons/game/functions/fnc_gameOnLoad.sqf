@@ -20,6 +20,8 @@ params ["_display"];
 uiNamespace setVariable [QGVAR(gameDisplay), _display];
 GVAR(targeting) = -1;
 GVAR(leaveConfirm) = false;
+GVAR(lastView) = createHashMap; // makes the first refresh play the dealing animation
+GVAR(pulse) = false;
 
 private _fnc_ctrl = {
     params ["_class", "_position"];
@@ -41,8 +43,15 @@ private _fnc_picture = {
         _picture setVariable [QGVAR(args), _args];
         _picture ctrlAddEventHandler ["ButtonClick", {
             params ["_ctrl"];
+            [_ctrl, 1] call FUNC(animScale);
             [_ctrl getVariable QGVAR(action), _ctrl getVariable QGVAR(args)] call FUNC(gameAction);
         }];
+        // Hover: the card / token grows a little
+        _picture ctrlAddEventHandler ["MouseEnter", {
+            params ["_ctrl"];
+            if (ctrlEnabled _ctrl) then {[_ctrl, 1.08] call FUNC(animScale)};
+        }];
+        _picture ctrlAddEventHandler ["MouseExit", {[_this select 0, 1] call FUNC(animScale)}];
     };
     _picture
 };
@@ -121,7 +130,7 @@ _display setVariable ["choice", [
 _display setVariable ["log", ["RscStructuredText", GRID(21.7,10.3,17.6,7.4)] call _fnc_ctrl];
 
 // ---- My hand ----
-[GRID(0.5,18.1,39,6.5), COLOR_PANEL_LIGHT] call _fnc_panel;
+_display setVariable ["myPanel", [GRID(0.5,18.1,39,6.5), COLOR_PANEL_LIGHT] call _fnc_panel];
 _display setVariable ["myName", ["RscStructuredText", GRID(0.8,18.2,8.2,1.1)] call _fnc_ctrl];
 _display setVariable ["mySand", [GRID(1,18.4,3.1,6.2), "swapCard", [SUIT_SAND]] call _fnc_picture];
 _display setVariable ["myBlood", [GRID(4.4,18.4,3.1,6.2), "swapCard", [SUIT_BLOOD]] call _fnc_picture];
@@ -144,7 +153,11 @@ for "_i" from 0 to 3 do {
 _display setVariable ["shiftSlots", _slots];
 _display setVariable ["shiftText", ["RscStructuredText", GRID(28.4,22,11,2.5)] call _fnc_ctrl];
 
-// Countdown
-GVAR(headerPFH) = [{call FUNC(gameUpdateHeader)}, 0.5] call CBA_fnc_addPerFrameHandler;
+// Countdown and pulsing highlights
+GVAR(headerPFH) = [{
+    call FUNC(gameUpdateHeader);
+    call FUNC(gamePulse);
+}, 0.5] call CBA_fnc_addPerFrameHandler;
 
+[_display] call FUNC(animFadeIn);
 call FUNC(gameRefresh);

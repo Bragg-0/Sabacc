@@ -101,4 +101,5 @@ _display setVariable ["btnBot", [LSTRING(MenuAddBot), GRID(12.8,20.3,7,1.4), {
 
 [LSTRING(MenuClose), GRID(27.4,20.3,7.1,1.4), {(ctrlParent (_this select 0)) closeDisplay 2}] call _fnc_button;
 
+[_display] call FUNC(animFadeIn);
 call FUNC(menuRefresh);

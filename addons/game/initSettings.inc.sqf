@@ -29,3 +29,9 @@ private _category = ["Sabacc", LLSTRING(SettingsRules)];
     [LSTRING(SettingRequireTerminal), LSTRING(SettingRequireTerminalTip)],
     ["Sabacc", LLSTRING(SettingsAccess)], true, 1
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(sounds), "CHECKBOX",
+    [LSTRING(SettingSounds), LSTRING(SettingSoundsTip)],
+    ["Sabacc", LLSTRING(SettingsInterface)], true, 0
+] call CBA_fnc_addSetting;

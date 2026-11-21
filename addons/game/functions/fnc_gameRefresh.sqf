@@ -70,6 +70,7 @@ call FUNC(gameUpdateHeader);
 private _opponents = [];
 private _count = count _players;
 for "_i" from 1 to (_count - 1) do {_opponents pushBack (_players select ((_myIndex + _i) mod _count))};
+_display setVariable ["seatUids", _opponents apply {_x get "uid"}];
 
 {
     private _seat = _x;
@@ -112,6 +113,7 @@ for "_i" from 1 to (_count - 1) do {_opponents pushBack (_players select ((_myIn
         _statusCtrl ctrlSetStructuredText parseText format ["<t size='0.85'>%1</t>", _lines joinString "<br/>"];
 
         _bg ctrlSetBackgroundColor (switch (true) do {
+            case (_showResults && {([_uid] call _fnc_resultOf) param [6, false]}): {COLOR_WIN};
             case (_player get "out"): {COLOR_OUT};
             case (_uid == _current): {COLOR_ACTIVE};
             case (_targeting): {COLOR_TARGET};
@@ -184,8 +186,10 @@ if (_showChoice) then {
         format [LLSTRING(ChoiceImpostor), localize ([LSTRING(Sand), LSTRING(Blood)] select _suit)]
     };
     (_choice select 1) ctrlSetStructuredText parseText format ["<t align='center'>%1</t>", _text];
-    (_choice select 2) ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select 0];
-    (_choice select 3) ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select 1];
+    if !(missionNamespace getVariable [QGVAR(diceRolling), false]) then {
+        (_choice select 2) ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select 0];
+        (_choice select 3) ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select 1];
+    };
 };
 
 // ---- Log ----
@@ -314,3 +318,7 @@ private _shiftText = switch (true) do {
     default {LLSTRING(ShiftHint)};
 };
 (_display getVariable "shiftText") ctrlSetStructuredText parseText format ["<t size='0.75' color='#cccccc'>%1</t>", _shiftText];
+
+// ---- Animations (only what changed since the last view) ----
+[_display, missionNamespace getVariable [QGVAR(lastView), createHashMap], _state] call FUNC(gameAnimate);
+GVAR(lastView) = _state;

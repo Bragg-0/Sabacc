@@ -1,7 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: Bragg
- * Creates a control on a display at a position.
+ * Creates a control on a display at a position. The position is remembered
+ * as the "rest" position used by the animations.
  *
  * Arguments:
  * 0: Display <DISPLAY>
@@ -24,4 +25,5 @@ private _ctrl = if (isNull _group) then {
 };
 _ctrl ctrlSetPosition _position;
 _ctrl ctrlCommit 0;
+_ctrl setVariable [QGVAR(basePos), _position];
 _ctrl

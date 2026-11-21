@@ -42,7 +42,7 @@ Texture sources (PNG) are in `assets_src/`, the game uses the `.paa` files in `a
 ## 📜 Licence
 
 <a href="https://www.bohemia.net/community/licenses/arma-public-license-share-alike">
-  <img src="https://www.bohemia.net/assets/img/licenses/APL-SA.png" alt="licence">
+  <img src="https://files.bistudio.com/public/2d36aa7e-6a0e-4ae8-bdab-dfeb2273f731-1" alt="licence">
 </a>
 
 The source code and **original** resources of this project are available under the [APL-SA](https://www.bohemia.net/community/licenses/arma-public-license-share-alike) license.
@@ -55,11 +55,3 @@ The source code and **original** resources of this project are available under t
 ## 💬 Feedback
 
 We appreciate your feedback! Please open an issue on GitHub if you have suggestions or find bugs.
-
-## 🌟 Acknowledgements
-
-<div align="center">
-  <a href="https://github.com/Bragg-0/Sabacc/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=Bragg-0/Sabacc"/>
-  </a>
-</div>

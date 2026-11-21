@@ -17,6 +17,7 @@ GVAR(state) = createHashMap;
 GVAR(targeting) = -1;
 GVAR(leaveConfirm) = false;
 GVAR(flash) = ["", -100];
+GVAR(diceRolling) = false;
 
 [EVENT_STATE, {
     params [["_view", createHashMap, [createHashMap]]];
