@@ -13,6 +13,9 @@
  */
 params [["_action", "", [""]], ["_args", [], [[]]]];
 
+// No interaction with the table while a banner is shown
+if (diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0])) exitWith {};
+
 private _state = GVAR(state);
 if (count _state == 0) exitWith {};
 

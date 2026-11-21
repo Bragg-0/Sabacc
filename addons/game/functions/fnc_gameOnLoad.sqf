@@ -26,6 +26,7 @@ GVAR(targeting) = -1;
 GVAR(leaveConfirm) = false;
 GVAR(lastView) = createHashMap; // makes the first refresh play the dealing animation
 GVAR(pulse) = false;
+GVAR(bannerUntil) = 0;
 
 private _fnc_ctrl = {
     params ["_class", "_position"];
@@ -66,7 +67,8 @@ private _fnc_picture = {
     // Pictures stay enabled (so hovering always works), "clickable" decides if a click does something.
     _picture ctrlAddEventHandler ["MouseEnter", {
         params ["_ctrl"];
-        if (_ctrl getVariable [QGVAR(clickable), false]) then {[_ctrl, 1.08] call FUNC(animScale)};
+        private _banner = diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0]);
+        if (!_banner && {_ctrl getVariable [QGVAR(clickable), false]}) then {[_ctrl, 1.08] call FUNC(animScale)};
         private _help = _ctrl getVariable [QGVAR(help), ""];
         if (_help != "") then {((ctrlParent _ctrl) getVariable "inspector") ctrlSetStructuredText parseText _help};
     }];
@@ -100,9 +102,11 @@ private _fnc_caption = {
 [GRID(0,1.55,40,0.05), COLOR_HOLO_FAINT] call _fnc_rect;
 [GRID(0,0,0.25,1.6), COLOR_AMBER] call _fnc_rect;
 
-_display setVariable ["title", [GRID(0.6,0.25,16,1.2)] call _fnc_text];
-_display setVariable ["roundInfo", [GRID(16,0.25,8,1.2)] call _fnc_text];
-_display setVariable ["turnPips", [0, 1, 2] apply {[GRID(24.2 + _x * 1,0.62,0.8,0.42), COLOR_HOLO_FAINT] call _fnc_rect}];
+_display setVariable ["title", [GRID(0.6,0.05,15.3,1.5)] call _fnc_text];
+// Round on top, then turn (or phase) with its 3 pips underneath
+_display setVariable ["roundInfo", [GRID(18.5,0.05,9.2,0.85)] call _fnc_text];
+_display setVariable ["phaseInfo", [GRID(18.5,0.8,5.85,0.75)] call _fnc_text];
+_display setVariable ["turnPips", [0, 1, 2] apply {[GRID(24.6 + _x * 1.05,1.0,0.9,0.36), COLOR_HOLO_FAINT] call _fnc_rect}];
 
 _display setVariable ["timerText", [GRID(28.4,0.1,9.9,1.1)] call _fnc_text];
 [GRID(28.6,1.18,9.6,0.18), [0.37, 0.85, 1, 0.12]] call _fnc_rect;
@@ -297,6 +301,7 @@ _display setVariable ["endRestart", _endButtons select 0];
 } forEach [
     [_display getVariable "title", LLSTRING(TipTableTitle)],
     [_display getVariable "roundInfo", LLSTRING(TipRound)],
+    [_display getVariable "phaseInfo", LLSTRING(TipRound)],
     [_display getVariable "timerText", LLSTRING(TipTimer)],
     [_display getVariable "statusLine", LLSTRING(TipStatusLine)],
     [_display getVariable "log", LLSTRING(TipLog)],

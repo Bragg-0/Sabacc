@@ -1,9 +1,9 @@
 [
-    "Sabacc", QGVAR(openTerminal),
+    LLSTRING(GameTitle), QGVAR(openTerminal),
     [LLSTRING(KeybindOpen), LLSTRING(KeybindOpenTip)],
     {
         if (!([player] call FUNC(canOpenTerminal))) exitWith {false};
-        call FUNC(openTerminal);
+        [] call FUNC(openTerminal);
         true
     },
     {false}

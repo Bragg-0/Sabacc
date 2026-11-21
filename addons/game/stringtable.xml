@@ -6,8 +6,8 @@
             <French>A pioché</French>
         </Key>
         <Key ID="STR_brg_game_ActionOpen">
-            <English>Play Sabacc</English>
-            <French>Jouer au Sabacc</French>
+            <English>Play Nar Shaddaa Sabacc</English>
+            <French>Jouer au Sabacc de Nar Shaddaa</French>
         </Key>
         <Key ID="STR_brg_game_ActionStood">
             <English>Stood</English>
@@ -38,8 +38,8 @@
             <French>À vous de jouer !</French>
         </Key>
         <Key ID="STR_brg_game_Blood">
-            <English>Blood</English>
-            <French>Sang</French>
+            <English>Ember</English>
+            <French>Braise</French>
         </Key>
         <Key ID="STR_brg_game_CaptionDeck">
             <English>Deck - %1</English>
@@ -51,11 +51,11 @@
         </Key>
         <Key ID="STR_brg_game_CardName">
             <English>%1 %2</English>
-            <French>%2 de %1</French>
+            <French>%2 %1</French>
         </Key>
         <Key ID="STR_brg_game_ChoiceImpostor">
-            <English>Your %1 Impostor takes the value of the die you choose.</English>
-            <French>Votre Imposteur de %1 prend la valeur du dé choisi.</French>
+            <English>Your %1 Mirage takes the value of the die you choose.</English>
+            <French>Votre Mirage %1 prend la valeur du dé choisi.</French>
         </Key>
         <Key ID="STR_brg_game_ChoicePriority">
             <English>Re-evaluation: the Sabacc of the chosen value becomes the strongest after the Pure Sabacc.</English>
@@ -70,8 +70,8 @@
             <French>Prochaine pioche gratuite</French>
         </Key>
         <Key ID="STR_brg_game_EffectImpostorSix">
-            <English>Impostors are worth 6</English>
-            <French>Les Imposteurs valent 6</French>
+            <English>Mirages are worth 6</English>
+            <French>Les Mirages valent 6</French>
         </Key>
         <Key ID="STR_brg_game_EffectInverted">
             <English>Sabacc order reversed</English>
@@ -257,21 +257,25 @@
             <English>Target</English>
             <French>Cibler</French>
         </Key>
+        <Key ID="STR_brg_game_GameTitle">
+            <English>Nar Shaddaa Sabacc</English>
+            <French>Sabacc de Nar Shaddaa</French>
+        </Key>
         <Key ID="STR_brg_game_GameTurn">
             <English>Turn %1/%2</English>
             <French>Tour %1/%2</French>
         </Key>
         <Key ID="STR_brg_game_HandDice">
-            <English>Impostor</English>
-            <French>Imposteur</French>
+            <English>Mirage</English>
+            <French>Mirage</French>
         </Key>
         <Key ID="STR_brg_game_HandDiff">
             <English>Difference of %1</English>
             <French>Écart de %1</French>
         </Key>
         <Key ID="STR_brg_game_HandImpostorFixed">
-            <English>Your Impostor counts as 6: a shift token (Major fraud) fixed it until the reveal.</English>
-            <French>Votre Imposteur compte pour 6 : un jeton bonus (Grosse arnaque) l'a fixé jusqu'à la révélation.</French>
+            <English>Your Mirage counts as 6: a shift token (Fixed mirage) set it until the reveal.</English>
+            <French>Votre Mirage compte pour 6 : un jeton bonus (Mirage figé) l'a fixé jusqu'à la révélation.</French>
         </Key>
         <Key ID="STR_brg_game_HandPure">
             <English>Pure Sabacc</English>
@@ -282,8 +286,8 @@
             <French>Sabacc de %1</French>
         </Key>
         <Key ID="STR_brg_game_HandUnknown">
-            <English>Impostor: value rolled at the reveal</English>
-            <French>Imposteur : valeur tirée aux dés à la révélation</French>
+            <English>Mirage: its value is rolled at the reveal</English>
+            <French>Mirage : sa valeur est tirée aux dés à la révélation</French>
         </Key>
         <Key ID="STR_brg_game_HelpCostFree">
             <English>Free this time (Free draw).</English>
@@ -318,8 +322,8 @@
             <French>Carte cachée</French>
         </Key>
         <Key ID="STR_brg_game_HelpImpostor">
-            <English>Impostor: at the reveal, roll two dice and choose its value.</English>
-            <French>Imposteur : à la révélation, lancez deux dés et choisissez sa valeur.</French>
+            <English>Mirage: at the reveal, roll two dice and keep the one you prefer as its value.</English>
+            <French>Mirage : à la révélation, lancez deux dés et gardez celui que vous préférez comme valeur.</French>
         </Key>
         <Key ID="STR_brg_game_HelpNumber">
             <English>Value %1. Pair it with the same value of the other suit to make a Sabacc.</English>
@@ -338,28 +342,28 @@
             <French>Cliquez dessus, puis choisissez un joueur avec les boutons Cibler.</French>
         </Key>
         <Key ID="STR_brg_game_HintGameStarted">
-            <English>Sabacc: your game has started. Open the terminal to play.</English>
-            <French>Sabacc : votre partie a commencé. Ouvrez le terminal pour jouer.</French>
+            <English>Nar Shaddaa Sabacc: your game has started. Open the terminal to play.</English>
+            <French>Sabacc de Nar Shaddaa : votre partie a commencé. Ouvrez le terminal pour jouer.</French>
         </Key>
         <Key ID="STR_brg_game_HintYourTurn">
-            <English>Sabacc: it's your turn!</English>
-            <French>Sabacc : c'est à vous de jouer !</French>
+            <English>Nar Shaddaa Sabacc: it's your turn!</English>
+            <French>Sabacc de Nar Shaddaa : c'est à vous de jouer !</French>
         </Key>
         <Key ID="STR_brg_game_IfLoseValue">
             <English>-%1</English>
             <French>-%1</French>
         </Key>
         <Key ID="STR_brg_game_Impostor">
-            <English>Impostor</English>
-            <French>Imposteur</French>
+            <English>Mirage</English>
+            <French>Mirage</French>
         </Key>
         <Key ID="STR_brg_game_InspectorDefault">
             <English>Hover a card, a pile or a shift token to analyse it.</English>
             <French>Survolez une carte, une pioche ou un jeton bonus pour l'analyser.</French>
         </Key>
         <Key ID="STR_brg_game_KeybindOpen">
-            <English>Open Sabacc terminal</English>
-            <French>Ouvrir le terminal de Sabacc</French>
+            <English>Open the Nar Shaddaa Sabacc terminal</English>
+            <French>Ouvrir le terminal Sabacc de Nar Shaddaa</French>
         </Key>
         <Key ID="STR_brg_game_KeybindOpenTip">
             <English>Opens the Sabacc tables menu or your current game.</English>
@@ -415,7 +419,7 @@
         </Key>
         <Key ID="STR_brg_game_LogDiscard">
             <English>%1 discards the %2.</English>
-            <French>%1 défausse le %2.</French>
+            <French>%1 défausse la carte %2.</French>
         </Key>
         <Key ID="STR_brg_game_LogDrawDeck">
             <English>%1 draws from the %2 deck.</English>
@@ -423,7 +427,7 @@
         </Key>
         <Key ID="STR_brg_game_LogDrawDiscard">
             <English>%1 takes the %2 from the discard.</English>
-            <French>%1 prend le %2 dans la défausse.</French>
+            <French>%1 prend la carte %2 dans la défausse.</French>
         </Key>
         <Key ID="STR_brg_game_LogEliminated">
             <English>%1 is eliminated.</English>
@@ -446,8 +450,8 @@
             <French>La partie commence !</French>
         </Key>
         <Key ID="STR_brg_game_LogImpostor">
-            <English>%1 sets their %2 Impostor to %3.</English>
-            <French>%1 fixe son Imposteur de %2 à %3.</French>
+            <English>%1 sets their %2 Mirage to %3.</English>
+            <French>%1 fixe son Mirage %2 à %3.</French>
         </Key>
         <Key ID="STR_brg_game_LogJoined">
             <English>%1 joined the table.</English>
@@ -570,8 +574,8 @@
             <French>Lancer</French>
         </Key>
         <Key ID="STR_brg_game_MenuTitle">
-            <English>SABACC TERMINAL</English>
-            <French>TERMINAL DE SABACC</French>
+            <English>NAR SHADDAA SABACC TERMINAL</English>
+            <French>TERMINAL SABACC DE NAR SHADDAA</French>
         </Key>
         <Key ID="STR_brg_game_MenuWaitingHost">
             <English>Waiting for the host to start.</English>
@@ -622,12 +626,12 @@
             <French>Révélation</French>
         </Key>
         <Key ID="STR_brg_game_RulesText">
-            <English>&lt;t size='1.2' font='PuristaBold'&gt;Kessel Sabacc&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Goal&lt;/t&gt;&lt;br/&gt;Be the last player with chips.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Your hand&lt;/t&gt;&lt;br/&gt;Always one &lt;t color='#f0c870'&gt;Sand&lt;/t&gt; card and one &lt;t color='#ff6060'&gt;Blood&lt;/t&gt; card. A pair is a &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;: the lower the pair, the better (1/1 is best). Two Sylops are a &lt;t font='PuristaBold'&gt;Pure Sabacc&lt;/t&gt;, the best hand. Without a pair, the smallest difference between your two cards wins.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Special cards&lt;/t&gt;&lt;br/&gt;Sylop: takes the value of your other card.&lt;br/&gt;Impostor: at the reveal you roll two dice and choose its value.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;A round&lt;/t&gt;&lt;br/&gt;3 turns. On your turn, either stand (free), or draw a card from a deck or a discard pile for 1 chip, then keep your hand or swap the card of the same suit. Before acting you may use one shift token.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;The reveal&lt;/t&gt;&lt;br/&gt;Best hand: you get your pot back. Others lose their pot and pay 1 chip with a Sabacc, otherwise the difference between their cards. No chips left: eliminated.</English>
-            <French>&lt;t size='1.2' font='PuristaBold'&gt;Sabacc de Kessel&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;But&lt;/t&gt;&lt;br/&gt;Être le dernier joueur à avoir des jetons.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Votre main&lt;/t&gt;&lt;br/&gt;Toujours une carte &lt;t color='#f0c870'&gt;Sable&lt;/t&gt; et une carte &lt;t color='#ff6060'&gt;Sang&lt;/t&gt;. Une paire est un &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt; : plus la paire est basse, meilleure elle est (1/1 est la meilleure). Deux Sylops forment un &lt;t font='PuristaBold'&gt;Sabacc pur&lt;/t&gt;, la meilleure main. Sans paire, le plus petit écart entre vos deux cartes l'emporte.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Cartes spéciales&lt;/t&gt;&lt;br/&gt;Sylop : prend la valeur de votre autre carte.&lt;br/&gt;Imposteur : à la révélation, vous lancez deux dés et choisissez sa valeur.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Une manche&lt;/t&gt;&lt;br/&gt;3 tours. À votre tour, passez (gratuit) ou piochez une carte dans une pioche ou une défausse pour 1 jeton, puis gardez votre main ou échangez la carte de même couleur. Avant d'agir, vous pouvez utiliser un jeton bonus.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;La révélation&lt;/t&gt;&lt;br/&gt;Meilleure main : vous récupérez votre pot. Les autres perdent leur pot et paient 1 jeton avec un Sabacc, sinon l'écart entre leurs cartes. Plus de jetons : éliminé.</French>
+            <English>&lt;t size='1.2' font='PuristaBold'&gt;Nar Shaddaa Sabacc&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Goal&lt;/t&gt;&lt;br/&gt;Keep chips longer than everyone else.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Your hand&lt;/t&gt;&lt;br/&gt;You always hold two cards: one &lt;t color='#f0c870'&gt;Amber&lt;/t&gt; and one &lt;t color='#ff6060'&gt;Ember&lt;/t&gt;. Two cards of the same value make a &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;, and a low pair beats a high one (1/1 is the strongest). Two Sylops are a &lt;t font='PuristaBold'&gt;Pure Sabacc&lt;/t&gt;, the best possible hand. Without a pair, the smaller the gap between your two cards, the better.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Special cards&lt;/t&gt;&lt;br/&gt;Sylop: copies the value of your other card.&lt;br/&gt;Mirage: its value is unknown until the reveal, where you roll two dice and keep one.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;A round&lt;/t&gt;&lt;br/&gt;Up to 3 turns. On your turn, stand for free, or pay 1 chip to take a card from a deck or a discard pile, then keep it or not. You may play one shift token before acting. If everyone stands in a row, the reveal comes early.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;The reveal&lt;/t&gt;&lt;br/&gt;The best hand takes its pot back. Other players lose their pot and pay 1 chip with a Sabacc, or the gap between their cards otherwise. A player with no chip left is out.</English>
+            <French>&lt;t size='1.2' font='PuristaBold'&gt;Sabacc de Nar Shaddaa&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;But&lt;/t&gt;&lt;br/&gt;Garder des jetons plus longtemps que tous les autres.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Votre main&lt;/t&gt;&lt;br/&gt;Vous avez toujours deux cartes : une &lt;t color='#f0c870'&gt;Ambre&lt;/t&gt; et une &lt;t color='#ff6060'&gt;Braise&lt;/t&gt;. Deux cartes de même valeur forment un &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;, et une paire basse bat une paire haute (1/1 est la plus forte). Deux Sylops forment un &lt;t font='PuristaBold'&gt;Sabacc pur&lt;/t&gt;, la meilleure main possible. Sans paire, plus l'écart entre vos deux cartes est petit, mieux c'est.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Cartes spéciales&lt;/t&gt;&lt;br/&gt;Sylop : copie la valeur de votre autre carte.&lt;br/&gt;Mirage : sa valeur reste inconnue jusqu'à la révélation, où vous lancez deux dés et en gardez un.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Une manche&lt;/t&gt;&lt;br/&gt;Jusqu'à 3 tours. À votre tour, passez gratuitement, ou payez 1 jeton pour prendre une carte dans une pioche ou une défausse, puis gardez-la ou non. Vous pouvez jouer un jeton bonus avant d'agir. Si tout le monde passe à la suite, la révélation arrive plus tôt.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;La révélation&lt;/t&gt;&lt;br/&gt;La meilleure main récupère son pot. Les autres perdent leur pot et paient 1 jeton avec un Sabacc, sinon l'écart entre leurs cartes. Un joueur sans jeton est éliminé.</French>
         </Key>
         <Key ID="STR_brg_game_Sand">
-            <English>Sand</English>
-            <French>Sable</French>
+            <English>Amber</English>
+            <French>Ambre</French>
         </Key>
         <Key ID="STR_brg_game_SeatChoosing">
             <English>Choosing...</English>
@@ -726,132 +730,132 @@
             <French>Règles</French>
         </Key>
         <Key ID="STR_brg_game_Shift10Desc">
-            <English>Every other player whose last move was to stand pays a tax of 2 chips.</English>
-            <French>Les autres joueurs qui ont passé leur dernier tour doivent payer une taxe de 2 jetons.</French>
+            <English>Every other player who stood on their last turn puts 2 chips in their pot.</English>
+            <French>Chaque autre joueur qui a passé à son dernier tour met 2 jetons dans son pot.</French>
         </Key>
         <Key ID="STR_brg_game_Shift10Name">
-            <English>Raid</English>
-            <French>Raid</French>
+            <English>Crackdown</English>
+            <French>Descente</French>
         </Key>
         <Key ID="STR_brg_game_Shift11Desc">
-            <English>Every other player pays a tax of 1 chip.</English>
-            <French>Les autres joueurs doivent payer une taxe de 1 jeton.</French>
+            <English>Every other player puts 1 chip in their pot.</English>
+            <French>Chaque autre joueur met 1 jeton dans son pot.</French>
         </Key>
         <Key ID="STR_brg_game_Shift11Name">
-            <English>Regulation</English>
-            <French>Régulation</French>
+            <English>Table fee</English>
+            <French>Droit de table</French>
         </Key>
         <Key ID="STR_brg_game_Shift12Desc">
-            <English>Get 2 chips back from your pot.</English>
-            <French>Récupérez 2 jetons de votre pot.</French>
+            <English>Take 2 chips back from your pot.</English>
+            <French>Reprenez 2 jetons de votre pot.</French>
         </Key>
         <Key ID="STR_brg_game_Shift12Name">
-            <English>Refund</English>
-            <French>Remboursement</French>
+            <English>Discount</English>
+            <French>Remise</French>
         </Key>
         <Key ID="STR_brg_game_Shift13Desc">
-            <English>Roll 2 dice and pick one: the Sabacc of that value becomes the strongest after the Pure Sabacc.</English>
-            <French>Lancez 2 dés et choisissez-en un : le Sabacc de cette valeur devient le plus fort après le Sabacc pur.</French>
+            <English>Roll 2 dice and keep one: the Sabacc of that value ranks right after the Pure Sabacc.</English>
+            <French>Lancez 2 dés et gardez-en un : le Sabacc de cette valeur se classe juste après le Sabacc pur.</French>
         </Key>
         <Key ID="STR_brg_game_Shift13Name">
-            <English>Re-evaluation</English>
-            <French>Réévaluation</French>
+            <English>Priority odds</English>
+            <French>Cote prioritaire</French>
         </Key>
         <Key ID="STR_brg_game_Shift14Desc">
-            <English>Choose a player. They pay a tax of 2 chips.</English>
-            <French>Choisissez un joueur. Il doit payer une taxe de 2 jetons.</French>
+            <English>Pick a player: they put 2 chips in their pot.</English>
+            <French>Désignez un joueur : il met 2 jetons dans son pot.</French>
         </Key>
         <Key ID="STR_brg_game_Shift14Name">
-            <English>Special levy</English>
-            <French>Droit spécial</French>
+            <English>Fine</English>
+            <French>Amende</French>
         </Key>
         <Key ID="STR_brg_game_Shift15Desc">
-            <English>The strength of Sabacc hands is reversed until the reveal (6/6 beats 1/1).</English>
-            <French>La force des mains de Sabacc est inversée jusqu'à la révélation (6/6 bat 1/1).</French>
+            <English>Until the reveal, Sabacc ranks are reversed (6/6 beats 1/1).</English>
+            <French>Jusqu'à la révélation, l'ordre des Sabacc est inversé (6/6 bat 1/1).</French>
         </Key>
         <Key ID="STR_brg_game_Shift15Name">
-            <English>Cooked books</English>
-            <French>Fraude comptable</French>
+            <English>Upside down</English>
+            <French>Monde à l'envers</French>
         </Key>
         <Key ID="STR_brg_game_Shift16Desc">
-            <English>Choose a player. They discard their hand and draw a new one.</English>
-            <French>Choisissez un joueur. Il doit défausser sa main et piocher à nouveau.</French>
+            <English>Pick a player: they discard both cards and draw two new ones.</English>
+            <French>Désignez un joueur : il défausse ses deux cartes et en pioche deux nouvelles.</French>
         </Key>
         <Key ID="STR_brg_game_Shift16Name">
-            <English>Exhaustion</English>
-            <French>Épuisement</French>
+            <English>Reshuffle</English>
+            <French>Redistribution</French>
         </Key>
         <Key ID="STR_brg_game_Shift1Desc">
-            <English>Get 3 chips back from your pot.</English>
-            <French>Récupérez 3 jetons de votre pot.</French>
+            <English>Take 3 chips back from your pot.</English>
+            <French>Reprenez 3 jetons de votre pot.</French>
         </Key>
         <Key ID="STR_brg_game_Shift1Name">
-            <English>Extra refund</English>
-            <French>Remboursement supplémentaire</French>
+            <English>Rebate</English>
+            <French>Ristourne</French>
         </Key>
         <Key ID="STR_brg_game_Shift2Desc">
-            <English>Choose a player with at least 3 chips. They pay a tax of 3 chips.</English>
-            <French>Choisissez un joueur qui a au moins 3 jetons. Il doit payer une taxe de 3 jetons.</French>
+            <English>Pick a player holding 3 chips or more: 3 of their chips go to their pot.</English>
+            <French>Désignez un joueur qui possède au moins 3 jetons : 3 de ses jetons partent dans son pot.</French>
         </Key>
         <Key ID="STR_brg_game_Shift2Name">
-            <English>Audit</English>
-            <French>Audit</French>
+            <English>Inspection</English>
+            <French>Inspection</French>
         </Key>
         <Key ID="STR_brg_game_Shift3Desc">
-            <English>Impostors are worth 6 until the reveal.</English>
-            <French>La valeur des Imposteurs est fixée à 6 jusqu'à la révélation.</French>
+            <English>Until the reveal, every Mirage is worth 6.</English>
+            <French>Jusqu'à la révélation, chaque Mirage vaut 6.</French>
         </Key>
         <Key ID="STR_brg_game_Shift3Name">
-            <English>Major fraud</English>
-            <French>Grosse arnaque</French>
+            <English>Fixed mirage</English>
+            <French>Mirage figé</French>
         </Key>
         <Key ID="STR_brg_game_Shift4Desc">
-            <English>Choose a player and swap your hand with theirs.</English>
-            <French>Choisissez un joueur et échangez vos cartes avec lui.</French>
+            <English>Pick a player: you exchange your two cards with theirs.</English>
+            <French>Désignez un joueur : vous échangez vos deux cartes avec les siennes.</French>
         </Key>
         <Key ID="STR_brg_game_Shift4Name">
-            <English>Direct transaction</English>
-            <French>Transaction directe</French>
+            <English>Forced swap</English>
+            <French>Échange forcé</French>
         </Key>
         <Key ID="STR_brg_game_Shift5Desc">
-            <English>Sylops are worth 0 until the reveal.</English>
-            <French>La valeur des Sylops est fixée à 0 jusqu'à la révélation.</French>
+            <English>Until the reveal, every Sylop is worth 0.</English>
+            <French>Jusqu'à la révélation, chaque Sylop vaut 0.</French>
         </Key>
         <Key ID="STR_brg_game_Shift5Name">
-            <English>Markdown</English>
-            <French>Réduction</French>
+            <English>Dimmed sylop</English>
+            <French>Sylop éteint</French>
         </Key>
         <Key ID="STR_brg_game_Shift6Desc">
-            <English>The next player must skip their turn.</English>
-            <French>Le prochain joueur doit passer son tour.</French>
+            <English>The next player loses their turn.</English>
+            <French>Le joueur suivant perd son tour.</French>
         </Key>
         <Key ID="STR_brg_game_Shift6Name">
-            <English>Embargo</English>
-            <French>Embargo</French>
+            <English>Blockade</English>
+            <French>Blocus</French>
         </Key>
         <Key ID="STR_brg_game_Shift7Desc">
-            <English>Take 1 chip from every other player's pot and add it to yours.</English>
-            <French>Prenez 1 jeton dans le pot de chaque joueur et ajoutez-les à votre pot.</French>
+            <English>Each other player moves 1 chip from their pot to yours.</English>
+            <French>Chaque autre joueur transfère 1 jeton de son pot vers le vôtre.</French>
         </Key>
         <Key ID="STR_brg_game_Shift7Name">
-            <English>Embezzlement</English>
-            <French>Détournement de fonds</French>
+            <English>Skim</English>
+            <French>Prélèvement</French>
         </Key>
         <Key ID="STR_brg_game_Shift8Desc">
-            <English>Your next draw this round costs nothing.</English>
-            <French>Votre prochaine pioche de la manche est gratuite.</French>
+            <English>Your next draw this round costs no chip.</English>
+            <French>Votre prochaine pioche de la manche ne coûte aucun jeton.</French>
         </Key>
         <Key ID="STR_brg_game_Shift8Name">
-            <English>Free draw</English>
-            <French>Tirage gratuit</French>
+            <English>Courtesy draw</English>
+            <French>Pioche offerte</French>
         </Key>
         <Key ID="STR_brg_game_Shift9Desc">
-            <English>Shift tokens have no effect on you until the reveal.</English>
-            <French>Les bonus n'ont pas d'effet sur vous jusqu'à la révélation.</French>
+            <English>Until the reveal, other players' tokens cannot affect you.</English>
+            <French>Jusqu'à la révélation, les jetons des autres joueurs ne vous affectent pas.</French>
         </Key>
         <Key ID="STR_brg_game_Shift9Name">
-            <English>Immunity</English>
-            <French>Immunité</French>
+            <English>Shield</English>
+            <French>Bouclier</French>
         </Key>
         <Key ID="STR_brg_game_ShiftNone">
             <English>No shift token left.</English>
@@ -882,8 +886,8 @@
             <French>Partie terminée : aucun vainqueur.</French>
         </Key>
         <Key ID="STR_brg_game_StatusImpostorChoice">
-            <English>Reveal: choose the value of your Impostor.</English>
-            <French>Révélation : choisissez la valeur de votre Imposteur.</French>
+            <English>Reveal: choose the value of your Mirage.</English>
+            <French>Révélation : choisissez la valeur de votre Mirage.</French>
         </Key>
         <Key ID="STR_brg_game_StatusLobby">
             <English>Waiting</English>
@@ -914,8 +918,8 @@
             <French>%1 joue...</French>
         </Key>
         <Key ID="STR_brg_game_StatusWaitingChoices">
-            <English>Reveal: waiting for the other players' Impostors...</English>
-            <French>Révélation : en attente des Imposteurs des autres joueurs...</French>
+            <English>Reveal: waiting for the other players' Mirages...</English>
+            <French>Révélation : en attente des Mirages des autres joueurs...</French>
         </Key>
         <Key ID="STR_brg_game_StatusYourTurn">
             <English>Your turn: draw a card (1 chip) or stand.</English>
@@ -998,8 +1002,8 @@
             <French>Manche et tour en cours. Une manche dure 3 tours, ou moins si tout le monde passe.</French>
         </Key>
         <Key ID="STR_brg_game_TipRules">
-            <English>Show the rules of Kessel Sabacc.</English>
-            <French>Afficher les règles du Sabacc de Kessel.</French>
+            <English>Show the rules of Nar Shaddaa Sabacc.</English>
+            <French>Afficher les règles du Sabacc de Nar Shaddaa.</French>
         </Key>
         <Key ID="STR_brg_game_TipSeatLine">
             <English>The table you are seated at.</English>

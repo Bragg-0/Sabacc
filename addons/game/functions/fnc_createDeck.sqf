@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Bragg
- * Builds and shuffles one suit of the Kessel deck (3 x 1..6, 3 Impostors, 2 Sylops).
+ * Builds and shuffles one suit of the deck (3 x 1..6, 3 Mirages, 2 Sylops).
  *
  * Arguments:
  * 0: Suit (SUIT_SAND / SUIT_BLOOD) <NUMBER>

@@ -7,7 +7,7 @@
  *   "draw"    [source]           take a card (1 chip), see SOURCE_* macros
  *   "discard" [keepDrawn]        0: discard the drawn card, 1: keep it and discard the hand card of the same suit
  *   "shift"   [id, targetUid]    use a shift token (once per turn, before drawing/standing)
- *   "choose"  [index]            pick one of two dice (Impostor value or Re-evaluation)
+ *   "choose"  [index]            pick one of two dice (Mirage value or Priority odds)
  *
  * Arguments:
  * 0: Uid <STRING>
@@ -26,7 +26,7 @@ private _player = [_table, _uid] call FUNC(serverFindPlayer);
 if (count _player == 0 || {_player get "out"}) exitWith {};
 private _unit = _player get "unit";
 
-// Dice choices can happen outside of the player's turn (Impostors at the reveal)
+// Dice choices can happen outside of the player's turn (Mirages at the reveal)
 if (_type == "choose") exitWith {
     _args params [["_index", 0, [0]]];
     [_table, _player, _index] call FUNC(serverResolveChoice);

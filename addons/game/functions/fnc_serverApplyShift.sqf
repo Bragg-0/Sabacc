@@ -77,10 +77,10 @@ private _fnc_refund = {
 
 // ---- Effects ----------------------------------------------------------------
 switch (_shift) do {
-    case 1: {[_player, 3] call _fnc_refund};                  // Extra refund
-    case 2: {[_target, 3] call _fnc_tax};                     // Audit
-    case 3: {_effects set ["impostorSix", true]};             // Major fraud
-    case 4: {                                                 // Direct transaction
+    case 1: {[_player, 3] call _fnc_refund};                  // Rebate
+    case 2: {[_target, 3] call _fnc_tax};                     // Inspection
+    case 3: {_effects set ["impostorSix", true]};             // Fixed mirage
+    case 4: {                                                 // Forced swap
         private _mySand = _player get "sand";
         private _myBlood = _player get "blood";
         _player set ["sand", _target get "sand"];
@@ -88,9 +88,9 @@ switch (_shift) do {
         _target set ["sand", _mySand];
         _target set ["blood", _myBlood];
     };
-    case 5: {_effects set ["sylopZero", true]};               // Markdown
-    case 6: {_effects set ["embargo", _next get "uid"]};      // Embargo
-    case 7: {                                                 // Embezzlement
+    case 5: {_effects set ["sylopZero", true]};               // Dimmed sylop
+    case 6: {_effects set ["embargo", _next get "uid"]};      // Blockade
+    case 7: {                                                 // Skim
         {
             if (!(_x get "immune") && {(_x get "pot") > 0}) then {
                 _x set ["pot", (_x get "pot") - 1];
@@ -98,21 +98,21 @@ switch (_shift) do {
             };
         } forEach _others;
     };
-    case 8: {_effects set ["freeDraw", _uid]};                // Free draw
-    case 9: {_player set ["immune", true]};                   // Immunity
-    case 10: {                                                // Raid
+    case 8: {_effects set ["freeDraw", _uid]};                // Courtesy draw
+    case 9: {_player set ["immune", true]};                   // Shield
+    case 10: {                                                // Crackdown
         {
             if ((_x get "lastAction") == "stand") then {[_x, 2] call _fnc_tax};
         } forEach _others;
     };
-    case 11: {{[_x, 1] call _fnc_tax} forEach _others};       // Regulation
-    case 12: {[_player, 2] call _fnc_refund};                 // Refund
-    case 13: {                                                // Re-evaluation
+    case 11: {{[_x, 1] call _fnc_tax} forEach _others};       // Table fee
+    case 12: {[_player, 2] call _fnc_refund};                 // Discount
+    case 13: {                                                // Priority odds
         _player set ["pending", ["priority", [1 + floor random 6, 1 + floor random 6], -1]];
     };
-    case 14: {[_target, 2] call _fnc_tax};                    // Special levy
-    case 15: {_effects set ["inverted", true]};               // Cooked books
-    case 16: {                                                // Exhaustion
+    case 14: {[_target, 2] call _fnc_tax};                    // Fine
+    case 15: {_effects set ["inverted", true]};               // Upside down
+    case 16: {                                                // Reshuffle
         private _decks = _table get "decks";
         private _discards = _table get "discards";
         {

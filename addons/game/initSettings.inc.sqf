@@ -1,4 +1,4 @@
-private _category = ["Sabacc", LLSTRING(SettingsRules)];
+private _category = [LLSTRING(GameTitle), LLSTRING(SettingsRules)];
 
 [
     QGVAR(startChips), "SLIDER",
@@ -27,11 +27,11 @@ private _category = ["Sabacc", LLSTRING(SettingsRules)];
 [
     QGVAR(requireTerminal), "CHECKBOX",
     [LSTRING(SettingRequireTerminal), LSTRING(SettingRequireTerminalTip)],
-    ["Sabacc", LLSTRING(SettingsAccess)], true, 1
+    [LLSTRING(GameTitle), LLSTRING(SettingsAccess)], true, 1
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(sounds), "CHECKBOX",
     [LSTRING(SettingSounds), LSTRING(SettingSoundsTip)],
-    ["Sabacc", LLSTRING(SettingsInterface)], true, 0
+    [LLSTRING(GameTitle), LLSTRING(SettingsInterface)], true, 0
 ] call CBA_fnc_addSetting;

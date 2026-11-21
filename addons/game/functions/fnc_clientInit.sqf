@@ -47,23 +47,16 @@ GVAR(diceRolling) = false;
     if (count GVAR(state) > 0) then {["refresh"] call FUNC(request)};
 }] call CBA_fnc_addPlayerEventHandler;
 
-if (isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
-    private _action = [
-        QGVAR(openTerminal),
-        LLSTRING(ActionOpen),
-        TEXTURE_TERMINAL,
-        {call FUNC(openTerminal)},
-        {[_player] call FUNC(canOpenTerminal)}
-    ] call ace_interact_menu_fnc_createAction;
-    ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-} else {
+// With ACE, the self-interaction action comes from the brg_compat_ace addon (config only).
+// Without ACE, a scroll-wheel action is added to the player.
+if !(isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
     ["unit", {
         params ["_unit"];
         if (_unit getVariable [QGVAR(actionAdded), false]) exitWith {};
         _unit setVariable [QGVAR(actionAdded), true];
         _unit addAction [
             format ["<img image='%1'/> %2", TEXTURE_TERMINAL, LLSTRING(ActionOpen)],
-            {call FUNC(openTerminal)},
+            {[] call FUNC(openTerminal)},
             nil, 0.5, false, true, "",
             QUOTE([_this] call FUNC(canOpenTerminal))
         ];

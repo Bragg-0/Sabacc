@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Bragg
- * Applies a dice choice: an Impostor value at the reveal, or the Re-evaluation shift.
+ * Applies a dice choice: a Mirage value at the reveal, or the Priority odds shift.
  *
  * Arguments:
  * 0: Table <HASHMAP>
@@ -26,7 +26,7 @@ if (_type == "priority") exitWith {
     [_table] call FUNC(serverSync);
 };
 
-// Impostor
+// Mirage
 if ((_table get "phase") != PHASE_CHOICE) exitWith {};
 (_player get "resolved") set [_suit, _value];
 [_table, LSTRING(LogImpostor), [_player get "name", [LSTRING(Sand), LSTRING(Blood)] select _suit, _value]] call FUNC(serverLog);

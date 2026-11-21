@@ -37,6 +37,7 @@ hemtt release  # signed release
 | `addons/main` | mod metadata, shared macros |
 | `addons/items` | the Nar Shaddaa Sabacc Terminal item |
 | `addons/game` | game logic (`fnc_server*`), UI (`fnc_menu*`, `fnc_game*`), settings, textures |
+| `addons/compat_ace` | ACE self-interaction to open the terminal (loaded only when ACE is present) |
 
 ## 📜 Licence
 

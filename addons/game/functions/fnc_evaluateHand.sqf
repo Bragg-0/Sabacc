@@ -1,12 +1,12 @@
 #include "..\script_component.hpp"
 /*
  * Author: Bragg
- * Scores a resolved hand. Impostors must already be replaced by their dice value.
+ * Scores a resolved hand. Mirages must already be replaced by their dice value.
  * A lower score is a better hand.
  *
  *   0        Pure Sabacc (two Sylops)
- *   1        Sabacc made "priority" by the Re-evaluation shift
- *   2..9     Sabacc (pair), 1/1 is the best (order reversed by the Cooked Books shift)
+ *   1        Sabacc made "priority" by the "Priority odds" shift
+ *   2..9     Sabacc (pair), 1/1 is the best (order reversed by the "Upside down" shift)
  *   100+     No Sabacc: smallest difference first, then lowest card
  *
  * Arguments:

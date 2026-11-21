@@ -14,6 +14,15 @@ private _display = uiNamespace getVariable [QGVAR(gameDisplay), displayNull];
 private _state = GVAR(state);
 if (isNull _display || {count _state == 0}) exitWith {};
 
+// Nothing pulses while a banner is shown: the table cannot be used during it
+if (diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0])) exitWith {
+    GVAR(pulse) = false;
+    {
+        _x ctrlSetFade 0;
+        _x ctrlCommit 0.2;
+    } forEach ([_display getVariable "myPanel", _display getVariable "statusLine"] + ((_display getVariable "seats") apply {_x select 0}));
+};
+
 GVAR(pulse) = !GVAR(pulse);
 
 private _myUid = getPlayerUID player;

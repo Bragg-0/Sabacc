@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: Bragg
- * End of the third turn: every Impostor gets two dice and its owner picks one
- * (unless the Major fraud shift fixed Impostors to 6).
+ * End of the third turn: every Mirage gets two dice and its owner picks one
+ * (unless the Fixed mirage shift set Mirages to 6).
  *
  * Arguments:
  * 0: Table <HASHMAP>

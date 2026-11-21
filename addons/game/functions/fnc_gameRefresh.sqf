@@ -57,7 +57,7 @@ private _fnc_tags = {
     _tags joinString " "
 };
 private _fnc_hand = {
-    // Evaluation of a hand without dice: [labelText, isSabacc, penalty] or [] if an Impostor is unknown
+    // Evaluation of a hand without dice: [labelText, isSabacc, penalty] or [] if a Mirage is unknown
     params ["_sand", "_blood"];
     if (_sand < 0 || {_blood < 0}) exitWith {[]};
     private _values = [CARD_VALUE(_sand), CARD_VALUE(_blood)];
@@ -75,8 +75,9 @@ private _fnc_hand = {
 
 // ===================================================================== Header
 (_display getVariable "title") ctrlSetStructuredText parseText format [
-    "<t font='PuristaBold' size='1.15' color='%1'>SABACC</t><t size='1' color='%2'>  //  </t><t font='PuristaMedium' size='1' color='%3'>%4</t>",
-    HTML_AMBER, HTML_DIM, HTML_TEXT, toUpper (_state get "name")
+    // Two lines: the game title, then the table name
+    "<t font='PuristaBold' size='0.95' color='%1'>%5</t><br/><t size='0.62' color='%2'>//  </t><t font='PuristaMedium' size='0.62' color='%3'>%4</t>",
+    HTML_AMBER, HTML_DIM, HTML_TEXT, toUpper (_state get "name"), toUpper LLSTRING(GameTitle)
 ];
 call FUNC(gameUpdateHeader);
 
@@ -271,7 +272,7 @@ if (_showChoice) then {
             if (_type == "priority") then {
                 _outcome = format [LLSTRING(EffectPriority), _value];
             } else {
-                // Impostor: evaluate the hand with this value (unknown if the other card is an Impostor too)
+                // Mirage: evaluate the hand with this value (unknown if the other card is a Mirage too)
                 private _otherCard = _me get (["blood", "sand"] select _suit);
                 private _otherValue = CARD_VALUE(_otherCard);
                 if (_otherValue != VALUE_IMPOSTOR) then {
@@ -358,7 +359,7 @@ if (_showResults) then {
         default {
             _hand params ["_label", "_isSabacc", "_penalty"];
             _rows pushBack ([LLSTRING(LabelHand), _label, [HTML_TEXT, HTML_GOOD] select _isSabacc, 0.9] call FUNC(uiRow));
-            // An Impostor only has a value here because a shift token fixed it: say it
+            // A Mirage only has a value here because a shift token fixed it: say it
             if (VALUE_IMPOSTOR in [CARD_VALUE(_mySand), CARD_VALUE(_myBlood)]) then {
                 _rows pushBack format ["<t size='0.65' color='%1'>%2</t>", HTML_AMBER, LLSTRING(HandImpostorFixed)];
             };
@@ -479,3 +480,21 @@ _display setVariable ["inspectorDefault", _default];
 // ===================================================================== Animations (only what changed since the last view)
 [_display, missionNamespace getVariable [QGVAR(lastView), createHashMap], _state] call FUNC(gameAnimate);
 GVAR(lastView) = _state;
+
+// While a banner is shown (possibly just started by gameAnimate) every button is disabled,
+// so nothing looks usable; animBanner refreshes the screen again once the banner is gone
+private _endButtons = (_display getVariable "endScreen") select [count (_display getVariable "endScreen") - 4, 4];
+if (diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0])) then {
+    {_x ctrlEnable false} forEach (
+        (_display getVariable "buttons")
+        + ((_display getVariable "seats") apply {_x select 6})
+        + _endButtons
+    );
+} else {
+    // Buttons whose state is not decided elsewhere (stand / keep hand and "new game" are)
+    {_x ctrlEnable true} forEach (
+        [(_display getVariable "buttons") select 2]
+        + ((_display getVariable "seats") apply {_x select 6})
+        + (_endButtons select [1, 3])
+    );
+};

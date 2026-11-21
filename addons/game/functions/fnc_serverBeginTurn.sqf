@@ -27,7 +27,12 @@ if ((_effects getOrDefault ["embargo", ""]) == _uid) exitWith {
     [_table] call FUNC(serverEndTurn);
 };
 
-[_table, GVAR(turnTime)] call FUNC(serverArmTimer);
+// Humans get extra time while their client shows the turn banner(s): the countdown starts after them
+private _grace = 0;
+if !(_player get "bot") then {
+    _grace = [BANNER_TIME, BANNER_TIME_ROUND] select ((_table get "turn") == 1 && {(_table get "lapPos") == 0});
+};
+[_table, GVAR(turnTime) + _grace] call FUNC(serverArmTimer);
 
 if (_player get "bot") then {
     [FUNC(serverBotPlay), [_table get "id", _table get "token"], 1.5 + random 1.5] call CBA_fnc_waitAndExecute;

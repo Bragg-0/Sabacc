@@ -1,8 +1,8 @@
 // ---------------------------------------------------------------------------
 // Cards
 // A card is encoded as a single number: SUIT * 10 + VALUE
-//   SUIT  : 0 = Sand, 1 = Blood
-//   VALUE : 1..6, 7 = Impostor, 8 = Sylop
+//   SUIT  : 0 = Amber ("sand" in the code), 1 = Ember ("blood" in the code)
+//   VALUE : 1..6, 7 = Mirage, 8 = Sylop
 // ---------------------------------------------------------------------------
 #define SUIT_SAND 0
 #define SUIT_BLOOD 1
@@ -17,7 +17,7 @@
 #define CARD_NONE -1
 #define CARD_HIDDEN -2
 
-// Number of copies of each card in one suit (3 x 1..6, 3 Impostors, 2 Sylops = 23 cards)
+// Number of copies of each card in one suit (3 x 1..6, 3 Mirages, 2 Sylops = 23 cards)
 #define COPIES_NUMBER 3
 #define COPIES_IMPOSTOR 3
 #define COPIES_SYLOP 2
@@ -26,6 +26,13 @@
 // Game flow
 // ---------------------------------------------------------------------------
 #define TURNS_PER_ROUND 3
+
+// Seconds added to a human player's turn while the client shows its banner
+// ("Your turn!", and "Round N" before it at the start of a round): the countdown starts after it
+#define BANNER_TIME 2.2
+#define BANNER_TIME_ROUND 3.5
+// How long a banner blocks clicks on the client (appear 0.2 s + hold 1.4 s + part of the fade)
+#define BANNER_BLOCK 1.9
 #define MIN_PLAYERS 2
 #define MAX_PLAYERS 4
 #define SHIFT_COUNT 16

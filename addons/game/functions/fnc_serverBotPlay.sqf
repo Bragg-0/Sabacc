@@ -5,7 +5,7 @@
  *   - with a Sabacc (or no chip left): stand,
  *   - otherwise take a discard card that improves the hand, or draw from a deck,
  *   - after drawing, keep whichever card gives the better hand.
- * Impostors are counted as 3 (average-ish die) when estimating a hand.
+ * Mirages are counted as 3 (average-ish die) when estimating a hand.
  *
  * Arguments:
  * 0: Table id <NUMBER>

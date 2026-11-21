@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Bragg
- * Moves the next queued Impostor choice of a player into "pending".
+ * Moves the next queued Mirage choice of a player into "pending".
  *
  * Arguments:
  * 0: Table <HASHMAP>

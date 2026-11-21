@@ -25,8 +25,11 @@ private _phaseText = switch (true) do {
     default {LLSTRING(PhaseResults)};
 };
 (_display getVariable "roundInfo") ctrlSetStructuredText parseText format [
-    "<t align='right' size='0.7' color='%1'>%2 </t><t align='right' font='PuristaBold' size='1' color='%3'>%4</t><t align='right' size='0.7' color='%1'>  %5</t>",
-    HTML_MUTED, toUpper LLSTRING(LabelRound), HTML_TEXT, _state get "round", toUpper _phaseText
+    "<t align='right' size='0.72' color='%1'>%2 </t><t align='right' font='PuristaBold' size='0.9' color='%3'>%4</t>",
+    HTML_MUTED, toUpper LLSTRING(LabelRound), HTML_TEXT, _state get "round"
+];
+(_display getVariable "phaseInfo") ctrlSetStructuredText parseText format [
+    "<t align='right' size='0.62' color='%1'>%2</t>", HTML_MUTED, toUpper _phaseText
 ];
 
 // Turn pips: done = holo, current = amber, to come = faint
@@ -47,6 +50,8 @@ private _total = switch (_phase) do {
     default {GVAR(resultsTime)};
 };
 private _remaining = if (_playing) then {(ceil ((_state get "deadline") - CBA_missionTime)) max 0} else {0};
+// The server adds a short grace while the banner is shown: the countdown displays the full time until then
+_remaining = _remaining min (ceil _total);
 private _urgent = _playing && {_remaining <= 10};
 private _minutes = floor (_remaining / 60);
 private _seconds = _remaining mod 60;
