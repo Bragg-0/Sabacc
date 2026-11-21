@@ -17,4 +17,4 @@ Exports/
 *.pbo
 *.sqfc
 *.pdf
-*.py
+tools/

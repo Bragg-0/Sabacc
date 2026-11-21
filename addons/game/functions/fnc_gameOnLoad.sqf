@@ -120,6 +120,7 @@ _close ctrlAddEventHandler ["ButtonClick", {(ctrlParent (_this select 0)) closeD
 // ===================================================================== Opponents
 private _seats = [];
 private _seatShifts = [];
+private _seatOut = []; // per seat: [sand caption, blood caption, "ELIMINATED" label]
 for "_i" from 0 to 2 do {
     private _x0 = 0.5 + _i * 13.1;
     private _frame = [[_x0, 2, 12.8, 7], " "] call _fnc_frame;
@@ -131,11 +132,19 @@ for "_i" from 0 to 2 do {
     _stats ctrlSetTooltip LLSTRING(TipSeatStats);
     private _status = [GRID(_x0 + 6.3,6.4,6.1,1.4)] call _fnc_text;
 
+    private _capSand = [GRID(_x0 + 0.3,8.1,3,0.7), LLSTRING(Sand), HTML_SAND] call _fnc_caption;
+    private _capBlood = [GRID(_x0 + 3.15,8.1,3,0.7), LLSTRING(Blood), HTML_BLOOD] call _fnc_caption;
     private _extras = (_frame select [2, count _frame]) + [
-        [GRID(_x0 + 0.3,8.1,3,0.7), LLSTRING(Sand), HTML_SAND] call _fnc_caption,
-        [GRID(_x0 + 3.15,8.1,3,0.7), LLSTRING(Blood), HTML_BLOOD] call _fnc_caption,
+        _capSand,
+        _capBlood,
         [GRID(_x0 + 6.3,6.35,6.1,0.04), COLOR_HOLO_FAINT] call _fnc_rect
     ];
+    // Shown in place of the cards once this opponent is eliminated
+    private _outLabel = [GRID(_x0 + 0.3,4.8,5.9,1.6), format [
+        "<t align='center' font='PuristaSemibold' size='1.25' color='%1'>%2</t>", HTML_BAD, toUpper LLSTRING(SeatOut)
+    ]] call _fnc_text;
+    _outLabel ctrlShow false;
+    _seatOut pushBack [_capSand, _capBlood, _outLabel];
     private _bonusLabel = [GRID(_x0 + 6.3,5.3,2.4,0.9), format ["<t size='0.72' color='%1'>%2</t>", HTML_MUTED, toUpper LLSTRING(LabelShifts)]] call _fnc_text;
 
     // Shift tokens of this opponent (hover = description in the analysis panel)
@@ -154,6 +163,7 @@ for "_i" from 0 to 2 do {
 };
 _display setVariable ["seats", _seats];
 _display setVariable ["seatShifts", _seatShifts];
+_display setVariable ["seatOut", _seatOut];
 
 // ===================================================================== Status line
 [GRID(0.5,9.25,39,1.1), COLOR_STRIP] call _fnc_rect;

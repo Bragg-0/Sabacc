@@ -60,7 +60,6 @@
 // Assets
 // ---------------------------------------------------------------------------
 #define TEXTURE_BACK QPATHTOF(data\cards\back.paa)
-#define TEXTURE_CHIPS QPATHTOF(data\ui\chips.paa)
 #define TEXTURE_TERMINAL "\x\brg\addons\items\data\ui\terminal_ca.paa"
 
 // ---------------------------------------------------------------------------

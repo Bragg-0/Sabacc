@@ -97,11 +97,16 @@ _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
     private _seatIndex = _forEachIndex;
     _seat params ["_bg", "_title", "_stats", "_sand", "_blood", "_statusCtrl", "_target"];
 
+    ((_display getVariable "seatOut") select _seatIndex) params ["_capSand", "_capBlood", "_outLabel"];
     if (_seatIndex >= count _opponents) then {
-        {_x ctrlShow false} forEach (_seat + ((_display getVariable "seatShifts") select _seatIndex));
+        {_x ctrlShow false} forEach (_seat + ((_display getVariable "seatShifts") select _seatIndex) + [_outLabel]);
     } else {
         {_x ctrlShow true} forEach _seat;
         private _player = _opponents select _seatIndex;
+        // Eliminated: no suit captions, a big "ELIMINATED" where the cards were
+        private _seatOut = _player get "out";
+        {_x ctrlShow !_seatOut} forEach [_capSand, _capBlood];
+        _outLabel ctrlShow _seatOut;
         private _uid = _player get "uid";
         private _isCurrent = _uid == _current;
 
