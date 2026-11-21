@@ -27,6 +27,9 @@
 // ---------------------------------------------------------------------------
 #define TURNS_PER_ROUND 3
 
+// Distance (m) to sit at / watch a physical table
+#define WORLD_TABLE_RANGE 5
+
 // Seconds added to a human player's turn while the client shows its banner
 // ("Your turn!", and "Round N" before it at the start of a round): the countdown starts after it
 #define BANNER_TIME 2.2

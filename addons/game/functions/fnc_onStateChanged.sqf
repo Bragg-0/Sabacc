@@ -42,5 +42,11 @@ if (_myTurn && {!_terminalOpen} && {(_previous getOrDefault ["current", ""]) != 
 
 if (!_myTurn) then {GVAR(targeting) = -1};
 
+// Sat at / watching a physical table: open the screen now that the server answered
+if (GVAR(openOnState) && {count _state > 0}) then {
+    GVAR(openOnState) = false;
+    [] call FUNC(openTerminal);
+};
+
 call FUNC(menuRefresh);
 call FUNC(gameRefresh);

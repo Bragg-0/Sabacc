@@ -175,6 +175,24 @@ Les résultats d'une manche restent affichés **12 secondes** avant la manche su
 - **Lancer** (hôte) : démarre la partie, à partir de 2 joueurs.
 - **Quitter** une table pendant une partie revient à **abandonner**.
 
+### Tables physiques
+
+Une mission peut placer des **tables de Sabacc dans le monde** (module d'éditeur « Table de Sabacc », ou script). Approchez-vous d'une table, à 5 m au plus :
+
+- **S'asseoir à la table** : vous rejoignez la partie en attente. Aucun terminal n'est nécessaire.
+- **Regarder la partie** : si une partie est déjà en cours.
+- **Ouvrir la table** : pour revenir à votre partie.
+
+Le premier joueur assis devient l'hôte. Quand tout le monde est parti, la table revient en attente avec ses droïdes.
+
+### Spectateurs
+
+Dans le menu, sélectionnez une partie en cours puis **Regarder**. Le spectateur voit la table en direct, mais **aucune main** : les cartes restent cachées jusqu'à la révélation, comme pour les joueurs. **Ne plus regarder** permet de quitter.
+
+### Statistiques
+
+Le bouton **Statistiques** du menu affiche vos parties et manches jouées et gagnées, vos Sabacc et Sabacc purs, ainsi que le **classement du serveur** (5 meilleurs joueurs). Les statistiques sont enregistrées sur le serveur, les droïdes ne sont pas comptés.
+
 ### Réglages du serveur (CBA)
 
 | Réglage | Par défaut | Plage |

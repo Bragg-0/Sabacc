@@ -47,10 +47,17 @@ if ((_table get "status") == STATUS_PLAYING) then {
 // Clear the view of the player who left
 [EVENT_STATE, [createHashMap], _unit] call CBA_fnc_targetEvent;
 
-// A table with only droids left is closed
+// No human left: a physical table goes back to waiting, a terminal table is closed
 private _remaining = _players select {!(_x get "left") && {!(_x get "bot")}};
+if (_remaining isEqualTo [] && {_table get "world"}) exitWith {
+    [_table] call FUNC(serverResetWorldTable);
+};
 if (_remaining isEqualTo []) exitWith {
     {GVAR(seats) deleteAt (_x get "uid")} forEach (_players select {_x get "bot"});
+    {
+        GVAR(watching) deleteAt _x;
+        [EVENT_STATE, [createHashMap], _y] call CBA_fnc_targetEvent;
+    } forEach (_table get "spectators");
     _table set ["token", (_table get "token") + 1];
     GVAR(tables) deleteAt _id;
     call FUNC(serverSyncLobby);

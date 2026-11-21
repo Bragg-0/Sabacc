@@ -175,6 +175,24 @@ The results of a round stay on screen for **12 seconds** before the next round.
 - **Start** (host): starts the game, from 2 players.
 - **Leaving** a table during a game means **forfeiting**.
 
+### Physical tables
+
+A mission can place **Sabacc tables in the world** (editor module "Sabacc table", or script). Walk up to a table, within 5 m:
+
+- **Sit at the Sabacc table**: you join the waiting game. No terminal needed.
+- **Watch the Sabacc game**: when a game is already in progress.
+- **Open the Sabacc table**: to come back to your game.
+
+The first player to sit becomes the host. When everybody has left, the table goes back to waiting, with its droids.
+
+### Spectators
+
+In the menu, select a game in progress, then **Watch**. Spectators see the table live but **no hand**: cards stay hidden until the reveal, just like for the players. **Stop watching** to leave.
+
+### Statistics
+
+The **Statistics** button of the menu shows your games and rounds played and won, your Sabaccs and Pure Sabaccs, and the **server ranking** (top 5). Statistics are saved on the server; droids are not counted.
+
 ### Server settings (CBA)
 
 | Setting | Default | Range |

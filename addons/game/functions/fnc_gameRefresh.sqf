@@ -15,23 +15,24 @@ if (isNull _display) exitWith {};
 private _state = GVAR(state);
 if (count _state == 0) exitWith {_display closeDisplay 2};
 
-private _myUid = getPlayerUID player;
+// "Me" is the player shown in the bottom station: myself, or the 4th player for a spectator
+([_state] call FUNC(viewSubject)) params ["_myUid", "_me", "_spectator"];
+_display setVariable ["viewUid", _myUid];
 private _players = _state get "players";
 private _myIndex = _players findIf {(_x get "uid") == _myUid};
-if (_myIndex < 0) exitWith {_display closeDisplay 2};
-
-private _me = _players select _myIndex;
+if (_myIndex < 0 && {!_spectator}) exitWith {_display closeDisplay 2};
+private _placeholder = _spectator && {_myIndex < 0}; // spectator of a table with 3 players or fewer
 private _status = _state get "status";
 private _phase = _state get "phase";
 private _current = _state get "current";
 private _effects = _state get "effects";
 private _results = _state get "results";
 private _showResults = _results isNotEqualTo [] && {_phase == PHASE_RESULTS || {_status == STATUS_OVER}};
-private _isOwner = (_state get "ownerUid") == _myUid;
+private _isOwner = !_spectator && {(_state get "ownerUid") == _myUid};
 
 private _drawn = _me get "drawn";
 private _pending = _me get "pending";
-private _myTurn = _status == STATUS_PLAYING && {_phase == PHASE_TURN} && {_current == _myUid};
+private _myTurn = !_spectator && {_status == STATUS_PLAYING} && {_phase == PHASE_TURN} && {_current == _myUid};
 private _canAct = _myTurn && {_pending isEqualTo []};
 if (!_myTurn) then {GVAR(targeting) = -1};
 private _targeting = GVAR(targeting) > 0;
@@ -84,7 +85,11 @@ call FUNC(gameUpdateHeader);
 // ===================================================================== Opponents, in play order after me
 private _opponents = [];
 private _count = count _players;
-for "_i" from 1 to (_count - 1) do {_opponents pushBack (_players select ((_myIndex + _i) mod _count))};
+if (_myIndex < 0) then {
+    _opponents = _players select [0, 3];
+} else {
+    for "_i" from 1 to (_count - 1) do {_opponents pushBack (_players select ((_myIndex + _i) mod _count))};
+};
 _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
 
 {
@@ -178,6 +183,8 @@ private _statusText = switch (true) do {
     case (_phase == PHASE_CHOICE): {
         if (_pending isNotEqualTo []) then {LLSTRING(StatusImpostorChoice)} else {LLSTRING(StatusWaitingChoices)}
     };
+    case (_spectator && {_phase == PHASE_TURN}): {format [LLSTRING(StatusSpectatorTurn), [_current] call _fnc_nameOf]};
+    case (_spectator): {LLSTRING(StatusSpectator)};
     case (_me get "out"): {LLSTRING(StatusEliminated)};
     case (!_myTurn): {format [LLSTRING(StatusTurnOf), [_current] call _fnc_nameOf]};
     case (_pending isNotEqualTo []): {LLSTRING(StatusPriorityChoice)};
@@ -383,7 +390,7 @@ private _handInfo = _display getVariable "handInfo";
 _handInfo ctrlSetStructuredText parseText (_rows joinString "<br/>");
 
 // Eliminated: the station says it clearly instead of showing an empty hand
-private _isOut = _me get "out";
+private _isOut = (_me get "out") || _placeholder;
 private _outBanner = _display getVariable "outBanner";
 _outBanner ctrlShow _isOut;
 // The cards of the round that eliminated me would show under the banner
@@ -392,12 +399,17 @@ if (_isOut) then {(_display getVariable "myDrawn") ctrlShow false};
 _handInfo ctrlShow !_isOut;
 {_x ctrlShow !_isOut} forEach ((_display getVariable "myCaptions") + (_display getVariable "myDividers") + [_display getVariable "shiftsTitle"]);
 if (_isOut) then {
-    private _round = _me get "eliminatedRound";
+    private _round = (_me get "eliminatedRound") max 1;
+    // [title color, title, reason, help]
+    (switch (true) do {
+        case (_placeholder): {[HTML_HOLO, LLSTRING(SpectatorTitle), LLSTRING(SpectatorReason), LLSTRING(SpectatorHelp)]};
+        case (_spectator): {[HTML_BAD, LLSTRING(OutTitle), format [LLSTRING(OutReasonOther), _me get "name", _round], LLSTRING(SpectatorHelp)]};
+        case (_me get "left"): {[HTML_BAD, LLSTRING(OutTitle), LLSTRING(OutLeft), LLSTRING(OutHelp)]};
+        default {[HTML_BAD, LLSTRING(OutTitle), format [LLSTRING(OutReason), _round], LLSTRING(OutHelp)]};
+    }) params ["_titleColor", "_title", "_reason", "_help"];
     _outBanner ctrlSetStructuredText parseText format [
         "<t align='center' font='PuristaBold' size='2.4' color='%1'>%2</t><br/><t align='center' size='0.95' color='%3'>%4</t><br/><t align='center' size='0.75' color='%5'>%6</t>",
-        HTML_BAD, toUpper LLSTRING(OutTitle),
-        HTML_TEXT, if (_me get "left") then {LLSTRING(OutLeft)} else {format [LLSTRING(OutReason), _round max 1]},
-        HTML_MUTED, LLSTRING(OutHelp)
+        _titleColor, toUpper _title, HTML_TEXT, _reason, HTML_MUTED, _help
     ];
 };
 _handInfo ctrlSetTooltip LLSTRING(TipMyStats);
@@ -419,7 +431,7 @@ switch (true) do {
         _main setVariable [QGVAR(action), "takeDrawn"];
     };
     default {
-        _main ctrlShow (_status == STATUS_PLAYING && {!(_me get "out")});
+        _main ctrlShow (_status == STATUS_PLAYING && {!(_me get "out")} && {!_spectator});
         _main ctrlEnable (_canAct && {!_targeting});
         _main ctrlSetText toUpper LLSTRING(GameStand);
         _main setVariable [QGVAR(action), "stand"];
@@ -442,7 +454,11 @@ if (_status == STATUS_OVER) then {
     _second setVariable [QGVAR(action), "keepHand"];
 };
 
-_leave ctrlSetText toUpper ([LLSTRING(GameLeave), LLSTRING(GameLeaveConfirm)] select GVAR(leaveConfirm));
+_leave ctrlSetText toUpper (switch (true) do {
+    case (_spectator): {LLSTRING(StopWatching)};
+    case (GVAR(leaveConfirm)): {LLSTRING(GameLeaveConfirm)};
+    default {LLSTRING(GameLeave)};
+});
 _leave setVariable [QGVAR(action), "leave"];
 
 // ===================================================================== Shift tokens

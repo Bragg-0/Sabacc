@@ -16,9 +16,8 @@ params ["_display", "_prev", "_state"];
 
 if (_prev isEqualTo _state) exitWith {};
 
-private _myUid = getPlayerUID player;
+([_state] call FUNC(viewSubject)) params ["_myUid", "_me", "_spectator"];
 private _players = _state get "players";
-private _me = _players select (_players findIf {(_x get "uid") == _myUid});
 private _prevPlayers = _prev getOrDefault ["players", []];
 private _prevMeIndex = _prevPlayers findIf {(_x get "uid") == _myUid};
 private _prevMe = if (_prevMeIndex >= 0) then {_prevPlayers select _prevMeIndex} else {createHashMap};
@@ -132,7 +131,7 @@ if (_phase == PHASE_RESULTS && {_prevPhase != PHASE_RESULTS}) then {
             private _text = if (_delta > 0) then {format ["+%1", _delta]} else {str _delta};
             [_display, _text, _position, ["#ff7070", "#70ff70"] select _won, _delay + 0.3] call FUNC(animFloatText);
         };
-        if (_uid == _myUid) then {
+        if (_uid == _myUid && {!_spectator}) then {
             if (_won) then {
                 [_display, LLSTRING(BannerWin), "#70ff70", _delay + 0.4] call FUNC(animBanner);
                 ["FD_Finish_F"] call FUNC(playSound);
@@ -161,7 +160,7 @@ if (!_newRound && {_phase != PHASE_RESULTS}) then {
 
 // ---- My turn ----
 private _current = _state get "current";
-if (_current == _myUid && {(_prev get "current") != _myUid}) then {
+if (!_spectator && {_current == _myUid} && {(_prev get "current") != _myUid}) then {
     [_display, LLSTRING(BannerYourTurn), "#ffc040", [0, 1.2] select _newRound] call FUNC(animBanner);
     ["FD_Timer_F"] call FUNC(playSound);
 };
@@ -176,7 +175,7 @@ if (_pending isNotEqualTo [] && {(_prevMe getOrDefault ["pending", []]) isEqualT
 // ---- Game over ----
 if (_status == STATUS_OVER && {(_prev get "status") != STATUS_OVER}) then {
     private _winner = _state get "winner";
-    if (_winner == (_me get "name")) then {
+    if (!_spectator && {_winner == (_me get "name")}) then {
         [_display, LLSTRING(BannerVictory), "#70ff70", 2.5] call FUNC(animBanner);
         ["FD_Finish_F"] call FUNC(playSound);
     } else {

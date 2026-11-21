@@ -25,7 +25,7 @@ if (diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0])) exit
 
 GVAR(pulse) = !GVAR(pulse);
 
-private _myUid = getPlayerUID player;
+private _myUid = _display getVariable ["viewUid", getPlayerUID player];
 private _current = _state getOrDefault ["current", ""];
 private _showResults = (_state get "phase") == PHASE_RESULTS || {(_state get "status") == STATUS_OVER};
 private _winners = ((_state get "results") select {_x select 6}) apply {_x select 0};

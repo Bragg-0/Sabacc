@@ -12,6 +12,12 @@ Multiplayer-ready: the server runs the game and every player only receives their
 
 Rules in short: you always hold one **Amber** and one **Ember** card. A pair is a *Sabacc* (the lower the better, two Sylops = *Pure Sabacc*); without a pair, the smallest difference wins. Each round has 3 turns: stand for free, or draw a card for 1 chip. **Shift tokens** (16 kinds) bend the rules once per game. The full rules are available in-game (*Rules* button) and in the rulebook: English [Markdown](rules/en_us.md), French [Markdown](rules/fr_fr.md).
 
+## 🪑 Physical tables, spectators and statistics
+
+- **Physical tables**: place the editor module *Sabacc > Sabacc table* and synchronize it with any object (table, crate...). Players walk up to it to sit, watch or open their game, without a terminal. In a script (server): `[myObject, "Cantina", 4, 1] call brg_game_fnc_addWorldTable;` (object, name, seats, droids).
+- **Spectators**: select a game in progress in the menu, then *Watch*. Cards stay hidden until the reveal.
+- **Statistics**: *Statistics* button in the menu: your games, rounds, Sabaccs and the server top 5. Saved in the server profile.
+
 ## ⚙️ Settings (CBA, server-side)
 
 | Setting | Default |

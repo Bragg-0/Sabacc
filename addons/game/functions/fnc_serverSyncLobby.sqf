@@ -2,7 +2,7 @@
 /*
  * Author: Bragg
  * Broadcasts the public list of tables shown in the terminal menu.
- * Entry: [id, name, ownerName, playerNames, maxPlayers, status]
+ * Entry: [id, name, ownerName, playerNames, maxPlayers, status, isPhysical, object, spectatorCount]
  *
  * Arguments:
  * None
@@ -20,7 +20,10 @@ private _lobby = (values GVAR(tables)) apply {
         _owner getOrDefault ["name", "?"],
         _seated apply {_x get "name"},
         _table get "maxPlayers",
-        _table get "status"
+        _table get "status",
+        _table get "world",
+        _table get "object",
+        count (_table get "spectators")
     ]
 };
 _lobby sort true;

@@ -54,6 +54,9 @@ private _results = [];
     };
     _player set ["pot", 0];
 
+    // Statistics: round played / won, Sabacc, Pure Sabacc
+    [_player, [0, 0, 1, parseNumber _won, parseNumber _isSabacc, parseNumber (_score == 0)]] call FUNC(serverStatsAdd);
+
     _results pushBack [
         _player get "uid", _player get "name",
         [_player get "sand", _player get "blood"], _values,

@@ -33,18 +33,19 @@ if (_visible) then {
 };
 if (!_visible) exitWith {};
 
+private _spectator = _state getOrDefault ["spectator", false];
 private _myUid = getPlayerUID player;
 private _players = _state get "players";
 private _winner = _state get "winner";
-private _me = _players select (_players findIf {(_x get "uid") == _myUid});
-private _iWon = _winner != "" && {_winner == (_me get "name")};
+private _myIndex = _players findIf {(_x get "uid") == _myUid};
+private _iWon = _myIndex >= 0 && {_winner != ""} && {_winner == ((_players select _myIndex) get "name")};
 
 (_display getVariable "endTexts") params ["_title", "_subtitle"];
 
 // ---- Title ----
 // Upper case is applied to the text only: upper-cased tags (<T COLOR=...>) would not be parsed
 (switch (true) do {
-    case (_winner == ""): {[HTML_TEXT, LLSTRING(EndDraw)]};
+    case (_winner == "" || _spectator): {[HTML_TEXT, LLSTRING(EndDraw)]};
     case (_iWon): {[HTML_GOOD, LLSTRING(EndVictory)]};
     default {[HTML_BAD, LLSTRING(EndDefeat)]};
 }) params ["_titleColor", "_titleText"];
@@ -129,7 +130,7 @@ private _fnc_cell = {
 } forEach (_display getVariable "endRows");
 
 // ---- Buttons: only the host can start a new game ----
-private _isOwner = (_state get "ownerUid") == _myUid;
+private _isOwner = !_spectator && {(_state get "ownerUid") == _myUid};
 private _restart = _display getVariable "endRestart";
 _restart ctrlEnable _isOwner;
 // Keep the focus on the end screen so nothing underneath comes back on top

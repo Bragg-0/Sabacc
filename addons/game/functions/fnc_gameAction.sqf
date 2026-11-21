@@ -21,7 +21,19 @@ if (count _state == 0) exitWith {};
 
 private _players = _state get "players";
 private _myIndex = _players findIf {(_x get "uid") == getPlayerUID player};
-if (_myIndex < 0) exitWith {};
+
+// A spectator only stops watching or moves between screens
+if (_myIndex < 0) exitWith {
+    switch (_action) do {
+        case "leave": {["leave"] call FUNC(request)};
+        case "hideEnd": {GVAR(endHidden) = true; call FUNC(gameRefresh)};
+        case "showEnd": {GVAR(endHidden) = false; call FUNC(gameRefresh)};
+        case "backToMenu": {
+            (uiNamespace getVariable [QGVAR(gameDisplay), displayNull]) closeDisplay 2;
+            [{createDialog QGVAR(menu)}] call CBA_fnc_execNextFrame;
+        };
+    };
+};
 private _me = _players select _myIndex;
 
 switch (_action) do {

@@ -7,12 +7,13 @@ class CfgPatches {
         url = ECSTRING(main,url);
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {QUOTE(MAIN_ADDON), QUOTE(DOUBLES(PREFIX,items)), "cba_settings", "cba_keybinding"};
-        units[] = {};
+        requiredAddons[] = {QUOTE(MAIN_ADDON), QUOTE(DOUBLES(PREFIX,items)), "cba_settings", "cba_keybinding", "A3_Modules_F"};
+        units[] = {QGVAR(moduleTable)};
         weapons[] = {};
         VERSION_CONFIG;
     };
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgVehicles.hpp"
 #include "ui\RscSabacc.hpp"

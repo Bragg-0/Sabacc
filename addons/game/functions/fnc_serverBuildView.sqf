@@ -63,5 +63,8 @@ createHashMapFromArray [
     ["winner", _table get "winner"],
     ["discardTops", (_table get "discards") apply {if (_x isEqualTo []) then {CARD_NONE} else {_x select -1}}],
     ["deckCounts", (_table get "decks") apply {count _x}],
-    ["players", _players]
+    ["players", _players],
+    ["spectator", (_table get "players") findIf {(_x get "uid") == _viewerUid} < 0],
+    ["spectatorCount", count (_table get "spectators")],
+    ["world", _table get "world"]
 ]

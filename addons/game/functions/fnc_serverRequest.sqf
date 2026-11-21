@@ -30,14 +30,25 @@ if (count _table > 0) then {
     if (count _player > 0) then {_player set ["unit", _unit]};
 };
 
+// A spectator gets the view of the table they watch
+if (count _table == 0 && {_uid in GVAR(watching)}) then {
+    _table = GVAR(tables) getOrDefault [GVAR(watching) get _uid, createHashMap];
+    if (count _table > 0) then {(_table get "spectators") set [_uid, _unit]};
+};
+
 switch (_type) do {
     case "refresh": {
         private _view = if (count _table > 0) then {[_table, _uid] call FUNC(serverBuildView)} else {createHashMap};
         [EVENT_STATE, [_view], _unit] call CBA_fnc_targetEvent;
     };
+    case "sit": {[_unit, _uid, _args] call FUNC(serverJoinTable)};
+    case "watch": {[_unit, _uid, _args] call FUNC(serverWatch)};
+    case "stats": {[_unit, _uid] call FUNC(serverSendStats)};
     case "create": {[_unit, _uid, _args] call FUNC(serverCreateTable)};
     case "join": {[_unit, _uid, _args] call FUNC(serverJoinTable)};
-    case "leave": {[_uid] call FUNC(serverLeave)};
+    case "leave": {
+        if !([_uid] call FUNC(serverStopWatching)) then {[_uid] call FUNC(serverLeave)};
+    };
     case "start": {[_unit, _uid] call FUNC(serverStartGame)};
     case "addBot": {[_unit, _uid] call FUNC(serverAddBot)};
     default {[_uid, _type, _args] call FUNC(serverGameAction)};

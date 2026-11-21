@@ -32,7 +32,7 @@ if (_try == 0) then {["refresh"] call FUNC(request)};
     [{
         params ["_try"];
         if (isNull (findDisplay IDD_MENU) && {isNull (findDisplay IDD_GAME)} && {_try < 1}) then {
-            WARNING("openTerminal: the dialog was closed right after opening, retrying");
+            WARNING("openTerminal: the dialog was closed right after opening,retrying");
             [_try + 1] call FUNC(openTerminal);
         };
     }, [_try], 2] call CBA_fnc_execAfterNFrames;

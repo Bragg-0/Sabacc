@@ -14,7 +14,7 @@ params ["_display"];
 
 uiNamespace setVariable [QGVAR(menuDisplay), _display];
 hintSilent ""; // a Sabacc hint left on screen would cover the interface
-GVAR(showRules) = false;
+GVAR(infoMode) = ""; // information panel: "", "rules" or "stats"
 
 private _fnc_ctrl = {
     params ["_class", "_position", ["_group", controlNull]];
@@ -90,9 +90,11 @@ _display setVariable ["seat", [QGVAR(StructuredText), GRID(5,17.05,30.3,1.05)] c
 
 // ===================================================================== Actions
 _display setVariable ["btnJoin", [LSTRING(MenuJoin), GRID(4.6,18.55,7.4,1.4), {
-    private _list = (ctrlParent (_this select 0)) getVariable "list";
+    // Same button: "join" a waiting table, or "watch" a game in progress
+    private _button = _this select 0;
+    private _list = (ctrlParent _button) getVariable "list";
     if (lbCurSel _list < 0) exitWith {};
-    ["join", [_list lbValue (lbCurSel _list)]] call FUNC(request);
+    [_button getVariable [QGVAR(request), "join"], [_list lbValue (lbCurSel _list)]] call FUNC(request);
 }, QGVAR(ButtonAccent), LSTRING(TipJoin)] call _fnc_button];
 
 _display setVariable ["btnLeave", [LSTRING(MenuLeave), GRID(12.4,18.55,7.4,1.4), {
@@ -109,13 +111,19 @@ _display setVariable ["btnOpen", [LSTRING(MenuOpenGame), GRID(28,18.55,7.4,1.4),
 }, QGVAR(Button), LSTRING(TipOpenGame)] call _fnc_button];
 
 _display setVariable ["btnRules", [LSTRING(MenuRules), GRID(4.6,20.45,7.4,1.3), {
-    GVAR(showRules) = !GVAR(showRules);
+    GVAR(infoMode) = ["rules", ""] select (GVAR(infoMode) == "rules");
     call FUNC(menuUpdateInfo);
 }, QGVAR(Button), LSTRING(TipRules)] call _fnc_button];
 
 _display setVariable ["btnBot", [LSTRING(MenuAddBot), GRID(12.4,20.45,7.4,1.3), {
     ["addBot"] call FUNC(request);
 }, QGVAR(Button), LSTRING(MenuAddBotTip)] call _fnc_button];
+
+_display setVariable ["btnStats", [LSTRING(MenuStats), GRID(20.2,20.45,7.4,1.3), {
+    GVAR(infoMode) = ["stats", ""] select (GVAR(infoMode) == "stats");
+    if (GVAR(infoMode) == "stats") then {["stats"] call FUNC(request)};
+    call FUNC(menuUpdateInfo);
+}, QGVAR(Button), LSTRING(TipStats)] call _fnc_button];
 
 [LSTRING(MenuClose), GRID(28,20.45,7.4,1.3), {(ctrlParent (_this select 0)) closeDisplay 2}, QGVAR(Button), LSTRING(TipCloseTerminal)] call _fnc_button;
 

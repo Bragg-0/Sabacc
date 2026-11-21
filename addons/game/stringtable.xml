@@ -9,9 +9,21 @@
             <English>Play Nar Shaddaa Sabacc</English>
             <French>Jouer au Sabacc de Nar Shaddaa</French>
         </Key>
+        <Key ID="STR_brg_game_ActionOpenTable">
+            <English>Open the Sabacc table</English>
+            <French>Ouvrir la table de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_game_ActionSit">
+            <English>Sit at the Sabacc table</English>
+            <French>S'asseoir à la table de Sabacc</French>
+        </Key>
         <Key ID="STR_brg_game_ActionStood">
             <English>Stood</English>
             <French>A passé</French>
+        </Key>
+        <Key ID="STR_brg_game_ActionWatch">
+            <English>Watch the Sabacc game</English>
+            <French>Regarder la partie de Sabacc</French>
         </Key>
         <Key ID="STR_brg_game_BannerGameOver">
             <English>Game over</English>
@@ -177,6 +189,10 @@
             <English>This pile is empty.</English>
             <French>Cette pile est vide.</French>
         </Key>
+        <Key ID="STR_brg_game_ErrorGoToTable">
+            <English>This is a physical table: go to it to sit down.</English>
+            <French>C'est une table physique : rendez-vous sur place pour vous asseoir.</French>
+        </Key>
         <Key ID="STR_brg_game_ErrorInvalidTarget">
             <English>Invalid target.</English>
             <French>Cible invalide.</French>
@@ -196,6 +212,10 @@
         <Key ID="STR_brg_game_ErrorNotYourTurn">
             <English>It is not your turn.</English>
             <French>Ce n'est pas votre tour.</French>
+        </Key>
+        <Key ID="STR_brg_game_ErrorNothingToWatch">
+            <English>No game in progress at this table.</English>
+            <French>Aucune partie en cours à cette table.</French>
         </Key>
         <Key ID="STR_brg_game_ErrorShiftBeforeAction">
             <English>Shift tokens are used before drawing.</English>
@@ -401,6 +421,10 @@
             <English>Shifts</English>
             <French>Bonus</French>
         </Key>
+        <Key ID="STR_brg_game_LabelSpectators">
+            <English>Spectators</English>
+            <French>Spectateurs</French>
+        </Key>
         <Key ID="STR_brg_game_LabelStatus">
             <English>Status</English>
             <French>Statut</French>
@@ -553,6 +577,10 @@
             <English>Open game</English>
             <French>Voir la partie</French>
         </Key>
+        <Key ID="STR_brg_game_MenuPhysicalHint">
+            <English>Physical table: go to it to sit down.</English>
+            <French>Table physique : rendez-vous sur place pour vous asseoir.</French>
+        </Key>
         <Key ID="STR_brg_game_MenuPlayersCount">
             <English>%1 players</English>
             <French>%1 joueurs</French>
@@ -573,6 +601,10 @@
             <English>Start game</English>
             <French>Lancer</French>
         </Key>
+        <Key ID="STR_brg_game_MenuStats">
+            <English>Statistics</English>
+            <French>Statistiques</French>
+        </Key>
         <Key ID="STR_brg_game_MenuTitle">
             <English>NAR SHADDAA SABACC TERMINAL</English>
             <French>TERMINAL SABACC DE NAR SHADDAA</French>
@@ -580,6 +612,46 @@
         <Key ID="STR_brg_game_MenuWaitingHost">
             <English>Waiting for the host to start.</English>
             <French>En attente du lancement par l'hôte.</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuWatch">
+            <English>Watch</English>
+            <French>Regarder</French>
+        </Key>
+        <Key ID="STR_brg_game_MenuWatching">
+            <English>You are watching the table &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt;.</English>
+            <French>Vous regardez la table &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt;.</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTable">
+            <English>Sabacc table</English>
+            <French>Table de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTableDesc">
+            <English>Synchronize this module with objects (tables, crates...): each one becomes a physical Sabacc table. Players near it can sit without a terminal. Without synchronized object, the module itself is the table.</English>
+            <French>Synchronisez ce module avec des objets (tables, caisses...) : chacun devient une table de Sabacc physique. Les joueurs à proximité peuvent s'y asseoir sans terminal. Sans objet synchronisé, le module lui-même sert de table.</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTableDroids">
+            <English>Droids</English>
+            <French>Droïdes</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTableDroidsTip">
+            <English>Droids already seated. They come back when the table is empty again.</English>
+            <French>Droïdes déjà assis. Ils reviennent quand la table se vide.</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTableName">
+            <English>Table name</English>
+            <French>Nom de la table</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTableNameTip">
+            <English>Shown in the tables list. Empty: automatic name.</English>
+            <French>Affiché dans la liste des tables. Vide : nom automatique.</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTableSeats">
+            <English>Seats</English>
+            <French>Places</French>
+        </Key>
+        <Key ID="STR_brg_game_ModuleTableSeatsTip">
+            <English>Maximum number of players, droids included.</English>
+            <French>Nombre maximum de joueurs, droïdes compris.</French>
         </Key>
         <Key ID="STR_brg_game_OutHelp">
             <English>Watch the end of the game, or use the Leave table button on the right.</English>
@@ -592,6 +664,10 @@
         <Key ID="STR_brg_game_OutReason">
             <English>Out of chips since round %1.</English>
             <French>Plus de jetons depuis la manche %1.</French>
+        </Key>
+        <Key ID="STR_brg_game_OutReasonOther">
+            <English>%1 has no chip left since round %2.</English>
+            <French>%1 n'a plus de jetons depuis la manche %2.</French>
         </Key>
         <Key ID="STR_brg_game_OutTitle">
             <English>Eliminated</English>
@@ -869,6 +945,62 @@
             <English>You already used a shift token this turn.</English>
             <French>Vous avez déjà utilisé un jeton bonus ce tour-ci.</French>
         </Key>
+        <Key ID="STR_brg_game_SpectatorHelp">
+            <English>Cards are shown at the reveal. Use the button on the right to stop watching.</English>
+            <French>Les cartes sont montrées à la révélation. Le bouton à droite permet d'arrêter de regarder.</French>
+        </Key>
+        <Key ID="STR_brg_game_SpectatorReason">
+            <English>You are watching this game.</English>
+            <French>Vous regardez cette partie.</French>
+        </Key>
+        <Key ID="STR_brg_game_SpectatorTitle">
+            <English>Spectator</English>
+            <French>Spectateur</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsGames">
+            <English>Games played</English>
+            <French>Parties jouées</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsLoading">
+            <English>Loading statistics...</English>
+            <French>Chargement des statistiques...</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsMine">
+            <English>My statistics</English>
+            <French>Mes statistiques</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsNoRanking">
+            <English>No game finished on this server yet.</English>
+            <French>Aucune partie terminée sur ce serveur pour l'instant.</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsPure">
+            <English>Pure Sabaccs</English>
+            <French>Sabacc purs</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsRanking">
+            <English>Server ranking</English>
+            <French>Classement du serveur</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsRankingRow">
+            <English>%1 wins / %2 games</English>
+            <French>%1 victoires / %2 parties</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsRoundWins">
+            <English>Rounds won</English>
+            <French>Manches gagnées</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsRounds">
+            <English>Rounds played</English>
+            <French>Manches jouées</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsSabaccs">
+            <English>Sabaccs</English>
+            <French>Sabacc réalisés</French>
+        </Key>
+        <Key ID="STR_brg_game_StatsWins">
+            <English>Games won</English>
+            <French>Parties gagnées</French>
+        </Key>
         <Key ID="STR_brg_game_StatusDiscard">
             <English>Keep your hand or take the drawn card.</English>
             <French>Gardez votre main ou prenez la carte piochée.</French>
@@ -909,6 +1041,14 @@
             <English>Hands revealed!</English>
             <French>Mains révélées !</French>
         </Key>
+        <Key ID="STR_brg_game_StatusSpectator">
+            <English>Spectator mode</English>
+            <French>Mode spectateur</French>
+        </Key>
+        <Key ID="STR_brg_game_StatusSpectatorTurn">
+            <English>Spectator: %1 is playing...</English>
+            <French>Spectateur : %1 joue...</French>
+        </Key>
         <Key ID="STR_brg_game_StatusTargeting">
             <English>Choose a target with the Target buttons.</English>
             <French>Choisissez une cible avec les boutons Cibler.</French>
@@ -924,6 +1064,10 @@
         <Key ID="STR_brg_game_StatusYourTurn">
             <English>Your turn: draw a card (1 chip) or stand.</English>
             <French>À vous : piochez une carte (1 jeton) ou passez.</French>
+        </Key>
+        <Key ID="STR_brg_game_StopWatching">
+            <English>Stop watching</English>
+            <French>Ne plus regarder</French>
         </Key>
         <Key ID="STR_brg_game_Sylop">
             <English>Sylop</English>
@@ -1033,6 +1177,10 @@
             <English>Start the game (host only, at least 2 players).</English>
             <French>Lancer la partie (hôte uniquement, au moins 2 joueurs).</French>
         </Key>
+        <Key ID="STR_brg_game_TipStats">
+            <English>Your statistics and the server ranking.</English>
+            <French>Vos statistiques et le classement du serveur.</French>
+        </Key>
         <Key ID="STR_brg_game_TipStatusLine">
             <English>What is happening now, and what you can do.</English>
             <French>Ce qui se passe maintenant, et ce que vous pouvez faire.</French>
@@ -1060,6 +1208,10 @@
         <Key ID="STR_brg_game_TipTimer">
             <English>Time left to act. When it runs out, the move is played for you (stand / keep your hand).</English>
             <French>Temps restant pour agir. À zéro, le coup est joué pour vous (passer / garder votre main).</French>
+        </Key>
+        <Key ID="STR_brg_game_TipWatch">
+            <English>Watch the game in progress, without playing. Cards stay hidden until the reveal.</English>
+            <French>Regarder la partie en cours sans jouer. Les cartes restent cachées jusqu'à la révélation.</French>
         </Key>
         <Key ID="STR_brg_game_TooltipSwap">
             <English>Replace this card with the drawn card</English>

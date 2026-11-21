@@ -19,6 +19,12 @@ _table set ["phase", ""];
 _table set ["winner", _winner];
 _table set ["token", (_table get "token") + 1]; // cancels any pending countdown
 
+// Statistics: everybody who took part played a game, the last one standing won it
+{
+    [_x, [1, parseNumber (count _active == 1 && {_x isEqualTo (_active select 0)}), 0, 0, 0, 0]] call FUNC(serverStatsAdd);
+} forEach (_table get "players");
+call FUNC(serverStatsSave);
+
 if (_winner == "") then {
     [_table, LSTRING(LogGameOverDraw), []] call FUNC(serverLog);
 } else {

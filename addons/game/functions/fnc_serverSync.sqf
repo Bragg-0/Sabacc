@@ -17,4 +17,9 @@ params ["_table"];
     };
 } forEach (_table get "players");
 
+// Spectators: same view without any hand
+{
+    [EVENT_STATE, [[_table, _x] call FUNC(serverBuildView)], _y] call CBA_fnc_targetEvent;
+} forEach (_table get "spectators");
+
 call FUNC(serverSyncLobby);

@@ -12,10 +12,16 @@
  * None
  */
 if (!isServer) exitWith {};
+// Can be called early by brg_game_fnc_addWorldTable (editor module), then by the post-init
+if (!isNil QGVAR(tables)) exitWith {};
 
 GVAR(tables) = createHashMap;   // table id -> table
 GVAR(seats) = createHashMap;    // player uid -> table id
+GVAR(watching) = createHashMap; // spectator uid -> table id
 GVAR(nextTableId) = 1;
+
+// Statistics saved in the server profile: [[uid, [name, games, wins, rounds, roundWins, sabaccs, pure]], ...]
+GVAR(stats) = createHashMapFromArray (profileNamespace getVariable [QGVAR(stats), []]);
 
 GVAR(lobby) = [];
 publicVariable QGVAR(lobby);
@@ -24,7 +30,7 @@ publicVariable QGVAR(lobby);
 
 addMissionEventHandler ["HandleDisconnect", {
     params ["", "", "_uid"];
-    [_uid] call FUNC(serverLeave);
+    if !([_uid] call FUNC(serverStopWatching)) then {[_uid] call FUNC(serverLeave)};
     false
 }];
 

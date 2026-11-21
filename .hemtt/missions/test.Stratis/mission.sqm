@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={5719.2983,40.181309,5741.5112};
-		dir[]={-0.75837296,-0.27925831,0.58897746};
-		up[]={-0.22055642,0.96021748,0.17129108};
-		aside[]={0.6133799,-1.0384247e-07,0.78979528};
+		pos[]={5723.0352,40.806164,5742.9678};
+		dir[]={-0.82496965,-0.091313682,0.55775166};
+		up[]={-0.075647064,0.99582225,0.051144034};
+		aside[]={0.56009167,0,0.82843077};
 	};
 };
 binarizationWanted=0;
@@ -25,13 +25,16 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Weapons_F",
 	"ace_goggles",
-	"brg_items"
+	"brg_items",
+	"A3_Structures_F_EPA_Civ_Camping",
+	"ace_dragging",
+	"brg_game"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=7;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -57,6 +60,27 @@ class AddonsMetaData
 		{
 			className="brg_items";
 			name="Sabacc - Items";
+			author="Bragg";
+			url="https://github.com/Bragg-0/Sabacc";
+		};
+		class Item4
+		{
+			className="A3_Structures_F_EPA";
+			name="Arma 3 Survive Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item6
+		{
+			className="brg_game";
+			name="Sabacc - Game";
 			author="Bragg";
 			url="https://github.com/Bragg-0/Sabacc";
 		};
@@ -91,7 +115,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1;
+		items=3;
 		class Item0
 		{
 			dataType="Group";
@@ -149,6 +173,97 @@ class Mission
 			};
 			id=0;
 			atlOffset=-1.1444092e-05;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5717.8535,39.298595,5747.7876};
+				angles[]={6.2132983,1.9639465,6.218277};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2;
+			type="Land_WoodenTable_large_F";
+			atlOffset=-0.00032424927;
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5717.9102,38.791687,5746.7979};
+			};
+			id=3;
+			type="brg_game_moduleTable";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="brg_game_moduleTable_name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Test";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="brg_game_moduleTable_droids";
+					expression="_this setVariable ['Droids',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="brg_game_moduleTable_maxPlayers";
+					expression="_this setVariable ['MaxPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=1;
+		};
+		class Links
+		{
+			items=1;
+			class Item0
+			{
+				linkID=0;
+				item0=3;
+				item1=2;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
 		};
 	};
 };

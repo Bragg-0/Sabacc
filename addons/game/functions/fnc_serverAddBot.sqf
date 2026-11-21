@@ -22,14 +22,5 @@ if (({!(_x get "left")} count _players) >= (_table get "maxPlayers")) exitWith {
     [_unit, LSTRING(ErrorTableFull)] call FUNC(serverNotify);
 };
 
-if (isNil QGVAR(nextBotId)) then {GVAR(nextBotId) = 1};
-private _botId = GVAR(nextBotId);
-GVAR(nextBotId) = _botId + 1;
-
-private _botUid = format ["bot_%1", _botId];
-private _name = format ["DRD-%1", 10 + _botId];
-_players pushBack ([objNull, _botUid, _name] call FUNC(serverNewPlayer));
-GVAR(seats) set [_botUid, _table get "id"];
-
-[_table, LSTRING(LogJoined), [_name]] call FUNC(serverLog);
+[_table] call FUNC(serverSeatBot);
 [_table] call FUNC(serverSync);
