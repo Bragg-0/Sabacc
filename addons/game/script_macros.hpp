@@ -57,12 +57,6 @@
 #define PHASE_RESULTS "results"
 
 // ---------------------------------------------------------------------------
-// Assets
-// ---------------------------------------------------------------------------
-#define TEXTURE_BACK QPATHTOF(data\cards\back.paa)
-#define TEXTURE_TERMINAL "\x\brg\addons\items\data\ui\terminal_ca.paa"
-
-// ---------------------------------------------------------------------------
 // Events
 // ---------------------------------------------------------------------------
 #define EVENT_REQUEST QGVAR(request)

@@ -6,7 +6,7 @@ Multiplayer-ready: the server runs the game and every player only receives their
 
 ## 🃏 How to play
 
-1. Get a **Nar Shaddaa Sabacc Terminal** (Arsenal / Zeus / editor: *Equipment > Inventory items*).
+1. Get a **Nar Shaddaa Sabacc Terminal** (Arsenal / Zeus / editor: *Sabacc > Equipment*).
 2. Open it: ACE self-interaction *Equipment > Play Nar Shaddaa Sabacc*, the scroll-wheel action without ACE, or the *Open the Nar Shaddaa Sabacc terminal* keybind (CBA controls).
 3. Create a table, wait for players (or **add droids**), then start the game.
 
@@ -41,7 +41,7 @@ hemtt release  # signed release
 | Addon | Content |
 |---|---|
 | `addons/main` | mod metadata, shared macros |
-| `addons/items` | the Nar Shaddaa Sabacc Terminal item |
+| `addons/objects` | the objects: Nar Shaddaa Sabacc Terminal (item) and the Sabacc table (model) |
 | `addons/game` | game logic (`fnc_server*`), UI (`fnc_menu*`, `fnc_game*`), settings, textures |
 | `addons/compat_ace` | ACE self-interaction to open the terminal (loaded only when ACE is present) |
 

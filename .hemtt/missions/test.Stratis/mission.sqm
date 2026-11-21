@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=4;
+		nextID=5;
 	};
 	class Camera
 	{
-		pos[]={5723.0352,40.806164,5742.9678};
-		dir[]={-0.82496965,-0.091313682,0.55775166};
-		up[]={-0.075647064,0.99582225,0.051144034};
-		aside[]={0.56009167,0,0.82843077};
+		pos[]={5707.1699,47.015984,5732.7007};
+		dir[]={0.11752418,-0.60243422,0.78947192};
+		up[]={0.08870367,0.79816955,0.5958693};
+		aside[]={0.98910451,-2.7072383e-07,-0.14724195};
 	};
 };
 binarizationWanted=0;
@@ -25,7 +25,7 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Weapons_F",
 	"ace_goggles",
-	"brg_items",
+	"brg_objects",
 	"A3_Structures_F_EPA_Civ_Camping",
 	"ace_dragging",
 	"brg_game"
@@ -58,8 +58,8 @@ class AddonsMetaData
 		};
 		class Item3
 		{
-			className="brg_items";
-			name="Sabacc - Items";
+			className="brg_objects";
+			name="Sabacc - Objects";
 			author="Bragg";
 			url="https://github.com/Bragg-0/Sabacc";
 		};
@@ -115,7 +115,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			dataType="Group";
@@ -151,7 +151,7 @@ class Mission
 									items=1;
 									class Item0
 									{
-										name="brg_items_terminal";
+										name="brg_objects_terminal";
 										count=1;
 									};
 								};
@@ -243,6 +243,22 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5706.938,39.607418,5742.2046};
+				angles[]={0.019996032,0,6.1785688};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=4;
+			type="brg_objects_table";
 		};
 	};
 	class Connections

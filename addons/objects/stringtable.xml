@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Sabacc">
+    <Package name="Objects">
+        <Key ID="STR_brg_objects_Description">
+            <English>Use this terminal to play Nar Shaddaa Sabacc.</English>
+            <French>Utilisez ce terminal pour jouer au Sabacc de Nar Shaddaa.</French>
+        </Key>
+        <Key ID="STR_brg_objects_DisplayName">
+            <English>Nar Shaddaa Sabacc Terminal</English>
+            <French>Terminal Sabacc de Nar Shaddaa</French>
+        </Key>
+        <Key ID="STR_brg_objects_EditorEquipment">
+            <English>Equipment</English>
+            <French>Équipement</French>
+        </Key>
+        <Key ID="STR_brg_objects_EditorTables">
+            <English>Tables</English>
+            <French>Tables</French>
+        </Key>
+        <Key ID="STR_brg_objects_TableObject">
+            <English>Nar Shaddaa Sabacc table</English>
+            <French>Table de Sabacc de Nar Shaddaa</French>
+        </Key>
+    </Package>
+</Project>

@@ -66,5 +66,6 @@ createHashMapFromArray [
     ["players", _players],
     ["spectator", (_table get "players") findIf {(_x get "uid") == _viewerUid} < 0],
     ["spectatorCount", count (_table get "spectators")],
-    ["world", _table get "world"]
+    ["world", _table get "world"],
+    ["object", _table get "object"]
 ]

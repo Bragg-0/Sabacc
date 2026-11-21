@@ -9,3 +9,9 @@
 #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #define PREP_RECOMPILE_START ; /* disabled */
 #define PREP_RECOMPILE_END ; /* disabled */
+
+// ---------------------------------------------------------------------------
+// Assets
+// ---------------------------------------------------------------------------
+#define TEXTURE_BACK QPATHTOEF(game,data\cards\back.paa)
+#define TEXTURE_TERMINAL QPATHTOEF(objects,data\ui\terminal_ca.paa)

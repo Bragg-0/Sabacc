@@ -35,9 +35,16 @@ private _fnc_button = {
     private _button = [_class, _position] call _fnc_ctrl;
     _button ctrlSetText toUpper localize _textKey;
     if (_tooltipKey != "") then {_button ctrlSetTooltip localize _tooltipKey};
-    _button ctrlAddEventHandler ["ButtonClick", _code];
+    _button setVariable [QGVAR(onClick), _code];
+    _button ctrlAddEventHandler ["ButtonClick", {
+        params ["_button"];
+        // Ignore the input that opened the menu (it would press the focused button)
+        if (diag_tickTime - ((ctrlParent _button) getVariable [QGVAR(openedAt), 0]) < 0.4) exitWith {};
+        _this call (_button getVariable QGVAR(onClick));
+    }];
     _button
 };
+_display setVariable [QGVAR(openedAt), diag_tickTime];
 
 // ===================================================================== Main frame
 [[4, 2, 32, 20.4], ([LLSTRING(MenuTitle)] call FUNC(uiTitle)), COLOR_AMBER, COLOR_PANEL] call _fnc_frame;
@@ -129,3 +136,11 @@ _display setVariable ["btnStats", [LSTRING(MenuStats), GRID(20.2,20.45,7.4,1.3),
 
 [_display] call FUNC(animFadeIn);
 call FUNC(menuRefresh);
+ctrlSetFocus _list; // no button has the keyboard focus when the menu opens
+
+// A physical table is started at the table: follow the player's distance to it
+[{
+    params ["_display", "_handle"];
+    if (isNull _display) exitWith {[_handle] call CBA_fnc_removePerFrameHandler};
+    [_display] call FUNC(menuUpdateStart);
+}, 1, _display] call CBA_fnc_addPerFrameHandler;

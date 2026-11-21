@@ -17,7 +17,7 @@ params [["_unit", objNull, [objNull]]];
 // Seated at a physical table or watching a game: no terminal needed to come back to it
 alive _unit && {
     !GVAR(requireTerminal)
-    || {QEGVAR(items,terminal) in (items _unit)}
+    || {QEGVAR(objects,terminal) in (items _unit)}
     || {GVAR(state) getOrDefault ["world", false]}
     || {GVAR(state) getOrDefault ["spectator", false]}
 }

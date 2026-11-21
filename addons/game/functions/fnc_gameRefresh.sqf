@@ -353,6 +353,7 @@ private _rows = [
     [LLSTRING(LabelPot), _pot, HTML_AMBER, 1.05] call FUNC(uiRow)
 ];
 
+private _mirageNote = false; // the hand line already explains a Mirage fixed at 6
 if (_showResults) then {
     private _result = [_myUid] call _fnc_resultOf;
     if (_result isNotEqualTo []) then {
@@ -373,6 +374,7 @@ if (_showResults) then {
             _rows pushBack ([LLSTRING(LabelHand), _label, [HTML_TEXT, HTML_GOOD] select _isSabacc, 0.9] call FUNC(uiRow));
             // A Mirage only has a value here because a shift token fixed it: say it
             if (VALUE_IMPOSTOR in [CARD_VALUE(_mySand), CARD_VALUE(_myBlood)]) then {
+                _mirageNote = true;
                 _rows pushBack format ["<t size='0.65' color='%1'>%2</t>", HTML_AMBER, LLSTRING(HandImpostorFixed)];
             };
             _rows pushBack ([LLSTRING(LabelIfLose), format [LLSTRING(IfLoseValue), _pot + _penalty], HTML_BAD, 0.85] call FUNC(uiRow));
@@ -381,7 +383,7 @@ if (_showResults) then {
 };
 
 private _active = [];
-if (_effects getOrDefault ["impostorSix", false]) then {_active pushBack LLSTRING(EffectImpostorSix)};
+if ((_effects getOrDefault ["impostorSix", false]) && {!_mirageNote}) then {_active pushBack LLSTRING(EffectImpostorSix)};
 if (_effects getOrDefault ["sylopZero", false]) then {_active pushBack LLSTRING(EffectSylopZero)};
 if (_effects getOrDefault ["inverted", false]) then {_active pushBack LLSTRING(EffectInverted)};
 if ((_effects getOrDefault ["priority", -1]) > 0) then {_active pushBack format [LLSTRING(EffectPriority), _effects get "priority"]};

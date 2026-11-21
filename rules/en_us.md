@@ -161,7 +161,7 @@ The results of a round stay on screen for **12 seconds** before the next round.
 
 ### Opening the terminal
 
-1. Equip a **Nar Shaddaa Sabacc Terminal** (Arsenal, Zeus or editor: *Equipment > Inventory items*).
+1. Equip a **Nar Shaddaa Sabacc Terminal** (Arsenal, Zeus or editor: *Sabacc > Equipment*).
 2. Open it:
    - with ACE: self-interaction, *Equipment > Play Nar Shaddaa Sabacc*;
    - without ACE: scroll-wheel action;

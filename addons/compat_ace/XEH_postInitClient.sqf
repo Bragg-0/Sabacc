@@ -13,7 +13,7 @@
     private _node = [
         QGVAR(table),
         "Sabacc",
-        "\x\brg\addons\items\data\ui\terminal_ca.paa",
+        TEXTURE_TERMINAL,
         {},
         {
             private _target = _this select 0;
@@ -30,7 +30,7 @@
         private _action = [
             format ["%1_%2", QGVAR(table), _kind],
             localize _titleKey,
-            "\x\brg\addons\items\data\ui\terminal_ca.paa",
+            TEXTURE_TERMINAL,
             {[_target, _this select 2] call EFUNC(game,worldTableAct)},
             {[_target, _this select 2] call EFUNC(game,worldTableCan)},
             {},

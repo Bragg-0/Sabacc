@@ -161,7 +161,7 @@ Les résultats d'une manche restent affichés **12 secondes** avant la manche su
 
 ### Ouvrir le terminal
 
-1. Équipez-vous d'un **Terminal Sabacc de Nar Shaddaa** (Arsenal, Zeus ou éditeur : *Équipement > Objets d'inventaire*).
+1. Équipez-vous d'un **Terminal Sabacc de Nar Shaddaa** (Arsenal, Zeus ou éditeur : *Sabacc > Équipement*).
 2. Ouvrez-le :
    - avec ACE : interaction personnelle, *Équipement > Jouer au Sabacc de Nar Shaddaa* ;
    - sans ACE : action à la molette ;

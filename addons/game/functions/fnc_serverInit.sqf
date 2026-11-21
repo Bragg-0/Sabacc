@@ -34,4 +34,7 @@ addMissionEventHandler ["HandleDisconnect", {
     false
 }];
 
+// Physical tables: players who walk away during the sign-up phase are removed
+[{call FUNC(serverWorldTableCheck)}, 1] call CBA_fnc_addPerFrameHandler;
+
 INFO("Sabacc server initialized");

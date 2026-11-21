@@ -5,7 +5,7 @@ class CfgVehicles {
             class ACE_Equipment {
                 class GVAR(openTerminal) {
                     displayName = ECSTRING(game,ActionOpen);
-                    icon = "\x\brg\addons\items\data\ui\terminal_ca.paa";
+                    icon = TEXTURE_TERMINAL;
                     condition = QUOTE([_player] call EFUNC(game,canOpenTerminal));
                     statement = QUOTE([] call EFUNC(game,openTerminal));
                     exceptions[] = {};

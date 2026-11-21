@@ -17,6 +17,12 @@ if (count _table == 0) exitWith {};
 if ((_table get "ownerUid") != _uid) exitWith {[_unit, LSTRING(ErrorNotOwner)] call FUNC(serverNotify)};
 if ((_table get "status") == STATUS_PLAYING) exitWith {};
 
+// A physical table is started on the spot: the host must stand at it
+private _object = _table get "object";
+if ((_table get "world") && {isNull _object || {_unit distance _object > WORLD_TABLE_RANGE}}) exitWith {
+    [_unit, LSTRING(ErrorStartAtTable)] call FUNC(serverNotify);
+};
+
 // Forget the seats of players who left the previous game
 _table set ["players", (_table get "players") select {!(_x get "left")}];
 private _players = _table get "players";

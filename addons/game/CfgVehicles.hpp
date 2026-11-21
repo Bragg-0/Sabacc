@@ -20,7 +20,7 @@ class CfgVehicles {
     class GVAR(moduleTable): Module_F {
         scope = 2;
         displayName = CSTRING(ModuleTable);
-        icon = "\x\brg\addons\items\data\ui\terminal_ca.paa";
+        icon = TEXTURE_TERMINAL;
         category = QGVAR(modules);
         function = QFUNC(moduleTable);
         functionPriority = 10;

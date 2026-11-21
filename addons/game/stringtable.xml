@@ -225,6 +225,10 @@
             <English>Only one shift token per turn.</English>
             <French>Un seul jeton bonus par tour.</French>
         </Key>
+        <Key ID="STR_brg_game_ErrorStartAtTable">
+            <English>This is a physical table: go back to it to start the game.</English>
+            <French>C'est une table physique : retournez-y pour lancer la partie.</French>
+        </Key>
         <Key ID="STR_brg_game_ErrorTableFull">
             <English>This table is full.</English>
             <French>Cette table est complète.</French>
@@ -294,8 +298,8 @@
             <French>Écart de %1</French>
         </Key>
         <Key ID="STR_brg_game_HandImpostorFixed">
-            <English>Your Mirage counts as 6: a shift token (Fixed mirage) set it until the reveal.</English>
-            <French>Votre Mirage compte pour 6 : un jeton bonus (Mirage figé) l'a fixé jusqu'à la révélation.</French>
+            <English>Mirage counts as 6 (Fixed mirage)</English>
+            <French>Mirage compté 6 (Mirage figé)</French>
         </Key>
         <Key ID="STR_brg_game_HandPure">
             <English>Pure Sabacc</English>
@@ -376,6 +380,10 @@
         <Key ID="STR_brg_game_Impostor">
             <English>Mirage</English>
             <French>Mirage</French>
+        </Key>
+        <Key ID="STR_brg_game_InfoLeftWorldTable">
+            <English>You walked away from the table: you are no longer signed up for it.</English>
+            <French>Vous vous êtes éloigné de la table : vous n'y êtes plus inscrit.</French>
         </Key>
         <Key ID="STR_brg_game_InspectorDefault">
             <English>Hover a card, a pile or a shift token to analyse it.</English>
