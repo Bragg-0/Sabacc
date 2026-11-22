@@ -13,7 +13,7 @@
  * Value <NUMBER>
  *
  * Example:
- * [_table, "startChips"] call brg_game_fnc_tableRule
+ * [_table, "startChips"] call brg_sabacc_game_fnc_tableRule
  */
 params ["_table", "_key"];
 

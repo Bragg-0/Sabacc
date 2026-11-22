@@ -2,7 +2,7 @@
 /*
  * Author: Bragg
  * Creates an empty table and registers it. Used by the terminal ("create") and by
- * physical tables placed in the world (brg_game_fnc_addWorldTable).
+ * physical tables placed in the world (brg_sabacc_game_fnc_addWorldTable).
  *
  * Arguments:
  * 0: Name <STRING>
@@ -15,7 +15,7 @@
  */
 params ["_name", "_maxPlayers", ["_ownerUid", ""], ["_object", objNull], ["_rules", createHashMap]];
 
-// Rules: variant (see brg_game_fnc_tableRule), droid level, tournament length (0 = none)
+// Rules: variant (see brg_sabacc_game_fnc_tableRule), droid level, tournament length (0 = none)
 private _variant = _rules getOrDefault ["variant", "classic"];
 if !(_variant in VARIANTS) then {_variant = "classic"};
 private _botLevel = (round (_rules getOrDefault ["botLevel", BOT_NORMAL])) max BOT_EASY min BOT_HARD;

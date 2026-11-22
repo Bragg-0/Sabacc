@@ -2,7 +2,7 @@
 /*
  * Author: Bragg
  * Holographic messages above the dealer droids (client, every frame from a Draw3D handler): the last
- * thing that happened at the table (its log, published on the table object by brg_game_fnc_serverLog),
+ * thing that happened at the table (its log, published on the table object by brg_sabacc_game_fnc_serverLog),
  * typed out in cyan above the droid, slightly flickering, for a few seconds, sized with the distance.
  * Not drawn through walls nor from far away.
  *

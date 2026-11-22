@@ -1,18 +1,18 @@
 // Eden: own "Sabacc" category
 class CfgEditorCategories {
-    class DOUBLES(PREFIX,sabacc) {
+    class PREFIX {
         displayName = "Sabacc";
     };
 };
 
 class CfgEditorSubcategories {
-    class DOUBLES(PREFIX,sabacc_equipment) {
+    class DOUBLES(PREFIX,equipment) {
         displayName = CSTRING(EditorEquipment);
     };
-    class DOUBLES(PREFIX,sabacc_tables) {
+    class DOUBLES(PREFIX,tables) {
         displayName = CSTRING(EditorTables);
     };
-    class DOUBLES(PREFIX,sabacc_furniture) {
+    class DOUBLES(PREFIX,furniture) {
         displayName = CSTRING(EditorFurniture);
     };
 };

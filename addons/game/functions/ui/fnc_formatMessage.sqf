@@ -15,7 +15,7 @@
  * Text <STRING>
  *
  * Example:
- * [LSTRING(LogStand), ["Bragg"]] call brg_game_fnc_formatMessage
+ * [LSTRING(LogStand), ["Bragg"]] call brg_sabacc_game_fnc_formatMessage
  */
 params [["_key", "", [""]], ["_args", [], [[]]]];
 

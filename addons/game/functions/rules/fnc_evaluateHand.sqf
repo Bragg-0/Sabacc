@@ -18,7 +18,7 @@
  * [score, isSabacc, penalty, labelKey, labelArgs] <ARRAY>
  *
  * Example:
- * [3, 3, createHashMap] call brg_game_fnc_evaluateHand
+ * [3, 3, createHashMap] call brg_sabacc_game_fnc_evaluateHand
  */
 params [["_sand", 0, [0]], ["_blood", 0, [0]], ["_effects", createHashMap, [createHashMap]]];
 

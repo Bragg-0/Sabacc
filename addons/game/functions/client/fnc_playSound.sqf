@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * ["chips", 0.3] call brg_game_fnc_playSound
+ * ["chips", 0.3] call brg_sabacc_game_fnc_playSound
  */
 params [["_sound", "", [""]], ["_delay", 0, [0]], ["_volume", 1, [0]]];
 

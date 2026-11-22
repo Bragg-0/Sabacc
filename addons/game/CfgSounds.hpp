@@ -1,5 +1,5 @@
 // Sound effects of the game (synthesized for the mod: tools/gen_sounds.py)
-// Played with brg_game_fnc_playSound, e.g. ["chips"] call brg_game_fnc_playSound
+// Played with brg_sabacc_game_fnc_playSound, e.g. ["chips"] call brg_sabacc_game_fnc_playSound
 #define SFX(SND) class DOUBLES(GVAR(sfx),SND) { \
     name = QUOTE(SND); \
     sound[] = {QPATHTOF(data\sounds\SND.wss), 1, 1}; \

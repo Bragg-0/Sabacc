@@ -10,7 +10,7 @@
  * Texture path <STRING>
  *
  * Example:
- * [14] call brg_game_fnc_cardTexture
+ * [14] call brg_sabacc_game_fnc_cardTexture
  */
 params [["_card", CARD_NONE, [0]]];
 

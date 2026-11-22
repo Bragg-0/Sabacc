@@ -10,7 +10,7 @@
  * Can open <BOOL>
  *
  * Example:
- * [player] call brg_game_fnc_canOpenTerminal
+ * [player] call brg_sabacc_game_fnc_canOpenTerminal
  */
 params [["_unit", objNull, [objNull]]];
 

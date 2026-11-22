@@ -18,10 +18,10 @@ if ((_table getOrDefault ["cardObjects", []]) isNotEqualTo []) exitWith {};
 
 // ---- Stools, turned towards the table (players sit on them, see worldTableSeat)
 private _stools = [];
-if (_object getVariable ["brg_objects_stools", true]) then {
+if (_object getVariable ["brg_sabacc_objects_stools", true]) then {
     {
         _x params ["_sx", "_sy"];
-        private _stool = createVehicle ["brg_objects_stool", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+        private _stool = createVehicle ["brg_sabacc_objects_stool", [0, 0, 0], [], 0, "CAN_COLLIDE"];
         _stool attachTo [_object, [_sx, _sy, 0]];
         _stool setDir ((-_sx) atan2 (-_sy));
         _stools pushBack _stool;
@@ -32,7 +32,7 @@ _object setVariable [QGVAR(stools), _stools, true];
 // ---- Cards: two per seat (side by side, pointing at the seat), then the four piles
 private _fnc_card = {
     params ["_x0", "_y0", "_dir"];
-    private _card = createVehicle ["brg_objects_card", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+    private _card = createVehicle ["brg_sabacc_objects_card", [0, 0, 0], [], 0, "CAN_COLLIDE"];
     _card attachTo [_object, [_x0, _y0, TABLE_FELT_Z]];
     _card setDir _dir;
     _card hideObjectGlobal true;
@@ -79,10 +79,10 @@ private _seatChips = [];
     // Reserve: 2 x 2 stacks on the right of the hand (seen from the seat)
     private _reserve = [[-0.115, 0], [-0.16, 0], [-0.115, 0.045], [-0.16, 0.045]] apply {
         _x params ["_across", "_towards"];
-        ["brg_objects_chips5", _cx + _tx * _across + _dx * _towards, _cy + _ty * _across + _dy * _towards, 0] call _fnc_chip
+        ["brg_sabacc_objects_chips5", _cx + _tx * _across + _dx * _towards, _cy + _ty * _across + _dy * _towards, 0] call _fnc_chip
     };
     private _pot = [0, 1, 2, 3, 4] apply {
-        ["brg_objects_chip1", _cx - _dx * 0.1, _cy - _dy * 0.1, _x * 0.0035] call _fnc_chip
+        ["brg_sabacc_objects_chip1", _cx - _dx * 0.1, _cy - _dy * 0.1, _x * 0.0035] call _fnc_chip
     };
     _seatChips pushBack [_reserve, _pot];
 } forEach TABLE_CARD_SPOTS;
@@ -98,7 +98,7 @@ private _seatTokens = [];
     private _dy = _sy / _len;
     private _dir = ((_sx atan2 _sy) + 180) mod 360;   // the top of the token towards the middle
     _seatTokens pushBack ([-0.066, -0.022, 0.022, 0.066] apply {
-        private _token = createVehicle ["brg_objects_token", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+        private _token = createVehicle ["brg_sabacc_objects_token", [0, 0, 0], [], 0, "CAN_COLLIDE"];
         _token attachTo [_object, [_cx + _dy * _x + _dx * 0.09, _cy - _dx * _x + _dy * 0.09, TABLE_FELT_Z]];
         _token setDir _dir;
         _token hideObjectGlobal true;

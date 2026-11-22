@@ -2,7 +2,7 @@
 /*
  * Author: Bragg
  * Statement of the interactions on a physical table. Sitting or watching opens the
- * screen as soon as the server answers (see brg_game_fnc_onStateChanged).
+ * screen as soon as the server answers (see brg_sabacc_game_fnc_onStateChanged).
  *
  * Arguments:
  * 0: Table object <OBJECT>

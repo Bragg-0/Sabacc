@@ -1,5 +1,5 @@
 #define MAINPREFIX x
-#define PREFIX brg
+#define PREFIX brg_sabacc
 #define MOD_NAME Sabacc
 #define AUTHOR "Bragg"
 

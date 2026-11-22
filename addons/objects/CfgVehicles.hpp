@@ -12,8 +12,8 @@ class CfgVehicles {
         author = AUTHOR;
         displayName = CSTRING(DisplayName);
         model = "\a3\Drones_F\Weapons_F_Gamma\Items\UAV_controller_Civ_F";
-        editorCategory = QUOTE(DOUBLES(PREFIX,sabacc));
-        editorSubcategory = QUOTE(DOUBLES(PREFIX,sabacc_equipment));
+        editorCategory = QUOTE(PREFIX);
+        editorSubcategory = QUOTE(DOUBLES(PREFIX,equipment));
         vehicleClass = "Items";
         class TransportItems {
             class _xx_brg_objects_terminal {
@@ -36,8 +36,8 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {QPATHTOF(data\textures\materials\metal_co.paa), QPATHTOF(data\textures\table\felt_co.paa), COLOR_GLOW};
         hiddenSelectionsMaterials[] = {QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\materials\felt.rvmat), QPATHTOF(data\textures\materials\glow.rvmat)};
         icon = "iconObject_2x1";
-        editorCategory = QUOTE(DOUBLES(PREFIX,sabacc));
-        editorSubcategory = QUOTE(DOUBLES(PREFIX,sabacc_tables));
+        editorCategory = QUOTE(PREFIX);
+        editorSubcategory = QUOTE(DOUBLES(PREFIX,tables));
         vehicleClass = "Furniture";
         destrType = "DestructNo";
         mapSize = 2;
@@ -157,8 +157,8 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {QPATHTOF(data\textures\materials\metal_co.paa), "#(argb,8,8,3)color(0.07,0.24,0.23,1,co)", COLOR_GLOW};
         hiddenSelectionsMaterials[] = {QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\materials\felt.rvmat), QPATHTOF(data\textures\materials\glow.rvmat)};
         icon = "iconObject_1x1";
-        editorCategory = QUOTE(DOUBLES(PREFIX,sabacc));
-        editorSubcategory = QUOTE(DOUBLES(PREFIX,sabacc_furniture));
+        editorCategory = QUOTE(PREFIX);
+        editorSubcategory = QUOTE(DOUBLES(PREFIX,furniture));
         vehicleClass = "Furniture";
         destrType = "DestructNo";
         mapSize = 0.5;
@@ -174,8 +174,8 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {QPATHTOF(data\textures\materials\metal_co.paa), QPATHTOF(data\textures\sign\sign_co.paa)};
         hiddenSelectionsMaterials[] = {QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\sign\sign.rvmat)};
         icon = "iconObject_1x2";
-        editorCategory = QUOTE(DOUBLES(PREFIX,sabacc));
-        editorSubcategory = QUOTE(DOUBLES(PREFIX,sabacc_furniture));
+        editorCategory = QUOTE(PREFIX);
+        editorSubcategory = QUOTE(DOUBLES(PREFIX,furniture));
         vehicleClass = "Furniture";
         destrType = "DestructNo";
         mapSize = 1.3;
@@ -217,7 +217,7 @@ class CfgVehicles {
             QPATHTOF(data\textures\materials\sensor.rvmat)
         };
         class AnimationSources {
-            // Turn of the sensor strip (0 .. 1), set every frame by brg_game_fnc_worldTableDealer
+            // Turn of the sensor strip (0 .. 1), set every frame by brg_sabacc_game_fnc_worldTableDealer
             class spin {
                 source = "user";
                 animPeriod = 0.001;
@@ -250,7 +250,7 @@ class CfgVehicles {
         model = QPATHTOF(data\models\token.p3d);
         destrType = "DestructNo";
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {"\x\brg\addons\game\data\ui\shifts\1.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOEF(game,data\ui\shifts\1.paa)};
     };
 
     // A card lying on a physical table (created by the game, texture set by the game)
@@ -262,6 +262,6 @@ class CfgVehicles {
         model = QPATHTOF(data\models\card.p3d);
         destrType = "DestructNo";
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {"\x\brg\addons\game\data\ui\cards\back.paa"};
+        hiddenSelectionsTextures[] = {QPATHTOEF(game,data\ui\cards\back.paa)};
     };
 };

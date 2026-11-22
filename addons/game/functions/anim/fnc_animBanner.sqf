@@ -14,9 +14,9 @@
  */
 params ["_display", "_text", ["_color", "#ffc040"], ["_delay", 0]];
 
-// Clicks on the table are ignored until this banner is gone (see brg_game_fnc_gameAction)
+// Clicks on the table are ignored until this banner is gone (see brg_sabacc_game_fnc_gameAction)
 GVAR(bannerUntil) = (missionNamespace getVariable [QGVAR(bannerUntil), 0]) max (diag_tickTime + _delay + BANNER_BLOCK);
-// Floating texts wait until the banner is gone (see brg_game_fnc_animFloatText)
+// Floating texts wait until the banner is gone (see brg_sabacc_game_fnc_animFloatText)
 GVAR(bannerVisibleUntil) = (missionNamespace getVariable [QGVAR(bannerVisibleUntil), 0]) max (diag_tickTime + _delay + 2);
 // Give the buttons back once the banner is gone
 [{call FUNC(gameRefresh)}, [], _delay + BANNER_BLOCK + 0.05] call CBA_fnc_waitAndExecute;

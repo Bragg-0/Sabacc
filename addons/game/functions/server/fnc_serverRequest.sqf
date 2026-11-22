@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, "join", [1]] call brg_game_fnc_serverRequest
+ * [player, "join", [1]] call brg_sabacc_game_fnc_serverRequest
  */
 params [["_unit", objNull, [objNull]], ["_type", "", [""]], ["_args", [], [[]]]];
 

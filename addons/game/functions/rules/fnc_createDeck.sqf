@@ -10,7 +10,7 @@
  * Shuffled cards <ARRAY>
  *
  * Example:
- * [0] call brg_game_fnc_createDeck
+ * [0] call brg_sabacc_game_fnc_createDeck
  */
 params [["_suit", SUIT_SAND, [0]]];
 

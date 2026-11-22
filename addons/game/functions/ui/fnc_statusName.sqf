@@ -10,7 +10,7 @@
  * Name <STRING>
  *
  * Example:
- * ["lobby"] call brg_game_fnc_statusName
+ * ["lobby"] call brg_sabacc_game_fnc_statusName
  */
 params [["_status", STATUS_LOBBY, [""]]];
 

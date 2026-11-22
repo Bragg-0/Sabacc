@@ -10,7 +10,7 @@
  * Name <STRING>
  *
  * Example:
- * [17] call brg_game_fnc_cardName
+ * [17] call brg_sabacc_game_fnc_cardName
  */
 params [["_card", CARD_NONE, [0]]];
 

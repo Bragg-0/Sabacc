@@ -147,7 +147,7 @@ private _effect = switch (_shift) do {
 };
 
 // Journal: who used which token (on whom), and what it did
-private _shiftKey = format ["STR_brg_game_Shift%1Name", _shift];
+private _shiftKey = format ["STR_brg_sabacc_game_Shift%1Name", _shift];
 private _what = ["msg", _effect select 0, _effect select 1];
 if (count _target > 0) then {
     [_table, LSTRING(LogShiftTarget), [_player get "name", _shiftKey, _target get "name", _what]] call FUNC(serverLog);

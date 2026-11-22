@@ -14,7 +14,7 @@
  * Control <CONTROL>
  *
  * Example:
- * [_display, QGVAR(Text), [0, 0, 0.1, 0.05]] call brg_game_fnc_createCtrl
+ * [_display, QGVAR(Text), [0, 0, 0.1, 0.05]] call brg_sabacc_game_fnc_createCtrl
  */
 params ["_display", "_class", "_position", ["_group", controlNull]];
 

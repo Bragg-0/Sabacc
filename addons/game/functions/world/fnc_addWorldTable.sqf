@@ -18,7 +18,7 @@
  * Table id (-1 on failure) <NUMBER>
  *
  * Example:
- * [myTable, "Cantina", 4, 1] call brg_game_fnc_addWorldTable
+ * [myTable, "Cantina", 4, 1] call brg_sabacc_game_fnc_addWorldTable
  */
 params [
     ["_object", objNull, [objNull]], ["_name", "", [""]], ["_maxPlayers", MAX_PLAYERS_WIDE, [0]], ["_droids", 0, [0]],

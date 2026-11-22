@@ -10,13 +10,13 @@
  * [name, description, needsTarget, texture] <ARRAY>
  *
  * Example:
- * [4] call brg_game_fnc_shiftInfo
+ * [4] call brg_sabacc_game_fnc_shiftInfo
  */
 params [["_id", 1, [0]]];
 
 [
-    localize format ["STR_brg_game_Shift%1Name", _id],
-    localize format ["STR_brg_game_Shift%1Desc", _id],
+    localize format ["STR_brg_sabacc_game_Shift%1Name", _id],
+    localize format ["STR_brg_sabacc_game_Shift%1Desc", _id],
     _id in [2, 4, 14, 16],
     format [QPATHTOF(data\ui\shifts\%1.paa), _id]
 ]

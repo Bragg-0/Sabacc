@@ -18,7 +18,7 @@ _log pushBack [_key, _args];
 if (count _log > LOG_SIZE) then {_log deleteRange [0, count _log - LOG_SIZE]};
 
 // Physical table: what happens is shown as a hologram above the dealer droid (see
-// brg_game_fnc_worldTableHolo) and can be heard around it (see brg_game_fnc_worldTableSound)
+// brg_sabacc_game_fnc_worldTableHolo) and can be heard around it (see brg_sabacc_game_fnc_worldTableSound)
 if (_table get "world") then {
     private _object = _table get "object";
     if (!isNull _object) then {

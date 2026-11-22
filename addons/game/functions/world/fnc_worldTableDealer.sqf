@@ -23,7 +23,7 @@ params [["_delta", 0.02]];
             _object setVariable [QGVAR(diceLocal), []];
         };
         if (isNull _droid) then {
-            _droid = "brg_objects_dealer" createVehicleLocal [0, 0, 0];
+            _droid = "brg_sabacc_objects_dealer" createVehicleLocal [0, 0, 0];
             _droid attachTo [_object, [0, 0, TABLE_FELT_Z + DEALER_HEIGHT]];
             _object setVariable [QGVAR(dealer), _droid];
             _droid setVariable [QGVAR(heading), 0];
@@ -53,7 +53,7 @@ params [["_delta", 0.02]];
         private _dice = _object getVariable [QGVAR(diceLocal), []];
         if (_dice isEqualTo []) then {
             _dice = TABLE_DICE apply {
-                private _die = "brg_objects_die" createVehicleLocal [0, 0, 0];
+                private _die = "brg_sabacc_objects_die" createVehicleLocal [0, 0, 0];
                 _die hideObject true;
                 _die
             };

@@ -33,8 +33,8 @@ private _text = switch (true) do {
     case (_entry isNotEqualTo []): {
         _entry params ["", "_name", "_ownerName", "_names", "_max", "_status", ["_world", false], "", ["_watchers", 0], ["_rules", ["classic", BOT_NORMAL, 0, 0]]];
         _rules params ["_variant", "_botLevel", "_tournament", "_tourGame"];
-        private _variantName = localize format ["STR_brg_game_Variant%1", toUpper (_variant select [0, 1]) + (_variant select [1])];
-        private _droidName = localize (["STR_brg_game_DroidEasy", "STR_brg_game_DroidNormal", "STR_brg_game_DroidHard"] select _botLevel);
+        private _variantName = localize format ["STR_brg_sabacc_game_Variant%1", toUpper (_variant select [0, 1]) + (_variant select [1])];
+        private _droidName = localize (["STR_brg_sabacc_game_DroidEasy", "STR_brg_sabacc_game_DroidNormal", "STR_brg_sabacc_game_DroidHard"] select _botLevel);
         private _tourText = if (_tournament > 0) then {
             format [LLSTRING(TournamentProgress), _tourGame max 1, _tournament]
         } else {LLSTRING(TournamentNone)};

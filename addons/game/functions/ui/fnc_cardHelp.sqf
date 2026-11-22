@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 /*
  * Author: Bragg
- * Explains a card: title, rule and title color (to use with brg_game_fnc_uiHelp).
+ * Explains a card: title, rule and title color (to use with brg_sabacc_game_fnc_uiHelp).
  *
  * Arguments:
  * 0: Card <NUMBER>

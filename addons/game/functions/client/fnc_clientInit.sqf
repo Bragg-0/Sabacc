@@ -80,7 +80,7 @@ addMissionEventHandler ["Draw3D", {call FUNC(worldTableHolo)}];
     if (count GVAR(state) > 0) then {["refresh"] call FUNC(request)};
 }] call CBA_fnc_addPlayerEventHandler;
 
-// With ACE, the self-interaction action comes from the brg_compat_ace addon (config only).
+// With ACE, the self-interaction action comes from the brg_sabacc_compat_ace addon (config only).
 // Without ACE, a scroll-wheel action is added to the player.
 if !(isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
     ["unit", {

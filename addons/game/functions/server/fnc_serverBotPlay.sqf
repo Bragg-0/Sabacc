@@ -29,7 +29,7 @@ private _effects = _table get "effects";
 private _turn = _table get "turn";
 private _fnc_next = {[FUNC(serverBotPlay), [_id, _token], 1.2] call CBA_fnc_waitAndExecute};
 
-// ---- Hand evaluation (lower score = better hand, see brg_game_fnc_evaluateHand) ----
+// ---- Hand evaluation (lower score = better hand, see brg_sabacc_game_fnc_evaluateHand) ----
 private _fnc_value = {
     params ["_card"];
     private _value = CARD_VALUE(_card);

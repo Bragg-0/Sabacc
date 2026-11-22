@@ -1,6 +1,6 @@
 name = "Sabacc"
 author = "Bragg"
-prefix = "brg"
+prefix = "brg_sabacc"
 mainprefix = "x"
 
 [version]

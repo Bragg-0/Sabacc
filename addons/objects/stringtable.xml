@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="Sabacc">
     <Package name="Objects">
-        <Key ID="STR_brg_objects_Card">
+        <Key ID="STR_brg_sabacc_objects_Card">
             <English>Sabacc card</English>
             <French>Carte de Sabacc</French>
         </Key>
-        <Key ID="STR_brg_objects_Chips">
+        <Key ID="STR_brg_sabacc_objects_Chips">
             <English>Sabacc chips</English>
             <French>Jetons de Sabacc</French>
         </Key>
-        <Key ID="STR_brg_objects_Dealer">
+        <Key ID="STR_brg_sabacc_objects_Dealer">
             <English>Sabacc dealer droid</English>
             <French>Droïde croupier de Sabacc</French>
         </Key>
-        <Key ID="STR_brg_objects_Description">
+        <Key ID="STR_brg_sabacc_objects_Description">
             <English>Use this terminal to play Nar Shaddaa Sabacc.</English>
             <French>Utilisez ce terminal pour jouer au Sabacc de Nar Shaddaa.</French>
         </Key>
-        <Key ID="STR_brg_objects_Die">
+        <Key ID="STR_brg_sabacc_objects_Die">
             <English>Sabacc die</English>
             <French>Dé de Sabacc</French>
         </Key>
-        <Key ID="STR_brg_objects_DisplayName">
+        <Key ID="STR_brg_sabacc_objects_DisplayName">
             <English>Nar Shaddaa Sabacc Terminal</English>
             <French>Terminal Sabacc de Nar Shaddaa</French>
         </Key>
-        <Key ID="STR_brg_objects_EditorEquipment">
+        <Key ID="STR_brg_sabacc_objects_EditorEquipment">
             <English>Equipment</English>
             <French>Équipement</French>
         </Key>
-        <Key ID="STR_brg_objects_EditorFurniture">
+        <Key ID="STR_brg_sabacc_objects_EditorFurniture">
             <English>Furniture</English>
             <French>Mobilier</French>
         </Key>
-        <Key ID="STR_brg_objects_EditorTables">
+        <Key ID="STR_brg_sabacc_objects_EditorTables">
             <English>Tables</English>
             <French>Tables</French>
         </Key>
-        <Key ID="STR_brg_objects_Sign">
+        <Key ID="STR_brg_sabacc_objects_Sign">
             <English>Sabacc sign</English>
             <French>Enseigne Sabacc</French>
         </Key>
-        <Key ID="STR_brg_objects_Stool">
+        <Key ID="STR_brg_sabacc_objects_Stool">
             <English>Sabacc stool</English>
             <French>Tabouret de Sabacc</French>
         </Key>
-        <Key ID="STR_brg_objects_TableObject">
+        <Key ID="STR_brg_sabacc_objects_TableObject">
             <English>Nar Shaddaa Sabacc table</English>
             <French>Table de Sabacc de Nar Shaddaa</French>
         </Key>
-        <Key ID="STR_brg_objects_TableStools">
+        <Key ID="STR_brg_sabacc_objects_TableStools">
             <English>With stools</English>
             <French>Avec tabourets</French>
         </Key>
-        <Key ID="STR_brg_objects_TableStoolsTip">
+        <Key ID="STR_brg_sabacc_objects_TableStoolsTip">
             <English>Six stools are placed around the table when the mission starts; players sit on them.</English>
             <French>Six tabourets sont placés autour de la table au lancement de la mission ; les joueurs s'y assoient.</French>
         </Key>
-        <Key ID="STR_brg_objects_Token">
+        <Key ID="STR_brg_sabacc_objects_Token">
             <English>Sabacc shift token</English>
             <French>Jeton bonus de Sabacc</French>
         </Key>

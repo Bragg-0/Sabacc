@@ -12,7 +12,7 @@
  * None
  */
 if (!isServer) exitWith {};
-// Can be called early by brg_game_fnc_addWorldTable (editor module), then by the post-init
+// Can be called early by brg_sabacc_game_fnc_addWorldTable (editor module), then by the post-init
 if (!isNil QGVAR(tables)) exitWith {};
 
 GVAR(tables) = createHashMap;   // table id -> table

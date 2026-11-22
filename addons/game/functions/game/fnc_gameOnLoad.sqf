@@ -348,7 +348,7 @@ _display setVariable ["endRows", _endRows];
 _display setVariable ["endRestart", _endButtons select 0];
 
 // ===================================================================== Tooltips of the fixed elements
-// (cards, piles, dice and shift tokens get theirs in gameRefresh, through brg_game_fnc_uiHelp)
+// (cards, piles, dice and shift tokens get theirs in gameRefresh, through brg_sabacc_game_fnc_uiHelp)
 {
     _x params ["_ctrl", "_tooltip"];
     _ctrl ctrlSetTooltip _tooltip;
