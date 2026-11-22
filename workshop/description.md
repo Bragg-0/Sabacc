@@ -52,4 +52,6 @@ Un bug, une idée, une règle qui vous semble bancale ? Laissez un commentaire i
 
 ---
 
+**AI disclosure:** the 3D models and the user interface of this mod were made with the help of AI. / Les modèles 3D et l'interface de ce mod ont été réalisés avec l'aide de l'IA.
+
 *Nar Shaddaa Sabacc is a free, non-commercial fan project, not affiliated with Lucasfilm or Disney. Source code and original assets: APL-SA.*
