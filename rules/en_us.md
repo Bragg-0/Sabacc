@@ -171,11 +171,28 @@ The results of a round stay on screen for **12 seconds** before the next round.
 
 ### Creating or joining a table
 
-- **Create**: give a name, choose 2 to 6 seats. You become the **host**.
+- **Create**: give a name, choose 2 to 6 seats and the options below. You become the **host**.
 - **Join**: select a waiting table in the list.
 - **Add droid** (host): seats a computer-controlled player, to play or test alone.
 - **Start** (host): starts the game, from 2 players.
 - **Leaving** a table during a game means **forfeiting**.
+
+### Table options
+
+- **Rules**:
+  - *Classic*: server settings;
+  - *Quick*: 5 chips, 1 shift token, 30 s turns;
+  - *No shifts*: no shift token;
+  - *High stakes*: 12 chips, 3 shift tokens.
+- **Droids**:
+  - *easy*: often careless;
+  - *normal*: play their hand;
+  - *hard*: count the odds, only spend a chip when it is worth it, and use their shift tokens.
+- **Tournament** (3 or 5 games): each game gives points by rank (10, 6, 4, 3, 2 then 1). The most points after the last game wins the tournament. Between games, every player accepts the next one.
+
+### End of a game
+
+To play again, **every player** (droids aside) must accept the new game.
 
 ### Physical tables
 
@@ -186,6 +203,15 @@ A mission can place **Sabacc tables in the world** (editor module "Sabacc table"
 - **Open the Sabacc table**: to come back to your game.
 
 The first player to sit becomes the host. When everybody has left, the table goes back to waiting, with its droids.
+
+During sign-up, a player who walks more than 5 m away is removed, and the game can only be started at the table.
+
+The editor's **Sabacc table** (*Sabacc > Tables*) goes further:
+- **Stools**: six stools are placed around it, unless "With stools" is unticked. Players sit on them when they join the table. **Stand up** leaves the table.
+- **Cards on the felt**: each player's two cards lie in front of them, face down, turned over at the reveal, and the draw and discard piles are visible.
+- **Sounds**: people around hear the game in 3D.
+
+*Sabacc > Furniture* also has stools and a sign to place freely.
 
 ### Spectators
 

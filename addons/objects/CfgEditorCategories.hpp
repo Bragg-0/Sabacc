@@ -12,4 +12,7 @@ class CfgEditorSubcategories {
     class DOUBLES(PREFIX,sabacc_tables) {
         displayName = CSTRING(EditorTables);
     };
+    class DOUBLES(PREFIX,sabacc_furniture) {
+        displayName = CSTRING(EditorFurniture);
+    };
 };

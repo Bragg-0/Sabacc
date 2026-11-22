@@ -9,7 +9,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {QUOTE(MAIN_ADDON), "cba_main", "cba_xeh", "A3_Weapons_F", "A3_Drones_F", "A3_Structures_F"};
-        units[] = {QGVAR(terminal_item), QGVAR(table)};
+        units[] = {QGVAR(terminal_item), QGVAR(table), QGVAR(stool), QGVAR(sign), QGVAR(card), QGVAR(chips5), QGVAR(chip1)};
         weapons[] = {QGVAR(terminal)};
         VERSION_CONFIG;
     };

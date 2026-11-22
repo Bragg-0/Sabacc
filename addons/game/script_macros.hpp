@@ -40,6 +40,21 @@
 #define MAX_PLAYERS 6
 #define MAX_PLAYERS_WIDE 4 // up to this many players, the game screen uses 3 wide opponent panels
 #define SHIFT_COUNT 16
+// Rule variants of a table (see brg_game_fnc_tableRule) and droid levels
+#define VARIANTS ["classic", "quick", "noShifts", "highStakes"]
+#define BOT_EASY 0
+#define BOT_NORMAL 1
+#define BOT_HARD 2
+#define TOURNAMENT_SIZES [0, 3, 5]
+#define TOURNAMENT_POINTS [10, 6, 4, 3, 2, 1]
+// Sabacc table model (brg_objects_table): seats (model coordinates, on the ground), felt height,
+// where each seat's cards lie, the draw / discard piles, and the order in which seats are taken
+#define TABLE_CLASS "brg_objects_table"
+#define TABLE_SEATS [[-1.45, 0], [1.45, 0], [-0.46, -1.16], [0.46, -1.16], [-0.46, 1.16], [0.46, 1.16]]
+#define TABLE_CARD_SPOTS [[-0.74, 0], [0.74, 0], [-0.3, -0.48], [0.3, -0.48], [-0.3, 0.48], [0.3, 0.48]]
+#define TABLE_PILES [[-0.56, 0], [-0.34, 0], [0.34, 0], [0.56, 0]]
+#define TABLE_FELT_Z 0.778
+#define TABLE_SEAT_ORDER [0, 1, 2, 5, 3, 4]
 #define LOG_SIZE 10
 
 // Draw sources

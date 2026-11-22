@@ -66,6 +66,43 @@ class CfgVehicles {
                     class Five {name = "5"; value = 5;};
                 };
             };
+            class Variant: Combo {
+                property = QGVAR(moduleTable_variant);
+                displayName = CSTRING(RulesVariant);
+                tooltip = CSTRING(RulesVariantTip);
+                typeName = "STRING";
+                defaultValue = "'classic'";
+                class Values {
+                    class Classic {name = CSTRING(VariantClassic); value = "classic";};
+                    class Quick {name = CSTRING(VariantQuick); value = "quick";};
+                    class NoShifts {name = CSTRING(VariantNoShifts); value = "noShifts";};
+                    class HighStakes {name = CSTRING(VariantHighStakes); value = "highStakes";};
+                };
+            };
+            class DroidLevel: Combo {
+                property = QGVAR(moduleTable_droidLevel);
+                displayName = CSTRING(RulesDroidLevel);
+                tooltip = CSTRING(RulesDroidLevelTip);
+                typeName = "NUMBER";
+                defaultValue = "1";
+                class Values {
+                    class Easy {name = CSTRING(DroidEasy); value = 0;};
+                    class Normal {name = CSTRING(DroidNormal); value = 1;};
+                    class Hard {name = CSTRING(DroidHard); value = 2;};
+                };
+            };
+            class Tournament: Combo {
+                property = QGVAR(moduleTable_tournament);
+                displayName = CSTRING(RulesTournament);
+                tooltip = CSTRING(RulesTournamentTip);
+                typeName = "NUMBER";
+                defaultValue = "0";
+                class Values {
+                    class None {name = CSTRING(TournamentNone); value = 0;};
+                    class Three {name = CSTRING(Tournament3); value = 3;};
+                    class Five {name = CSTRING(Tournament5); value = 5;};
+                };
+            };
             class ModuleDescription: ModuleDescription {};
         };
 

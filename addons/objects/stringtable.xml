@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="Sabacc">
     <Package name="Objects">
+        <Key ID="STR_brg_objects_Card">
+            <English>Sabacc card</English>
+            <French>Carte de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_objects_Chips">
+            <English>Sabacc chips</English>
+            <French>Jetons de Sabacc</French>
+        </Key>
         <Key ID="STR_brg_objects_Description">
             <English>Use this terminal to play Nar Shaddaa Sabacc.</English>
             <French>Utilisez ce terminal pour jouer au Sabacc de Nar Shaddaa.</French>
@@ -13,13 +21,33 @@
             <English>Equipment</English>
             <French>Équipement</French>
         </Key>
+        <Key ID="STR_brg_objects_EditorFurniture">
+            <English>Furniture</English>
+            <French>Mobilier</French>
+        </Key>
         <Key ID="STR_brg_objects_EditorTables">
             <English>Tables</English>
             <French>Tables</French>
         </Key>
+        <Key ID="STR_brg_objects_Sign">
+            <English>Sabacc sign</English>
+            <French>Enseigne Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_objects_Stool">
+            <English>Sabacc stool</English>
+            <French>Tabouret de Sabacc</French>
+        </Key>
         <Key ID="STR_brg_objects_TableObject">
             <English>Nar Shaddaa Sabacc table</English>
             <French>Table de Sabacc de Nar Shaddaa</French>
+        </Key>
+        <Key ID="STR_brg_objects_TableStools">
+            <English>With stools</English>
+            <French>Avec tabourets</French>
+        </Key>
+        <Key ID="STR_brg_objects_TableStoolsTip">
+            <English>Six stools are placed around the table when the mission starts; players sit on them.</English>
+            <French>Six tabourets sont placés autour de la table au lancement de la mission ; les joueurs s'y assoient.</French>
         </Key>
     </Package>
 </Project>

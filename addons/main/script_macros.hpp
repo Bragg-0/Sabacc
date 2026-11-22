@@ -7,6 +7,8 @@
 
 #undef PREP
 #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
+// Function in a subfolder: functions\<sub>\fnc_<name>.sqf
+#define PREP_SUB(sub,fncName) [QPATHTOF(functions\sub\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #define PREP_RECOMPILE_START ; /* disabled */
 #define PREP_RECOMPILE_END ; /* disabled */
 

@@ -17,6 +17,10 @@
             <English>Sit at the Sabacc table</English>
             <French>S'asseoir à la table de Sabacc</French>
         </Key>
+        <Key ID="STR_brg_game_ActionStandUp">
+            <English>Stand up (leave the table)</English>
+            <French>Se lever (quitter la table)</French>
+        </Key>
         <Key ID="STR_brg_game_ActionStood">
             <English>Stood</English>
             <French>A passé</French>
@@ -77,6 +81,18 @@
             <English>Dice roll</English>
             <French>Lancer de dés</French>
         </Key>
+        <Key ID="STR_brg_game_DroidEasy">
+            <English>Easy droids</English>
+            <French>Droïdes faciles</French>
+        </Key>
+        <Key ID="STR_brg_game_DroidHard">
+            <English>Hard droids</English>
+            <French>Droïdes difficiles</French>
+        </Key>
+        <Key ID="STR_brg_game_DroidNormal">
+            <English>Normal droids</English>
+            <French>Droïdes normaux</French>
+        </Key>
         <Key ID="STR_brg_game_EffectFreeDraw">
             <English>Next draw is free</English>
             <French>Prochaine pioche gratuite</French>
@@ -108,6 +124,10 @@
         <Key ID="STR_brg_game_EndColPlayer">
             <English>Player</English>
             <French>Joueur</French>
+        </Key>
+        <Key ID="STR_brg_game_EndColPoints">
+            <English>Points</English>
+            <French>Points</French>
         </Key>
         <Key ID="STR_brg_game_EndColRank">
             <English>Rank</English>
@@ -156,6 +176,18 @@
         <Key ID="STR_brg_game_EndTitle">
             <English>End of the game</English>
             <French>Fin de partie</French>
+        </Key>
+        <Key ID="STR_brg_game_EndTournamentChampion">
+            <English>Tournament champion: %1 with %2 points</English>
+            <French>Champion du tournoi : %1 avec %2 points</French>
+        </Key>
+        <Key ID="STR_brg_game_EndTournamentLeader">
+            <English>Tournament: game %1 / %2. Leader: %3 (%4 pts)</English>
+            <French>Tournoi : partie %1 / %2. En tête : %3 (%4 pts)</French>
+        </Key>
+        <Key ID="STR_brg_game_EndTournamentOver">
+            <English>Tournament over!</English>
+            <French>Tournoi terminé !</French>
         </Key>
         <Key ID="STR_brg_game_EndVictory">
             <English>Victory!</English>
@@ -537,6 +569,14 @@
             <English>%1 ran out of time.</English>
             <French>%1 n'a pas joué à temps.</French>
         </Key>
+        <Key ID="STR_brg_game_LogTournamentGame">
+            <English>Tournament: game %1 of %2 over, points updated.</English>
+            <French>Tournoi : partie %1 sur %2 terminée, points mis à jour.</French>
+        </Key>
+        <Key ID="STR_brg_game_LogTournamentWon">
+            <English>%1 wins the tournament with %2 points!</English>
+            <French>%1 remporte le tournoi avec %2 points !</French>
+        </Key>
         <Key ID="STR_brg_game_LogWinner">
             <English>%1 wins the round (%2).</English>
             <French>%1 remporte la manche (%2).</French>
@@ -721,9 +761,33 @@
             <English>Reveal</English>
             <French>Révélation</French>
         </Key>
+        <Key ID="STR_brg_game_RulesDroidLevel">
+            <English>Droids</English>
+            <French>Droïdes</French>
+        </Key>
+        <Key ID="STR_brg_game_RulesDroidLevelTip">
+            <English>How well the droids play. Easy: often careless. Normal: plays its hand. Hard: counts the odds and uses its shift tokens.</English>
+            <French>Le niveau des droïdes. Facile : souvent distrait. Normal : joue sa main. Difficile : calcule ses chances et utilise ses jetons bonus.</French>
+        </Key>
         <Key ID="STR_brg_game_RulesText">
             <English>&lt;t size='1.2' font='PuristaBold'&gt;Nar Shaddaa Sabacc&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Goal&lt;/t&gt;&lt;br/&gt;Keep chips longer than everyone else.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Your hand&lt;/t&gt;&lt;br/&gt;You always hold two cards: one &lt;t color='#f0c870'&gt;Amber&lt;/t&gt; and one &lt;t color='#ff6060'&gt;Ember&lt;/t&gt;. Two cards of the same value make a &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;, and a low pair beats a high one (1/1 is the strongest). Two Sylops are a &lt;t font='PuristaBold'&gt;Pure Sabacc&lt;/t&gt;, the best possible hand. Without a pair, the smaller the gap between your two cards, the better.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Special cards&lt;/t&gt;&lt;br/&gt;Sylop: copies the value of your other card.&lt;br/&gt;Mirage: its value is unknown until the reveal, where you roll two dice and keep one.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;A round&lt;/t&gt;&lt;br/&gt;Up to 3 turns. On your turn, stand for free, or pay 1 chip to take a card from a deck or a discard pile, then keep it or not. You may play one shift token before acting. If everyone stands in a row, the reveal comes early.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;The reveal&lt;/t&gt;&lt;br/&gt;The best hand takes its pot back. Other players lose their pot and pay 1 chip with a Sabacc, or the gap between their cards otherwise. A player with no chip left is out.</English>
             <French>&lt;t size='1.2' font='PuristaBold'&gt;Sabacc de Nar Shaddaa&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;But&lt;/t&gt;&lt;br/&gt;Garder des jetons plus longtemps que tous les autres.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Votre main&lt;/t&gt;&lt;br/&gt;Vous avez toujours deux cartes : une &lt;t color='#f0c870'&gt;Ambre&lt;/t&gt; et une &lt;t color='#ff6060'&gt;Braise&lt;/t&gt;. Deux cartes de même valeur forment un &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;, et une paire basse bat une paire haute (1/1 est la plus forte). Deux Sylops forment un &lt;t font='PuristaBold'&gt;Sabacc pur&lt;/t&gt;, la meilleure main possible. Sans paire, plus l'écart entre vos deux cartes est petit, mieux c'est.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Cartes spéciales&lt;/t&gt;&lt;br/&gt;Sylop : copie la valeur de votre autre carte.&lt;br/&gt;Mirage : sa valeur reste inconnue jusqu'à la révélation, où vous lancez deux dés et en gardez un.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Une manche&lt;/t&gt;&lt;br/&gt;Jusqu'à 3 tours. À votre tour, passez gratuitement, ou payez 1 jeton pour prendre une carte dans une pioche ou une défausse, puis gardez-la ou non. Vous pouvez jouer un jeton bonus avant d'agir. Si tout le monde passe à la suite, la révélation arrive plus tôt.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;La révélation&lt;/t&gt;&lt;br/&gt;La meilleure main récupère son pot. Les autres perdent leur pot et paient 1 jeton avec un Sabacc, sinon l'écart entre leurs cartes. Un joueur sans jeton est éliminé.</French>
+        </Key>
+        <Key ID="STR_brg_game_RulesTournament">
+            <English>Tournament</English>
+            <French>Tournoi</French>
+        </Key>
+        <Key ID="STR_brg_game_RulesTournamentTip">
+            <English>A series of games: each game gives points by rank (10, 6, 4, 3, 2, 1). The most points at the end wins the tournament.</English>
+            <French>Une série de parties : chaque partie rapporte des points selon le classement (10, 6, 4, 3, 2, 1). Le plus de points à la fin remporte le tournoi.</French>
+        </Key>
+        <Key ID="STR_brg_game_RulesVariant">
+            <English>Rules</English>
+            <French>Règles</French>
+        </Key>
+        <Key ID="STR_brg_game_RulesVariantTip">
+            <English>Classic: server settings. Quick: 5 chips, 1 shift token, 30 s turns. No shifts: no shift token. High stakes: 12 chips, 3 shift tokens.</English>
+            <French>Classique : réglages du serveur. Rapide : 5 jetons, 1 jeton bonus, tours de 30 s. Sans bonus : aucun jeton bonus. Grosses mises : 12 jetons, 3 jetons bonus.</French>
         </Key>
         <Key ID="STR_brg_game_Sand">
             <English>Amber</English>
@@ -1256,6 +1320,42 @@
         <Key ID="STR_brg_game_TooltipSwap">
             <English>Replace this card with the drawn card</English>
             <French>Remplacer cette carte par la carte piochée</French>
+        </Key>
+        <Key ID="STR_brg_game_Tournament3">
+            <English>Tournament: 3 games</English>
+            <French>Tournoi : 3 parties</French>
+        </Key>
+        <Key ID="STR_brg_game_Tournament5">
+            <English>Tournament: 5 games</English>
+            <French>Tournoi : 5 parties</French>
+        </Key>
+        <Key ID="STR_brg_game_TournamentNextGame">
+            <English>Next game (%1/%2)</English>
+            <French>Partie suivante (%1/%2)</French>
+        </Key>
+        <Key ID="STR_brg_game_TournamentNone">
+            <English>Single game</English>
+            <French>Partie simple</French>
+        </Key>
+        <Key ID="STR_brg_game_TournamentProgress">
+            <English>Game %1 / %2</English>
+            <French>Partie %1 / %2</French>
+        </Key>
+        <Key ID="STR_brg_game_VariantClassic">
+            <English>Classic</English>
+            <French>Classique</French>
+        </Key>
+        <Key ID="STR_brg_game_VariantHighStakes">
+            <English>High stakes</English>
+            <French>Grosses mises</French>
+        </Key>
+        <Key ID="STR_brg_game_VariantNoShifts">
+            <English>No shifts</English>
+            <French>Sans bonus</French>
+        </Key>
+        <Key ID="STR_brg_game_VariantQuick">
+            <English>Quick</English>
+            <French>Rapide</French>
         </Key>
     </Package>
 </Project>

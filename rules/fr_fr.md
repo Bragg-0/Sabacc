@@ -171,11 +171,28 @@ Les résultats d'une manche restent affichés **12 secondes** avant la manche su
 
 ### Créer ou rejoindre une table
 
-- **Créer** : donnez un nom, choisissez 2 à 6 places. Vous devenez l'**hôte**.
+- **Créer** : donnez un nom, choisissez 2 à 6 places et les options ci-dessous. Vous devenez l'**hôte**.
 - **Rejoindre** : sélectionnez une table en attente dans la liste.
 - **Ajouter un droïde** (hôte) : assoit un joueur contrôlé par l'ordinateur, pour jouer ou tester seul.
 - **Lancer** (hôte) : démarre la partie, à partir de 2 joueurs.
 - **Quitter** une table pendant une partie revient à **abandonner**.
+
+### Options d'une table
+
+- **Règles** :
+  - *Classique* : les réglages du serveur ;
+  - *Rapide* : 5 jetons, 1 jeton bonus, tours de 30 s ;
+  - *Sans bonus* : aucun jeton bonus ;
+  - *Grosses mises* : 12 jetons, 3 jetons bonus.
+- **Droïdes** :
+  - *faciles* : souvent distraits ;
+  - *normaux* : jouent leur main ;
+  - *difficiles* : calculent leurs chances, ne dépensent un jeton que si ça vaut le coup, et utilisent leurs jetons bonus.
+- **Tournoi** (3 ou 5 parties) : chaque partie rapporte des points selon le classement (10, 6, 4, 3, 2 puis 1). Le plus de points après la dernière partie remporte le tournoi. Entre deux parties, tous les joueurs acceptent la suivante.
+
+### Fin de partie
+
+Pour rejouer, **tous les joueurs** (hors droïdes) doivent accepter la nouvelle partie.
 
 ### Tables physiques
 
@@ -186,6 +203,15 @@ Une mission peut placer des **tables de Sabacc dans le monde** (module d'éditeu
 - **Ouvrir la table** : pour revenir à votre partie.
 
 Le premier joueur assis devient l'hôte. Quand tout le monde est parti, la table revient en attente avec ses droïdes.
+
+Pendant l'inscription, un joueur qui s'éloigne à plus de 5 m est désinscrit, et la partie ne se lance qu'à la table.
+
+La **table de Sabacc** de l'éditeur (*Sabacc > Tables*) va plus loin :
+- **Tabourets** : six tabourets sont placés autour d'elle, sauf si l'option « Avec tabourets » est décochée. Les joueurs s'y assoient en rejoignant la table. **Se lever** fait quitter la table.
+- **Cartes sur le tapis** : chacun a ses deux cartes devant lui, face cachée, retournées à la révélation, et les pioches et défausses sont visibles.
+- **Sons** : les gens autour entendent la partie en 3D.
+
+Dans *Sabacc > Mobilier*, il y a aussi des tabourets et une enseigne à poser librement.
 
 ### Spectateurs
 
