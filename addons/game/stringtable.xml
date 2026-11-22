@@ -149,6 +149,10 @@
             <English>Rounds played: %1</English>
             <French>Manches jouées : %1</French>
         </Key>
+        <Key ID="STR_brg_game_EndSpectatorNoVote">
+            <English>Spectators do not vote for a new game.</English>
+            <French>Les spectateurs ne votent pas pour rejouer.</French>
+        </Key>
         <Key ID="STR_brg_game_EndTitle">
             <English>End of the game</English>
             <French>Fin de partie</French>
@@ -156,10 +160,6 @@
         <Key ID="STR_brg_game_EndVictory">
             <English>Victory!</English>
             <French>Victoire !</French>
-        </Key>
-        <Key ID="STR_brg_game_EndWaitHost">
-            <English>Only the host can start a new game.</English>
-            <French>Seul l'hôte peut lancer une nouvelle partie.</French>
         </Key>
         <Key ID="STR_brg_game_EndWinnerIs">
             <English>%1 wins the game</English>
@@ -260,6 +260,14 @@
         <Key ID="STR_brg_game_GameLeaveConfirm">
             <English>Confirm?</English>
             <French>Confirmer ?</French>
+        </Key>
+        <Key ID="STR_brg_game_GameRematch">
+            <English>Play again (%1/%2)</English>
+            <French>Rejouer (%1/%2)</French>
+        </Key>
+        <Key ID="STR_brg_game_GameRematchWaiting">
+            <English>Waiting (%1/%2)</English>
+            <French>En attente (%1/%2)</French>
         </Key>
         <Key ID="STR_brg_game_GameRestart">
             <English>New game</English>
@@ -497,6 +505,14 @@
             <English>%1 makes the Sabacc of %2 the priority.</English>
             <French>%1 rend le Sabacc de %2 prioritaire.</French>
         </Key>
+        <Key ID="STR_brg_game_LogRematchVote">
+            <English>%1 wants a new game (%2/%3).</English>
+            <French>%1 veut rejouer (%2/%3).</French>
+        </Key>
+        <Key ID="STR_brg_game_LogReshuffled">
+            <English>The %1 deck is empty: the discard pile is shuffled back into it.</English>
+            <French>La pioche %1 est vide : la défausse y est remélangée.</French>
+        </Key>
         <Key ID="STR_brg_game_LogReveal">
             <English>Hands are revealed!</English>
             <French>Révélation des mains !</French>
@@ -673,10 +689,6 @@
             <English>Out of chips since round %1.</English>
             <French>Plus de jetons depuis la manche %1.</French>
         </Key>
-        <Key ID="STR_brg_game_OutReasonOther">
-            <English>%1 has no chip left since round %2.</English>
-            <French>%1 n'a plus de jetons depuis la manche %2.</French>
-        </Key>
         <Key ID="STR_brg_game_OutTitle">
             <English>Eliminated</English>
             <French>Éliminé</French>
@@ -777,13 +789,21 @@
             <English>Number of shift tokens dealt to each player for the whole game.</English>
             <French>Nombre de jetons bonus distribués à chaque joueur pour toute la partie.</French>
         </Key>
+        <Key ID="STR_brg_game_SettingSoundVolume">
+            <English>Sound volume</English>
+            <French>Volume des sons</French>
+        </Key>
+        <Key ID="STR_brg_game_SettingSoundVolumeTip">
+            <English>Volume of the sound effects of the game.</English>
+            <French>Volume des effets sonores du jeu.</French>
+        </Key>
         <Key ID="STR_brg_game_SettingSounds">
             <English>Sounds</English>
             <French>Sons</French>
         </Key>
         <Key ID="STR_brg_game_SettingSoundsTip">
-            <English>Play sounds for your turn, the start of the game and the results.</English>
-            <French>Jouer des sons pour votre tour, le début de partie et les résultats.</French>
+            <English>Play the sound effects of the game: cards, chips, dice, your turn, results.</English>
+            <French>Jouer les effets sonores du jeu : cartes, jetons, dés, votre tour, résultats.</French>
         </Key>
         <Key ID="STR_brg_game_SettingStartChips">
             <English>Starting chips</English>
@@ -957,9 +977,17 @@
             <English>Cards are shown at the reveal. Use the button on the right to stop watching.</English>
             <French>Les cartes sont montrées à la révélation. Le bouton à droite permet d'arrêter de regarder.</French>
         </Key>
+        <Key ID="STR_brg_game_SpectatorInspector">
+            <English>You are watching: hover over a card, a pile or a shift token to analyse it.</English>
+            <French>Vous regardez la partie : survolez une carte, une pioche ou un jeton bonus pour l'analyser.</French>
+        </Key>
+        <Key ID="STR_brg_game_SpectatorMode">
+            <English>Spectator mode</English>
+            <French>Mode spectateur</French>
+        </Key>
         <Key ID="STR_brg_game_SpectatorReason">
-            <English>You are watching this game.</English>
-            <French>Vous regardez cette partie.</French>
+            <English>You are watching this game: you cannot play.</English>
+            <French>Vous regardez cette partie : vous ne pouvez pas jouer.</French>
         </Key>
         <Key ID="STR_brg_game_SpectatorTitle">
             <English>Spectator</English>
@@ -1148,6 +1176,10 @@
         <Key ID="STR_brg_game_TipOpenGame">
             <English>Open the game screen of your table.</English>
             <French>Ouvrir l'écran de jeu de votre table.</French>
+        </Key>
+        <Key ID="STR_brg_game_TipRematch">
+            <English>A new game starts once every player (droids aside) has accepted.</English>
+            <French>Une nouvelle partie démarre quand tous les joueurs (hors droïdes) ont accepté.</French>
         </Key>
         <Key ID="STR_brg_game_TipRound">
             <English>Current round and turn. A round lasts 3 turns, or less if everyone stands.</English>

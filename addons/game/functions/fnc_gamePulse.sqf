@@ -14,17 +14,6 @@ private _display = uiNamespace getVariable [QGVAR(gameDisplay), displayNull];
 private _state = GVAR(state);
 if (isNull _display || {count _state == 0}) exitWith {};
 
-// Nothing pulses while a banner is shown: the table cannot be used during it
-if (diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0])) exitWith {
-    GVAR(pulse) = false;
-    {
-        _x ctrlSetFade 0;
-        _x ctrlCommit 0.2;
-    } forEach ([_display getVariable "myPanel", _display getVariable "statusLine"] + ((_display getVariable "seats") apply {_x select 0}));
-};
-
-GVAR(pulse) = !GVAR(pulse);
-
 private _myUid = _display getVariable ["viewUid", getPlayerUID player];
 private _current = _state getOrDefault ["current", ""];
 private _showResults = (_state get "phase") == PHASE_RESULTS || {(_state get "status") == STATUS_OVER};
@@ -34,7 +23,7 @@ private _fnc_highlighted = {
     _uid == _current || {_showResults && {_uid in _winners}}
 };
 
-// My hand
+// My hand: its color is set at once (even under a banner), like the panels of the opponents
 private _myTurn = _current == _myUid;
 private _myPanel = _display getVariable "myPanel";
 private _myHighlight = [_myUid] call _fnc_highlighted;
@@ -42,6 +31,17 @@ private _myColor = [COLOR_PANEL_LIGHT, [COLOR_ACTIVE, COLOR_WIN] select _showRes
 private _myIndex = (_state get "players") findIf {(_x get "uid") == _myUid};
 if (_myIndex >= 0 && {((_state get "players") select _myIndex) get "out"}) then {_myColor = COLOR_OUT};
 _myPanel ctrlSetBackgroundColor _myColor;
+
+// Nothing pulses while a banner is shown: the table cannot be used during it
+if (diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0])) exitWith {
+    GVAR(pulse) = false;
+    {
+        _x ctrlSetFade 0;
+        _x ctrlCommit 0.2;
+    } forEach ([_myPanel, _display getVariable "statusLine"] + ((_display getVariable "seats") apply {_x select 0}));
+};
+
+GVAR(pulse) = !GVAR(pulse);
 _myPanel ctrlSetFade ([0, 0.5] select (_myHighlight && GVAR(pulse)));
 _myPanel ctrlCommit 0.5;
 

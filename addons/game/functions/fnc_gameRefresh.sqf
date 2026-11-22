@@ -15,13 +15,13 @@ if (isNull _display) exitWith {};
 private _state = GVAR(state);
 if (count _state == 0) exitWith {_display closeDisplay 2};
 
-// "Me" is the player shown in the bottom station: myself, or the 4th player for a spectator
+// "Me" is the player shown in the bottom station: myself (nobody for a spectator)
 ([_state] call FUNC(viewSubject)) params ["_myUid", "_me", "_spectator"];
 _display setVariable ["viewUid", _myUid];
 private _players = _state get "players";
 private _myIndex = _players findIf {(_x get "uid") == _myUid};
 if (_myIndex < 0 && {!_spectator}) exitWith {_display closeDisplay 2};
-private _placeholder = _spectator && {_myIndex < 0}; // spectator of a table with 3 players or fewer
+private _placeholder = _spectator; // the bottom station shows the spectator panel
 private _status = _state get "status";
 private _phase = _state get "phase";
 private _current = _state get "current";
@@ -77,8 +77,9 @@ private _fnc_hand = {
 // ===================================================================== Header
 (_display getVariable "title") ctrlSetStructuredText parseText format [
     // Two lines: the game title, then the table name
-    "<t font='PuristaBold' size='0.95' color='%1'>%5</t><br/><t size='0.62' color='%2'>//  </t><t font='PuristaMedium' size='0.62' color='%3'>%4</t>",
-    HTML_AMBER, HTML_DIM, HTML_TEXT, toUpper (_state get "name"), toUpper LLSTRING(GameTitle)
+    "<t font='PuristaBold' size='0.95' color='%1'>%5</t><br/><t size='0.62' color='%2'>//  </t><t font='PuristaMedium' size='0.62' color='%3'>%4</t>%6",
+    HTML_AMBER, HTML_DIM, HTML_TEXT, toUpper (_state get "name"), toUpper LLSTRING(GameTitle),
+    ["", format ["<t font='PuristaSemibold' size='0.62' color='%1'>   [%2]</t>", HTML_HOLO, toUpper LLSTRING(SpectatorTitle)]] select _spectator
 ];
 call FUNC(gameUpdateHeader);
 
@@ -86,11 +87,12 @@ call FUNC(gameUpdateHeader);
 private _opponents = [];
 private _count = count _players;
 if (_myIndex < 0) then {
-    _opponents = _players select [0, 3];
+    _opponents = _players select [0, count (_display getVariable "seats")];
 } else {
     for "_i" from 1 to (_count - 1) do {_opponents pushBack (_players select ((_myIndex + _i) mod _count))};
 };
 _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
+private _compact = _display getVariable ["compact", false];
 
 {
     private _seat = _x;
@@ -103,26 +105,32 @@ _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
     } else {
         {_x ctrlShow true} forEach _seat;
         private _player = _opponents select _seatIndex;
-        // Eliminated: no suit captions, a big "ELIMINATED" where the cards were
-        private _seatOut = _player get "out";
-        {_x ctrlShow !_seatOut} forEach [_capSand, _capBlood];
+        // Eliminated: only the name and a big "ELIMINATED" in the panel
+        // (except while the cards of the round that eliminated them are revealed)
+        private _seatOut = (_player get "out") && {!(_showResults && {([_player get "uid"] call _fnc_resultOf) isNotEqualTo []})};
+        {_x ctrlShow !_seatOut} forEach [_capSand, _capBlood, _stats, _sand, _blood, _statusCtrl, _seat select -1];
         _outLabel ctrlShow _seatOut;
         private _uid = _player get "uid";
         private _isCurrent = _uid == _current;
 
         _title ctrlSetStructuredText parseText format [
-            "<t align='left' font='PuristaSemibold' size='0.85' color='%1'>%2%3</t><t align='right' size='0.7'>%4</t>",
+            "<t align='left' font='PuristaSemibold' size='%5' color='%1'>%2%3</t><t align='right' size='0.7'>%4</t>",
             [HTML_TEXT, HTML_AMBER] select _isCurrent,
             ["", "> "] select _isCurrent,
             toUpper (_player get "name"),
-            [_uid] call _fnc_tags
+            [_uid] call _fnc_tags,
+            [0.85, 0.72] select _compact
         ];
 
         private _chips = _player get "chips";
-        _stats ctrlSetStructuredText parseText ([
-            [LLSTRING(LabelChips), _chips, [HTML_TEXT, HTML_BAD] select (_chips <= 2), 1.15] call FUNC(uiRow),
-            [LLSTRING(LabelPot), _player get "pot", HTML_AMBER] call FUNC(uiRow)
-        ] joinString "<br/>");
+        // Chips and pot: the icon, then the number (the tooltip says which is which)
+        _stats ctrlSetStructuredText parseText format [
+            "<t size='%1'><img image='%2'/></t><t font='PuristaBold' size='%3' color='%4' valign='middle'> %5</t><br/>"
+            + "<t size='%1'><img image='%6'/></t><t font='PuristaBold' size='%3' color='%7' valign='middle'> %8</t>",
+            [1.35, 1.15] select _compact,
+            TEXTURE_CHIPS, [1.2, 1.05] select _compact, [HTML_TEXT, HTML_BAD] select (_chips <= 2), _chips,
+            TEXTURE_POT, HTML_AMBER, _player get "pot"
+        ];
 
         // Shift tokens still in hand: icons with their description
         private _theirShifts = _player get "shifts";
@@ -153,7 +161,7 @@ _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
             case (_showResults && {([_uid] call _fnc_resultOf) isNotEqualTo []}): {
                 ([[_uid] call _fnc_resultOf] call FUNC(formatResult)) joinString "<br/>"
             };
-            case (_player get "out"): {format ["<t color='%1'>%2</t>", HTML_BAD, toUpper LLSTRING(SeatOut)]};
+            case (_player get "out"): {""}; // the panel already says "ELIMINATED" in big letters
             case (_player get "waiting"): {format ["<t color='%1'>%2</t>", HTML_AMBER, LLSTRING(SeatChoosing)]};
             case (_isCurrent): {format ["<t color='%1'>%2</t>", HTML_AMBER, LLSTRING(SeatPlaying)]};
             case ((_player get "lastAction") == "stand"): {LLSTRING(ActionStood)};
@@ -163,7 +171,7 @@ _display setVariable ["seatUids", _opponents apply {_x get "uid"}];
         if ((_player get "immune") && {!_showResults}) then {
             _line = _line + format ["<br/><t color='%1'>%2</t>", HTML_HOLO, LLSTRING(SeatImmune)];
         };
-        _statusCtrl ctrlSetStructuredText parseText format ["<t size='0.75' color='%1'>%2</t>", HTML_TEXT, _line];
+        _statusCtrl ctrlSetStructuredText parseText format ["<t size='%3' color='%1'>%2</t>", HTML_TEXT, _line, [0.75, 0.66] select _compact];
 
         _bg ctrlSetBackgroundColor (switch (true) do {
             case (_showResults && {([_uid] call _fnc_resultOf) param [6, false]}): {COLOR_WIN};
@@ -271,7 +279,7 @@ if (_showChoice) then {
         _x setVariable [QGVAR(clickable), true];
         [_x, LLSTRING(ChoiceTitle), format [LLSTRING(HelpDie), _dice select _forEachIndex], HTML_AMBER] call FUNC(uiHelp);
         if !(missionNamespace getVariable [QGVAR(diceRolling), false]) then {
-            _x ctrlSetText format [QPATHTOF(data\dice\%1.paa), _dice select _forEachIndex];
+            _x ctrlSetText format [QPATHTOF(data\ui\dice\%1.paa), _dice select _forEachIndex];
         };
     } forEach [_choice select 2, _choice select 3];
 
@@ -349,8 +357,8 @@ if (_hasDrawn) then {
 private _chips = _me get "chips";
 private _pot = _me get "pot";
 private _rows = [
-    [LLSTRING(LabelChips), _chips, [HTML_TEXT, HTML_BAD] select (_chips <= 2), 1.3] call FUNC(uiRow),
-    [LLSTRING(LabelPot), _pot, HTML_AMBER, 1.05] call FUNC(uiRow)
+    [LLSTRING(LabelChips), _chips, [HTML_TEXT, HTML_BAD] select (_chips <= 2), 1.3, TEXTURE_CHIPS] call FUNC(uiRow),
+    [LLSTRING(LabelPot), _pot, HTML_AMBER, 1.05, TEXTURE_POT] call FUNC(uiRow)
 ];
 
 private _mirageNote = false; // the hand line already explains a Mirage fixed at 6
@@ -397,7 +405,8 @@ private _handInfo = _display getVariable "handInfo";
 _handInfo ctrlSetStructuredText parseText (_rows joinString "<br/>");
 
 // Eliminated: the station says it clearly instead of showing an empty hand
-private _isOut = (_me get "out") || _placeholder;
+// (my cards stay visible while the round that eliminated me is revealed)
+private _isOut = _placeholder || {(_me get "out") && {!(_showResults && {([_myUid] call _fnc_resultOf) isNotEqualTo []})}};
 private _outBanner = _display getVariable "outBanner";
 _outBanner ctrlShow _isOut;
 // The cards of the round that eliminated me would show under the banner
@@ -409,8 +418,7 @@ if (_isOut) then {
     private _round = (_me get "eliminatedRound") max 1;
     // [title color, title, reason, help]
     (switch (true) do {
-        case (_placeholder): {[HTML_HOLO, LLSTRING(SpectatorTitle), LLSTRING(SpectatorReason), LLSTRING(SpectatorHelp)]};
-        case (_spectator): {[HTML_BAD, LLSTRING(OutTitle), format [LLSTRING(OutReasonOther), _me get "name", _round], LLSTRING(SpectatorHelp)]};
+        case (_placeholder): {[HTML_HOLO, LLSTRING(SpectatorMode), LLSTRING(SpectatorReason), LLSTRING(SpectatorHelp)]};
         case (_me get "left"): {[HTML_BAD, LLSTRING(OutTitle), LLSTRING(OutLeft), LLSTRING(OutHelp)]};
         default {[HTML_BAD, LLSTRING(OutTitle), format [LLSTRING(OutReason), _round], LLSTRING(OutHelp)]};
     }) params ["_titleColor", "_title", "_reason", "_help"];
@@ -426,9 +434,10 @@ _handInfo ctrlSetTooltip LLSTRING(TipMyStats);
 
 switch (true) do {
     case (_status == STATUS_OVER): {
-        _main ctrlShow _isOwner;
-        _main ctrlEnable true;
-        _main ctrlSetText toUpper LLSTRING(GameRestart);
+        ([_state] call FUNC(rematchInfo)) params ["_canVote", "_voted", "_readyCount", "_humanCount"];
+        _main ctrlShow _canVote;
+        _main ctrlEnable !_voted;
+        _main ctrlSetText toUpper format [[LLSTRING(GameRematch), LLSTRING(GameRematchWaiting)] select _voted, _readyCount, _humanCount];
         _main setVariable [QGVAR(action), "start"];
     };
     case (_hasDrawn): {
@@ -444,7 +453,11 @@ switch (true) do {
         _main setVariable [QGVAR(action), "stand"];
     };
 };
-_main ctrlSetTooltip ([LLSTRING(TipStand), LLSTRING(TipTakeDrawn)] select _hasDrawn);
+_main ctrlSetTooltip (switch (true) do {
+    case (_status == STATUS_OVER): {LLSTRING(TipRematch)};
+    case (_hasDrawn): {LLSTRING(TipTakeDrawn)};
+    default {LLSTRING(TipStand)};
+});
 
 if (_status == STATUS_OVER) then {
     // Brings back the end screen after "see the table"
@@ -476,7 +489,7 @@ private _canShift = _canAct && {!_hasDrawn} && {!(_me get "shiftUsed")};
         private _shift = _myShifts select _forEachIndex;
         ([_shift] call FUNC(shiftInfo)) params ["_shiftName", "_shiftDesc", "_needsTarget", "_texture"];
         private _selected = GVAR(targeting) == _shift;
-        _x ctrlShow !(_me get "out");
+        _x ctrlShow (!(_me get "out") && {!_spectator});
         _x ctrlSetText _texture;
         _x setVariable [QGVAR(clickable), _canShift];
         _x ctrlSetTextColor ([COLOR_DIM, COLOR_WHITE] select (_canShift && {!_targeting || _selected}));
@@ -489,6 +502,7 @@ private _canShift = _canAct && {!_hasDrawn} && {!(_me get "shiftUsed")};
 // Default text of the analysis panel (when the mouse is over nothing)
 private _default = switch (true) do {
     case (_targeting): {format [LLSTRING(ShiftTargeting), ([GVAR(targeting)] call FUNC(shiftInfo)) select 0]};
+    case (_spectator): {LLSTRING(SpectatorInspector)};
     case (_myShifts isEqualTo []): {LLSTRING(ShiftNone)};
     case (_myTurn && {_me get "shiftUsed"}): {LLSTRING(ShiftUsedThisTurn)};
     default {LLSTRING(InspectorDefault)};

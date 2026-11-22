@@ -129,10 +129,11 @@ private _fnc_cell = {
     };
 } forEach (_display getVariable "endRows");
 
-// ---- Buttons: only the host can start a new game ----
-private _isOwner = !_spectator && {(_state get "ownerUid") == _myUid};
+// ---- Buttons: a new game starts when every player (droids aside) accepted ----
+([_state] call FUNC(rematchInfo)) params ["_canVote", "_voted", "_readyCount", "_humanCount"];
 private _restart = _display getVariable "endRestart";
-_restart ctrlEnable _isOwner;
+_restart ctrlEnable (_canVote && {!_voted});
+_restart ctrlSetText toUpper format [[LLSTRING(GameRematch), LLSTRING(GameRematchWaiting)] select _voted, _readyCount, _humanCount];
 // Keep the focus on the end screen so nothing underneath comes back on top
-ctrlSetFocus ([(_display getVariable "endScreen") select -3, _restart] select _isOwner);
-_restart ctrlSetTooltip ([LLSTRING(EndWaitHost), LLSTRING(TipStart)] select _isOwner);
+ctrlSetFocus ([(_display getVariable "endScreen") select -3, _restart] select (_canVote && {!_voted}));
+_restart ctrlSetTooltip ([LLSTRING(EndSpectatorNoVote), LLSTRING(TipRematch)] select _canVote);

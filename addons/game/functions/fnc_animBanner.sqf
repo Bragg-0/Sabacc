@@ -16,12 +16,25 @@ params ["_display", "_text", ["_color", "#ffc040"], ["_delay", 0]];
 
 // Clicks on the table are ignored until this banner is gone (see brg_game_fnc_gameAction)
 GVAR(bannerUntil) = (missionNamespace getVariable [QGVAR(bannerUntil), 0]) max (diag_tickTime + _delay + BANNER_BLOCK);
+// Floating texts wait until the banner is gone (see brg_game_fnc_animFloatText)
+GVAR(bannerVisibleUntil) = (missionNamespace getVariable [QGVAR(bannerVisibleUntil), 0]) max (diag_tickTime + _delay + 2);
 // Give the buttons back once the banner is gone
 [{call FUNC(gameRefresh)}, [], _delay + BANNER_BLOCK + 0.05] call CBA_fnc_waitAndExecute;
 
 [{
     params ["_display", "_text", "_color"];
     if (isNull _display) exitWith {};
+
+    // The focused control is drawn above everything: give the focus to an invisible button
+    private _sink = _display getVariable [QGVAR(focusSink), controlNull];
+    if (isNull _sink) then {
+        _sink = _display ctrlCreate [QGVAR(Button), -1];
+        _sink ctrlSetPosition [safeZoneX, safeZoneY, 0, 0];
+        _sink ctrlSetText "";
+        _sink ctrlCommit 0;
+        _display setVariable [QGVAR(focusSink), _sink];
+    };
+    ctrlSetFocus _sink;
 
     // Only one banner at a time
     ctrlDelete (_display getVariable [QGVAR(banner), controlNull]);

@@ -18,6 +18,9 @@ params ["_display", "_text", "_position", ["_color", "#ffffff"], ["_delay", 0]];
 [{
     params ["_display", "_text", "_position", "_color"];
     if (isNull _display) exitWith {};
+    // A banner is on screen: show the text once it is gone (created later = drawn above it)
+    private _wait = (missionNamespace getVariable [QGVAR(bannerVisibleUntil), 0]) - diag_tickTime;
+    if (_wait > 0) exitWith {[_display, _text, _position, _color, _wait] call FUNC(animFloatText)};
     _position params ["_px", "_py"];
 
     private _ctrl = _display ctrlCreate [QGVAR(StructuredText), -1];

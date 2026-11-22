@@ -8,7 +8,7 @@
  * Arguments:
  * 0: Object <OBJECT>
  * 1: Table name <STRING> (default: "")
- * 2: Max players (2..4) <NUMBER> (default: 4)
+ * 2: Max players (2..6) <NUMBER> (default: 4)
  * 3: Droids already seated <NUMBER> (default: 0)
  *
  * Return Value:
@@ -17,7 +17,7 @@
  * Example:
  * [myTable, "Cantina", 4, 1] call brg_game_fnc_addWorldTable
  */
-params [["_object", objNull, [objNull]], ["_name", "", [""]], ["_maxPlayers", MAX_PLAYERS, [0]], ["_droids", 0, [0]]];
+params [["_object", objNull, [objNull]], ["_name", "", [""]], ["_maxPlayers", MAX_PLAYERS_WIDE, [0]], ["_droids", 0, [0]]];
 
 if (!isServer) exitWith {
     WARNING("addWorldTable must run on the server");

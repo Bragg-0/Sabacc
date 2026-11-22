@@ -37,7 +37,8 @@
 // How long a banner blocks clicks on the client (appear 0.2 s + hold 1.4 s + part of the fade)
 #define BANNER_BLOCK 1.9
 #define MIN_PLAYERS 2
-#define MAX_PLAYERS 4
+#define MAX_PLAYERS 6
+#define MAX_PLAYERS_WIDE 4 // up to this many players, the game screen uses 3 wide opponent panels
 #define SHIFT_COUNT 16
 #define LOG_SIZE 10
 

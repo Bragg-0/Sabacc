@@ -35,3 +35,9 @@ private _category = [LLSTRING(GameTitle), LLSTRING(SettingsRules)];
     [LSTRING(SettingSounds), LSTRING(SettingSoundsTip)],
     [LLSTRING(GameTitle), LLSTRING(SettingsInterface)], true, 0
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(soundVolume), "SLIDER",
+    [LSTRING(SettingSoundVolume), LSTRING(SettingSoundVolumeTip)],
+    [LLSTRING(GameTitle), LLSTRING(SettingsInterface)], [0, 1, 0.8, 2, true], 0
+] call CBA_fnc_addSetting;

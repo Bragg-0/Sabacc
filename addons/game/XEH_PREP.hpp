@@ -34,6 +34,7 @@ PREP(moduleTable);
 PREP(onStateChanged);
 PREP(openTerminal);
 PREP(playSound);
+PREP(rematchInfo);
 PREP(request);
 PREP(serverActivePlayers);
 PREP(serverAddBot);

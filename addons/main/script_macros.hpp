@@ -13,5 +13,7 @@
 // ---------------------------------------------------------------------------
 // Assets
 // ---------------------------------------------------------------------------
-#define TEXTURE_BACK QPATHTOEF(game,data\cards\back.paa)
+#define TEXTURE_BACK QPATHTOEF(game,data\ui\cards\back.paa)
 #define TEXTURE_TERMINAL QPATHTOEF(objects,data\ui\terminal_ca.paa)
+#define TEXTURE_CHIPS QPATHTOEF(game,data\ui\chips_ca.paa)
+#define TEXTURE_POT QPATHTOEF(game,data\ui\pot_ca.paa)

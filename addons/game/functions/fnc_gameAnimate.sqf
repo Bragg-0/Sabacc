@@ -53,21 +53,25 @@ private _fnc_chipsPos = {
 
 // ---- New round: deal the cards ----
 if (_newRound && {_status == STATUS_PLAYING} && {_phase == PHASE_TURN}) then {
+    ["shuffle"] call FUNC(playSound);
     private _delay = 0.1;
     // Opponents first, then me, like a real dealer
     {
         if (ctrlShown (_x select 0)) then {
             [_x select 3, _deckPos select 0, 0.35, _delay] call FUNC(animFly);
             [_x select 4, _deckPos select 1, 0.35, _delay + 0.08] call FUNC(animFly);
+            ["card_place", _delay + 0.3, 0.6] call FUNC(playSound);
             _delay = _delay + 0.2;
         };
     } forEach _seats;
     [_display getVariable "mySand", _deckPos select 0, 0.4, _delay] call FUNC(animFly);
     [_display getVariable "myBlood", _deckPos select 1, 0.4, _delay + 0.1] call FUNC(animFly);
+    ["card_place", _delay + 0.35] call FUNC(playSound);
+    ["card_place", _delay + 0.45] call FUNC(playSound);
     {[_x, _delay + 0.4] call FUNC(animPop)} forEach _discardCtrls;
 
     [_display, format [LLSTRING(BannerRound), _state get "round"], "#ffe0a0"] call FUNC(animBanner);
-    if ((_state get "round") == 1) then {["FD_Start_F"] call FUNC(playSound)};
+    ["round", 0.2] call FUNC(playSound);
 };
 
 if (_firstView) exitWith {};
@@ -77,10 +81,16 @@ if (!_newRound) then {
     private _prevTops = _prev get "discardTops";
     private _prevCounts = _prev get "deckCounts";
     {
-        if ((_prevTops select _forEachIndex) != _x) then {[_discardCtrls select _forEachIndex] call FUNC(animPop)};
+        if ((_prevTops select _forEachIndex) != _x) then {
+            [_discardCtrls select _forEachIndex] call FUNC(animPop);
+            ["card_place"] call FUNC(playSound);
+        };
     } forEach (_state get "discardTops");
     {
-        if ((_prevCounts select _forEachIndex) != _x) then {[_deckCtrls select _forEachIndex] call FUNC(animPop)};
+        if ((_prevCounts select _forEachIndex) != _x) then {
+            [_deckCtrls select _forEachIndex] call FUNC(animPop);
+            ["card_draw"] call FUNC(playSound);
+        };
     } forEach (_state get "deckCounts");
 
     // My drawn card comes from the pile it was taken from
@@ -105,7 +115,7 @@ if (!_newRound) then {
 
 // ---- Reveal ----
 if (_phase == PHASE_RESULTS && {_prevPhase != PHASE_RESULTS}) then {
-    ["FD_CP_Clear_F"] call FUNC(playSound);
+    ["reveal"] call FUNC(playSound);
     private _results = _state get "results";
     private _delay = 0.1;
     {
@@ -118,12 +128,15 @@ if (_phase == PHASE_RESULTS && {_prevPhase != PHASE_RESULTS}) then {
             if (_results findIf {(_x select 0) == _uid} >= 0) then {
                 [_seat select 3, [_player get "sand"] call FUNC(cardTexture), _delay] call FUNC(animFlip);
                 [_seat select 4, [_player get "blood"] call FUNC(cardTexture), _delay + 0.15] call FUNC(animFlip);
+                ["card_flip", _delay] call FUNC(playSound);
+                ["card_flip", _delay + 0.15] call FUNC(playSound);
                 _delay = _delay + 0.35;
             };
         };
     } forEach _seats;
 
     // Chips won / lost, once the cards are visible
+    if (_results findIf {(_x select 7) != 0} >= 0) then {["chips", _delay + 0.3, 0.6] call FUNC(playSound)};
     {
         _x params ["_uid", "", "", "", "", "", "_won", "_delta"];
         private _position = [_uid] call _fnc_chipsPos;
@@ -134,9 +147,10 @@ if (_phase == PHASE_RESULTS && {_prevPhase != PHASE_RESULTS}) then {
         if (_uid == _myUid && {!_spectator}) then {
             if (_won) then {
                 [_display, LLSTRING(BannerWin), "#70ff70", _delay + 0.4] call FUNC(animBanner);
-                ["FD_Finish_F"] call FUNC(playSound);
+                ["win", _delay + 0.4] call FUNC(playSound);
             } else {
                 [_display, LLSTRING(BannerLose), "#ff7070", _delay + 0.4] call FUNC(animBanner);
+                [["lose", "eliminated"] select (_me get "out"), _delay + 0.4] call FUNC(playSound);
             };
         };
     } forEach _results;
@@ -144,6 +158,7 @@ if (_phase == PHASE_RESULTS && {_prevPhase != PHASE_RESULTS}) then {
 
 // ---- Chips moving during a round (draw cost, taxes, refunds...) ----
 if (!_newRound && {_phase != PHASE_RESULTS}) then {
+    private _chipsMoved = false;
     {
         private _uid = _x get "uid";
         private _prevIndex = _prevPlayers findIf {(_x get "uid") == _uid};
@@ -154,15 +169,26 @@ if (!_newRound && {_phase != PHASE_RESULTS}) then {
                 private _text = if (_delta > 0) then {format ["+%1", _delta]} else {str _delta};
                 [_display, _text, _position, ["#ffa050", "#a0ff80"] select (_delta > 0)] call FUNC(animFloatText);
             };
+            if (_delta != 0 && {_uid == _myUid}) then {_chipsMoved = true}; // only my own chips: heard often otherwise
         };
     } forEach _players;
+    if (_chipsMoved) then {["chips", 0.1, 0.5] call FUNC(playSound)};
+};
+
+// ---- Shift token used (by anybody) ----
+if (!_newRound && {_players findIf {
+    private _uid = _x get "uid";
+    private _prevIndex = _prevPlayers findIf {(_x get "uid") == _uid};
+    _prevIndex >= 0 && {count (_x get "shifts") < count ((_prevPlayers select _prevIndex) get "shifts")}
+} >= 0}) then {
+    ["shift"] call FUNC(playSound);
 };
 
 // ---- My turn ----
 private _current = _state get "current";
 if (!_spectator && {_current == _myUid} && {(_prev get "current") != _myUid}) then {
     [_display, LLSTRING(BannerYourTurn), "#ffc040", [0, 1.2] select _newRound] call FUNC(animBanner);
-    ["FD_Timer_F"] call FUNC(playSound);
+    ["turn", [0, 1.2] select _newRound] call FUNC(playSound);
 };
 
 // ---- Dice ----
@@ -170,6 +196,7 @@ private _pending = _me get "pending";
 if (_pending isNotEqualTo [] && {(_prevMe getOrDefault ["pending", []]) isEqualTo []}) then {
     private _choice = _display getVariable "choice";
     [[_choice select 2, _choice select 3], _pending select 1] call FUNC(animDice);
+    ["dice"] call FUNC(playSound);
 };
 
 // ---- Game over ----
@@ -177,9 +204,10 @@ if (_status == STATUS_OVER && {(_prev get "status") != STATUS_OVER}) then {
     private _winner = _state get "winner";
     if (!_spectator && {_winner == (_me get "name")}) then {
         [_display, LLSTRING(BannerVictory), "#70ff70", 2.5] call FUNC(animBanner);
-        ["FD_Finish_F"] call FUNC(playSound);
+        ["victory", 2.5] call FUNC(playSound);
     } else {
         [_display, LLSTRING(BannerGameOver), "#ffe0a0", 2.5] call FUNC(animBanner);
+        ["round", 2.5] call FUNC(playSound);
     };
 
     // The end screen appears once the last results and the banner have been seen

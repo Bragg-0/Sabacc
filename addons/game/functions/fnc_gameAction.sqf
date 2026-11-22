@@ -36,6 +36,8 @@ if (_myIndex < 0) exitWith {
 };
 private _me = _players select _myIndex;
 
+if (_action in ["stand", "takeDrawn", "keepHand", "start", "target", "shift", "choose"]) then {["click", 0, 0.6] call FUNC(playSound)};
+
 switch (_action) do {
     case "draw": {["draw", _args] call FUNC(request)};
     case "stand": {["stand"] call FUNC(request)};

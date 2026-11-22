@@ -47,6 +47,8 @@ class CfgVehicles {
                     class Two {name = "2"; value = 2;};
                     class Three {name = "3"; value = 3;};
                     class Four {name = "4"; value = 4;};
+                    class Five {name = "5"; value = 5;};
+                    class Six {name = "6"; value = 6;};
                 };
             };
             class Droids: Combo {
@@ -60,6 +62,8 @@ class CfgVehicles {
                     class One {name = "1"; value = 1;};
                     class Two {name = "2"; value = 2;};
                     class Three {name = "3"; value = 3;};
+                    class Four {name = "4"; value = 4;};
+                    class Five {name = "5"; value = 5;};
                 };
             };
             class ModuleDescription: ModuleDescription {};

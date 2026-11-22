@@ -53,6 +53,12 @@ private _remaining = if (_playing) then {(ceil ((_state get "deadline") - CBA_mi
 // The server adds a short grace while the banner is shown: the countdown displays the full time until then
 _remaining = _remaining min (ceil _total);
 private _urgent = _playing && {_remaining <= 10};
+// Last seconds of my own turn: one tick per second
+if (_playing && {_phase == PHASE_TURN} && {_remaining in [1, 2, 3, 4, 5]} && {(_state get "current") == getPlayerUID player}
+    && {_remaining != (missionNamespace getVariable [QGVAR(lastTick), -1])}) then {
+    GVAR(lastTick) = _remaining;
+    ["tick"] call FUNC(playSound);
+};
 private _minutes = floor (_remaining / 60);
 private _seconds = _remaining mod 60;
 private _clock = format ["%1%2:%3%4", ["", "0"] select (_minutes < 10), _minutes, ["", "0"] select (_seconds < 10), _seconds];

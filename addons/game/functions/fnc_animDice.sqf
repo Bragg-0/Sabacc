@@ -26,7 +26,7 @@ GVAR(diceRolling) = true;
     if (diag_tickTime >= _end) exitWith {
         GVAR(diceRolling) = false;
         {
-            _x ctrlSetText format [QPATHTOF(data\dice\%1.paa), _finals select _forEachIndex];
+            _x ctrlSetText format [QPATHTOF(data\ui\dice\%1.paa), _finals select _forEachIndex];
             [_x] call FUNC(animPop);
         } forEach _ctrls;
         [_handle] call CBA_fnc_removePerFrameHandler;
@@ -35,6 +35,6 @@ GVAR(diceRolling) = true;
     };
 
     {
-        _x ctrlSetText format [QPATHTOF(data\dice\%1.paa), 1 + floor random 6];
+        _x ctrlSetText format [QPATHTOF(data\ui\dice\%1.paa), 1 + floor random 6];
     } forEach _ctrls;
 }, 0.07, [_ctrls, _finals, diag_tickTime + 0.9]] call CBA_fnc_addPerFrameHandler;

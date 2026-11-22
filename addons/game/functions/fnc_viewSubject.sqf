@@ -18,9 +18,7 @@ private _players = _state getOrDefault ["players", []];
 private _spectator = _state getOrDefault ["spectator", false];
 
 private _uid = getPlayerUID player;
-if (_spectator) then {
-    _uid = if (count _players >= 4) then {(_players select 3) get "uid"} else {""};
-};
+if (_spectator) then {_uid = ""}; // a spectator only watches: every player is shown in the top panels
 
 private _index = _players findIf {(_x get "uid") == _uid};
 private _subject = if (_index >= 0) then {

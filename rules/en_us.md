@@ -1,7 +1,7 @@
 # Rulebook
 # Nar Shaddaa Sabacc
 
-*Fan-made card game for Arma 3, 2 to 4 players (droids included).*
+*Fan-made card game for Arma 3, 2 to 6 players (droids included).*
 
 *Nar Shaddaa Sabacc is a free, non-commercial fan project, not affiliated with Lucasfilm Ltd. or The Walt Disney Company.*
 
@@ -31,7 +31,7 @@ The deck has **46 cards**, split into two suits of 23 cards: **Amber** (gold) an
 
 - **Reserve**: the chips you own. **8** at the start (from 4 to 20 in the settings).
 - **Pot**: the chips you bet during the current round. You get it back if you win the round, and lose it otherwise.
-- **Shift tokens**: **2** per player (from 0 to 4 in the settings), drawn at random from 16 different tokens. They lie face up: everyone sees the others' tokens. Each token can be used **once per game**.
+- **Shift tokens**: **2** per player (from 0 to 4 in the settings), drawn at random from 16 different tokens (with 5 or 6 players, each gets fewer so the 16 are enough). They lie face up: everyone sees the others' tokens. Each token can be used **once per game**.
 
 ---
 
@@ -76,6 +76,8 @@ A round lasts **3 turns around the table** at most. On your turn:
 - **Draw**: you pay **1 chip**, which goes to your pot, and take one card of your choice:
   - the top of a **deck** (Amber or Ember), without knowing what you take;
   - the top of a **discard pile** (Amber or Ember), whose card you can see.
+
+  An empty deck is refilled at once with its discard pile, shuffled (the top card of the discard pile stays).
 
 **3. If you drew:**
 
@@ -169,7 +171,7 @@ The results of a round stay on screen for **12 seconds** before the next round.
 
 ### Creating or joining a table
 
-- **Create**: give a name, choose 2 to 4 seats. You become the **host**.
+- **Create**: give a name, choose 2 to 6 seats. You become the **host**.
 - **Join**: select a waiting table in the list.
 - **Add droid** (host): seats a computer-controlled player, to play or test alone.
 - **Start** (host): starts the game, from 2 players.

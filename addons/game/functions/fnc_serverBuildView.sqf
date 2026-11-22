@@ -26,6 +26,7 @@ private _players = (_table get "players") apply {
     createHashMapFromArray [
         ["uid", _x get "uid"],
         ["name", _x get "name"],
+        ["bot", _x getOrDefault ["bot", false]],
         ["chips", _x get "chips"],
         ["pot", _x get "pot"],
         ["sand", [_x get "sand", _visible] call _fnc_hide],
@@ -67,5 +68,6 @@ createHashMapFromArray [
     ["spectator", (_table get "players") findIf {(_x get "uid") == _viewerUid} < 0],
     ["spectatorCount", count (_table get "spectators")],
     ["world", _table get "world"],
+    ["ready", +(_table getOrDefault ["ready", []])],
     ["object", _table get "object"]
 ]

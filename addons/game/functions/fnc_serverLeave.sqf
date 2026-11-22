@@ -67,4 +67,12 @@ if ((_table get "ownerUid") == _uid) then {
     _table set ["ownerUid", (_remaining select 0) get "uid"];
 };
 
+// Rematch vote: the players still there may all have accepted already
+private _ready = (_table getOrDefault ["ready", []]) - [_uid];
+_table set ["ready", _ready];
+if ((_table get "status") == STATUS_OVER && {_ready isNotEqualTo []} && {_remaining findIf {!((_x get "uid") in _ready)} < 0}) exitWith {
+    private _first = _remaining select 0;
+    [_first get "unit", _first get "uid"] call FUNC(serverStartGame);
+};
+
 [_table] call FUNC(serverSync);

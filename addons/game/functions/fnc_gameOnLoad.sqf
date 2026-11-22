@@ -118,43 +118,83 @@ _close ctrlSetTooltip LLSTRING(MenuClose);
 _close ctrlAddEventHandler ["ButtonClick", {(ctrlParent (_this select 0)) closeDisplay 2}];
 
 // ===================================================================== Opponents
+// 3 wide panels (tables up to 4 players) or 5 compact ones (5 or 6 players)
+// (a spectator sees every player up there, so 4 players already need the compact panels)
+private _seatsNeeded = (GVAR(state) getOrDefault ["maxPlayers", MAX_PLAYERS_WIDE]) - ([1, 0] select (GVAR(state) getOrDefault ["spectator", false]));
+private _seatCount = [3, 5] select (_seatsNeeded > 3);
+private _compact = _seatCount > 3;
+_display setVariable ["compact", _compact];
+private _seatW = (39 - 0.3 * (_seatCount - 1)) / _seatCount;
 private _seats = [];
 private _seatShifts = [];
 private _seatOut = []; // per seat: [sand caption, blood caption, "ELIMINATED" label]
-for "_i" from 0 to 2 do {
-    private _x0 = 0.5 + _i * 13.1;
-    private _frame = [[_x0, 2, 12.8, 7], " "] call _fnc_frame;
+for "_i" from 0 to (_seatCount - 1) do {
+    private _x0 = 0.5 + _i * (_seatW + 0.3);
+    private _frame = [[_x0, 2, _seatW, 7], " "] call _fnc_frame;
     _frame params ["_fill", "_title"];
 
-    private _sand = ["RscPicture", GRID(_x0 + 0.5,3.05,2.6,5.2)] call _fnc_ctrl;
-    private _blood = ["RscPicture", GRID(_x0 + 3.35,3.05,2.6,5.2)] call _fnc_ctrl;
-    private _stats = [GRID(_x0 + 6.3,3.05,6.1,2.2)] call _fnc_text;
-    _stats ctrlSetTooltip LLSTRING(TipSeatStats);
-    private _status = [GRID(_x0 + 6.3,6.4,6.1,1.4)] call _fnc_text;
+    // Layout. Wide: cards on the left, everything else on the right.
+    // Compact (5 panels): cards and numbers on top, shift tokens 2 x 2 beside the numbers,
+    // the status / result across the whole panel at the bottom (long results are not cut).
+    private _cardW = [2.6, 1.8] select _compact;
+    private _cardGap = [2.85, 1.95] select _compact;
+    private _cardY = [3.05, 3.1] select _compact;
+    private _infoX = _x0 + ([6.3, 4.3] select _compact);
+    private _infoW = _seatW - ([6.7, 4.5] select _compact);
 
-    private _capSand = [GRID(_x0 + 0.3,8.1,3,0.7), LLSTRING(Sand), HTML_SAND] call _fnc_caption;
-    private _capBlood = [GRID(_x0 + 3.15,8.1,3,0.7), LLSTRING(Blood), HTML_BLOOD] call _fnc_caption;
-    private _extras = (_frame select [2, count _frame]) + [
-        _capSand,
-        _capBlood,
-        [GRID(_x0 + 6.3,6.35,6.1,0.04), COLOR_HOLO_FAINT] call _fnc_rect
-    ];
+    private _cardX = _x0 + ([0.5, 0.4] select _compact);
+    private _sand = ["RscPicture", GRID(_cardX,_cardY,_cardW,_cardW * 2)] call _fnc_ctrl;
+    private _blood = ["RscPicture", GRID(_cardX + _cardGap,_cardY,_cardW,_cardW * 2)] call _fnc_ctrl;
+    private _statsH = 2.35;
+    private _stats = [GRID(_infoX,3.05,_infoW,_statsH)] call _fnc_text;
+    _stats ctrlSetTooltip LLSTRING(TipSeatStats);
+    private _status = if (_compact) then {
+        [GRID(_x0 + 0.3,7.4,_seatW - 0.6,1.55)] call _fnc_text
+    } else {
+        [GRID(_infoX,6.4,_infoW,1.4)] call _fnc_text
+    };
+
+    private _capY = [8.1, 6.72] select _compact;
+    private _capSand = [GRID(_cardX + _cardW / 2 - 1.5,_capY,3,0.7), LLSTRING(Sand), HTML_SAND] call _fnc_caption;
+    private _capBlood = [GRID(_cardX + _cardGap + _cardW / 2 - 1.5,_capY,3,0.7), LLSTRING(Blood), HTML_BLOOD] call _fnc_caption;
+    private _divider = if (_compact) then {
+        [GRID(_x0 + 0.3,7.35,_seatW - 0.6,0.04), COLOR_HOLO_FAINT] call _fnc_rect
+    } else {
+        [GRID(_infoX,6.35,_infoW,0.04), COLOR_HOLO_FAINT] call _fnc_rect
+    };
+    private _extras = (_frame select [2, count _frame]) + [_capSand, _capBlood, _divider];
+
     // Shown in place of the cards once this opponent is eliminated
-    private _outLabel = [GRID(_x0 + 0.3,4.8,5.9,1.6), format [
-        "<t align='center' font='PuristaSemibold' size='1.25' color='%1'>%2</t>", HTML_BAD, toUpper LLSTRING(SeatOut)
+    // Eliminated: one big "ELIMINATED" in the middle of the emptied panel
+    private _outLabel = [GRID(_x0 + 0.3,4.6,_seatW - 0.6,2.4), format [
+        "<t align='center' valign='middle' font='PuristaBold' size='%3' color='%1' shadow='2'>%2</t>", HTML_BAD, toUpper LLSTRING(SeatOut), [2.2, 1.45] select _compact
     ]] call _fnc_text;
     _outLabel ctrlShow false;
     _seatOut pushBack [_capSand, _capBlood, _outLabel];
-    private _bonusLabel = [GRID(_x0 + 6.3,5.3,2.4,0.9), format ["<t size='0.72' color='%1'>%2</t>", HTML_MUTED, toUpper LLSTRING(LabelShifts)]] call _fnc_text;
 
-    // Shift tokens of this opponent (hover = description in the analysis panel)
+    // "BONUS" label (wide panels only), then the shift tokens of this opponent
+    private _bonusLabel = [GRID(_infoX,5.42,2.4,0.9), format ["<t size='0.72' color='%1'>%2</t>", HTML_MUTED, toUpper LLSTRING(LabelShifts)]] call _fnc_text;
+    if (_compact) then {_bonusLabel ctrlSetPosition [0, 0, 0, 0]; _bonusLabel ctrlCommit 0};
     private _icons = [];
     for "_j" from 0 to 3 do {
-        _icons pushBack ([GRID(_x0 + 8.75 + _j * 0.95,5.25,0.9,0.9)] call _fnc_picture);
+        private _iconPos = if (_compact) then {
+            // 2 x 2 grid, centered in the information column
+            private _size = 0.9;
+            private _left = _infoX + (_infoW - 2 * _size - 0.15) / 2;
+            [_left + (_j mod 2) * (_size + 0.15), 5.45 + floor (_j / 2) * (_size + 0.05), _size]
+        } else {
+            [_infoX + 2.45 + _j * 0.95, 5.42, 0.9]
+        };
+        _iconPos params ["_ix", "_iy", "_isize"];
+        _icons pushBack ([GRID(_ix,_iy,_isize,_isize)] call _fnc_picture);
     };
     _seatShifts pushBack ([_bonusLabel] + _icons); // index 0 = "BONUS" label, then 4 icons
 
-    private _target = [GRID(_x0 + 6.3,7.85,6.1,0.95), QGVAR(ButtonAccent)] call _fnc_button;
+    private _target = if (_compact) then {
+        [GRID(_x0 + 0.3,8.05,_seatW - 0.6,0.8), QGVAR(ButtonAccent)] call _fnc_button
+    } else {
+        [GRID(_infoX,7.85,_infoW,0.95), QGVAR(ButtonAccent)] call _fnc_button
+    };
     _target ctrlSetText toUpper LLSTRING(GameTarget);
     _target setVariable [QGVAR(action), "target"];
 
@@ -259,7 +299,7 @@ private _endTitle = [GRID(8.5,4.25,23,3.0)] call _fnc_text;
 private _endSubtitle = [GRID(8.5,7.3,23,1.1)] call _fnc_text;
 private _endLine = [GRID(9,8.55,22,0.05), COLOR_HOLO_FAINT] call _fnc_rect;
 
-// Ranking table: fixed columns, one line per player (max 4)
+// Ranking table: fixed columns, one line per player (max 6)
 // Columns: rank | player | status | rounds won | chips
 private _columns = [[9.2, 1.8], [11, 7.6], [18.6, 6.2], [24.8, 3.6], [28.4, 2.6]];
 private _endTable = [];
@@ -271,10 +311,10 @@ _endTable append _header;
 _endTable pushBack ([GRID(9,9.8,22,0.05), COLOR_HOLO_FAINT] call _fnc_rect);
 
 private _endRows = [];
-for "_r" from 0 to 3 do {
-    private _y = 10.05 + _r * 1.85;
-    private _stripe = [GRID(9,_y,22,1.65), [0.37, 0.85, 1, [0.08, 0.04] select (_r mod 2)]] call _fnc_rect;
-    private _cells = _columns apply {[GRID(_x select 0,_y + 0.25,_x select 1,1.2)] call _fnc_text};
+for "_r" from 0 to (MAX_PLAYERS - 1) do {
+    private _y = 10.0 + _r * 1.28;
+    private _stripe = [GRID(9,_y,22,1.18), [0.37, 0.85, 1, [0.08, 0.04] select (_r mod 2)]] call _fnc_rect;
+    private _cells = _columns apply {[GRID(_x select 0,_y + 0.1,_x select 1,1.0)] call _fnc_text};
     _endRows pushBack ([_stripe] + _cells);
     _endTable append ([_stripe] + _cells);
 };

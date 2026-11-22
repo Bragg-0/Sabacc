@@ -57,6 +57,17 @@ switch (_type) do {
         private _fromDiscard = _source >= SOURCE_SAND_DISCARD;
         private _suit = _source mod 2;
         private _pile = ([_table get "decks", _table get "discards"] select _fromDiscard) select _suit;
+        // Many players can empty a deck within a round: shuffle the discard pile back into it (top card stays)
+        if (!_fromDiscard && {_pile isEqualTo []}) then {
+            private _discard = (_table get "discards") select _suit;
+            if (count _discard > 1) then {
+                private _top = _discard deleteAt (count _discard - 1);
+                _pile append ([_discard] call CBA_fnc_shuffle);
+                _discard resize 0;
+                _discard pushBack _top;
+                [_table, LSTRING(LogReshuffled), [[LSTRING(Sand), LSTRING(Blood)] select _suit]] call FUNC(serverLog);
+            };
+        };
         if (_pile isEqualTo []) exitWith {[_unit, LSTRING(ErrorEmptyPile)] call FUNC(serverNotify)};
 
         // Deck: top card is the first one. Discard: top card is the last one.

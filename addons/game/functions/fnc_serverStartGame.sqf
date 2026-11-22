@@ -14,14 +14,31 @@ params ["_unit", "_uid"];
 
 private _table = GVAR(tables) getOrDefault [GVAR(seats) getOrDefault [_uid, -1], createHashMap];
 if (count _table == 0) exitWith {};
-if ((_table get "ownerUid") != _uid) exitWith {[_unit, LSTRING(ErrorNotOwner)] call FUNC(serverNotify)};
 if ((_table get "status") == STATUS_PLAYING) exitWith {};
+// First game: the host starts it. After a game: every player votes for a new one
+private _rematch = (_table get "status") == STATUS_OVER;
+if (!_rematch && {(_table get "ownerUid") != _uid}) exitWith {[_unit, LSTRING(ErrorNotOwner)] call FUNC(serverNotify)};
 
 // A physical table is started on the spot: the host must stand at it
 private _object = _table get "object";
 if ((_table get "world") && {isNull _object || {_unit distance _object > WORLD_TABLE_RANGE}}) exitWith {
     [_unit, LSTRING(ErrorStartAtTable)] call FUNC(serverNotify);
 };
+
+if (_rematch) then {
+    private _humans = ((_table get "players") select {!(_x get "bot") && {!(_x get "left")}}) apply {_x get "uid"};
+    private _ready = (_table getOrDefault ["ready", []]) select {_x in _humans};
+    if !(_uid in _ready) then {
+        _ready pushBack _uid;
+        private _player = [_table, _uid] call FUNC(serverFindPlayer);
+        [_table, LSTRING(LogRematchVote), [_player get "name", count _ready, count _humans]] call FUNC(serverLog);
+    };
+    _table set ["ready", _ready];
+};
+// Somebody has not accepted yet: wait
+private _waiting = ((_table get "players") select {!(_x get "bot") && {!(_x get "left")}}) findIf {!((_x get "uid") in (_table getOrDefault ["ready", []]))};
+if (_rematch && {_waiting >= 0}) exitWith {[_table] call FUNC(serverSync)};
+_table set ["ready", []];
 
 // Forget the seats of players who left the previous game
 _table set ["players", (_table get "players") select {!(_x get "left")}];

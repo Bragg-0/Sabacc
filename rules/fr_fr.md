@@ -1,7 +1,7 @@
 # Livret de règles
 # Sabacc de Nar Shaddaa
 
-*Jeu de cartes de fan pour Arma 3, de 2 à 4 joueurs (droïdes compris).*
+*Jeu de cartes de fan pour Arma 3, de 2 à 6 joueurs (droïdes compris).*
 
 *Sabacc de Nar Shaddaa est un projet de fan gratuit et non commercial, sans lien avec Lucasfilm Ltd. ni The Walt Disney Company.*
 
@@ -31,7 +31,7 @@ Le paquet compte **46 cartes**, réparties en deux couleurs de 23 cartes : **Amb
 
 - **Réserve** : les jetons que vous possédez. **8** au départ (réglable de 4 à 20).
 - **Pot** : vos jetons misés pendant la manche en cours. Il vous est rendu si vous gagnez la manche, et perdu sinon.
-- **Jetons bonus** : **2** par joueur (réglable de 0 à 4), tirés au hasard parmi 16 jetons différents. Ils sont posés face visible : tout le monde voit ceux des autres. Chaque jeton ne sert qu'**une fois par partie**.
+- **Jetons bonus** : **2** par joueur (réglable de 0 à 4), tirés au hasard parmi 16 jetons différents (à 5 ou 6 joueurs, chacun en reçoit moins pour que les 16 suffisent). Ils sont posés face visible : tout le monde voit ceux des autres. Chaque jeton ne sert qu'**une fois par partie**.
 
 ---
 
@@ -76,6 +76,8 @@ Une manche dure **3 tours de table** au maximum. À votre tour :
 - **Piocher** : vous payez **1 jeton**, qui va dans votre pot, et vous prenez une carte au choix :
   - le dessus d'une **pioche** (Ambre ou Braise), sans savoir ce que vous prenez ;
   - le dessus d'une **défausse** (Ambre ou Braise), dont vous voyez la carte.
+
+  Une pioche vide est aussitôt remplie avec sa défausse remélangée (la carte du dessus de la défausse reste en place).
 
 **3. Si vous avez pioché :**
 
@@ -169,7 +171,7 @@ Les résultats d'une manche restent affichés **12 secondes** avant la manche su
 
 ### Créer ou rejoindre une table
 
-- **Créer** : donnez un nom, choisissez 2 à 4 places. Vous devenez l'**hôte**.
+- **Créer** : donnez un nom, choisissez 2 à 6 places. Vous devenez l'**hôte**.
 - **Rejoindre** : sélectionnez une table en attente dans la liste.
 - **Ajouter un droïde** (hôte) : assoit un joueur contrôlé par l'ordinateur, pour jouer ou tester seul.
 - **Lancer** (hôte) : démarre la partie, à partir de 2 joueurs.

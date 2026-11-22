@@ -24,4 +24,4 @@ private _name = switch (_value) do {
     default {str _value};
 };
 
-format [QPATHTOF(data\cards\%1\%2.paa), ["sand", "blood"] select CARD_SUIT(_card), _name]
+format [QPATHTOF(data\ui\cards\%1\%2.paa), ["sand", "blood"] select CARD_SUIT(_card), _name]

@@ -77,7 +77,7 @@ private _combo = [QGVAR(Combo), GRID(20.5,14.9,6.4,1.1)] call _fnc_ctrl;
 for "_i" from MIN_PLAYERS to MAX_PLAYERS do {
     _combo lbSetValue [_combo lbAdd format [LLSTRING(MenuPlayersCount), _i], _i];
 };
-_combo lbSetCurSel (MAX_PLAYERS - MIN_PLAYERS);
+_combo lbSetCurSel (MAX_PLAYERS_WIDE - MIN_PLAYERS);
 _combo ctrlSetTooltip LLSTRING(TipMaxPlayers);
 _display setVariable ["combo", _combo];
 

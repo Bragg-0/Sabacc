@@ -31,6 +31,9 @@ if (({!(_x get "left")} count _players) >= (_table get "maxPlayers")) exitWith {
     [_unit, LSTRING(ErrorTableFull)] call FUNC(serverNotify);
 };
 
+// Rejoining a finished table: the seat of the previous game (marked as left) is replaced
+private _old = _players findIf {(_x get "uid") == _uid};
+if (_old >= 0) then {_players deleteAt _old};
 _players pushBack ([_unit, _uid] call FUNC(serverNewPlayer));
 GVAR(seats) set [_uid, _id];
 

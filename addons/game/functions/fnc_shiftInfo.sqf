@@ -18,5 +18,5 @@ params [["_id", 1, [0]]];
     localize format ["STR_brg_game_Shift%1Name", _id],
     localize format ["STR_brg_game_Shift%1Desc", _id],
     _id in [2, 4, 14, 16],
-    format [QPATHTOF(data\shifts\%1.paa), _id]
+    format [QPATHTOF(data\ui\shifts\%1.paa), _id]
 ]
