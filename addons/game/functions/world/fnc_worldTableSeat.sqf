@@ -29,7 +29,6 @@ if (!isNull _current) then {
     player setVariable [QGVAR(sittingOn), objNull];
     [player, ""] remoteExec ["switchMove", 0];
     player setPosASL ((getPosASL _current) vectorAdd ((vectorDir _current) vectorMultiply -0.6));
-    player removeAction (player getVariable [QGVAR(standAction), -1]);
     player removeEventHandler ["Killed", player getVariable [QGVAR(standKilled), -1]];
 };
 
@@ -43,11 +42,7 @@ if (!isNull _stool) then {
     player setDir (_stool getDir _object);
     // A pose at random, so a full table does not look like clones (see CfgMoves.hpp)
     [player, format ["%1_%2", QGVAR(sitting), selectRandom ["A", "B", "UA", "UB"]]] remoteExec ["switchMove", 0];
-    // Standing up = leaving the table (a game in progress is forfeited, like the button)
-    player setVariable [QGVAR(standAction), player addAction [
-        format ["<t color='#ffb347'>%1</t>", LLSTRING(ActionStandUp)],
-        {["leave"] call FUNC(request)}, nil, 1.5, false, true, "", "true"
-    ]];
+    // Standing up = leaving the table: only from the table screens ("Leave", confirmed by a second click)
     player setVariable [QGVAR(standKilled), player addEventHandler ["Killed", {
         params ["_unit"];
         _unit setVariable [QGVAR(sittingOn), objNull];

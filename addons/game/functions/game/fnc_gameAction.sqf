@@ -79,8 +79,8 @@ switch (_action) do {
         [{createDialog QGVAR(menu)}] call CBA_fnc_execNextFrame;
     };
     case "leave": {
-        // During a game, leaving means forfeiting: ask for a second click
-        if (GVAR(leaveConfirm) || {(_state get "status") != STATUS_PLAYING} || {_me get "out"}) then {
+        // Leaving the table (and forfeiting a game in progress): always ask for a second click
+        if (GVAR(leaveConfirm)) then {
             GVAR(leaveConfirm) = false;
             ["leave"] call FUNC(request);
         } else {

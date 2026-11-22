@@ -17,10 +17,6 @@
             <English>Sit at the Sabacc table</English>
             <French>S'asseoir à la table de Sabacc</French>
         </Key>
-        <Key ID="STR_brg_game_ActionStandUp">
-            <English>Stand up (leave the table)</English>
-            <French>Se lever (quitter la table)</French>
-        </Key>
         <Key ID="STR_brg_game_ActionStood">
             <English>Stood</English>
             <French>A passé</French>

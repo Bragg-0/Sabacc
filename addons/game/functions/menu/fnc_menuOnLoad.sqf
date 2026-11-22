@@ -131,7 +131,19 @@ _display setVariable ["btnJoin", [LSTRING(MenuJoin), GRID(4.6,18.55,7.4,1.4), {
 }, QGVAR(ButtonAccent), LSTRING(TipJoin)] call _fnc_button];
 
 _display setVariable ["btnLeave", [LSTRING(MenuLeave), GRID(12.4,18.55,7.4,1.4), {
-    ["leave"] call FUNC(request);
+    // Leaving the table asks for a second click (a spectator just stops watching)
+    private _button = _this select 0;
+    if (GVAR(leaveConfirm) || {_button getVariable [QGVAR(spectator), false]}) then {
+        GVAR(leaveConfirm) = false;
+        ["leave"] call FUNC(request);
+    } else {
+        GVAR(leaveConfirm) = true;
+        [{
+            GVAR(leaveConfirm) = false;
+            call FUNC(menuRefresh);
+        }, [], 3] call CBA_fnc_waitAndExecute;
+    };
+    call FUNC(menuRefresh);
 }, QGVAR(ButtonDanger), LSTRING(TipLeaveTable)] call _fnc_button];
 
 _display setVariable ["btnStart", [LSTRING(MenuStart), GRID(20.2,18.55,7.4,1.4), {

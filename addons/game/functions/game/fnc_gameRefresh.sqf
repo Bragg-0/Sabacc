@@ -521,6 +521,8 @@ GVAR(lastView) = _state;
 // While a banner is shown (possibly just started by gameAnimate) every button is disabled,
 // so nothing looks usable; animBanner refreshes the screen again once the banner is gone
 private _endButtons = (_display getVariable "endScreen") select [count (_display getVariable "endScreen") - 4, 4];
+// "Leave" of the end screen: asks for a second click too
+(_endButtons select 3) ctrlSetText toUpper ([LLSTRING(GameLeave), LLSTRING(GameLeaveConfirm)] select GVAR(leaveConfirm));
 if (diag_tickTime < (missionNamespace getVariable [QGVAR(bannerUntil), 0])) then {
     {_x ctrlEnable false} forEach (
         (_display getVariable "buttons")

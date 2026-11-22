@@ -118,7 +118,12 @@ _btnJoin ctrlSetText toUpper ([LLSTRING(MenuJoin), LLSTRING(MenuWatch)] select _
 _btnJoin ctrlSetTooltip ([LLSTRING(TipJoin), LLSTRING(TipWatch)] select _watch);
 (_display getVariable "btnCreate") ctrlEnable !_seated;
 (_display getVariable "btnLeave") ctrlEnable _seated;
-(_display getVariable "btnLeave") ctrlSetText toUpper ([LLSTRING(MenuLeave), LLSTRING(StopWatching)] select _spectator);
+(_display getVariable "btnLeave") ctrlSetText toUpper (switch (true) do {
+    case (_spectator): {LLSTRING(StopWatching)};
+    case (GVAR(leaveConfirm)): {LLSTRING(GameLeaveConfirm)};
+    default {LLSTRING(MenuLeave)};
+});
+(_display getVariable "btnLeave") setVariable [QGVAR(spectator), _spectator];
 _display setVariable ["canStart", _isOwner && {_myStatus != STATUS_PLAYING} && {_seatedCount >= MIN_PLAYERS}];
 [_display] call FUNC(menuUpdateStart);
 (_display getVariable "btnBot") ctrlEnable (_isOwner && {_myStatus != STATUS_PLAYING} && {_seatedCount < (_state get "maxPlayers")});
