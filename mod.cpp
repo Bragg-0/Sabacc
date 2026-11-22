@@ -1,4 +1,10 @@
 name = "Nar Shaddaa Sabacc";
 author = "Bragg";
 tooltip = "Nar Shaddaa Sabacc";
-overview = "Nar Shaddaa Sabacc: a fan-made Sabacc card game to play with other players, anywhere in Arma 3. Unofficial, not affiliated with Lucasfilm or Disney.";
+overview = "Nar Shaddaa Sabacc: a fan-made Sabacc card game to play with other players, anywhere in Arma 3. Open beta: feedback welcome on GitHub. Unofficial, not affiliated with Lucasfilm or Disney.";
+picture = "logo_ca.paa";
+logo = "logo_ca.paa";
+logoOver = "logo_ca.paa";
+logoSmall = "logo_small_ca.paa";
+action = "https://github.com/Bragg-0/Sabacc";
+actionName = "GitHub";

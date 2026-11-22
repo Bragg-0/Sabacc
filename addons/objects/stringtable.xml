@@ -37,10 +37,6 @@
             <English>Tables</English>
             <French>Tables</French>
         </Key>
-        <Key ID="STR_brg_sabacc_objects_Sign">
-            <English>Sabacc sign</English>
-            <French>Enseigne Sabacc</French>
-        </Key>
         <Key ID="STR_brg_sabacc_objects_Stool">
             <English>Sabacc stool</English>
             <French>Tabouret de Sabacc</French>

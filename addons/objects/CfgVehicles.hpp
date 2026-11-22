@@ -164,23 +164,6 @@ class CfgVehicles {
         mapSize = 0.5;
         cost = 10;
     };
-    class GVAR(sign): NonStrategic {
-        author = AUTHOR;
-        scope = 2;
-        scopeCurator = 2;
-        displayName = CSTRING(Sign);
-        model = QPATHTOF(data\models\sign.p3d);
-        hiddenSelections[] = {"camo_metal", "camo_panel"};
-        hiddenSelectionsTextures[] = {QPATHTOF(data\textures\materials\metal_co.paa), QPATHTOF(data\textures\sign\sign_co.paa)};
-        hiddenSelectionsMaterials[] = {QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\sign\sign.rvmat)};
-        icon = "iconObject_1x2";
-        editorCategory = QUOTE(PREFIX);
-        editorSubcategory = QUOTE(DOUBLES(PREFIX,furniture));
-        vehicleClass = "Furniture";
-        destrType = "DestructNo";
-        mapSize = 1.3;
-        cost = 10;
-    };
 
     // Chips on a physical table (created by the game): a stack of 5 (reserve) and a single chip (pot)
     class GVAR(chips5): NonStrategic {

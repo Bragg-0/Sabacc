@@ -1,4 +1,4 @@
-name = "Sabacc"
+name = "Nar Shaddaa Sabacc"
 author = "Bragg"
 prefix = "brg_sabacc"
 mainprefix = "x"
@@ -41,3 +41,7 @@ parameters = [
     "-noPauseAudio",
 ]
 mission = "test.Stratis"
+
+[hemtt.publish]
+description = "workshop/description.md"
+changelog = "CHANGELOG.md"
