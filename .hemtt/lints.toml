@@ -1,0 +1,6 @@
+[sqf.banned_macros]
+options.release = [
+    "DEBUG_MODE_FULL",
+    "DISABLE_COMPILE_CACHE",
+    "ENABLE_PERFORMANCE_COUNTERS"
+]

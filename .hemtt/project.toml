@@ -1,0 +1,47 @@
+name = "Nar Shaddaa Sabacc"
+author = "Bragg"
+prefix = "brg_sabacc"
+mainprefix = "x"
+
+[version]
+path = "addons/main/script_version.hpp"
+git_hash = 0
+
+[files]
+include = [
+    "mod.cpp",
+    "meta.cpp",
+    "*.paa",
+    "*.dll",
+    "LICENSE.md",
+    "README.md",
+    "rules/*.pdf",
+]
+exclude = [
+    "*.psd",
+    "*.png",
+    "*.md",
+]
+
+[hemtt.release]
+sign = true
+binarize = true
+rapify = true
+archive = true
+
+[hemtt.launch.default]
+workshop = [
+    "450814997",            # CBA_A3
+    "463939057",            # ACE3
+]
+dlc = []
+optionals = []
+parameters = [
+    "-noPause",
+    "-noPauseAudio",
+]
+mission = "test.Stratis"
+
+[hemtt.publish]
+description = "workshop/description.md"
+changelog = "CHANGELOG.md"

@@ -1,4 +1,20 @@
-*.backup
-*adc
-*.png
-/@*
+# HEMTT
+hemtt.exe
+.hemtt/missions/~*
+.hemttout/
+releases/
+
+# Textures
+Exports/
+*.spp
+*.spp.painter_lock
+*.psd
+
+# Other
+*.hemttprivatekey
+*.biprivatekey
+*.zip
+*.pbo
+*.sqfc
+*.pdf
+tools/

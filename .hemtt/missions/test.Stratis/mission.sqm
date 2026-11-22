@@ -1,0 +1,212 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=5;
+	};
+	class Camera
+	{
+		pos[]={1807.4713,11.193426,5633.4814};
+		dir[]={0.21274325,-0.83324605,0.51033455};
+		up[]={0.32061261,0.55290234,0.76909465};
+		aside[]={0.92301023,0,-0.38477543};
+	};
+};
+binarizationWanted=0;
+sourceName="test";
+addons[]=
+{
+	"A3_Characters_F",
+	"A3_Weapons_F",
+	"ace_goggles",
+	"brg_sabacc_objects"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=4;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="ace_goggles";
+			name="ACE3 - Goggles";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item3
+		{
+			className="brg_sabacc_objects";
+			name="Sabacc - Objects";
+			author="Bragg";
+			url="https://github.com/Bragg-0/Sabacc";
+		};
+	};
+};
+randomSeed=14817295;
+class ScenarioData
+{
+	author="Bragg";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=2;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1810.1742,5.5014381,5635.6646};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CTRG_2";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="V_PlateCarrierL_CTRG";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="brg_sabacc_objects_terminal";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							goggles="G_Combat";
+						};
+					};
+					id=1;
+					type="B_Story_SF_Captain_F";
+					atlOffset=-9.5367432e-07;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=0;
+			atlOffset=-9.5367432e-07;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1810.578,5.5,5639.7739};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=4;
+			type="brg_sabacc_objects_table";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="brg_sabacc_objects_maxPlayers";
+					expression="_this setVariable ['brg_sabacc_objects_maxPlayers', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=6;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="brg_sabacc_objects_tournament";
+					expression="_this setVariable ['brg_sabacc_objects_tournament', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="brg_sabacc_objects_variant";
+					expression="_this setVariable ['brg_sabacc_objects_variant', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="highStakes";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+	};
+};

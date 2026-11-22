@@ -1,23 +1,67 @@
-# 🎲 Sabacc - Star Wars Game in Arma 3
+# 🎲 Nar Shaddaa Sabacc - a fan-made card game for Arma 3
 
-## 📄 License
+Play **Nar Shaddaa Sabacc** with other players (or droids) from a terminal item, anywhere in Arma 3.
+Nar Shaddaa Sabacc is a fan-made variant inspired by the Sabacc card game of a famous space saga: its rules, card names and shift tokens are its own.
+Multiplayer-ready: the server runs the game and every player only receives their own hand.
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Bragg-0/Sabacc">Sabacc - Star Wars Game in Arma 3</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/Bragg-0">Bragg-0</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+## 🃏 How to play
 
-## ⚠️ Disclaimer
+1. Get a **Nar Shaddaa Sabacc Terminal** (Arsenal / Zeus / editor: *Sabacc > Equipment*).
+2. Open it: ACE self-interaction *Equipment > Play Nar Shaddaa Sabacc*, the scroll-wheel action without ACE, or the *Open the Nar Shaddaa Sabacc terminal* keybind (CBA controls).
+3. Create a table, wait for players (or **add droids**), then start the game.
 
-This mod is an unofficial resource and is in no way linked to Lucasfilm Ltd, the Walt Disney Company, Electronic Arts Inc. or Twentieth Century Fox. The "Star Wars" brand and all the intellectual content of this mod is based on the property of "The Walt Disney Company".
+Rules in short: you always hold one **Amber** and one **Ember** card. A pair is a *Sabacc* (the lower the better, two Sylops = *Pure Sabacc*); without a pair, the smallest difference wins. Each round has 3 turns: stand for free, or draw a card for 1 chip. **Shift tokens** (16 kinds) bend the rules once per game. The full rules are available in-game (*Rules* button) and in the rulebook: English [Markdown](rules/en_us.md), French [Markdown](rules/fr_fr.md).
 
-Star Wars © 1977 Twentieth Century Fox Film Corporation. All rights reserved. ™ & copyright 1977 Lucasfilm Ltd. Star Wars logo and all related characters, names and indicia are trademarks & copyright 2012 Lucasfilm Ltd. All rights reserved, or their respective trademark and copyright holders.
+## 🪑 Physical tables, spectators and statistics
+
+- **Physical tables**: place the editor module *Sabacc > Sabacc table* and synchronize it with any object (table, crate...). Players walk up to it to sit, watch or open their game, without a terminal. In a script (server): `[myObject, "Cantina", 4, 1] call brg_sabacc_game_fnc_addWorldTable;` (object, name, seats, droids).
+- **Spectators**: select a game in progress in the menu, then *Watch*. Cards stay hidden until the reveal.
+- **Statistics**: *Statistics* button in the menu: your games, rounds, Sabaccs and the server top 5. Saved in the server profile.
+
+## ⚙️ Settings (CBA, server-side)
+
+| Setting | Default |
+|---|---|
+| Starting chips | 8 |
+| Shift tokens per player | 2 |
+| Turn time | 60 s |
+| Results display time | 12 s |
+| Nar Shaddaa Sabacc terminal required | yes |
+
+## 🛠️ Development
+
+Requires [HEMTT](https://hemtt.dev) and [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997). ACE3 is optional.
+
+```sh
+hemtt dev      # build + file patching
+hemtt launch   # build and start Arma 3 (Ctrl+Shift+B in VS Code)
+hemtt release  # signed release
+```
+
+| Addon | Content |
+|---|---|
+| `addons/main` | mod metadata, shared macros |
+| `addons/objects` | the objects: Nar Shaddaa Sabacc Terminal (item) and the Sabacc table (model) |
+| `addons/game` | game logic (`fnc_server*`), UI (`fnc_menu*`, `fnc_game*`), settings, textures |
+| `addons/compat_ace` | ACE self-interaction to open the terminal (loaded only when ACE is present) |
+
+## 📜 Licence
+
+<a href="https://www.bohemia.net/community/licenses/arma-public-license-share-alike">
+  <img src="https://files.bistudio.com/public/2d36aa7e-6a0e-4ae8-bdab-dfeb2273f731-1" alt="licence">
+</a>
+
+The source code and **original** resources of this project are available under the [APL-SA](https://www.bohemia.net/community/licenses/arma-public-license-share-alike) license.
+
+> [!CAUTION]
+> Nar Shaddaa Sabacc is a free, non-commercial fan project. It is not sold, and no paid content is attached to it.
+>
+> If you hold rights on any element of this mod and want it changed or removed, please open an issue on GitHub: it will be handled promptly.
+>
+> This mod is an unofficial resource and is not affiliated with Lucasfilm Ltd, the Walt Disney Company, Electronic Arts Inc., or Twentieth Century Fox. The "Star Wars" brand and all intellectual content in this mod are based on the property of The Walt Disney Company.
+>
+> Star Wars © 1977 Twentieth Century Fox Film Corporation. All rights reserved. ™ & Copyright 1977 Lucasfilm Ltd. Star Wars logo and all related characters, names, and indicia are trademarks & copyright 2012 Lucasfilm Ltd. All rights reserved, or their respective trademark and copyright holders.
 
 ## 💬 Feedback
 
 We appreciate your feedback! Please open an issue on GitHub if you have suggestions or find bugs.
-
-## 🌟 Acknowledgements
-
-<div align="center">
-  <a href="https://github.com/Bragg-0/Sabacc/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=Bragg-0/Sabacc"/>
-  </a>
-</div>

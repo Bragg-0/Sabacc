@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Sabacc">
+    <Package name="Game">
+        <Key ID="STR_brg_sabacc_game_ActionDrew">
+            <English>Drew a card</English>
+            <French>A pioché</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ActionOpen">
+            <English>Play Nar Shaddaa Sabacc</English>
+            <French>Jouer au Sabacc de Nar Shaddaa</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ActionOpenTable">
+            <English>Open the Sabacc table</English>
+            <French>Ouvrir la table de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ActionSit">
+            <English>Sit at the Sabacc table</English>
+            <French>S'asseoir à la table de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ActionStood">
+            <English>Stood</English>
+            <French>A passé</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ActionWatch">
+            <English>Watch the Sabacc game</English>
+            <French>Regarder la partie de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_BannerGameOver">
+            <English>Game over</English>
+            <French>Partie terminée</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_BannerLose">
+            <English>Round lost</English>
+            <French>Manche perdue</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_BannerRound">
+            <English>Round %1</English>
+            <French>Manche %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_BannerVictory">
+            <English>Victory!</English>
+            <French>Victoire !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_BannerWin">
+            <English>Round won!</English>
+            <French>Manche gagnée !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_BannerYourTurn">
+            <English>Your turn!</English>
+            <French>À vous de jouer !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Blood">
+            <English>Ember</English>
+            <French>Braise</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_CaptionDeck">
+            <English>Deck - %1</English>
+            <French>Pioche - %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_CaptionDiscard">
+            <English>Discard</English>
+            <French>Défausse</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_CardName">
+            <English>%1 %2</English>
+            <French>%2 %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ChoiceImpostor">
+            <English>Your %1 Mirage takes the value of the die you choose.</English>
+            <French>Votre Mirage %1 prend la valeur du dé choisi.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ChoicePriority">
+            <English>Re-evaluation: the Sabacc of the chosen value becomes the strongest after the Pure Sabacc.</English>
+            <French>Réévaluation : le Sabacc de la valeur choisie devient le plus fort après le Sabacc pur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ChoiceTitle">
+            <English>Dice roll</English>
+            <French>Lancer de dés</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_DroidEasy">
+            <English>Easy droids</English>
+            <French>Droïdes faciles</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_DroidHard">
+            <English>Hard droids</English>
+            <French>Droïdes difficiles</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_DroidNormal">
+            <English>Normal droids</English>
+            <French>Droïdes normaux</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectFreeDraw">
+            <English>Next draw is free</English>
+            <French>Prochaine pioche gratuite</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectImpostorSix">
+            <English>Mirages are worth 6</English>
+            <French>Les Mirages valent 6</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectInverted">
+            <English>Sabacc order reversed</English>
+            <French>Force des Sabacc inversée</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogBlockade">
+            <English>%1 will miss their next turn</English>
+            <French>%1 passera son prochain tour</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogCrackdown">
+            <English>the players who stood pay %1 chip(s) in all</English>
+            <French>les joueurs qui ont passé paient %1 jeton(s) en tout</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogFreeDraw">
+            <English>their next draw this round is free</English>
+            <French>sa prochaine pioche de la manche est gratuite</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogInverted">
+            <English>Sabacc values are inverted until the reveal</English>
+            <French>les valeurs de Sabacc sont inversées jusqu'à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogMirage">
+            <English>Mirages are worth 6 until the reveal</English>
+            <French>les Mirages valent 6 jusqu'à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogPriority">
+            <English>dice are rolled for the priority value</English>
+            <French>les dés sont lancés pour la valeur prioritaire</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogRefund">
+            <English>takes %1 chip(s) back from their pot</English>
+            <French>récupère %1 jeton(s) de son pot</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogReshuffle">
+            <English>%1 gets two new cards</English>
+            <French>%1 reçoit deux nouvelles cartes</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogShield">
+            <English>protected until the end of the round</English>
+            <French>protégé jusqu'à la fin de la manche</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogSkim">
+            <English>takes %1 chip(s) from the other pots</English>
+            <French>prend %1 jeton(s) dans les pots des autres</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogSwap">
+            <English>%1 and %2 swap their hands</English>
+            <French>%1 et %2 échangent leurs mains</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogSylop">
+            <English>Sylops are worth 0 until the reveal</English>
+            <French>les Sylops valent 0 jusqu'à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogTableFee">
+            <English>the others pay %1 chip(s) in all</English>
+            <French>les autres paient %1 jeton(s) en tout</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectLogTax">
+            <English>%1 bets %2 chip(s)</English>
+            <French>%1 mise %2 jeton(s)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectPriority">
+            <English>Sabacc of %1 is priority</English>
+            <French>Sabacc de %1 prioritaire</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EffectSylopZero">
+            <English>Sylops are worth 0</English>
+            <French>Les Sylops valent 0</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndBackToMenu">
+            <English>Back to menu</English>
+            <French>Retour au menu</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndColChips">
+            <English>Chips</English>
+            <French>Jetons</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndColPlayer">
+            <English>Player</English>
+            <French>Joueur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndColPoints">
+            <English>Points</English>
+            <French>Points</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndColRank">
+            <English>Rank</English>
+            <French>Rang</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndColRounds">
+            <English>Wins</English>
+            <French>Manches</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndColStatus">
+            <English>Status</English>
+            <French>Statut</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndDefeat">
+            <English>Defeat</English>
+            <French>Défaite</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndDraw">
+            <English>Game over</English>
+            <French>Partie terminée</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndEliminated">
+            <English>eliminated in round %1</English>
+            <French>éliminé manche %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndLeft">
+            <English>left the table</English>
+            <French>a quitté la table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndNoWinner">
+            <English>Nobody has any chip left</English>
+            <French>Plus personne n'a de jetons</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndReview">
+            <English>See the table</English>
+            <French>Voir la table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndRoundsPlayed">
+            <English>Rounds played: %1</English>
+            <French>Manches jouées : %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndSpectatorNoVote">
+            <English>Spectators do not vote for a new game.</English>
+            <French>Les spectateurs ne votent pas pour rejouer.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndTitle">
+            <English>End of the game</English>
+            <French>Fin de partie</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndTournamentChampion">
+            <English>Tournament champion: %1 with %2 points</English>
+            <French>Champion du tournoi : %1 avec %2 points</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndTournamentLeader">
+            <English>Tournament: game %1 / %2. Leader: %3 (%4 pts)</English>
+            <French>Tournoi : partie %1 / %2. En tête : %3 (%4 pts)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndTournamentOver">
+            <English>Tournament over!</English>
+            <French>Tournoi terminé !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndVictory">
+            <English>Victory!</English>
+            <French>Victoire !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndWinnerIs">
+            <English>%1 wins the game</English>
+            <French>%1 remporte la partie</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_EndWinnerTag">
+            <English>Winner</English>
+            <French>Vainqueur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorAlreadySeated">
+            <English>You are already seated at a table.</English>
+            <French>Vous êtes déjà assis à une table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorAlreadyStarted">
+            <English>The game has already started.</English>
+            <French>La partie a déjà commencé.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorAuditChips">
+            <English>%1 has fewer than 3 chips.</English>
+            <French>%1 a moins de 3 jetons.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorChoiceFirst">
+            <English>Choose a die first.</English>
+            <French>Choisissez d'abord un dé.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorEmptyPile">
+            <English>This pile is empty.</English>
+            <French>Cette pile est vide.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorGoToTable">
+            <English>This is a physical table: go to it to sit down.</English>
+            <French>C'est une table physique : rendez-vous sur place pour vous asseoir.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorInvalidTarget">
+            <English>Invalid target.</English>
+            <French>Cible invalide.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorNoChips">
+            <English>You have no chip left to draw. Stand instead.</English>
+            <French>Vous n'avez plus de jeton pour piocher. Passez votre tour.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorNotEnoughPlayers">
+            <English>At least 2 players are needed.</English>
+            <French>Il faut au moins 2 joueurs.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorNotOwner">
+            <English>Only the host can start the game.</English>
+            <French>Seul l'hôte peut lancer la partie.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorNotYourTurn">
+            <English>It is not your turn.</English>
+            <French>Ce n'est pas votre tour.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorNothingToWatch">
+            <English>No game in progress at this table.</English>
+            <French>Aucune partie en cours à cette table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorShiftBeforeAction">
+            <English>Shift tokens are used before drawing.</English>
+            <French>Les jetons bonus s'utilisent avant de piocher.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorShiftUsed">
+            <English>Only one shift token per turn.</English>
+            <French>Un seul jeton bonus par tour.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorStartAtTable">
+            <English>This is a physical table: go back to it to start the game.</English>
+            <French>C'est une table physique : retournez-y pour lancer la partie.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorTableFull">
+            <English>This table is full.</English>
+            <French>Cette table est complète.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorTableNotFound">
+            <English>This table no longer exists.</English>
+            <French>Cette table n'existe plus.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ErrorTargetImmune">
+            <English>%1 is immune to shift tokens.</English>
+            <French>%1 est immunisé contre les bonus.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameDrawnCard">
+            <English>Drawn</English>
+            <French>Piochée</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameHost">
+            <English>Host</English>
+            <French>Hôte</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameKeepHand">
+            <English>Keep my hand</English>
+            <French>Garder ma main</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameLeave">
+            <English>Leave table</English>
+            <French>Quitter la table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameLeaveConfirm">
+            <English>Confirm?</English>
+            <French>Confirmer ?</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameRematch">
+            <English>Play again (%1/%2)</English>
+            <French>Rejouer (%1/%2)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameRematchWaiting">
+            <English>Waiting (%1/%2)</English>
+            <French>En attente (%1/%2)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameRestart">
+            <English>New game</English>
+            <French>Nouvelle partie</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameResults">
+            <English>Results</English>
+            <French>Résultats</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameStand">
+            <English>Stand</English>
+            <French>Passer</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameTakeDrawn">
+            <English>Take the card</English>
+            <French>Prendre la carte</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameTarget">
+            <English>Target</English>
+            <French>Cibler</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameTitle">
+            <English>Nar Shaddaa Sabacc</English>
+            <French>Sabacc de Nar Shaddaa</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_GameTurn">
+            <English>Turn %1/%2</English>
+            <French>Tour %1/%2</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HandDice">
+            <English>Mirage</English>
+            <French>Mirage</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HandDiff">
+            <English>Difference of %1</English>
+            <French>Écart de %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HandImpostorFixed">
+            <English>Mirage counts as 6 (Fixed mirage)</English>
+            <French>Mirage compté 6 (Mirage figé)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HandPure">
+            <English>Pure Sabacc</English>
+            <French>Sabacc pur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HandSabacc">
+            <English>Sabacc of %1</English>
+            <French>Sabacc de %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HandUnknown">
+            <English>Mirage: its value is rolled at the reveal</English>
+            <French>Mirage : sa valeur est tirée aux dés à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpCostFree">
+            <English>Free this time (Free draw).</English>
+            <French>Gratuit cette fois (Tirage gratuit).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpCostOne">
+            <English>Costs 1 chip (goes to your pot).</English>
+            <French>Coûte 1 jeton (va dans votre pot).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpDeck">
+            <English>%1 deck: unknown card.</English>
+            <French>Pioche %1 : carte inconnue.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpDie">
+            <English>Choose %1.</English>
+            <French>Choisir %1.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpDiscard">
+            <English>%1 discard: you know what you take.</English>
+            <French>Défausse %1 : vous savez ce que vous prenez.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpEmptyPile">
+            <English>Empty for now: nothing to take.</English>
+            <French>Vide pour l'instant : rien à prendre.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpHidden">
+            <English>Hidden card. It will be revealed at the end of the round.</English>
+            <French>Carte cachée. Elle sera révélée en fin de manche.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpHiddenShort">
+            <English>Hidden card</English>
+            <French>Carte cachée</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpImpostor">
+            <English>Mirage: at the reveal, roll two dice and keep the one you prefer as its value.</English>
+            <French>Mirage : à la révélation, lancez deux dés et gardez celui que vous préférez comme valeur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpNumber">
+            <English>Value %1. Pair it with the same value of the other suit to make a Sabacc.</English>
+            <French>Valeur %1. Associez-la à la même valeur de l'autre couleur pour faire un Sabacc.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpOpponentShift">
+            <English>Token of %1.</English>
+            <French>Jeton de %1.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpSylop">
+            <English>Sylop: takes the value of your other card. Two Sylops = Pure Sabacc.</English>
+            <French>Sylop : prend la valeur de votre autre carte. Deux Sylops = Sabacc pur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HelpTargetedLong">
+            <English>Click it, then choose a player with the Target buttons.</English>
+            <French>Cliquez dessus, puis choisissez un joueur avec les boutons Cibler.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HintGameStarted">
+            <English>Nar Shaddaa Sabacc: your game has started. Open the terminal to play.</English>
+            <French>Sabacc de Nar Shaddaa : votre partie a commencé. Ouvrez le terminal pour jouer.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_HintYourTurn">
+            <English>Nar Shaddaa Sabacc: it's your turn!</English>
+            <French>Sabacc de Nar Shaddaa : c'est à vous de jouer !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_IfLoseValue">
+            <English>-%1</English>
+            <French>-%1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Impostor">
+            <English>Mirage</English>
+            <French>Mirage</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_InfoLeftWorldTable">
+            <English>You walked away from the table: you are no longer signed up for it.</English>
+            <French>Vous vous êtes éloigné de la table : vous n'y êtes plus inscrit.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_InspectorDefault">
+            <English>Hover a card, a pile or a shift token to analyse it.</English>
+            <French>Survolez une carte, une pioche ou un jeton bonus pour l'analyser.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_KeybindOpen">
+            <English>Open the Nar Shaddaa Sabacc terminal</English>
+            <French>Ouvrir le terminal Sabacc de Nar Shaddaa</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_KeybindOpenTip">
+            <English>Opens the Sabacc tables menu or your current game.</English>
+            <French>Ouvre le menu des tables de Sabacc ou votre partie en cours.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelChips">
+            <English>Chips</English>
+            <French>Jetons</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelHand">
+            <English>Hand</English>
+            <French>Main</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelHost">
+            <English>Host</English>
+            <French>Hôte</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelIfLose">
+            <English>If lost</English>
+            <French>Si défaite</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelPot">
+            <English>Pot</English>
+            <French>Pot</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelRound">
+            <English>Round</English>
+            <French>Manche</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelSeats">
+            <English>Seats</English>
+            <French>Places</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelShifts">
+            <English>Shifts</English>
+            <French>Bonus</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelSpectators">
+            <English>Spectators</English>
+            <French>Spectateurs</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelStatus">
+            <English>Status</English>
+            <French>Statut</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LabelTime">
+            <English>Time</English>
+            <French>Temps</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogAllStood">
+            <English>Everyone stood: early reveal!</English>
+            <French>Tout le monde a passé : révélation anticipée !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogCreated">
+            <English>%1 created the table.</English>
+            <French>%1 a créé la table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogDiscard">
+            <English>%1 discards the %2.</English>
+            <French>%1 défausse la carte %2.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogDrawDeck">
+            <English>%1 draws from the %2 deck.</English>
+            <French>%1 pioche dans la pile %2.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogDrawDiscard">
+            <English>%1 takes the %2 from the discard.</English>
+            <French>%1 prend la carte %2 dans la défausse.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogEliminated">
+            <English>%1 is eliminated.</English>
+            <French>%1 est éliminé.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogEmbargoSkip">
+            <English>%1 is under embargo and skips the turn.</English>
+            <French>%1 est sous embargo et passe son tour.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogGameOver">
+            <English>%1 wins the game!</English>
+            <French>%1 remporte la partie !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogGameOverDraw">
+            <English>The game ends with no winner.</English>
+            <French>La partie se termine sans vainqueur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogGameStarted">
+            <English>The game begins!</English>
+            <French>La partie commence !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogImpostor">
+            <English>%1 sets their %2 Mirage to %3.</English>
+            <French>%1 fixe son Mirage %2 à %3.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogJoined">
+            <English>%1 joined the table.</English>
+            <French>%1 a rejoint la table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogLeft">
+            <English>%1 left the table.</English>
+            <French>%1 a quitté la table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogPriority">
+            <English>%1 makes the Sabacc of %2 the priority.</English>
+            <French>%1 rend le Sabacc de %2 prioritaire.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogRematchVote">
+            <English>%1 wants a new game (%2/%3).</English>
+            <French>%1 veut rejouer (%2/%3).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogReshuffled">
+            <English>The %1 deck is empty: the discard pile is shuffled back into it.</English>
+            <French>La pioche %1 est vide : la défausse y est remélangée.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogReveal">
+            <English>Hands are revealed!</English>
+            <French>Révélation des mains !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogRoundStarted">
+            <English>Round %1 begins.</English>
+            <French>La manche %1 commence.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogShift">
+            <English>%1 uses "%2": %3.</English>
+            <French>%1 utilise « %2 » : %3.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogShiftTarget">
+            <English>%1 uses "%2" on %3: %4.</English>
+            <French>%1 utilise « %2 » sur %3 : %4.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogStand">
+            <English>%1 stands.</English>
+            <French>%1 passe.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogTimeout">
+            <English>%1 ran out of time.</English>
+            <French>%1 n'a pas joué à temps.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogTournamentGame">
+            <English>Tournament: game %1 of %2 over, points updated.</English>
+            <French>Tournoi : partie %1 sur %2 terminée, points mis à jour.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogTournamentWon">
+            <English>%1 wins the tournament with %2 points!</English>
+            <French>%1 remporte le tournoi avec %2 points !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_LogWinner">
+            <English>%1 wins the round (%2).</English>
+            <French>%1 remporte la manche (%2).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuAddBot">
+            <English>Add droid</English>
+            <French>Ajouter un droïde</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuAddBotTip">
+            <English>Seat a computer player at your table (to play or test alone).</English>
+            <French>Asseoir un joueur contrôlé par l'ordinateur à votre table (pour jouer ou tester seul).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuBack">
+            <English>Back</English>
+            <French>Retour</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuClose">
+            <English>Close</English>
+            <French>Fermer</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuCloseShort">
+            <English>X</English>
+            <French>X</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuCreate">
+            <English>Create</English>
+            <French>Créer</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuDefaultName">
+            <English>%1's table</English>
+            <French>Table de %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuFreeSeat">
+            <English>free seat</English>
+            <French>place libre</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuHostHint">
+            <English>Start the game when everyone is seated.</English>
+            <French>Lancez la partie quand tout le monde est assis.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuJoin">
+            <English>Join</English>
+            <French>Rejoindre</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuLeave">
+            <English>Leave</English>
+            <French>Quitter</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuNewTable">
+            <English>New table</English>
+            <French>Nouvelle table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuNoTables">
+            <English>No table yet. Create the first one!</English>
+            <French>Aucune table pour l'instant. Créez la première !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuNotSeated">
+            <English>You are not seated at any table.</English>
+            <French>Vous n'êtes assis à aucune table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuOpenGame">
+            <English>Open game</English>
+            <French>Voir la partie</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuPhysicalHint">
+            <English>Physical table: go to it to sit down.</English>
+            <French>Table physique : rendez-vous sur place pour vous asseoir.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuPlayersCount">
+            <English>%1 players</English>
+            <French>%1 joueurs</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuRules">
+            <English>Rules</English>
+            <French>Règles</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuSeatedAt">
+            <English>Your table: &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt; (%2).</English>
+            <French>Votre table : &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt; (%2).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuSelectTable">
+            <English>Select a table to see its players, or create your own.</English>
+            <French>Sélectionnez une table pour voir ses joueurs, ou créez la vôtre.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuStart">
+            <English>Start game</English>
+            <French>Lancer</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuStats">
+            <English>Statistics</English>
+            <French>Statistiques</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuTitle">
+            <English>NAR SHADDAA SABACC TERMINAL</English>
+            <French>TERMINAL SABACC DE NAR SHADDAA</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuWaitingHost">
+            <English>Waiting for the host to start.</English>
+            <French>En attente du lancement par l'hôte.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuWatch">
+            <English>Watch</English>
+            <French>Regarder</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_MenuWatching">
+            <English>You are watching the table &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt;.</English>
+            <French>Vous regardez la table &lt;t color='#ffe0a0'&gt;%1&lt;/t&gt;.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTable">
+            <English>Sabacc table</English>
+            <French>Table de Sabacc</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTableDesc">
+            <English>Synchronize this module with objects (tables, crates...): each one becomes a physical Sabacc table. Players near it can sit without a terminal. Without synchronized object, the module itself is the table.</English>
+            <French>Synchronisez ce module avec des objets (tables, caisses...) : chacun devient une table de Sabacc physique. Les joueurs à proximité peuvent s'y asseoir sans terminal. Sans objet synchronisé, le module lui-même sert de table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTableDroids">
+            <English>Droids</English>
+            <French>Droïdes</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTableDroidsTip">
+            <English>Droids already seated. They come back when the table is empty again.</English>
+            <French>Droïdes déjà assis. Ils reviennent quand la table se vide.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTableName">
+            <English>Table name</English>
+            <French>Nom de la table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTableNameTip">
+            <English>Shown in the tables list. Empty: automatic name.</English>
+            <French>Affiché dans la liste des tables. Vide : nom automatique.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTableSeats">
+            <English>Seats</English>
+            <French>Places</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ModuleTableSeatsTip">
+            <English>Maximum number of players, droids included.</English>
+            <French>Nombre maximum de joueurs, droïdes compris.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_OutHelp">
+            <English>Watch the end of the game, or use the Leave table button on the right.</English>
+            <French>Regardez la fin de la partie, ou utilisez le bouton Quitter la table à droite.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_OutLeft">
+            <English>You left this game.</English>
+            <French>Vous avez quitté cette partie.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_OutReason">
+            <English>Out of chips since round %1.</English>
+            <French>Plus de jetons depuis la manche %1.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_OutTitle">
+            <English>Eliminated</English>
+            <French>Éliminé</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_PanelDetails">
+            <English>Details</English>
+            <French>Détails</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_PanelLog">
+            <English>Table log</English>
+            <French>Journal de table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_PanelShifts">
+            <English>Shift tokens</English>
+            <French>Jetons bonus</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_PanelTable">
+            <English>Table: draw piles</English>
+            <French>Table : pioches</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_PanelTables">
+            <English>Available tables</English>
+            <French>Tables disponibles</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_PhaseResults">
+            <English>Results</English>
+            <French>Résultats</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_PhaseReveal">
+            <English>Reveal</English>
+            <French>Révélation</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_RulesDroidLevel">
+            <English>Droids</English>
+            <French>Droïdes</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_RulesDroidLevelTip">
+            <English>How well the droids play. Easy: often careless. Normal: plays its hand. Hard: counts the odds and uses its shift tokens.</English>
+            <French>Le niveau des droïdes. Facile : souvent distrait. Normal : joue sa main. Difficile : calcule ses chances et utilise ses jetons bonus.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_RulesText">
+            <English>&lt;t size='1.2' font='PuristaBold'&gt;Nar Shaddaa Sabacc&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Goal&lt;/t&gt;&lt;br/&gt;Keep chips longer than everyone else.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Your hand&lt;/t&gt;&lt;br/&gt;You always hold two cards: one &lt;t color='#f0c870'&gt;Amber&lt;/t&gt; and one &lt;t color='#ff6060'&gt;Ember&lt;/t&gt;. Two cards of the same value make a &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;, and a low pair beats a high one (1/1 is the strongest). Two Sylops are a &lt;t font='PuristaBold'&gt;Pure Sabacc&lt;/t&gt;, the best possible hand. Without a pair, the smaller the gap between your two cards, the better.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Special cards&lt;/t&gt;&lt;br/&gt;Sylop: copies the value of your other card.&lt;br/&gt;Mirage: its value is unknown until the reveal, where you roll two dice and keep one.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;A round&lt;/t&gt;&lt;br/&gt;Up to 3 turns. On your turn, stand for free, or pay 1 chip to take a card from a deck or a discard pile, then keep it or not. You may play one shift token before acting. If everyone stands in a row, the reveal comes early.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;The reveal&lt;/t&gt;&lt;br/&gt;The best hand takes its pot back. Other players lose their pot and pay 1 chip with a Sabacc, or the gap between their cards otherwise. A player with no chip left is out.</English>
+            <French>&lt;t size='1.2' font='PuristaBold'&gt;Sabacc de Nar Shaddaa&lt;/t&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;But&lt;/t&gt;&lt;br/&gt;Garder des jetons plus longtemps que tous les autres.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Votre main&lt;/t&gt;&lt;br/&gt;Vous avez toujours deux cartes : une &lt;t color='#f0c870'&gt;Ambre&lt;/t&gt; et une &lt;t color='#ff6060'&gt;Braise&lt;/t&gt;. Deux cartes de même valeur forment un &lt;t font='PuristaBold'&gt;Sabacc&lt;/t&gt;, et une paire basse bat une paire haute (1/1 est la plus forte). Deux Sylops forment un &lt;t font='PuristaBold'&gt;Sabacc pur&lt;/t&gt;, la meilleure main possible. Sans paire, plus l'écart entre vos deux cartes est petit, mieux c'est.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Cartes spéciales&lt;/t&gt;&lt;br/&gt;Sylop : copie la valeur de votre autre carte.&lt;br/&gt;Mirage : sa valeur reste inconnue jusqu'à la révélation, où vous lancez deux dés et en gardez un.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;Une manche&lt;/t&gt;&lt;br/&gt;Jusqu'à 3 tours. À votre tour, passez gratuitement, ou payez 1 jeton pour prendre une carte dans une pioche ou une défausse, puis gardez-la ou non. Vous pouvez jouer un jeton bonus avant d'agir. Si tout le monde passe à la suite, la révélation arrive plus tôt.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ffe0a0'&gt;La révélation&lt;/t&gt;&lt;br/&gt;La meilleure main récupère son pot. Les autres perdent leur pot et paient 1 jeton avec un Sabacc, sinon l'écart entre leurs cartes. Un joueur sans jeton est éliminé.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_RulesTournament">
+            <English>Tournament</English>
+            <French>Tournoi</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_RulesTournamentTip">
+            <English>A series of games: each game gives points by rank (10, 6, 4, 3, 2, 1). The most points at the end wins the tournament.</English>
+            <French>Une série de parties : chaque partie rapporte des points selon le classement (10, 6, 4, 3, 2, 1). Le plus de points à la fin remporte le tournoi.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_RulesVariant">
+            <English>Rules</English>
+            <French>Règles</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_RulesVariantTip">
+            <English>Classic: server settings. Quick: 5 chips, 1 shift token, 30 s turns. No shifts: no shift token. High stakes: 12 chips, 3 shift tokens.</English>
+            <French>Classique : réglages du serveur. Rapide : 5 jetons, 1 jeton bonus, tours de 30 s. Sans bonus : aucun jeton bonus. Grosses mises : 12 jetons, 3 jetons bonus.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Sand">
+            <English>Amber</English>
+            <French>Ambre</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatChoosing">
+            <English>Choosing...</English>
+            <French>Choisit...</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatImmune">
+            <English>Immune to shifts</English>
+            <French>Immunisé contre les bonus</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatLeft">
+            <English>Left the table</English>
+            <French>A quitté la table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatLoser">
+            <English>Loses %1</English>
+            <French>Perd %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatOut">
+            <English>Eliminated</English>
+            <French>Éliminé</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatPlaying">
+            <English>Playing...</English>
+            <French>Joue...</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatWaiting">
+            <English>Waiting</English>
+            <French>En attente</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatWinner">
+            <English>Wins, gets back %1</English>
+            <French>Gagne, récupère %1</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SeatWinnerNoPot">
+            <English>Wins the round</English>
+            <French>Gagne la manche</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingRequireTerminal">
+            <English>Require a Sabacc terminal</English>
+            <French>Terminal de Sabacc requis</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingRequireTerminalTip">
+            <English>Players need the Sabacc terminal item in their inventory to play.</English>
+            <French>Les joueurs doivent avoir l'objet Terminal de Sabacc dans leur inventaire pour jouer.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingResultsTime">
+            <English>Results display time (s)</English>
+            <French>Durée d'affichage des résultats (s)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingResultsTimeTip">
+            <English>How long the revealed hands stay on screen before the next round.</English>
+            <French>Temps pendant lequel les mains révélées restent affichées avant la manche suivante.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingShifts">
+            <English>Shift tokens per player</English>
+            <French>Bonus par joueur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingShiftsTip">
+            <English>Number of shift tokens dealt to each player for the whole game.</English>
+            <French>Nombre de jetons bonus distribués à chaque joueur pour toute la partie.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingSoundVolume">
+            <English>Sound volume</English>
+            <French>Volume des sons</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingSoundVolumeTip">
+            <English>Volume of the sound effects of the game.</English>
+            <French>Volume des effets sonores du jeu.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingSounds">
+            <English>Sounds</English>
+            <French>Sons</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingSoundsTip">
+            <English>Play the sound effects of the game: cards, chips, dice, your turn, results.</English>
+            <French>Jouer les effets sonores du jeu : cartes, jetons, dés, votre tour, résultats.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingStartChips">
+            <English>Starting chips</English>
+            <French>Jetons de départ</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingStartChipsTip">
+            <English>Chips each player starts the game with.</English>
+            <French>Nombre de jetons de chaque joueur en début de partie.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingTurnTime">
+            <English>Turn time (s)</English>
+            <French>Temps par tour (s)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingTurnTimeTip">
+            <English>After this delay the player automatically stands.</English>
+            <French>Passé ce délai, le joueur passe automatiquement son tour.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingsAccess">
+            <English>Access</English>
+            <French>Accès</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingsInterface">
+            <English>Interface</English>
+            <French>Interface</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SettingsRules">
+            <English>Rules</English>
+            <French>Règles</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift10Desc">
+            <English>Every other player who stood on their last turn puts 2 chips in their pot.</English>
+            <French>Chaque autre joueur qui a passé à son dernier tour met 2 jetons dans son pot.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift10Name">
+            <English>Crackdown</English>
+            <French>Descente</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift11Desc">
+            <English>Every other player puts 1 chip in their pot.</English>
+            <French>Chaque autre joueur met 1 jeton dans son pot.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift11Name">
+            <English>Table fee</English>
+            <French>Droit de table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift12Desc">
+            <English>Take 2 chips back from your pot.</English>
+            <French>Reprenez 2 jetons de votre pot.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift12Name">
+            <English>Discount</English>
+            <French>Remise</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift13Desc">
+            <English>Roll 2 dice and keep one: the Sabacc of that value ranks right after the Pure Sabacc.</English>
+            <French>Lancez 2 dés et gardez-en un : le Sabacc de cette valeur se classe juste après le Sabacc pur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift13Name">
+            <English>Priority odds</English>
+            <French>Cote prioritaire</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift14Desc">
+            <English>Pick a player: they put 2 chips in their pot.</English>
+            <French>Désignez un joueur : il met 2 jetons dans son pot.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift14Name">
+            <English>Fine</English>
+            <French>Amende</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift15Desc">
+            <English>Until the reveal, Sabacc ranks are reversed (6/6 beats 1/1).</English>
+            <French>Jusqu'à la révélation, l'ordre des Sabacc est inversé (6/6 bat 1/1).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift15Name">
+            <English>Upside down</English>
+            <French>Monde à l'envers</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift16Desc">
+            <English>Pick a player: they discard both cards and draw two new ones.</English>
+            <French>Désignez un joueur : il défausse ses deux cartes et en pioche deux nouvelles.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift16Name">
+            <English>Reshuffle</English>
+            <French>Redistribution</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift1Desc">
+            <English>Take 3 chips back from your pot.</English>
+            <French>Reprenez 3 jetons de votre pot.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift1Name">
+            <English>Rebate</English>
+            <French>Ristourne</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift2Desc">
+            <English>Pick a player holding 3 chips or more: 3 of their chips go to their pot.</English>
+            <French>Désignez un joueur qui possède au moins 3 jetons : 3 de ses jetons partent dans son pot.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift2Name">
+            <English>Inspection</English>
+            <French>Inspection</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift3Desc">
+            <English>Until the reveal, every Mirage is worth 6.</English>
+            <French>Jusqu'à la révélation, chaque Mirage vaut 6.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift3Name">
+            <English>Fixed mirage</English>
+            <French>Mirage figé</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift4Desc">
+            <English>Pick a player: you exchange your two cards with theirs.</English>
+            <French>Désignez un joueur : vous échangez vos deux cartes avec les siennes.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift4Name">
+            <English>Forced swap</English>
+            <French>Échange forcé</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift5Desc">
+            <English>Until the reveal, every Sylop is worth 0.</English>
+            <French>Jusqu'à la révélation, chaque Sylop vaut 0.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift5Name">
+            <English>Dimmed sylop</English>
+            <French>Sylop éteint</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift6Desc">
+            <English>The next player loses their turn.</English>
+            <French>Le joueur suivant perd son tour.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift6Name">
+            <English>Blockade</English>
+            <French>Blocus</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift7Desc">
+            <English>Each other player moves 1 chip from their pot to yours.</English>
+            <French>Chaque autre joueur transfère 1 jeton de son pot vers le vôtre.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift7Name">
+            <English>Skim</English>
+            <French>Prélèvement</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift8Desc">
+            <English>Your next draw this round costs no chip.</English>
+            <French>Votre prochaine pioche de la manche ne coûte aucun jeton.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift8Name">
+            <English>Courtesy draw</English>
+            <French>Pioche offerte</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift9Desc">
+            <English>Until the reveal, other players' tokens cannot affect you.</English>
+            <French>Jusqu'à la révélation, les jetons des autres joueurs ne vous affectent pas.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Shift9Name">
+            <English>Shield</English>
+            <French>Bouclier</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ShiftNone">
+            <English>No shift token left.</English>
+            <French>Plus aucun jeton bonus.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ShiftTargeting">
+            <English>%1: choose a target (click the token again to cancel).</English>
+            <French>%1 : choisissez une cible (recliquez sur le jeton pour annuler).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_ShiftUsedThisTurn">
+            <English>You already used a shift token this turn.</English>
+            <French>Vous avez déjà utilisé un jeton bonus ce tour-ci.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SpectatorHelp">
+            <English>Cards are shown at the reveal. Use the button on the right to stop watching.</English>
+            <French>Les cartes sont montrées à la révélation. Le bouton à droite permet d'arrêter de regarder.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SpectatorInspector">
+            <English>You are watching: hover over a card, a pile or a shift token to analyse it.</English>
+            <French>Vous regardez la partie : survolez une carte, une pioche ou un jeton bonus pour l'analyser.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SpectatorMode">
+            <English>Spectator mode</English>
+            <French>Mode spectateur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SpectatorReason">
+            <English>You are watching this game: you cannot play.</English>
+            <French>Vous regardez cette partie : vous ne pouvez pas jouer.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_SpectatorTitle">
+            <English>Spectator</English>
+            <French>Spectateur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsGames">
+            <English>Games played</English>
+            <French>Parties jouées</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsLoading">
+            <English>Loading statistics...</English>
+            <French>Chargement des statistiques...</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsMine">
+            <English>My statistics</English>
+            <French>Mes statistiques</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsNoRanking">
+            <English>No game finished on this server yet.</English>
+            <French>Aucune partie terminée sur ce serveur pour l'instant.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsPure">
+            <English>Pure Sabaccs</English>
+            <French>Sabacc purs</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsRanking">
+            <English>Server ranking</English>
+            <French>Classement du serveur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsRankingRow">
+            <English>%1 wins / %2 games</English>
+            <French>%1 victoires / %2 parties</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsRoundWins">
+            <English>Rounds won</English>
+            <French>Manches gagnées</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsRounds">
+            <English>Rounds played</English>
+            <French>Manches jouées</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsSabaccs">
+            <English>Sabaccs</English>
+            <French>Sabacc réalisés</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatsWins">
+            <English>Games won</English>
+            <French>Parties gagnées</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusDiscard">
+            <English>Keep your hand or take the drawn card.</English>
+            <French>Gardez votre main ou prenez la carte piochée.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusEliminated">
+            <English>You are out of chips. You can keep watching or leave the table.</English>
+            <French>Vous n'avez plus de jetons. Vous pouvez regarder la suite ou quitter la table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusGameOver">
+            <English>Game over: %1 wins!</English>
+            <French>Partie terminée : %1 l'emporte !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusGameOverDraw">
+            <English>Game over: no winner.</English>
+            <French>Partie terminée : aucun vainqueur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusImpostorChoice">
+            <English>Reveal: choose the value of your Mirage.</English>
+            <French>Révélation : choisissez la valeur de votre Mirage.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusLobby">
+            <English>Waiting</English>
+            <French>En attente</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusOver">
+            <English>Finished</English>
+            <French>Terminée</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusPlaying">
+            <English>In game</English>
+            <French>En jeu</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusPriorityChoice">
+            <English>Re-evaluation: choose a die.</English>
+            <French>Réévaluation : choisissez un dé.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusResults">
+            <English>Hands revealed!</English>
+            <French>Mains révélées !</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusSpectator">
+            <English>Spectator mode</English>
+            <French>Mode spectateur</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusSpectatorTurn">
+            <English>Spectator: %1 is playing...</English>
+            <French>Spectateur : %1 joue...</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusTargeting">
+            <English>Choose a target with the Target buttons.</English>
+            <French>Choisissez une cible avec les boutons Cibler.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusTurnOf">
+            <English>%1 is playing...</English>
+            <French>%1 joue...</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusWaitingChoices">
+            <English>Reveal: waiting for the other players' Mirages...</English>
+            <French>Révélation : en attente des Mirages des autres joueurs...</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StatusYourTurn">
+            <English>Your turn: draw a card (1 chip) or stand.</English>
+            <French>À vous : piochez une carte (1 jeton) ou passez.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_StopWatching">
+            <English>Stop watching</English>
+            <French>Ne plus regarder</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Sylop">
+            <English>Sylop</English>
+            <French>Sylop</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipCloseTerminal">
+            <English>Close the terminal. You stay seated at your table.</English>
+            <French>Fermer le terminal. Vous restez assis à votre table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipCreate">
+            <English>Create a new table with this name and seats. You become its host.</English>
+            <French>Créer une nouvelle table avec ce nom et ce nombre de places. Vous en devenez l'hôte.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipDetails">
+            <English>Players and seats of the selected table.</English>
+            <French>Joueurs et places de la table sélectionnée.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipDiscardDrawn">
+            <English>Click to send this card back to the discard (you keep your hand).</English>
+            <French>Cliquez pour renvoyer cette carte à la défausse (vous gardez votre main).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipEndBackToMenu">
+            <English>Go back to the tables menu. You stay seated at this table.</English>
+            <French>Revenir au menu des tables. Vous restez assis à cette table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipEndRanking">
+            <English>The winner first, then the players eliminated last. Rounds: rounds won during the game.</English>
+            <French>Le vainqueur d'abord, puis les joueurs éliminés le plus tard. Manches : manches gagnées pendant la partie.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipEndReview">
+            <English>Hide this screen to look at the final hands.</English>
+            <French>Masquer cet écran pour regarder les dernières mains.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipInspector">
+            <English>Hover a card, a pile, a die or a shift token to read its description here.</English>
+            <French>Survolez une carte, une pioche, un dé ou un jeton bonus pour lire sa description ici.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipJoin">
+            <English>Sit at the selected table (only before the game starts).</English>
+            <French>S'asseoir à la table sélectionnée (seulement avant le début de la partie).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipKeepHand">
+            <English>Discard the drawn card, keep your hand.</English>
+            <French>Défausser la carte piochée, garder votre main.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipLeaveGame">
+            <English>Leave the table. During a game you forfeit: click twice to confirm.</English>
+            <French>Quitter la table. En cours de partie vous abandonnez : cliquez deux fois pour confirmer.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipLeaveTable">
+            <English>Leave your table. During a game you forfeit.</English>
+            <French>Quitter votre table. En cours de partie, vous abandonnez.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipLog">
+            <English>Everything that happened at the table, newest at the bottom.</English>
+            <French>Tout ce qui s'est passé à la table, le plus récent en bas.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipMaxPlayers">
+            <English>Maximum number of players</English>
+            <French>Nombre maximum de joueurs</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipMyStation">
+            <English>Your hand, your chips and your actions.</English>
+            <French>Votre main, vos jetons et vos actions.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipMyStats">
+            <English>Chips: your reserve. Pot: what you bet this round, back to you if you win. If lost: pot + penalty you would lose with this hand.</English>
+            <French>Jetons : votre réserve. Pot : votre mise de la manche, rendue si vous gagnez. Si défaite : pot + pénalité perdus avec cette main.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipOpenGame">
+            <English>Open the game screen of your table.</English>
+            <French>Ouvrir l'écran de jeu de votre table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipRematch">
+            <English>A new game starts once every player (droids aside) has accepted.</English>
+            <French>Une nouvelle partie démarre quand tous les joueurs (hors droïdes) ont accepté.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipRound">
+            <English>Current round and turn. A round lasts 3 turns, or less if everyone stands.</English>
+            <French>Manche et tour en cours. Une manche dure 3 tours, ou moins si tout le monde passe.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipRules">
+            <English>Show the rules of Nar Shaddaa Sabacc.</English>
+            <French>Afficher les règles du Sabacc de Nar Shaddaa.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipSeatLine">
+            <English>The table you are seated at.</English>
+            <French>La table à laquelle vous êtes assis.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipSeatStats">
+            <English>Chips: reserve (0 = eliminated). Pot: chips bet this round, lost if the round is lost. Shifts: shift tokens left.</English>
+            <French>Jetons : réserve (0 = éliminé). Pot : jetons misés cette manche, perdus si la manche est perdue. Bonus : jetons bonus restants.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipSeatStatus">
+            <English>Last action of this player, or their result after the reveal.</English>
+            <French>Dernière action de ce joueur, ou son résultat après la révélation.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipSeatTitle">
+            <English>Opponent. [HOST] created the table.</English>
+            <French>Adversaire. [HÔTE] a créé la table.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipShowEnd">
+            <English>Show the end screen and the final ranking again.</English>
+            <French>Réafficher l'écran de fin et le classement final.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipStand">
+            <English>Keep your hand and end your turn (free).</English>
+            <French>Garder votre main et finir votre tour (gratuit).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipStart">
+            <English>Start the game (host only, at least 2 players).</English>
+            <French>Lancer la partie (hôte uniquement, au moins 2 joueurs).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipStats">
+            <English>Your statistics and the server ranking.</English>
+            <French>Vos statistiques et le classement du serveur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipStatusLine">
+            <English>What is happening now, and what you can do.</English>
+            <French>Ce qui se passe maintenant, et ce que vous pouvez faire.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipTableList">
+            <English>Tables of this server. Your table is shown in amber.</English>
+            <French>Tables du serveur. Votre table est affichée en ambre.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipTableName">
+            <English>Name of the new table</English>
+            <French>Nom de la nouvelle table</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipTableTitle">
+            <English>Name of the table you are playing at.</English>
+            <French>Nom de la table à laquelle vous jouez.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipTakeDrawn">
+            <English>Keep the drawn card, discard your card of the same suit.</English>
+            <French>Garder la carte piochée, défausser votre carte de la même couleur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipTarget">
+            <English>Use your shift token on this player.</English>
+            <French>Utiliser votre jeton bonus sur ce joueur.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipTimer">
+            <English>Time left to act. When it runs out, the move is played for you (stand / keep your hand).</English>
+            <French>Temps restant pour agir. À zéro, le coup est joué pour vous (passer / garder votre main).</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TipWatch">
+            <English>Watch the game in progress, without playing. Cards stay hidden until the reveal.</English>
+            <French>Regarder la partie en cours sans jouer. Les cartes restent cachées jusqu'à la révélation.</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TooltipSwap">
+            <English>Replace this card with the drawn card</English>
+            <French>Remplacer cette carte par la carte piochée</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Tournament3">
+            <English>Tournament: 3 games</English>
+            <French>Tournoi : 3 parties</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_Tournament5">
+            <English>Tournament: 5 games</English>
+            <French>Tournoi : 5 parties</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TournamentNextGame">
+            <English>Next game (%1/%2)</English>
+            <French>Partie suivante (%1/%2)</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TournamentNone">
+            <English>Single game</English>
+            <French>Partie simple</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_TournamentProgress">
+            <English>Game %1 / %2</English>
+            <French>Partie %1 / %2</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_VariantClassic">
+            <English>Classic</English>
+            <French>Classique</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_VariantHighStakes">
+            <English>High stakes</English>
+            <French>Grosses mises</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_VariantNoShifts">
+            <English>No shifts</English>
+            <French>Sans bonus</French>
+        </Key>
+        <Key ID="STR_brg_sabacc_game_VariantQuick">
+            <English>Quick</English>
+            <French>Rapide</French>
+        </Key>
+    </Package>
+</Project>

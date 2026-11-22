@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Sabacc">
+    <Package name="Main">
+        <Key ID="STR_brg_sabacc_main_url">
+            <Original>https://github.com/Bragg-0/Sabacc</Original>
+        </Key>
+    </Package>
+</Project>
