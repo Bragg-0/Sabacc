@@ -1,6 +1,6 @@
-# Nar Shaddaa Sabacc — v0.1.0 (OPEN BETA)
+# Nar Shaddaa Sabacc - v0.1.0 (OPEN BETA)
 
-**English — Français plus bas**
+**English - Français plus bas**
 
 A fan-made card game for Arma 3, inspired by the Sabacc game of a famous space saga. Its rules, cards and shift tokens are its own.
 
