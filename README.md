@@ -45,6 +45,10 @@ hemtt release  # signed release
 | `addons/game` | game logic (`fnc_server*`), UI (`fnc_menu*`, `fnc_game*`), settings, textures |
 | `addons/compat_ace` | ACE self-interaction to open the terminal (loaded only when ACE is present) |
 
+## 🤖 AI disclosure
+
+The 3D models and the user interface of this mod were made with the help of AI.
+
 ## 📜 Licence
 
 <a href="https://www.bohemia.net/community/licenses/arma-public-license-share-alike">
