@@ -54,7 +54,17 @@
 #define TABLE_CARD_SPOTS [[-0.74, 0], [0.74, 0], [-0.3, -0.48], [0.3, -0.48], [-0.3, 0.48], [0.3, 0.48]]
 #define TABLE_PILES [[-0.56, 0], [-0.34, 0], [0.34, 0], [0.56, 0]]
 #define TABLE_FELT_Z 0.778
-#define TABLE_SEAT_ORDER [0, 1, 2, 5, 3, 4]
+// The seats in order around the table (one direction), and which of them a table of 2..6 players uses
+#define TABLE_SEAT_RING [0, 2, 3, 1, 5, 4]
+#define TABLE_SEAT_SPREAD [[], [0], [0, 3], [0, 2, 4], [0, 1, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4, 5]]
+#define TABLE_DICE [[-0.05, 0], [0.05, 0]] // in the middle, under the dealer droid
+#define DICE_HEIGHT 0.11 // the dice float this high above the felt
+#define DEALER_HEIGHT 0.32 // the dealer droid flies this high above the felt
+// Holographic messages above the droid (see worldTableHolo): height above it, seconds shown, seconds to type, range
+#define HOLO_HEIGHT 0.3
+#define HOLO_DURATION 7
+#define HOLO_TYPING 0.6
+#define HOLO_RANGE 20
 #define LOG_SIZE 10
 
 // Draw sources

@@ -51,6 +51,17 @@ GVAR(statsData) = [];         // [my stats, top 5] received from the server
     call FUNC(menuRefresh);
 }] call CBA_fnc_addEventHandler;
 
+// Dealer droids of the Sabacc tables nearby (local objects, moved every frame)
+GVAR(dealerTime) = diag_tickTime;
+[{
+    private _now = diag_tickTime;
+    [(_now - GVAR(dealerTime)) min 0.2] call FUNC(worldTableDealer);
+    GVAR(dealerTime) = _now;
+}, 0] call CBA_fnc_addPerFrameHandler;
+
+// Holographic messages above the dealer droids (drawn every frame)
+addMissionEventHandler ["Draw3D", {call FUNC(worldTableHolo)}];
+
 // Sounds of the physical tables nearby
 [QGVAR(tableSound), {_this call FUNC(worldTableSound)}] call CBA_fnc_addEventHandler;
 

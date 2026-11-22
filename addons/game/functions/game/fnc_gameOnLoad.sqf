@@ -299,13 +299,13 @@ private _endDim = [GRID(0,1.6,40,23.4), [0, 0, 0, 0.78]] call _fnc_rect;
 private _endFrame = [[8, 3.2, 24, 18.8], [LLSTRING(EndTitle)] call FUNC(uiTitle), COLOR_AMBER] call _fnc_frame;
 (_endFrame select 0) ctrlSetBackgroundColor COLOR_PANEL;
 
-private _endTitle = [GRID(8.5,4.25,23,3.0)] call _fnc_text;
-private _endSubtitle = [GRID(8.5,7.3,23,1.1)] call _fnc_text;
+private _endTitle = [GRID(8.5,4.2,23,2.6)] call _fnc_text;
+private _endSubtitle = [GRID(8.5,6.75,23,1.75)] call _fnc_text;
 private _endLine = [GRID(9,8.55,22,0.05), COLOR_HOLO_FAINT] call _fnc_rect;
 
 // Ranking table: fixed columns, one line per player (max 6)
 // Columns: rank | player | status | rounds won | chips | tournament points
-private _columns = [[9.2, 1.5], [10.7, 6.8], [17.5, 5.2], [22.7, 2.8], [25.5, 2.4], [27.9, 3.1]];
+private _columns = [[9.2, 2.0], [11.2, 6.4], [17.6, 5.1], [22.7, 2.8], [25.5, 2.4], [27.9, 3.1]];
 private _endTable = [];
 private _header = _columns apply {[GRID(_x select 0,8.85,_x select 1,0.9)] call _fnc_text};
 {

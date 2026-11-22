@@ -76,10 +76,19 @@ private _fnc_refund = {
 };
 
 // ---- Effects ----------------------------------------------------------------
-switch (_shift) do {
-    case 1: {[_player, 3] call _fnc_refund};                  // Rebate
-    case 2: {[_target, 3] call _fnc_tax};                     // Inspection
-    case 3: {_effects set ["impostorSix", true]};             // Fixed mirage
+// Each effect also says what it did, for the journal: [message key, arguments]
+private _effect = switch (_shift) do {
+    case 1;                                                   // Rebate
+    case 12: {                                                // Discount
+        private _back = [_player, [3, 2] select (_shift == 12)] call _fnc_refund;
+        [LSTRING(EffectLogRefund), [_back]]
+    };
+    case 2;                                                   // Inspection
+    case 14: {                                                // Fine
+        private _paid = [_target, [3, 2] select (_shift == 14)] call _fnc_tax;
+        [LSTRING(EffectLogTax), [_target get "name", _paid]]
+    };
+    case 3: {_effects set ["impostorSix", true]; [LSTRING(EffectLogMirage), []]};           // Fixed mirage
     case 4: {                                                 // Forced swap
         private _mySand = _player get "sand";
         private _myBlood = _player get "blood";
@@ -87,31 +96,40 @@ switch (_shift) do {
         _player set ["blood", _target get "blood"];
         _target set ["sand", _mySand];
         _target set ["blood", _myBlood];
+        [LSTRING(EffectLogSwap), [_player get "name", _target get "name"]]
     };
-    case 5: {_effects set ["sylopZero", true]};               // Dimmed sylop
-    case 6: {_effects set ["embargo", _next get "uid"]};      // Blockade
+    case 5: {_effects set ["sylopZero", true]; [LSTRING(EffectLogSylop), []]};              // Dimmed sylop
+    case 6: {_effects set ["embargo", _next get "uid"]; [LSTRING(EffectLogBlockade), [_next get "name"]]}; // Blockade
     case 7: {                                                 // Skim
+        private _taken = 0;
         {
             if (!(_x get "immune") && {(_x get "pot") > 0}) then {
                 _x set ["pot", (_x get "pot") - 1];
                 _player set ["pot", (_player get "pot") + 1];
+                _taken = _taken + 1;
             };
         } forEach _others;
+        [LSTRING(EffectLogSkim), [_taken]]
     };
-    case 8: {_effects set ["freeDraw", _uid]};                // Courtesy draw
-    case 9: {_player set ["immune", true]};                   // Shield
+    case 8: {_effects set ["freeDraw", _uid]; [LSTRING(EffectLogFreeDraw), []]};          // Courtesy draw
+    case 9: {_player set ["immune", true]; [LSTRING(EffectLogShield), []]};                // Shield
     case 10: {                                                // Crackdown
+        private _paid = 0;
         {
-            if ((_x get "lastAction") == "stand") then {[_x, 2] call _fnc_tax};
+            if ((_x get "lastAction") == "stand") then {_paid = _paid + ([_x, 2] call _fnc_tax)};
         } forEach _others;
+        [LSTRING(EffectLogCrackdown), [_paid]]
     };
-    case 11: {{[_x, 1] call _fnc_tax} forEach _others};       // Table fee
-    case 12: {[_player, 2] call _fnc_refund};                 // Discount
+    case 11: {                                                // Table fee
+        private _paid = 0;
+        {_paid = _paid + ([_x, 1] call _fnc_tax)} forEach _others;
+        [LSTRING(EffectLogTableFee), [_paid]]
+    };
     case 13: {                                                // Priority odds
         _player set ["pending", ["priority", [1 + floor random 6, 1 + floor random 6], -1]];
+        [LSTRING(EffectLogPriority), []]
     };
-    case 14: {[_target, 2] call _fnc_tax};                    // Fine
-    case 15: {_effects set ["inverted", true]};               // Upside down
+    case 15: {_effects set ["inverted", true]; [LSTRING(EffectLogInverted), []]};          // Upside down
     case 16: {                                                // Reshuffle
         private _decks = _table get "decks";
         private _discards = _table get "discards";
@@ -123,14 +141,18 @@ switch (_shift) do {
                 _target set [_key, _deck deleteAt 0];
             };
         } forEach [["sand", SUIT_SAND], ["blood", SUIT_BLOOD]];
+        [LSTRING(EffectLogReshuffle), [_target get "name"]]
     };
+    default {["", []]};
 };
 
+// Journal: who used which token (on whom), and what it did
 private _shiftKey = format ["STR_brg_game_Shift%1Name", _shift];
+private _what = ["msg", _effect select 0, _effect select 1];
 if (count _target > 0) then {
-    [_table, LSTRING(LogShiftTarget), [_player get "name", _shiftKey, _target get "name"]] call FUNC(serverLog);
+    [_table, LSTRING(LogShiftTarget), [_player get "name", _shiftKey, _target get "name", _what]] call FUNC(serverLog);
 } else {
-    [_table, LSTRING(LogShift), [_player get "name", _shiftKey]] call FUNC(serverLog);
+    [_table, LSTRING(LogShift), [_player get "name", _shiftKey, _what]] call FUNC(serverLog);
 };
 
 true

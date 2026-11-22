@@ -20,7 +20,7 @@ private _players = _state get "players";
 private _index = _players findIf {(_x get "uid") == getPlayerUID player};
 if (_index < 0) exitWith {};
 private _me = _players select _index;
-private _cards = _seatCards param [TABLE_SEAT_ORDER select (_index mod 6), []];
+private _cards = _seatCards param [[_index, _state get "maxPlayers"] call FUNC(tableSeat), []];
 {
     private _value = _me getOrDefault [["sand", "blood", "drawn"] select _forEachIndex, CARD_NONE];
     // Only over a card that is on the table (face down for the others)

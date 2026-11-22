@@ -49,6 +49,8 @@ PREP_SUB(world,serverWorldTableCheck);
 PREP_SUB(world,worldTableAct);
 PREP_SUB(world,worldTableCan);
 PREP_SUB(world,worldTableCards);
+PREP_SUB(world,worldTableDealer);
+PREP_SUB(world,worldTableHolo);
 PREP_SUB(world,worldTableMyCards);
 PREP_SUB(world,worldTableProps);
 PREP_SUB(world,worldTableScan);
@@ -61,6 +63,7 @@ PREP_SUB(rules,createDeck);
 PREP_SUB(rules,evaluateHand);
 PREP_SUB(rules,gameRanking);
 PREP_SUB(rules,tableRule);
+PREP_SUB(rules,tableSeat);
 
 // Client: initialisation, requests to the server, sounds
 PREP_SUB(client,canOpenTerminal);

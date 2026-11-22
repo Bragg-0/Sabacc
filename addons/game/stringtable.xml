@@ -105,6 +105,62 @@
             <English>Sabacc order reversed</English>
             <French>Force des Sabacc inversée</French>
         </Key>
+        <Key ID="STR_brg_game_EffectLogBlockade">
+            <English>%1 will miss their next turn</English>
+            <French>%1 passera son prochain tour</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogCrackdown">
+            <English>the players who stood pay %1 chip(s) in all</English>
+            <French>les joueurs qui ont passé paient %1 jeton(s) en tout</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogFreeDraw">
+            <English>their next draw this round is free</English>
+            <French>sa prochaine pioche de la manche est gratuite</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogInverted">
+            <English>Sabacc values are inverted until the reveal</English>
+            <French>les valeurs de Sabacc sont inversées jusqu'à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogMirage">
+            <English>Mirages are worth 6 until the reveal</English>
+            <French>les Mirages valent 6 jusqu'à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogPriority">
+            <English>dice are rolled for the priority value</English>
+            <French>les dés sont lancés pour la valeur prioritaire</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogRefund">
+            <English>takes %1 chip(s) back from their pot</English>
+            <French>récupère %1 jeton(s) de son pot</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogReshuffle">
+            <English>%1 gets two new cards</English>
+            <French>%1 reçoit deux nouvelles cartes</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogShield">
+            <English>protected until the end of the round</English>
+            <French>protégé jusqu'à la fin de la manche</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogSkim">
+            <English>takes %1 chip(s) from the other pots</English>
+            <French>prend %1 jeton(s) dans les pots des autres</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogSwap">
+            <English>%1 and %2 swap their hands</English>
+            <French>%1 et %2 échangent leurs mains</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogSylop">
+            <English>Sylops are worth 0 until the reveal</English>
+            <French>les Sylops valent 0 jusqu'à la révélation</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogTableFee">
+            <English>the others pay %1 chip(s) in all</English>
+            <French>les autres paient %1 jeton(s) en tout</French>
+        </Key>
+        <Key ID="STR_brg_game_EffectLogTax">
+            <English>%1 bets %2 chip(s)</English>
+            <French>%1 mise %2 jeton(s)</French>
+        </Key>
         <Key ID="STR_brg_game_EffectPriority">
             <English>Sabacc of %1 is priority</English>
             <French>Sabacc de %1 prioritaire</French>
@@ -554,12 +610,12 @@
             <French>La manche %1 commence.</French>
         </Key>
         <Key ID="STR_brg_game_LogShift">
-            <English>%1 uses "%2".</English>
-            <French>%1 utilise « %2 ».</French>
+            <English>%1 uses "%2": %3.</English>
+            <French>%1 utilise « %2 » : %3.</French>
         </Key>
         <Key ID="STR_brg_game_LogShiftTarget">
-            <English>%1 uses "%2" on %3.</English>
-            <French>%1 utilise « %2 » sur %3.</French>
+            <English>%1 uses "%2" on %3: %4.</English>
+            <French>%1 utilise « %2 » sur %3 : %4.</French>
         </Key>
         <Key ID="STR_brg_game_LogStand">
             <English>%1 stands.</English>

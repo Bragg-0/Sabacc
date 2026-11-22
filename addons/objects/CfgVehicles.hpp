@@ -1,5 +1,8 @@
 class CBA_Extended_EventHandlers_base;
 
+// Amber glow of the lit parts (procedural texture, with data\textures\materials\glow.rvmat)
+#define COLOR_GLOW "#(argb,8,8,3)color(1,0.62,0.2,1,co)"
+
 class CfgVehicles {
     // Terminal lying on the ground (editor, Zeus)
     class Item_Base_F;
@@ -27,7 +30,11 @@ class CfgVehicles {
         scope = 2;
         scopeCurator = 2;
         displayName = CSTRING(TableObject);
-        model = QPATHTOF(data\table\sabacc_table.p3d);
+        model = QPATHTOF(data\models\sabacc_table.p3d);
+        // The models hold no paths: textures and materials of each part are given here
+        hiddenSelections[] = {"camo_metal", "camo_felt", "camo_glow"};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\textures\materials\metal_co.paa), QPATHTOF(data\textures\table\felt_co.paa), COLOR_GLOW};
+        hiddenSelectionsMaterials[] = {QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\materials\felt.rvmat), QPATHTOF(data\textures\materials\glow.rvmat)};
         icon = "iconObject_2x1";
         editorCategory = QUOTE(DOUBLES(PREFIX,sabacc));
         editorSubcategory = QUOTE(DOUBLES(PREFIX,sabacc_tables));
@@ -145,7 +152,10 @@ class CfgVehicles {
         scope = 2;
         scopeCurator = 2;
         displayName = CSTRING(Stool);
-        model = QPATHTOF(data\stool\stool.p3d);
+        model = QPATHTOF(data\models\stool.p3d);
+        hiddenSelections[] = {"camo_metal", "camo_cushion", "camo_glow"};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\textures\materials\metal_co.paa), "#(argb,8,8,3)color(0.07,0.24,0.23,1,co)", COLOR_GLOW};
+        hiddenSelectionsMaterials[] = {QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\materials\felt.rvmat), QPATHTOF(data\textures\materials\glow.rvmat)};
         icon = "iconObject_1x1";
         editorCategory = QUOTE(DOUBLES(PREFIX,sabacc));
         editorSubcategory = QUOTE(DOUBLES(PREFIX,sabacc_furniture));
@@ -159,7 +169,10 @@ class CfgVehicles {
         scope = 2;
         scopeCurator = 2;
         displayName = CSTRING(Sign);
-        model = QPATHTOF(data\sign\sign.p3d);
+        model = QPATHTOF(data\models\sign.p3d);
+        hiddenSelections[] = {"camo_metal", "camo_panel"};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\textures\materials\metal_co.paa), QPATHTOF(data\textures\sign\sign_co.paa)};
+        hiddenSelectionsMaterials[] = {QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\sign\sign.rvmat)};
         icon = "iconObject_1x2";
         editorCategory = QUOTE(DOUBLES(PREFIX,sabacc));
         editorSubcategory = QUOTE(DOUBLES(PREFIX,sabacc_furniture));
@@ -175,11 +188,69 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 0;
         displayName = CSTRING(Chips);
-        model = QPATHTOF(data\chips\chips5.p3d);
+        model = QPATHTOF(data\models\chips5.p3d);
         destrType = "DestructNo";
+        hiddenSelections[] = {"camo_top", "camo_side"};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\textures\chips\chip_top_co.paa), QPATHTOF(data\textures\chips\chip_side_co.paa)};
     };
     class GVAR(chip1): GVAR(chips5) {
-        model = QPATHTOF(data\chips\chip1.p3d);
+        model = QPATHTOF(data\models\chip1.p3d);
+    };
+
+    // Dealer droid in the middle of a Sabacc table (created locally by each client, turned by the game)
+    class GVAR(dealer): NonStrategic {
+        author = AUTHOR;
+        scope = 1;
+        scopeCurator = 0;
+        displayName = CSTRING(Dealer);
+        model = QPATHTOF(data\models\dealer.p3d);
+        destrType = "DestructNo";
+        hiddenSelections[] = {"camo_body", "camo_eye", "camo_lights", "camo_sensor", "camo_engine"};
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(data\textures\dealer\droid_co.paa), QPATHTOF(data\textures\dealer\eye_co.paa),
+            QPATHTOF(data\textures\dealer\glow_co.paa), QPATHTOF(data\textures\dealer\sensor_co.paa),
+            QPATHTOF(data\textures\dealer\engine_co.paa)
+        };
+        hiddenSelectionsMaterials[] = {
+            QPATHTOF(data\textures\materials\metal.rvmat), QPATHTOF(data\textures\materials\eye.rvmat),
+            QPATHTOF(data\textures\materials\glow.rvmat), QPATHTOF(data\textures\materials\sensor.rvmat),
+            QPATHTOF(data\textures\materials\sensor.rvmat)
+        };
+        class AnimationSources {
+            // Turn of the sensor strip (0 .. 1), set every frame by brg_game_fnc_worldTableDealer
+            class spin {
+                source = "user";
+                animPeriod = 0.001;
+                initPhase = 0;
+            };
+        };
+    };
+
+    // A die on a physical table (created by the game, turned to show the rolled value)
+    class GVAR(die): NonStrategic {
+        author = AUTHOR;
+        scope = 1;
+        scopeCurator = 0;
+        displayName = CSTRING(Die);
+        model = QPATHTOF(data\models\die.p3d);
+        destrType = "DestructNo";
+        hiddenSelections[] = {"camo_1", "camo_2", "camo_3", "camo_4", "camo_5", "camo_6"};
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(data\textures\dice\face_1_co.paa), QPATHTOF(data\textures\dice\face_2_co.paa), QPATHTOF(data\textures\dice\face_3_co.paa),
+            QPATHTOF(data\textures\dice\face_4_co.paa), QPATHTOF(data\textures\dice\face_5_co.paa), QPATHTOF(data\textures\dice\face_6_co.paa)
+        };
+    };
+
+    // A shift token lying on a physical table (created by the game, texture set by the game)
+    class GVAR(token): NonStrategic {
+        author = AUTHOR;
+        scope = 1;
+        scopeCurator = 0;
+        displayName = CSTRING(Token);
+        model = QPATHTOF(data\models\token.p3d);
+        destrType = "DestructNo";
+        hiddenSelections[] = {"camo"};
+        hiddenSelectionsTextures[] = {"\x\brg\addons\game\data\ui\shifts\1.paa"};
     };
 
     // A card lying on a physical table (created by the game, texture set by the game)
@@ -188,7 +259,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 0;
         displayName = CSTRING(Card);
-        model = QPATHTOF(data\card\card.p3d);
+        model = QPATHTOF(data\models\card.p3d);
         destrType = "DestructNo";
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {"\x\brg\addons\game\data\ui\cards\back.paa"};

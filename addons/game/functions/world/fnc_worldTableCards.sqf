@@ -38,9 +38,13 @@ private _fnc_set = {
 
 // Seats: players in order (left / eliminated players have no cards on the table)
 private _players = _table get "players";
+private _maxPlayers = _table get "maxPlayers";
+// (a plain loop: _forEachIndex does not exist inside "apply")
+private _seatOfPlayer = [];
+for "_i" from 0 to (count _players - 1) do {_seatOfPlayer pushBack ([_i, _maxPlayers] call FUNC(tableSeat))};
 {
     private _seat = _forEachIndex;
-    private _index = TABLE_SEAT_ORDER find _seat;
+    private _index = _seatOfPlayer find _seat;
     private _player = _players param [_index, createHashMap];
     private _show = _inGame && {count _player > 0} && {!(_player get "out")} && {(_player get "sand") >= 0};
     {
@@ -64,13 +68,38 @@ private _fnc_show = {
 };
 {
     _x params ["_reserve", "_pot"];
-    private _player = _players param [TABLE_SEAT_ORDER find _forEachIndex, createHashMap];
+    private _player = _players param [_seatOfPlayer find _forEachIndex, createHashMap];
     private _present = _inGame && {count _player > 0} && {!(_player get "left")};
     private _stacks = if (_present) then {ceil ((_player get "chips") / 5) min 4} else {0};
     private _potChips = if (_present) then {(_player get "pot") min 5} else {0};
     {[_x, _forEachIndex < _stacks] call _fnc_show} forEach _reserve;
     {[_x, _forEachIndex < _potChips] call _fnc_show} forEach _pot;
 } forEach (_table getOrDefault ["chipObjects", []]);
+
+// Shift tokens still in hand, face up in front of each player
+{
+    private _player = _players param [_seatOfPlayer find _forEachIndex, createHashMap];
+    private _shifts = if (_inGame && {count _player > 0} && {!(_player get "out")}) then {_player get "shifts"} else {[]};
+    {
+        private _shift = _shifts param [_forEachIndex, -1];
+        [_x, ["", ([_shift] call FUNC(shiftInfo)) select 3] select (_shift > 0)] call _fnc_set;
+    } forEach _x;
+} forEach (_table getOrDefault ["tokenObjects", []]);
+
+// Dice: the roll being chosen (Mirage, Priority odds). Clients show them floating (see worldTableDealer)
+private _roll = [];
+{
+    private _pending = _x getOrDefault ["pending", []];
+    if (_pending isNotEqualTo [] && {(_pending param [1, []]) isNotEqualTo []}) exitWith {_roll = +(_pending select 1)};
+} forEach _players;
+private _tableObject = _table get "object";
+if ((_tableObject getVariable [QGVAR(dice), []]) isNotEqualTo _roll) then {_tableObject setVariable [QGVAR(dice), _roll, true]};
+
+// Dealer droid: the seat whose turn it is (the droid itself is local to each client, see worldTableDealer)
+private _object = _table get "object";
+private _currentIndex = _players findIf {(_x get "uid") == ([_table] call FUNC(serverCurrentUid))};
+private _turnSeat = if (_status == STATUS_PLAYING && {_currentIndex >= 0}) then {[_currentIndex, _maxPlayers] call FUNC(tableSeat)} else {-1};
+if ((_object getVariable [QGVAR(turnSeat), -1]) != _turnSeat) then {_object setVariable [QGVAR(turnSeat), _turnSeat, true]};
 
 // Piles: sand deck, sand discard, blood discard, blood deck
 private _decks = _table get "decks";

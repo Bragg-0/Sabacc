@@ -17,8 +17,15 @@ private _log = _table get "log";
 _log pushBack [_key, _args];
 if (count _log > LOG_SIZE) then {_log deleteRange [0, count _log - LOG_SIZE]};
 
-// Physical table: what happens can be heard around it (see brg_game_fnc_worldTableSound)
+// Physical table: what happens is shown as a hologram above the dealer droid (see
+// brg_game_fnc_worldTableHolo) and can be heard around it (see brg_game_fnc_worldTableSound)
 if (_table get "world") then {
+    private _object = _table get "object";
+    if (!isNull _object) then {
+        private _id = ((_object getVariable [QGVAR(holo), [0]]) select 0) + 1;
+        _object setVariable [QGVAR(holo), [_id, _key, _args, CBA_missionTime], true];
+    };
+
     private _sound = switch (_key) do {
         case LSTRING(LogRoundStarted): {"shuffle"};
         case LSTRING(LogDrawDeck);

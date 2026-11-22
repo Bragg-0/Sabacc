@@ -87,3 +87,23 @@ private _seatChips = [];
     _seatChips pushBack [_reserve, _pot];
 } forEach TABLE_CARD_SPOTS;
 _table set ["chipObjects", _seatChips];
+
+// ---- Shift tokens of each seat: a row of 4 between the cards and the player, upright for the player
+private _seatTokens = [];
+{
+    _x params ["_cx", "_cy"];
+    (TABLE_SEATS select _forEachIndex) params ["_sx", "_sy"];
+    private _len = sqrt (_sx ^ 2 + _sy ^ 2);
+    private _dx = _sx / _len;
+    private _dy = _sy / _len;
+    private _dir = ((_sx atan2 _sy) + 180) mod 360;   // the top of the token towards the middle
+    _seatTokens pushBack ([-0.066, -0.022, 0.022, 0.066] apply {
+        private _token = createVehicle ["brg_objects_token", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+        _token attachTo [_object, [_cx + _dy * _x + _dx * 0.09, _cy - _dx * _x + _dy * 0.09, TABLE_FELT_Z]];
+        _token setDir _dir;
+        _token hideObjectGlobal true;
+        _token
+    });
+} forEach TABLE_CARD_SPOTS;
+_table set ["tokenObjects", _seatTokens];
+

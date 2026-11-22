@@ -9,9 +9,17 @@
             <English>Sabacc chips</English>
             <French>Jetons de Sabacc</French>
         </Key>
+        <Key ID="STR_brg_objects_Dealer">
+            <English>Sabacc dealer droid</English>
+            <French>Droïde croupier de Sabacc</French>
+        </Key>
         <Key ID="STR_brg_objects_Description">
             <English>Use this terminal to play Nar Shaddaa Sabacc.</English>
             <French>Utilisez ce terminal pour jouer au Sabacc de Nar Shaddaa.</French>
+        </Key>
+        <Key ID="STR_brg_objects_Die">
+            <English>Sabacc die</English>
+            <French>Dé de Sabacc</French>
         </Key>
         <Key ID="STR_brg_objects_DisplayName">
             <English>Nar Shaddaa Sabacc Terminal</English>
@@ -48,6 +56,10 @@
         <Key ID="STR_brg_objects_TableStoolsTip">
             <English>Six stools are placed around the table when the mission starts; players sit on them.</English>
             <French>Six tabourets sont placés autour de la table au lancement de la mission ; les joueurs s'y assoient.</French>
+        </Key>
+        <Key ID="STR_brg_objects_Token">
+            <English>Sabacc shift token</English>
+            <French>Jeton bonus de Sabacc</French>
         </Key>
     </Package>
 </Project>

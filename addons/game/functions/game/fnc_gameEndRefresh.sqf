@@ -116,7 +116,7 @@ private _fnc_cell = {
         private _entry = _sorted select _rowIndex;
         private _player = _entry select 3;
         private _isMe = (_player get "uid") == _myUid;
-        private _isWinner = (_entry select 0) == 0;
+        private _isWinner = _winner != "" && {(_player get "name") == _winner} && {!(_player get "out")};
         private _eliminated = _player get "eliminatedRound";
         private _status = switch (true) do {
             case (_isWinner): {[toUpper LLSTRING(EndWinnerTag), HTML_GOOD]};

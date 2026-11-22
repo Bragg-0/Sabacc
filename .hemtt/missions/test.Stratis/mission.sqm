@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5707.1699,47.015984,5732.7007};
-		dir[]={0.11752418,-0.60243422,0.78947192};
-		up[]={0.08870367,0.79816955,0.5958693};
-		aside[]={0.98910451,-2.7072383e-07,-0.14724195};
+		pos[]={1807.4713,11.193426,5633.4814};
+		dir[]={0.21274325,-0.83324605,0.51033455};
+		up[]={0.32061261,0.55290234,0.76909465};
+		aside[]={0.92301023,0,-0.38477543};
 	};
 };
 binarizationWanted=0;
@@ -25,16 +25,13 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Weapons_F",
 	"ace_goggles",
-	"brg_objects",
-	"A3_Structures_F_EPA_Civ_Camping",
-	"ace_dragging",
-	"brg_game"
+	"brg_objects"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=4;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -60,27 +57,6 @@ class AddonsMetaData
 		{
 			className="brg_objects";
 			name="Sabacc - Objects";
-			author="Bragg";
-			url="https://github.com/Bragg-0/Sabacc";
-		};
-		class Item4
-		{
-			className="A3_Structures_F_EPA";
-			name="Arma 3 Survive Episode - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item5
-		{
-			className="ace_dragging";
-			name="ACE3 - Dragging";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item6
-		{
-			className="brg_game";
-			name="Sabacc - Game";
 			author="Bragg";
 			url="https://github.com/Bragg-0/Sabacc";
 		};
@@ -115,7 +91,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=4;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
@@ -128,7 +104,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5716.1792,38.597706,5743.978};
+						position[]={1810.1742,5.5014381,5635.6646};
 					};
 					side="West";
 					flags=7;
@@ -165,60 +141,48 @@ class Mission
 					};
 					id=1;
 					type="B_Story_SF_Captain_F";
-					atlOffset=-1.1444092e-05;
+					atlOffset=-9.5367432e-07;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=0;
-			atlOffset=-1.1444092e-05;
+			atlOffset=-9.5367432e-07;
 		};
 		class Item1
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5717.8535,39.298595,5747.7876};
-				angles[]={6.2132983,1.9639465,6.218277};
+				position[]={1810.578,5.5,5639.7739};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 			};
-			id=2;
-			type="Land_WoodenTable_large_F";
-			atlOffset=-0.00032424927;
-		};
-		class Item2
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={5717.9102,38.791687,5746.7979};
-			};
-			id=3;
-			type="brg_game_moduleTable";
+			id=4;
+			type="brg_objects_table";
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="brg_game_moduleTable_name";
-					expression="_this setVariable ['Name',_value,true];";
+					property="brg_objects_maxPlayers";
+					expression="_this setVariable ['brg_objects_maxPlayers', _value, true];";
 					class Value
 					{
 						class data
 						{
-							singleType="STRING";
-							value="Test";
+							singleType="SCALAR";
+							value=6;
 						};
 					};
 				};
 				class Attribute1
 				{
-					property="brg_game_moduleTable_droids";
-					expression="_this setVariable ['Droids',_value,true];";
+					property="brg_objects_tournament";
+					expression="_this setVariable ['brg_objects_tournament', _value, true];";
 					class Value
 					{
 						class data
@@ -230,55 +194,18 @@ class Mission
 				};
 				class Attribute2
 				{
-					property="brg_game_moduleTable_maxPlayers";
-					expression="_this setVariable ['MaxPlayers',_value,true];";
+					property="brg_objects_variant";
+					expression="_this setVariable ['brg_objects_variant', _value, true];";
 					class Value
 					{
 						class data
 						{
-							singleType="SCALAR";
-							value=4;
+							singleType="STRING";
+							value="highStakes";
 						};
 					};
 				};
 				nAttributes=3;
-			};
-		};
-		class Item3
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5706.938,39.607418,5742.2046};
-				angles[]={0.019996032,0,6.1785688};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=4;
-			type="brg_objects_table";
-		};
-	};
-	class Connections
-	{
-		class LinkIDProvider
-		{
-			nextID=1;
-		};
-		class Links
-		{
-			items=1;
-			class Item0
-			{
-				linkID=0;
-				item0=3;
-				item1=2;
-				class CustomData
-				{
-					type="Sync";
-				};
 			};
 		};
 	};

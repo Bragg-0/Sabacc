@@ -19,7 +19,7 @@ private _stools = _object getVariable [QGVAR(stools), []];
 private _stool = objNull;
 if (alive player && {!(_state getOrDefault ["spectator", false])} && {_index >= 0} && {_stools isNotEqualTo []}
     && {!((_players select _index) get "left")} && {isNull objectParent player}) then {
-    _stool = _stools param [TABLE_SEAT_ORDER select (_index mod 6), objNull];
+    _stool = _stools param [[_index, _state get "maxPlayers"] call FUNC(tableSeat), objNull];
 };
 private _current = player getVariable [QGVAR(sittingOn), objNull];
 if (_stool isEqualTo _current) exitWith {};
